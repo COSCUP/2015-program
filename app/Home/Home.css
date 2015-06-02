@@ -1,0 +1,45 @@
+
+@media screen and (min-width: 600px){
+	.Home-main {
+        position: relative;
+        border: 1px solid gray;
+        height: auto;
+    }
+    .Home-filter {
+    	margin-left: 80px;
+    	width: 320px;
+    	position: absolute;
+    	border: 2px solid;
+
+    }
+    .Home-filter.is-fixed {
+    	position: fixed;
+    	top: 0;
+
+    }
+    .Home-filter.is-passed{
+    	position: absolute;
+    	/* top dynamically decided*/
+    }
+    .Home-schedule {
+    	
+    	width: 600px;
+    	margin-left: 405px;
+
+    }
+    .Home-scheduleDetail {
+    	/*position: absolute;
+    	width: 0%;
+    	right: -100%;
+    	overflow: hidden;
+    	height: 100vh;*/
+    	
+
+
+    }
+    .Home-footer {
+    	height: 300px;
+    	background: lightgray;
+    }
+
+}
