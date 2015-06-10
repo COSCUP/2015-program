@@ -15,14 +15,14 @@ module.exports = {
   entry: entry.concat(["./app/app.es6"]),
   output: {
     path: __dirname + "/build",
-    publicPath: "/build/",
+    publicPath:"/build/", /* github pages needs 'build/', local neesd '/build/' */
     filename: "bundle.js"
   },
   module: {
     loaders: [
       { test: /\.(js|jsx|es6)$/, exclude:/node_modules/, loaders: es6Loaders.concat(["babel-loader"]) },
       { test: /\.css$/, loader: "style-loader!css-loader!postcss-loader" },
-      { test: /\.(jpg|png|svg)$/, loader: "url-loader"}
+      { test: /\.(jpg|png|svg)$/, loader: "url-loader?limit=8192"}
     ]
   },
   postcss: [
