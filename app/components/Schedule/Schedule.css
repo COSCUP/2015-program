@@ -1,7 +1,11 @@
 .Schedule {
 	width: 100%;
-	padding-bottom: 100px;
+	
 	position: relative;
+	background: white;
+	border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    
 }
 .Schedule-title {
     padding: 20px;
@@ -9,10 +13,24 @@
     border-bottom: 1px solid gray;
     width: 100%;
 }
-.Schedule-title.is-fixed {
-	position: fixed;
+
+.Schedule-title.is-fixed.without-session {
+    left: 362px;
+    position: fixed;
     top: 0;
-    max-width: 598px;
+    max-width: 548px;
+
+    -webkit-transition: left .2s cubic-bezier(.4,0,.2,1); 
+    transition: left .2s cubic-bezier(.4,0,.2,1); 
+}
+.Schedule-title.is-fixed.with-session {
+    left: 162px;
+    position: fixed;
+    top: 0;
+    max-width: 548px;
+
+    -webkit-transition: left .2s cubic-bezier(.4,0,.2,1); 
+    transition: left .2s cubic-bezier(.4,0,.2,1); 
 }
 /*@media screen and (min-width: 600px){
 	.Schedule-title.is-fixed {
@@ -21,6 +39,8 @@
 }*/
 .Schedule-item {
 	padding: 30px;
+	cursor: pointer;
+	background: white;
 }
 .Schedule-item.has-top-border {
 	border-top: 1px solid rgb(220,220,220);

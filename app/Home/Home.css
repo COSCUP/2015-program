@@ -4,6 +4,7 @@
         position: relative;
         border: 1px solid gray;
         height: auto;
+
     }
     .Home-filter {
     	margin-left: 120px;
@@ -13,21 +14,59 @@
     .Home-filter.is-fixed {
     	position: fixed;
     	top: 0;
+        left: 0;
     }
     .Home-filter.is-passed{
     	position: absolute;
     	/* top dynamically decided*/
     }
     .Home-schedule {
-    	width: 600px;
+    	width: 550px;
     	margin-left: 360px;
-        border-left: 1px solid gray;
-        border-right: 1px solid gray;
+        will-change: margin-left;
+        -webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+        transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
     }
-    
+    .Home-schedule.is-fixed {
+        width: 550px;
+        margin-left: 360px;
+        will-change: margin-left;
+        
+    }
+    .Home-schedule.with-session {
+        width: 550px;
+        margin-left: 160px;
+        will-change: margin-left;
+        -webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+        transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+    }
+    .Home-session {
+        background: pink;
+        position: absolute;
+        top: 0;
+        right: -570px;
+        width: 570px;
+        padding: 20px;
+
+    }
+    .Home-session.is-show {
+        background: lightblue;
+        left: 711px;
+        width: 570px;
+        height: 90vh;
+        overflow: scroll;
+        padding: 20px;
+        
+    }
+    .Home-session.is-show.is-fixed {
+       height: 100vh;
+       overflow: scroll;
+       position: fixed;
+    }
+   
     .Home-footer {
     	height: 300px;
-    	background: lightgray;
+    	background: rgb(220,220,220);
     }
 
 }

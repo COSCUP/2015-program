@@ -5,7 +5,7 @@ export default React.createClass({
   displayName: "Schedule",
 
   render() {
-    var {inScheduleArea} = this.props;
+    var {inScheduleArea, sessionHandler, showSession} = this.props;
     var array = Array.apply(null, {length: 50}).map(Number.call, Number)
 
     var fakeItems = array.map((value,i)=>{
@@ -14,7 +14,9 @@ export default React.createClass({
         "has-top-border" : i !== 0
       })
     	return (
-    		<div className={itemClasses} key={i}>
+    		<div className={itemClasses} 
+             key={i}
+             onClick={sessionHandler}>
           SOME AWESOME TALK
         </div>
     	)
@@ -22,7 +24,9 @@ export default React.createClass({
 
     var titleClasses = classNames({
         "Schedule-title" : true,
-        "is-fixed" : inScheduleArea==="within"
+        "is-fixed" : inScheduleArea==="within",
+        "with-session" : showSession,
+        "without-session" : !showSession
     })
     return (
         <div className="Schedule">

@@ -11,7 +11,8 @@ export default React.createClass({
     return {
       inScheduleArea: "before",
       scheduleHeight: 0,
-      filterHeight: 0
+      filterHeight: 0,
+      sessionClass: false
     };
   },
 
@@ -27,16 +28,16 @@ export default React.createClass({
     var scheduleHeight = this.refs.schedule.getDOMNode().offsetHeight;
     var filterHeight = this.refs.filter.getDOMNode().offsetHeight;
     var height = scheduleHeight - window.innerHeight + filterHeight;
-    console.log(height)
+    //console.log("height: "+height);
 
     _setScheduleHeight(height);
     _setFilterHeight(filterHeight);
     //
 
     addEventListener("scroll", function() {
-        console.log("->"+pageYOffset)
+        //console.log("->"+pageYOffset)
         
-        if(pageYOffset > top){
+        if(pageYOffset > top && pageYOffset < height){
             _setInScheduleArea("within");
         }
         if(pageYOffset < top){
@@ -50,7 +51,9 @@ export default React.createClass({
   },
 
   _setInScheduleArea(value){
+    //console.log("[current] "+this.state.inScheduleArea + " // [to be set] "+ value)
     if(this.state.inScheduleArea !== value){
+      //console.log("! set schedule value !")
       this.setState({
         inScheduleArea: value
       })
@@ -67,25 +70,44 @@ export default React.createClass({
         filterHeight: value
     })
   },
+  _toggleSession(){
+    
+    this.setState({
+        showSession: !this.state.showSession
+    })
+  },
 
   render() {
-    var {inScheduleArea, scheduleHeight, filterHeight} = this.state;
+    var {inScheduleArea, scheduleHeight, filterHeight, showSession} = this.state;
     var filterClass = classNames({
         "Home-filter": true,
         "is-fixed": inScheduleArea === "within"
     });
+
     var filterStyle = {};
+    var sessionStyle = {};
     if(inScheduleArea === "passed"){
         filterStyle = { 
+          position: "absolute", 
+          top: (scheduleHeight - filterHeight - 20) + "px"
+        }
+        sessionStyle = { 
           position: "absolute", 
           top: (scheduleHeight - filterHeight - 20) + "px"
         }
     }
 
     var scheduleClass = classNames({
-        "Home-schedule": true,
-        "is-fixed": inScheduleArea === "within"
+        "Home-schedule" : true,
+        "is-fixed" : inScheduleArea !== "before",
+        "with-session" : showSession
     });
+
+    var sessionClass = classNames({
+        "Home-session" : true,
+        "is-show" : showSession,
+        "is-fixed" : inScheduleArea === "within"
+    })
 
     var coverIMG = require("./images/cover.jpg");
     return (
@@ -93,19 +115,27 @@ export default React.createClass({
         <div className="Home-cover">
             <img src={coverIMG} />
         </div>
+
         <div className="Home-main" ref="main">
           
-          <div className={filterClass}
-               style={filterStyle}>
-            <Filter ref="filter"/>
-            
-          </div>
-          <div className={scheduleClass} ref="schedule">
-            <Schedule inScheduleArea={inScheduleArea}/>
-          </div>
+            <div className={filterClass}
+                 style={filterStyle}>
+                <Filter ref="filter"
+                        sessionHandler={this._toggleSession}
+                        showSession={showSession}/>
+            </div>
+  
+            <div className={scheduleClass} ref="schedule">
+              <Schedule inScheduleArea={inScheduleArea}
+                        sessionHandler={this._toggleSession}
+                        showSession={showSession}/>
+            </div>
+  
+            <div className={sessionClass}
+                 style={sessionStyle}>detail</div>
           
-          
-          <div className="Home-footer"></div>
+            <div className="Home-footer"></div>
+
         </div>
       </div>
     );
