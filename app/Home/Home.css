@@ -6,37 +6,25 @@
         height: auto;
     }
     .Home-filter {
-    	margin-left: 80px;
-    	width: 320px;
+    	margin-left: 120px;
+    	width: 240px;
     	position: absolute;
-    	border: 2px solid;
-
     }
     .Home-filter.is-fixed {
     	position: fixed;
     	top: 0;
-
     }
     .Home-filter.is-passed{
     	position: absolute;
     	/* top dynamically decided*/
     }
     .Home-schedule {
-    	
     	width: 600px;
-    	margin-left: 405px;
-
+    	margin-left: 360px;
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
     }
-    .Home-scheduleDetail {
-    	/*position: absolute;
-    	width: 0%;
-    	right: -100%;
-    	overflow: hidden;
-    	height: 100vh;*/
-    	
-
-
-    }
+    
     .Home-footer {
     	height: 300px;
     	background: lightgray;

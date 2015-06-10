@@ -1,7 +1,27 @@
 .Schedule {
+	width: 100%;
 	padding-bottom: 100px;
+	position: relative;
 }
+.Schedule-title {
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+.Schedule-title.is-fixed {
+	position: fixed;
+    top: 0;
+    max-width: 598px;
+}
+/*@media screen and (min-width: 600px){
+	.Schedule-title.is-fixed {
+		width: 600px;
+    }
+}*/
 .Schedule-item {
 	padding: 30px;
-	border: 1px solid pink;
+}
+.Schedule-item.has-top-border {
+	border-top: 1px solid rgb(220,220,220);
 }

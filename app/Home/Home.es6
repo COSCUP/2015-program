@@ -40,10 +40,10 @@ export default React.createClass({
             _setInScheduleArea("within");
         }
         if(pageYOffset < top){
-           _setInScheduleArea("before");
+            _setInScheduleArea("before");
         }
         if(pageYOffset > height){
-           _setInScheduleArea("passed");
+            _setInScheduleArea("passed");
         }
     });
 
@@ -101,10 +101,10 @@ export default React.createClass({
             
           </div>
           <div className={scheduleClass} ref="schedule">
-            <Schedule/>
+            <Schedule inScheduleArea={inScheduleArea}/>
           </div>
           
-          <div className="Home-scheduleDetail">schedule detail</div>
+          
           <div className="Home-footer"></div>
         </div>
       </div>

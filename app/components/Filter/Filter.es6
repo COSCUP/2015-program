@@ -14,6 +14,7 @@ export default React.createClass({
 
     return (
       <div className="Fitler">
+          <div className="Fitler-title">議程主題</div>
           <ul className="Filter-categories">{fakeItems}</ul>
         
       </div>
