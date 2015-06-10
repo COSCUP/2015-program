@@ -1,3 +1,7 @@
+.Home {
+  position: relative;
+  height: 100%;
+}
 .Home-shadow {
   position: absolute;
   top: 0;
@@ -21,11 +25,19 @@
   cursor: pointer;
   pointer-events: all;
 }
+.Home-cover {
+  padding: 60px 0;
+}
+.Home-main {
+  position: relative;
+}
+
 @media screen and (min-width: 600px){
-	.Home-main {
+	  .Home-main {
         position: relative;
         border: 1px solid gray;
         height: auto;
+        
        
     }
     .Home-filter {
@@ -46,8 +58,8 @@
     	width: 550px;
     	margin-left: 360px;
         will-change: margin-left;
-        -webkit-transition: margin-left .1s cubic-bezier(.4,0,.2,1); 
-        transition: margin-left .1s cubic-bezier(.4,0,.2,1); 
+        -webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+        transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
         z-index: 10;
     }
     .Home-schedule.is-fixed {
@@ -61,8 +73,8 @@
         width: 550px;
         margin-left: 160px;
         will-change: margin-left;
-        -webkit-transition: margin-left .1s cubic-bezier(.4,0,.2,1); 
-        transition: margin-left .1s cubic-bezier(.4,0,.2,1); 
+        -webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+        transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
     }
     .Home-session {
         position: absolute;

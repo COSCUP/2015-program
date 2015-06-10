@@ -23,21 +23,20 @@ export default React.createClass({
     var { inScheduleArea } = this.state;
     var { _setInScheduleArea, _setScheduleHeight, _setFilterHeight } = this;
 
-   
-    var top = this.refs.main.getDOMNode().offsetTop;
-
     // 這裏有點神秘
+   
     var scheduleHeight = this.refs.schedule.getDOMNode().offsetHeight;
     var filterHeight = this.refs.filter.getDOMNode().offsetHeight;
+    var top = filterHeight + 80;//this.refs.main.getDOMNode().offsetTop;
     var height = scheduleHeight - window.innerHeight + filterHeight;
-    //console.log("height: "+height);
+
 
     _setScheduleHeight(height);
     _setFilterHeight(filterHeight);
     //
 
     addEventListener("scroll", function() {
-        //console.log("->"+pageYOffset)
+        console.log("->"+pageYOffset)
         
         if(pageYOffset > top && pageYOffset < height){
             _setInScheduleArea("within");
@@ -119,12 +118,12 @@ export default React.createClass({
     });
 
     return (
-      <div>
-        <div className="Home-cover">
+      <div className="Home">
+        <div className="Home-cover" ref="cover">
             <img src={coverIMG} />
         </div>
 
-        <div className="Home-main" ref="main">
+        <div className="Home-main" ref="main" id="Home-main">
             <div className={shadowClass}
                  onClick={this._toggleSession}></div>
 
