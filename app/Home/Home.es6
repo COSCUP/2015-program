@@ -2,6 +2,8 @@ import React from "react";
 import "./Home.css";
 import Filter from "../components/Filter/Filter.es6";
 import Schedule from "../components/Schedule/Schedule.es6";
+import Session from "../components/Session/Session.es6";
+
 import classNames from "classnames";
 
 export default React.createClass({
@@ -110,6 +112,12 @@ export default React.createClass({
     })
 
     var coverIMG = require("./images/cover.jpg");
+
+    var shadowClass = classNames({
+      "Home-shadow" : true,
+      "is-show" : showSession
+    });
+
     return (
       <div>
         <div className="Home-cover">
@@ -117,12 +125,12 @@ export default React.createClass({
         </div>
 
         <div className="Home-main" ref="main">
-          
+            <div className={shadowClass}
+                 onClick={this._toggleSession}></div>
+
             <div className={filterClass}
                  style={filterStyle}>
-                <Filter ref="filter"
-                        sessionHandler={this._toggleSession}
-                        showSession={showSession}/>
+                <Filter ref="filter"/>
             </div>
   
             <div className={scheduleClass} ref="schedule">
@@ -132,7 +140,9 @@ export default React.createClass({
             </div>
   
             <div className={sessionClass}
-                 style={sessionStyle}>detail</div>
+                 style={sessionStyle}>
+              <Session sessionHandler={this._toggleSession} />
+            </div>
           
             <div className="Home-footer"></div>
 

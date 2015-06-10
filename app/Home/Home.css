@@ -1,10 +1,32 @@
+.Home-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  pointer-events: none;
 
+}
+.Home-shadow.is-show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 50%;
+  z-index: 1;
+  background: rgba(255,255,255,0.7);
+  -webkit-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out;
+  cursor: pointer;
+  pointer-events: all;
+}
 @media screen and (min-width: 600px){
 	.Home-main {
         position: relative;
         border: 1px solid gray;
         height: auto;
-
+       
     }
     .Home-filter {
     	margin-left: 120px;
@@ -24,46 +46,48 @@
     	width: 550px;
     	margin-left: 360px;
         will-change: margin-left;
-        -webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
-        transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+        -webkit-transition: margin-left .1s cubic-bezier(.4,0,.2,1); 
+        transition: margin-left .1s cubic-bezier(.4,0,.2,1); 
+        z-index: 10;
     }
     .Home-schedule.is-fixed {
         width: 550px;
         margin-left: 360px;
         will-change: margin-left;
+
         
     }
     .Home-schedule.with-session {
         width: 550px;
         margin-left: 160px;
         will-change: margin-left;
-        -webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
-        transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+        -webkit-transition: margin-left .1s cubic-bezier(.4,0,.2,1); 
+        transition: margin-left .1s cubic-bezier(.4,0,.2,1); 
     }
     .Home-session {
-        background: pink;
         position: absolute;
         top: 0;
         right: -570px;
         width: 570px;
-        padding: 20px;
-
+        will-change: right;
+        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); 
+        transition: right .2s cubic-bezier(.4,0,.2,1); 
     }
     .Home-session.is-show {
-        background: lightblue;
+        
         left: 711px;
         width: 570px;
         height: 90vh;
         overflow: scroll;
-        padding: 20px;
-        
+        will-change: right;
+        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); 
+        transition: right .2s cubic-bezier(.4,0,.2,1); 
     }
     .Home-session.is-show.is-fixed {
-       height: 100vh;
-       overflow: scroll;
-       position: fixed;
+        height: 100vh;
+        overflow: scroll;
+        position: fixed;
     }
-   
     .Home-footer {
     	height: 300px;
     	background: rgb(220,220,220);

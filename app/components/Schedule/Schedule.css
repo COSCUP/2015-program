@@ -1,10 +1,10 @@
 .Schedule {
 	width: 100%;
-	
 	position: relative;
 	background: white;
 	border-left: 1px solid gray;
     border-right: 1px solid gray;
+    z-index: 10;
     
 }
 .Schedule-title {
