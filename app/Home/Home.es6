@@ -3,6 +3,7 @@ import "./Home.css";
 import Filter from "../components/Filter/Filter.es6";
 import Schedule from "../components/Schedule/Schedule.es6";
 import Session from "../components/Session/Session.es6";
+import Sponser from "../components/Sponser/Sponser.es6";
 
 import classNames from "classnames";
 
@@ -119,8 +120,9 @@ export default React.createClass({
 
     return (
       <div className="Home">
+        
         <div className="Home-cover" ref="cover">
-            <img src={coverIMG} />
+            <img className="Home-coverImg" src={coverIMG} />
         </div>
 
         <div className="Home-main" ref="main" id="Home-main">
@@ -137,6 +139,10 @@ export default React.createClass({
                         sessionHandler={this._toggleSession}
                         showSession={showSession}/>
             </div>
+
+            <div className="Home-sponser">
+              <Sponser />
+            </div>
   
             <div className={sessionClass}
                  style={sessionStyle}>
@@ -146,6 +152,8 @@ export default React.createClass({
             <div className="Home-footer"></div>
 
         </div>
+       
+        
       </div>
     );
   }
