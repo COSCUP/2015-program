@@ -8,29 +8,42 @@
   border-bottom: 1px solid gray;
 
 }
-ul.Filter-categories {
+.Filter-categories {
 	list-style: none;
   margin: 0;
   padding: 10px 20px 10px 0;
 }
-li.Filter-category {
+.Filter-category {
 	font-size: 13px;
   line-height: 14px;
-  background: lightgray;
   margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
   	
 }
-li.Filter-category:before {
-	content: '';
+.Filter-categoryIcon {
+	position: absolute;
+  top: 5px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
   -webkit-transition: background .3s;
   transition: background .3s;
-  display: inline-block;
-  left: 1px;
-  width: 10px;
-  height: 10px;
-  margin-top: -5px;
-  margin-right: 10px;
-  border-radius: 2px;
-  background: 0 0;
-  border: 1px solid #d03f58;
+}
+
+.Filter-categoryText {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+.Filter-clearAll {
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: transparent;
+}
+.Filter-clearAll.is-active {
+  color: rgb(120,120,120);
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }

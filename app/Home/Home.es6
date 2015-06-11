@@ -4,20 +4,34 @@ import Filter from "../components/Filter/Filter.es6";
 import Schedule from "../components/Schedule/Schedule.es6";
 import Session from "../components/Session/Session.es6";
 import Sponser from "../components/Sponser/Sponser.es6";
-
+import Data from "./Categories";
 import classNames from "classnames";
 
 export default React.createClass({
   displayName: "Home",
 
   getInitialState () {
+    
+    var categories = Data.categories.map((value,index)=>{
+        return (
+          {
+            "title" : value,
+            "active" : false
+          }
+        )
+    });
+    console.log(categories);
     return {
       inScheduleArea: "before",
       scheduleHeight: 0,
       filterHeight: 0,
-      sessionClass: false
+      sessionClass: false,
+      categories: categories,
+      categoryOn: false
     };
   },
+
+
 
   componentDidMount(){
    
@@ -73,14 +87,50 @@ export default React.createClass({
     })
   },
   _toggleSession(){
-    
     this.setState({
         showSession: !this.state.showSession
     })
   },
 
+  _toggleCategory(index){
+    var current = this.state.categories;
+    current[index].active = !current[index].active;
+    
+    var sum = current.reduce((pre, current)=>{
+        if(current.active){
+           return pre + 1;
+        }else{
+           return pre;
+        }
+    },0);
+    var categoryOn = (sum > 0);
+
+    this.setState({
+        categories: current,
+        categoryOn: categoryOn
+    })
+  },
+  _clearCategory(){
+   
+    var current = this.state.categories.map((value,i)=>{
+        return {
+            title: value.title,
+            active: false
+        }
+    });
+    console.log("xxxxxx");
+    console.log(current);
+    
+    this.setState({
+        categories: current,
+        categoryOn: false
+    })
+
+  },
+
   render() {
-    var {inScheduleArea, scheduleHeight, filterHeight, showSession} = this.state;
+    var {inScheduleArea, scheduleHeight, filterHeight, showSession,
+         categories, categoryOn} = this.state;
     var filterClass = classNames({
         "Home-filter": true,
         "is-fixed": inScheduleArea === "within"
@@ -131,7 +181,11 @@ export default React.createClass({
 
             <div className={filterClass}
                  style={filterStyle}>
-                <Filter ref="filter"/>
+                <Filter ref="filter"
+                        data={categories}
+                        filterOn={categoryOn}
+                        toggleCategoryHandler={this._toggleCategory}
+                        clearCategoryHandler={this._clearCategory}/>
             </div>
   
             <div className={scheduleClass} ref="schedule">
