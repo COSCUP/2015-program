@@ -9,7 +9,21 @@
 .Schedule.is-fixed {
     padding-top: 56px;
 }
-@media screen and (min-width: 776px) and (max-width: 1279px){
+.Schedule-title {
+    background: white;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    z-index: 20;
+
+}
+.Schedule-title.is-fixed {
+    position: fixed;
+    top: 0;
+    
+    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); 
+    transition: all .2s cubic-bezier(.4,0,.2,1); 
+}
+@media screen and (min-width: 776px) and (max-width: 1199px){
     .Schedule-title {
         background: white;
         border-bottom: 1px solid gray;
@@ -27,7 +41,7 @@
     }
     
 }
-@media screen and (min-width: 1280px){
+@media screen and (min-width: 1200px){
     .Schedule-title {
         background: white;
         border-bottom: 1px solid gray;
