@@ -29,6 +29,7 @@
 .Home-cover {
   width: 100%;
   padding: 60px 0;
+  border-bottom: 1px solid gray;
 }
 .Home-coverImg {
   width: 100%;
@@ -38,12 +39,9 @@
 }
 
 @media screen and (min-width: 600px){
-	  .Home-main {
+	.Home-main {
         position: relative;
-        border: 1px solid gray;
         height: auto;
-        
-       
     }
     .Home-filter {
     	margin-left: 120px;
