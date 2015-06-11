@@ -39,11 +39,15 @@
 .Session-close:hover:before, .Session-close:hover:after {
   background: rgb(53,55,54);
 }
-
 .Session-content {
-  padding: 20px 40px 20px 20px;
-  line-height: 1.6;
-  background: white;
+    padding: 20px;
+    line-height: 1.6;
+    background: white;
+}
+@media screen and (min-width: 1024px){
+    .Session-content {
+        padding: 20px 40px 20px 20px;
+    }
 }
 .Session-meta {
   font-size: 14px;

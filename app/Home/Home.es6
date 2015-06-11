@@ -42,7 +42,7 @@ export default React.createClass({
     // 這裏有點神秘
    
     var scheduleHeight = this.refs.schedule.getDOMNode().offsetHeight;
-    var filterHeight = this.refs.filter.getDOMNode().offsetHeight;
+    var filterHeight = this.refs.filter.getDOMNode().offsetHeight || 230;
     var top = filterHeight + 94;//this.refs.main.getDOMNode().offsetTop;
     var height = scheduleHeight - window.innerHeight + filterHeight;
 
@@ -200,7 +200,8 @@ export default React.createClass({
                         toggleCategoryHandler={this._toggleCategory}
                         clearCategoryHandler={this._clearCategory}/>
             </div>
-  
+            
+
             <div className={scheduleClass} ref="schedule">
               <Schedule inScheduleArea={inScheduleArea}
                         sessionHandler={this._toggleSession}
@@ -212,6 +213,7 @@ export default React.createClass({
                         filterOn={categoryOn}/>
             </div>
 
+            
             <div className="Home-sponser">
               <Sponser />
             </div>
