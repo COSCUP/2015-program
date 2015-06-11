@@ -81,6 +81,7 @@
 }
 .Schedule-session {
     padding: 30px;
+    padding-right: 40px;
     cursor: pointer;
     will-change: background;
     line-height: 1.4;

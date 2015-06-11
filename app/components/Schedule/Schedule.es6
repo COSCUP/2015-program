@@ -6,24 +6,44 @@ export default React.createClass({
   displayName: "Schedule",
 
   render() {
-    var {inScheduleArea, sessionHandler, showSession, setSessionHandler, currentSession} = this.props;
-    var array = Array.apply(null, {length: 50}).map(Number.call, Number)
-
-    var items = Data.day1.map((value,i)=>{
+    var {inScheduleArea, sessionHandler, showSession, setSessionHandler, currentSession,
+         filterOn, categories} = this.props;
+    /* ----------- */
+    var categoryObj = {};
+    categories.map((v,i)=>{
+        categoryObj[v.title] = v.active;
+    });
+    /* ----------- */
+    
+    var items = Data.day1
+    .filter((eventItem)=>{
+        var shouldReturn = false;
+        if(eventItem.event && filterOn){
+            if(categoryObj[eventItem.event.category])  
+                shouldReturn = true;
+           
+        }else{//events
+            shouldReturn = true;
+        }
+        if(shouldReturn) return eventItem;
+    })
+    .map((value,i)=>{
+      
       var itemClasses = classNames({
         "Schedule-item" : value.event,
         "Schedule-itemWrapper" : value.events,
         "has-top-border" : i !== 0
       })
 
-console.log(`***${currentSession.event}`);
-
 
       var content = "";
       if(value.event){ //single event
         content = value.event;
+
       }else{ //multile event
-        content = value.events.map((v,k)=>{
+        content = value.events
+        
+        .map((v,k)=>{
             var sessionClasses = classNames({
               "Schedule-session" : true,
               "is-last" : k === value.events.length-1,

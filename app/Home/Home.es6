@@ -207,7 +207,9 @@ export default React.createClass({
                         showSession={showSession}
                         top={scheduleHeight - filterHeight - 80}
                         setSessionHandler={this._setSession}
-                        currentSession={currentSession}/>
+                        currentSession={currentSession}
+                        categories={categories}
+                        filterOn={categoryOn}/>
             </div>
 
             <div className="Home-sponser">
