@@ -41,16 +41,26 @@ export default React.createClass({
         content = value.event;
 
       }else{ //multile event
-        content = value.events
-        
+        var filteredEvents = value.events
+        .filter((sessionItem)=>{
+            
+            if(!filterOn) return sessionItem;
+
+            var shouldReturn = false;
+            if(categoryObj[sessionItem.category])  
+                shouldReturn = true;
+            
+            if(shouldReturn) return sessionItem;
+        });
+        content = filteredEvents
         .map((v,k)=>{
             var sessionClasses = classNames({
               "Schedule-session" : true,
-              "is-last" : k === value.events.length-1,
+              "is-last" : k === filteredEvents.length-1,
               "is-active" : currentSession.event === v.event 
             })
             return(
-              <div className={sessionClasses} onClick={setSessionHandler.bind(null,v)}>{v.event}</div>
+              <div className={sessionClasses} onClick={setSessionHandler.bind(null,v)} key={k}>{v.event}</div>
             )
         })
       }
