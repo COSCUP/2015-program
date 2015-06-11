@@ -15,7 +15,7 @@ module.exports = {
   entry: entry.concat(["./app/app.es6"]),
   output: {
     path: __dirname + "/build",
-    publicPath:"/build/", /* github pages needs 'build/', local neesd '/build/' */
+    publicPath:"build/", /* github pages needs 'build/', local neesd '/build/' */
     filename: "bundle.js"
   },
   module: {
