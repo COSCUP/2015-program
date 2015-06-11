@@ -43,6 +43,7 @@
 .Session-content {
   padding: 20px 40px 20px 20px;
   line-height: 1.6;
+  background: white;
 }
 .Session-meta {
   font-size: 14px;
