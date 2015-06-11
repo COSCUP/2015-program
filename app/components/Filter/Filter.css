@@ -47,3 +47,8 @@
   -webkit-transition: all .3s;
   transition: all .3s;
 }
+.Filter-clearAll.is-active:hover{
+  color: rgb(50,53,52);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}

@@ -7,41 +7,86 @@
     z-index: 10;
     
 }
+.Schedule.is-fixed {
+    padding-top: 54px;
+}
 .Schedule-title {
     padding: 20px;
     background: white;
     border-bottom: 1px solid gray;
     width: 100%;
+    z-index: 20;
 }
 
 .Schedule-title.is-fixed.without-session {
-    left: 362px;
+    left: 361px;
     position: fixed;
     top: 0;
     max-width: 548px;
 
-    -webkit-transition: left .2s cubic-bezier(.4,0,.2,1); 
-    transition: left .2s cubic-bezier(.4,0,.2,1); 
+    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); 
+    transition: all .2s cubic-bezier(.4,0,.2,1); 
 }
 .Schedule-title.is-fixed.with-session {
-    left: 162px;
+    left: 161px;
     position: fixed;
     top: 0;
     max-width: 548px;
 
-    -webkit-transition: left .2s cubic-bezier(.4,0,.2,1); 
-    transition: left .2s cubic-bezier(.4,0,.2,1); 
+    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); 
+    transition: all .2s cubic-bezier(.4,0,.2,1); 
 }
 /*@media screen and (min-width: 600px){
 	.Schedule-title.is-fixed {
 		width: 600px;
     }
 }*/
+.Schedule-day {
+    background: rgb(220,220,220);
+    padding: 20px;
+}
 .Schedule-item {
 	padding: 30px;
 	cursor: pointer;
 	background: white;
+    position: relative;
+    padding-left: 110px;
+    color: rgb(100,100,100);
 }
-.Schedule-item.has-top-border {
+.Schedule-itemWrapper {
+    cursor: pointer;
+    background: white;
+    position: relative;
+    padding-left: 80px;
+    
+}
+.Schedule-item.has-top-border, .Schedule-itemWrapper.has-top-border {
 	border-top: 1px solid rgb(220,220,220);
+}
+.Schedule-time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    line-height: 80px;
+    font-size: 14px;
+    text-align: center;
+    color: rgb(53,55,54);
+}
+.Schedule-session {
+    padding: 30px;
+    cursor: pointer;
+    will-change: background;
+    line-height: 1.4;
+    -webkit-transition: background .3s;
+    transition: background .3s;
+    border-bottom: 1px solid rgb(220,220,220);
+}
+.Schedule-session.is-last {
+    border-bottom: none;
+}
+.Schedule-session:hover {
+    background: pink;
+    -webkit-transition: background .3s;
+    transition: background .3s;
 }

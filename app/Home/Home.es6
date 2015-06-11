@@ -42,10 +42,10 @@ export default React.createClass({
    
     var scheduleHeight = this.refs.schedule.getDOMNode().offsetHeight;
     var filterHeight = this.refs.filter.getDOMNode().offsetHeight;
-    var top = filterHeight + 80;//this.refs.main.getDOMNode().offsetTop;
+    var top = filterHeight + 94;//this.refs.main.getDOMNode().offsetTop;
     var height = scheduleHeight - window.innerHeight + filterHeight;
 
-
+    console.log(`height:${height}`);
     _setScheduleHeight(height);
     _setFilterHeight(filterHeight);
     //
@@ -141,11 +141,11 @@ export default React.createClass({
     if(inScheduleArea === "passed"){
         filterStyle = { 
           position: "absolute", 
-          top: (scheduleHeight - filterHeight - 20) + "px"
+          top: (scheduleHeight - filterHeight) + "px"
         }
         sessionStyle = { 
           position: "absolute", 
-          top: (scheduleHeight - filterHeight - 20) + "px"
+          top: (scheduleHeight - filterHeight) + "px"
         }
     }
 
