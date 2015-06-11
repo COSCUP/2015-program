@@ -161,6 +161,7 @@
     	margin-left: 120px;
     	width: 240px;
     	position: absolute;
+        display: block;
     }
     .Home-filter.is-fixed {
     	position: fixed;
