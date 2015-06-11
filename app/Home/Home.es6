@@ -27,7 +27,8 @@ export default React.createClass({
       filterHeight: 0,
       sessionClass: false,
       categories: categories,
-      categoryOn: false
+      categoryOn: false,
+      currentSession: {}
     };
   },
 
@@ -90,6 +91,18 @@ export default React.createClass({
     this.setState({
         showSession: !this.state.showSession
     })
+    if(this.state.showSession){
+        this.setState({
+            currentSession: {}
+        });
+    }
+  },
+  _setSession(value){
+    this.setState({
+        showSession: true,
+        currentSession: value
+    });
+
   },
 
   _toggleCategory(index){
@@ -130,7 +143,7 @@ export default React.createClass({
 
   render() {
     var {inScheduleArea, scheduleHeight, filterHeight, showSession,
-         categories, categoryOn} = this.state;
+         categories, categoryOn, currentSession} = this.state;
     var filterClass = classNames({
         "Home-filter": true,
         "is-fixed": inScheduleArea === "within"
@@ -141,11 +154,11 @@ export default React.createClass({
     if(inScheduleArea === "passed"){
         filterStyle = { 
           position: "absolute", 
-          top: (scheduleHeight - filterHeight) + "px"
+          top: (scheduleHeight - filterHeight - 80) + "px"
         }
         sessionStyle = { 
           position: "absolute", 
-          top: (scheduleHeight - filterHeight) + "px"
+          top: (scheduleHeight - filterHeight - 80) + "px"
         }
     }
 
@@ -191,7 +204,10 @@ export default React.createClass({
             <div className={scheduleClass} ref="schedule">
               <Schedule inScheduleArea={inScheduleArea}
                         sessionHandler={this._toggleSession}
-                        showSession={showSession}/>
+                        showSession={showSession}
+                        top={scheduleHeight - filterHeight - 80}
+                        setSessionHandler={this._setSession}
+                        currentSession={currentSession}/>
             </div>
 
             <div className="Home-sponser">
@@ -200,7 +216,7 @@ export default React.createClass({
   
             <div className={sessionClass}
                  style={sessionStyle}>
-              <Session sessionHandler={this._toggleSession} />
+              <Session sessionHandler={this._toggleSession} data={currentSession}/>
             </div>
           
             <div className="Home-footer"></div>

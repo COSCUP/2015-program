@@ -61,23 +61,24 @@
     	width: 550px;
     	margin-left: 360px;
         will-change: margin-left;
-        -webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
-        transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+        /*-webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+        transition: margin-left .2s cubic-bezier(.4,0,.2,1); */
         z-index: 10;
     }
     .Home-schedule.is-fixed {
         width: 550px;
         margin-left: 360px;
         will-change: margin-left;
-
-        
+        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); 
+        transition: all .2s cubic-bezier(.4,0,.2,1); 
     }
     .Home-schedule.with-session {
         width: 550px;
         margin-left: 160px;
         will-change: margin-left;
-        -webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
-        transition: margin-left .2s cubic-bezier(.4,0,.2,1); 
+         -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); 
+        transition: all .2s cubic-bezier(.4,0,.2,1);
+        
     }
     .Home-sponser {
         width: 280px;

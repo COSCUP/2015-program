@@ -5,19 +5,16 @@
 	border-left: 1px solid gray;
     border-right: 1px solid gray;
     z-index: 10;
-    
 }
 .Schedule.is-fixed {
-    padding-top: 54px;
+    padding-top: 56px;
 }
 .Schedule-title {
-    padding: 20px;
     background: white;
     border-bottom: 1px solid gray;
     width: 100%;
     z-index: 20;
 }
-
 .Schedule-title.is-fixed.without-session {
     left: 361px;
     position: fixed;
@@ -41,20 +38,29 @@
 		width: 600px;
     }
 }*/
+.Schedule-dayButton {
+    font-family: Polaris-Bold,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    display: inline-block;
+    padding: 20px;
+    
+}
 .Schedule-day {
     background: rgb(220,220,220);
     padding: 20px;
 }
 .Schedule-item {
 	padding: 30px;
-	cursor: pointer;
+	
 	background: white;
     position: relative;
     padding-left: 110px;
     color: rgb(100,100,100);
 }
 .Schedule-itemWrapper {
-    cursor: pointer;
+    
     background: white;
     position: relative;
     padding-left: 80px;
@@ -84,9 +90,13 @@
 }
 .Schedule-session.is-last {
     border-bottom: none;
+    /*background: rgba(215, 253, 236, 0.82);*/
+}
+.Schedule-session.is-active {
+    background: rgba(215, 253, 236, 0.82);
 }
 .Schedule-session:hover {
-    background: pink;
+    background: rgba(215, 253, 236, 0.82);
     -webkit-transition: background .3s;
     transition: background .3s;
 }

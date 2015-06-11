@@ -6,7 +6,10 @@
   padding: 20px 20px 20px 0;
   background: white;
   border-bottom: 1px solid gray;
-
+  font-family: Polaris-Bold,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
 }
 .Filter-categories {
 	list-style: none;

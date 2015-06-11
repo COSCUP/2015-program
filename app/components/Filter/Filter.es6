@@ -47,7 +47,7 @@ export default React.createClass({
     
     return (
       <div className="Fitler">
-          <div className="Fitler-title">議程主題</div>
+          <div className="Fitler-title">Filter by topic</div>
           <div className="Filter-categories">{items}</div>
           <div className={clearClass} onClick={clearCategoryHandler}>Clear All</div>
       </div>

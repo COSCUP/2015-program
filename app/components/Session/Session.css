@@ -39,3 +39,59 @@
 .Session-close:hover:before, .Session-close:hover:after {
   background: rgb(53,55,54);
 }
+
+.Session-content {
+  padding: 20px 40px 20px 20px;
+  line-height: 1.6;
+}
+.Session-meta {
+  font-size: 14px;
+}
+.Session-time {
+  display: inline-block;
+}
+.Session-venue {
+  display: inline-block;
+  padding: 1px 8px;
+  margin: 0 10px;
+  background: rgb(220,220,220);
+  border-radius: 12px;
+}
+.Session-en {
+  display: inline-block;
+  background: rgb(207,43,43);
+ /* rgb(213,62,79);*/
+  color: white;
+  padding: 0 4px ;
+}
+.Session-crossTime {
+  display: inline-block;
+  color: rgb(207,43,43);
+}
+
+.Session-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: rgb(49, 153, 122);
+}
+.Session-subTitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(53,55,54);
+}
+.Session-presenter {
+  color: rgb(100,100,100);
+}
+.Session-abstract {
+  margin: 20px 0;
+  color: rgb(53,55,54);
+}
+.Session-biography {
+  margin: 20px 0;
+  color: rgb(53,55,54);
+}
+
+
+
+
+
