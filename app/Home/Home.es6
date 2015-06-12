@@ -6,7 +6,7 @@ import Session from "../components/Session/Session.es6";
 import Sponser from "../components/Sponser/Sponser.es6";
 import Data from "./Categories";
 import classNames from "classnames";
-
+import $ from "jquery";
 export default React.createClass({
   displayName: "Home",
 
@@ -149,6 +149,16 @@ export default React.createClass({
 
   },
 
+  _goToElement(value){
+    console.log(value);
+    var node = this.refs.cover.getDOMNode();
+    var position = value + node.offsetHeight - 54;
+    
+    ////// TO BE REFINE: Don't use jquery
+    $('body').animate({ scrollTop: position}, 1000);
+
+  },
+
   componentDidUpdate(){
 
     //如果是從 session 退出回到主頁，要 scroll 到原本離開的位置
@@ -256,7 +266,8 @@ export default React.createClass({
                         toggleCategoryHandler={this._toggleCategory}
                         clearCategoryHandler={this._clearCategory}
 
-                        currentScrollHeight={currentScrollHeight}/>
+                        currentScrollHeight={currentScrollHeight}
+                        goToElementHandler = {this._goToElement}/>
             </div>
 
             

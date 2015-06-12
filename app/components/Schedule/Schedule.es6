@@ -4,6 +4,9 @@ import "./Schedule.css";
 
 import Filter from "../Filter/Filter.es6";
 import Data from "./Schedule";
+
+
+
 export default React.createClass({
   displayName: "Schedule",
 
@@ -25,6 +28,13 @@ export default React.createClass({
      this.setState({
       currentSection: value
     })
+  },
+
+   _goToElement(refName){
+    console.log(refName);
+    var node = this.refs[refName].getDOMNode();
+    this.props.goToElementHandler(node.offsetTop);
+
   },
 
   componentDidMount(){
@@ -203,8 +213,10 @@ export default React.createClass({
         <div className={scheduleClasses}>
           <div className={titleClasses}
                style={titleStyle}>
-              <div className={day1Classes}>Day 1</div>
-              <div className={day2Classes}>Day 2</div>
+              <div className={day1Classes}
+                   onClick={this._goToElement.bind(this,"day1")}>Day 1</div>
+              <div className={day2Classes}
+                   onClick={this._goToElement.bind(this,"day2")}>Day 2</div>
               <div className={filterBtnClasses}
                    onClick={this._togglePanel}>{filterText}
                    <div className={bar1Classes}></div>
