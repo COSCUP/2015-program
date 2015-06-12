@@ -28,8 +28,9 @@ export default React.createClass({
                  onClick={sessionHandler}></div>
             <div className="Session-content">
                 <div className="Session-meta">
-                  <div className="Session-time">{data.time}</div>
                   <div className="Session-venue">{data.venue}</div>
+                  <div className="Session-time">{data.time}</div>
+                  
                   {language}
                   {crossTime}
                 </div>

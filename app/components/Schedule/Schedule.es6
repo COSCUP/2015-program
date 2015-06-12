@@ -14,7 +14,7 @@ export default React.createClass({
   },
 
   _togglePanel(){
-    console.log("click!! LLL");
+   
     this.setState({
       showPanel: !this.state.showPanel
     })
@@ -138,8 +138,10 @@ export default React.createClass({
 
     var filterClasses = classNames({
         "Schedule-filterPanel" : true,
-        "is-show" : window.innerWidth < 1200 && this.state.showPanel
+        "is-show" : window.innerWidth < 1200 && this.state.showPanel,
+        "is-fixed" : inScheduleArea==="within"
     })
+    console.log(">>>> inScheduleArea:"+inScheduleArea);
 
     var bar1Classes = classNames({
         "Schedule-bar1" : true,
