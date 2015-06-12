@@ -264,7 +264,10 @@ export default React.createClass({
                         setSessionHandler={this._setSession}
                         currentSession={currentSession}
                         categories={categories}
-                        filterOn={categoryOn}/>
+                        filterOn={categoryOn}
+
+                        toggleCategoryHandler={this._toggleCategory}
+                        clearCategoryHandler={this._clearCategory}/>
             </div>
 
             

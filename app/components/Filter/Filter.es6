@@ -14,7 +14,7 @@ export default React.createClass({
     //   )
     // });
 
-    var {data, filterOn, toggleCategoryHandler, clearCategoryHandler} = this.props;
+    var {data, filterOn, toggleCategoryHandler, clearCategoryHandler, togglePanelHander} = this.props;
     var items = data.map((value,i)=>{
       
       if(value.active){
@@ -41,13 +41,16 @@ export default React.createClass({
       "is-active" : filterOn
     });
 
-    console.log("filter:"+filterOn);
+    var closeItem = (window.innerWidth < 1200) ? <div className="Filter-close" onClick={togglePanelHander}>Close</div> : "";
     
     return (
       <div className="Fitler">
           <div className="Fitler-title">Filter by topic</div>
           <div className="Filter-categories">{items}</div>
-          <div className={clearClass} onClick={clearCategoryHandler}>Clear All</div>
+          <div className="Filter-actions">
+            {closeItem}
+            <div className={clearClass} onClick={clearCategoryHandler}>Clear All</div>
+          </div>
       </div>
     );
   }

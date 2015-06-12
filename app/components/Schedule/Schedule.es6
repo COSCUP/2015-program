@@ -1,13 +1,29 @@
 import React from "react";
 import classNames from "classnames";
 import "./Schedule.css";
+
+import Filter from "../Filter/Filter.es6";
 import Data from "./Schedule";
 export default React.createClass({
   displayName: "Schedule",
 
+  getInitialState () {
+    return {
+      showPanel: false
+    };
+  },
+
+  _togglePanel(){
+    console.log("click!! LLL");
+    this.setState({
+      showPanel: !this.state.showPanel
+    })
+  },
+
   render() {
     var {inScheduleArea, sessionHandler, showSession, setSessionHandler, currentSession,
-         filterOn, categories} = this.props;
+         filterOn, categories,
+         toggleCategoryHandler, clearCategoryHandler} = this.props;
     /* ----------- */
     var categoryObj = {};
     categories.map((v,i)=>{
@@ -108,6 +124,29 @@ export default React.createClass({
       }
 
     }
+
+    var filterBtnClasses = classNames({
+        "Schedule-filterBtn" : true,
+        "is-active" : window.innerWidth < 1200 && this.state.showPanel
+    })
+
+    var filterText = (window.innerWidth < 1200 && this.state.showPanel) ? "":"Filter";
+
+    var filterClasses = classNames({
+        "Schedule-filterPanel" : true,
+        "is-show" : window.innerWidth < 1200 && this.state.showPanel
+    })
+
+    var bar1Classes = classNames({
+        "Schedule-bar1" : true,
+        "is-active" : window.innerWidth < 1200 && this.state.showPanel
+    })
+    var bar2Classes = classNames({
+        "Schedule-bar2" : true,
+        "is-active" : window.innerWidth < 1200 && this.state.showPanel
+    })
+
+
    
     return (
         <div className={scheduleClasses}>
@@ -115,6 +154,19 @@ export default React.createClass({
                style={titleStyle}>
               <div className="Schedule-dayButton">Day 1</div>
               <div className="Schedule-dayButton">Day 2</div>
+              <div className={filterBtnClasses}
+                   onClick={this._togglePanel}>{filterText}
+                   <div className={bar1Classes}></div>
+                   <div className={bar2Classes}></div>
+              </div>
+          </div>
+          <div className={filterClasses}>
+              <Filter ref="filter"
+                      data={categories}
+                      filterOn={filterOn}
+                      toggleCategoryHandler={toggleCategoryHandler}
+                      clearCategoryHandler={clearCategoryHandler}
+                      togglePanelHander={this._togglePanel}/>
           </div>
           <div>
               <div className="Schedule-day">8／15 Sat</div>

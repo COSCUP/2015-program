@@ -1,9 +1,10 @@
 .Fitler {
 	position: relative;
+  padding-bottom: 20px;
 }
 
 .Fitler-title {
-  padding: 20px 20px 20px 0;
+  padding: 20px 20px 20px 10px;
   background: white;
   border-bottom: 1px solid gray;
   font-family: Polaris-Bold,Helvetica,Arial,sans-serif;
@@ -14,7 +15,7 @@
 .Filter-categories {
 	list-style: none;
   margin: 0;
-  padding: 10px 20px 10px 0;
+  padding: 10px 20px 0px 0;
 }
 .Filter-category {
 	font-size: 13px;
@@ -27,7 +28,7 @@
 .Filter-categoryIcon {
 	position: absolute;
   top: 5px;
-  left: 0;
+  left: 10px;
   width: 12px;
   height: 12px;
   border-radius: 2px;
@@ -36,14 +37,32 @@
 }
 
 .Filter-categoryText {
-  padding-left: 20px;
+  padding-left: 30px;
   line-height: 1.6;
+}
+.Filter-actions {
+  padding: 10px;
+
+}
+.Filter-close {
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline-block;
+  margin-right: 20px;
+}
+.Filter-complete:hover{
+  color: rgb(50,53,52);
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 .Filter-clearAll {
   font-size: 12px;
   cursor: pointer;
   text-decoration: underline;
   color: transparent;
+  display: inline-block;
+ 
 }
 .Filter-clearAll.is-active {
   color: rgb(120,120,120);

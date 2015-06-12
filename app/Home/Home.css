@@ -123,10 +123,10 @@
     }
    
     .Home-sponser, .Home-sponser.is-hide {
-        width: 280px;
         width: 50%;
-        display: inline-block;
-        vertical-align: top;
+        top: 0;
+        position: absolute;
+        
         left: 50%;
         
     }
@@ -142,7 +142,7 @@
         transition: right .2s cubic-bezier(.4,0,.2,1); 
     }
     .Home-session.is-show {
-        
+        position: absolute;
         left: 50%;
         width: 50%;
         height: 100vh;
