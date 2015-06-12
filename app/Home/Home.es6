@@ -29,7 +29,9 @@ export default React.createClass({
       sessionClass: false,
       categories: categories,
       categoryOn: false,
-      currentSession: {}
+      currentSession: {},
+      showSession: false,
+      currentScrollHeight: 0
     };
   },
 
@@ -102,12 +104,26 @@ export default React.createClass({
             currentSession: {}
         });
     }
+    //Saving current scrolling position
+    if(this.state.currentScrollHeight===0){
+        console.log("Saving scrolling: "+ pageYOffset);
+        this.setState({
+          currentScrollHeight: pageYOffset
+        })
+    }
   },
   _setSession(value){
     this.setState({
         showSession: true,
         currentSession: value
     });
+    //Saving current scrolling position
+    if(this.state.currentScrollHeight===0){
+        console.log("Saving scrolling: "+ pageYOffset);
+        this.setState({
+          currentScrollHeight: pageYOffset
+        })
+    }
 
   },
 
@@ -138,8 +154,7 @@ export default React.createClass({
             active: false
         }
     });
-    console.log("xxxxxx");
-    console.log(current);
+  
     
     this.setState({
         categories: current,
@@ -148,9 +163,26 @@ export default React.createClass({
 
   },
 
+  componentDidUpdate(){
+    //如果是從 session 退出回到主頁，要 scroll 到原本離開的位置
+
+    var {currentScrollHeight, showSession} = this.state;
+
+    console.log("component did upate, scrolling height:"+currentScrollHeight);
+
+    if((currentScrollHeight!==0 && showSession === false)){ 
+        console.log("reload scroll position");
+        window.scrollTo(0, currentScrollHeight);
+        this.setState({
+          currentScrollHeight: 0
+        })
+    }
+  },
+
   render() {
     var {inScheduleArea, scheduleHeight, filterHeight, showSession,
-         categories, categoryOn, currentSession} = this.state;
+         categories, categoryOn, currentSession,
+         currentScrollHeight} = this.state;
     var filterClass = classNames({
         "Home-filter": true,
         "is-fixed": inScheduleArea === "within"
@@ -169,17 +201,32 @@ export default React.createClass({
         }
     }
 
+    /* ------------------- */
+    var shouldHide = showSession;
+    
+    var scheduleStyle = (shouldHide && window.innerWidth < 776) ? {
+        "transform" : `translate3d(0,${-currentScrollHeight}px,0)`
+    }: {};
+
     var scheduleClass = classNames({
         "Home-schedule" : true,
         "is-fixed" : inScheduleArea !== "before",
-        "with-session" : showSession
+        "with-session" : showSession,
+        "is-hide" : shouldHide
     });
+    /* ------------------- */
 
     var sessionClass = classNames({
         "Home-session" : true,
         "is-show" : showSession,
         "is-fixed" : inScheduleArea === "within"
-    })
+    });
+
+    var sponserClass = classNames({
+      "Home-sponser" : true,
+      "is-hide" : shouldHide
+    });
+
 
     var coverIMG = require("./images/cover.jpg");
 
@@ -209,7 +256,7 @@ export default React.createClass({
             </div>
             
 
-            <div className={scheduleClass} ref="schedule">
+            <div className={scheduleClass} ref="schedule" style={scheduleStyle}>
               <Schedule inScheduleArea={inScheduleArea}
                         sessionHandler={this._toggleSession}
                         showSession={showSession}
@@ -221,7 +268,7 @@ export default React.createClass({
             </div>
 
             
-            <div className="Home-sponser">
+            <div className={sponserClass}>
               <Sponser />
             </div>
   
