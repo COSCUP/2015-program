@@ -118,6 +118,7 @@
     -webkit-transition: background .3s;
     transition: background .3s;
     border-bottom: 1px solid rgb(220,220,220);
+    position: relative;
 }
 .Schedule-session.is-last {
     border-bottom: none;
@@ -130,4 +131,18 @@
     background: rgba(215, 253, 236, 0.82);
     -webkit-transition: background .3s;
     transition: background .3s;
+}
+
+
+.Schedule-categoryIcon {
+  position: absolute;
+  top: 34px;
+  right: 25px;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: transparent;
+  will-change: background;
+  -webkit-transition: background .3s;
+  transition: background .3s;
 }

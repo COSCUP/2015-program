@@ -213,7 +213,7 @@
         transition: right .2s cubic-bezier(.4,0,.2,1); 
     }
     .Home-session.is-show {
-        
+        position: absolute;
         left: 711px;
         width: 570px;
         height: 100vh;

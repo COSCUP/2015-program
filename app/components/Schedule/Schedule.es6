@@ -11,16 +11,20 @@ export default React.createClass({
     /* ----------- */
     var categoryObj = {};
     categories.map((v,i)=>{
-        categoryObj[v.title] = v.active;
+        categoryObj[v.title] = v;
+        
     });
     /* ----------- */
-    
+   
     var items = Data.day1
     .filter((eventItem)=>{
         var shouldReturn = false;
         if(eventItem.event && filterOn){
-            if(categoryObj[eventItem.event.category])  
-                shouldReturn = true;
+            
+            if(categoryObj[eventItem.event.category]){
+                if(categoryObj[eventItem.event.category].active)  
+                    shouldReturn = true;
+            }
            
         }else{//events
             shouldReturn = true;
@@ -47,7 +51,7 @@ export default React.createClass({
             if(!filterOn) return sessionItem;
 
             var shouldReturn = false;
-            if(categoryObj[sessionItem.category])  
+            if(categoryObj[sessionItem.category].active)  
                 shouldReturn = true;
             
             if(shouldReturn) return sessionItem;
@@ -59,8 +63,21 @@ export default React.createClass({
               "is-last" : k === filteredEvents.length-1,
               "is-active" : currentSession.event === v.event 
             })
+            var categoryStyle = {};
+            if(filterOn){
+               categoryStyle = {
+                  "border" : `1px solid ${categoryObj[v.category].color}`,
+                  "background" : categoryObj[v.category].color
+               }
+            }
+            console.log("xxxxxxx")
+            console.log(categoryStyle);
             return(
-              <div className={sessionClasses} onClick={setSessionHandler.bind(null,v)} key={k}>{v.event}</div>
+              <div className={sessionClasses} 
+                    onClick={setSessionHandler.bind(null,v)} 
+                    key={k}>{v.event}
+                    <div className="Schedule-categoryIcon" style={categoryStyle}></div>
+              </div>
             )
         })
       }

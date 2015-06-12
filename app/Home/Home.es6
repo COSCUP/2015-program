@@ -15,7 +15,8 @@ export default React.createClass({
     var categories = Data.categories.map((value,index)=>{
         return (
           {
-            "title" : value,
+            "title" : value.title,
+            "color" : value.color,
             "active" : false
           }
         )
@@ -42,7 +43,12 @@ export default React.createClass({
     // 這裏有點神秘
    
     var scheduleHeight = this.refs.schedule.getDOMNode().offsetHeight;
-    var filterHeight = this.refs.filter.getDOMNode().offsetHeight || 230;
+    if(window.innerWidth >= 1200){
+      var filterHeight = this.refs.filter.getDOMNode().offsetHeight;
+    }else{
+      var filterHeight = this.refs.filter.getDOMNode().offsetHeight || 230;
+    }
+    
     var top = filterHeight + 94;//this.refs.main.getDOMNode().offsetTop;
     var height = scheduleHeight - window.innerHeight + filterHeight;
 
@@ -128,6 +134,7 @@ export default React.createClass({
     var current = this.state.categories.map((value,i)=>{
         return {
             title: value.title,
+            color: value.color,
             active: false
         }
     });

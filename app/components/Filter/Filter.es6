@@ -7,26 +7,24 @@ export default React.createClass({
 
   render() {
     
-
     // var array = Array.apply(null, {length: 10}).map(Number.call, Number)
     // var fakeItems = array.map((value,i)=>{
     //   return (
     //     <li className="Filter-category" key={i}>CATEGORY</li>
     //   )
     // });
-    var colors = ["#d53e4f","#fc8d59","rgb(237,199,19)","rgb(197,225,48)","#99d594","#3288bd"];
 
     var {data, filterOn, toggleCategoryHandler, clearCategoryHandler} = this.props;
     var items = data.map((value,i)=>{
       
       if(value.active){
           var style = {
-              "border" : `1px solid ${colors[i]}`,
-              "background" : colors[i]
+              "border" : `1px solid ${value.color}`,
+              "background" : value.color
           }
       }else{
           var style = {
-              "border" : `1px solid ${colors[i]}`
+              "border" : `1px solid ${value.color}`
           }
       }
     
