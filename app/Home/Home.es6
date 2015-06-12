@@ -51,7 +51,7 @@ export default React.createClass({
       var filterHeight = this.refs.filter.getDOMNode().offsetHeight || 230;
     }
     
-    var top = filterHeight + 94;//this.refs.main.getDOMNode().offsetTop;
+    var top = filterHeight + 74;//this.refs.main.getDOMNode().offsetTop;
     var height = scheduleHeight - window.innerHeight + filterHeight;
 
     console.log(`height:${height}`);
@@ -282,7 +282,11 @@ export default React.createClass({
                        categories={categories}/>
             </div>
           
-            <div className="Home-footer"></div>
+            <div className="Home-footer">
+              <a className="Home-patch"
+                 href="https://github.com/soidid/coscup-schedule"
+                 target="_blank">patches welcome</a>
+            </div>
 
         </div>
        

@@ -182,7 +182,11 @@
 }
 .Schedule-day {
     background: rgb(220,220,220);
-    padding: 20px;
+    padding: 20px 20px 20px 26px;
+    font-family: Polaris-Book,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*'Gentium Basic',Gentium,serif;*/
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 .Schedule-item {
 	padding: 30px;

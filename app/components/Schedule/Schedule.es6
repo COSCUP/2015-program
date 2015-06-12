@@ -175,11 +175,11 @@ export default React.createClass({
                       togglePanelHander={this._togglePanel}/>
           </div>
           <div>
-              <div className="Schedule-day">8／15 Sat</div>
+              <div className="Schedule-day">8/15 (Sat)</div>
         	    {items}
           </div>
           <div>
-              <div className="Schedule-day">8／16 Sun</div>
+              <div className="Schedule-day">8/16 (Sun)</div>
               {items}
           </div>
         </div>
