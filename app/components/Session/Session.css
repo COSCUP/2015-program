@@ -78,6 +78,8 @@
   font-size: 26px;
   font-weight: 700;
   color: rgb(49, 153, 122);
+  
+  position: relative;
 }
 .Session-subTitle {
   font-weight: 600;
@@ -85,8 +87,27 @@
   color: rgb(53,55,54);
 }
 .Session-presenter {
-  color: rgb(100,100,100);
+  color: rgb(55,54,53);
 }
+
+.Session-category {
+  position: relative;
+  vertical-align: top;
+  font-size: 14px;
+  color: rgb(80,80,80);
+  margin-top: 20px;
+}
+.Session-categoryIcon {
+  display: inline-block;
+
+  width: 12px;
+  height: 12px;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-right: 6px;
+  border-radius: 2px;
+}
+
 .Session-abstract {
   margin: 20px 0;
   color: rgb(53,55,54);

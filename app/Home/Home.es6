@@ -227,7 +227,9 @@ export default React.createClass({
   
             <div className={sessionClass}
                  style={sessionStyle}>
-              <Session sessionHandler={this._toggleSession} data={currentSession}/>
+              <Session sessionHandler={this._toggleSession} 
+                       data={currentSession} 
+                       categories={categories}/>
             </div>
           
             <div className="Home-footer"></div>

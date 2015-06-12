@@ -70,8 +70,7 @@ export default React.createClass({
                   "background" : categoryObj[v.category].color
                }
             }
-            console.log("xxxxxxx")
-            console.log(categoryStyle);
+
             return(
               <div className={sessionClasses} 
                     onClick={setSessionHandler.bind(null,v)} 

@@ -5,8 +5,20 @@ export default React.createClass({
   displayName: "Session",
 
   render() {
-    var {sessionHandler, data} = this.props;
-    console.log(data);
+    var {sessionHandler, data, categories} = this.props;
+    var categoryObj = {};
+    categories.map((v,i)=>{
+        categoryObj[v.title] = v;
+        
+    });
+    var categoryStyle = {};
+    if(categoryObj[data.category]){
+      categoryStyle = {
+        "border" : `1px solid ${categoryObj[data.category].color}`,
+        "background" : categoryObj[data.category].color
+      }
+    }
+    
 
     var language = (data.EN) ? <div className="Session-en">EN</div> : "";
     var crossTime = (data.cross_time) ? <div className="Session-crossTime">cross-time session / 跨時段議程</div> : "";
@@ -21,10 +33,18 @@ export default React.createClass({
                   {language}
                   {crossTime}
                 </div>
-                <div className="Session-title">{data.event}</div>
+                <div className="Session-title">
+                  {data.event}
+                </div>
                 <div className="Session-presenter">
                     {data.presenter}
                 </div>
+
+                <div className="Session-category">
+                  <div className="Session-categoryIcon" style={categoryStyle}></div>
+                  {data.category}
+                </div>
+
                 <div className="Session-abstract">
                     <div className="Session-subTitle">Abstract</div>
                     {data.abstract}
