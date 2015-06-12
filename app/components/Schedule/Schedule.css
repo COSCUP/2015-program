@@ -166,10 +166,10 @@
 }
 .Schedule-item {
 	padding: 30px;
-	
+	padding-left: 92px;
+
 	background: white;
     position: relative;
-    padding-left: 110px;
     color: rgb(100,100,100);
 }
 .Schedule-itemWrapper {
@@ -193,8 +193,7 @@
     color: rgb(53,55,54);
 }
 .Schedule-session {
-    padding: 30px;
-    padding-right: 40px;
+    padding: 14px 20px 14px 10px;
     cursor: pointer;
     will-change: background;
     line-height: 1.4;
@@ -214,6 +213,38 @@
     background: rgba(215, 253, 236, 0.82);
     -webkit-transition: background .3s;
     transition: background .3s;
+}
+.Schedule-venue {
+    display: inline-block;
+    padding: 1px 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    background: rgb(220,220,220);
+    border-radius: 12px;
+    color: gray;
+
+}
+@media screen and (min-width: 776px){
+    
+    .Schedule-session {
+        padding: 20px 20px 20px 46px;
+    }
+    .Schedule-venue {
+        position: absolute;
+        top: 22px;
+        left: 8px;
+
+    }
+}
+.Schedule-presenter {
+    color: rgb(125,124,123);
+    font-size: 14px;
+    margin-left: 1px;
+}
+.Schedule-en {
+    color: rgb(207,43,43);
+    display: inline-block;
+    padding: 0 4px ;
 }
 .Schedule-categoryIcon {
   position: absolute;

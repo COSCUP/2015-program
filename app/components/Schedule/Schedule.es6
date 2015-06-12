@@ -86,11 +86,15 @@ export default React.createClass({
                   "background" : categoryObj[v.category].color
                }
             }
+            var language = (v.EN) ? <div className="Schedule-en">EN</div> : "";
 
             return(
               <div className={sessionClasses} 
                     onClick={setSessionHandler.bind(null,v)} 
-                    key={k}>{v.event}
+                    key={k}>
+                    <div className="Schedule-venue">{v.venue}</div>
+                    <div>{v.event}{language}</div>
+                    <div className="Schedule-presenter">{v.presenter}</div>
                     <div className="Schedule-categoryIcon" style={categoryStyle}></div>
               </div>
             )
