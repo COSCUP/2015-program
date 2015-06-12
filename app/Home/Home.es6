@@ -35,33 +35,20 @@ export default React.createClass({
     };
   },
 
-
-
   componentDidMount(){
    
     var { inScheduleArea } = this.state;
     var { _setInScheduleArea, _setScheduleHeight, _setFilterHeight } = this;
 
-    // 這裏有點神秘
-   
-    var scheduleHeight = this.refs.schedule.getDOMNode().offsetHeight;
-    if(window.innerWidth >= 1200){
-      var filterHeight = this.refs.filter.getDOMNode().offsetHeight;
-    }else{
-      var filterHeight = this.refs.filter.getDOMNode().offsetHeight || 230;
-    }
-    
-    var top = filterHeight + 74;//this.refs.main.getDOMNode().offsetTop;
-    var height = scheduleHeight - window.innerHeight + filterHeight;
+    var coverNode = this.refs.cover.getDOMNode();
+    var scheduleNode = this.refs.schedule.getDOMNode();
 
-    console.log(`height:${height}`);
-    _setScheduleHeight(height);
-    _setFilterHeight(filterHeight);
-    //
-
+    //// Why offsetHeight will only be correct after first scrolling? Dynamic generated elements?
     addEventListener("scroll", function() {
-        console.log("->"+pageYOffset)
-        
+        //console.log("->"+pageYOffset)
+        var top = coverNode.offsetHeight;
+        var height = scheduleNode.offsetHeight;
+
         if(pageYOffset > top && pageYOffset < height){
             _setInScheduleArea("within");
         }
@@ -154,8 +141,7 @@ export default React.createClass({
             active: false
         }
     });
-  
-    
+
     this.setState({
         categories: current,
         categoryOn: false
@@ -164,6 +150,7 @@ export default React.createClass({
   },
 
   componentDidUpdate(){
+
     //如果是從 session 退出回到主頁，要 scroll 到原本離開的位置
 
     var {currentScrollHeight, showSession} = this.state;

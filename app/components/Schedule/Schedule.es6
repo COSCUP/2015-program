@@ -9,7 +9,8 @@ export default React.createClass({
 
   getInitialState () {
     return {
-      showPanel: false
+      showPanel: false,
+      currentSection: "before"
     };
   },
 
@@ -20,10 +21,47 @@ export default React.createClass({
     })
   },
 
+  _setSectionArea(value){
+     this.setState({
+      currentSection: value
+    })
+  },
+
+  componentDidMount(){
+    
+    addEventListener("scroll", (function() {
+        
+        var {currentSection} = this.state;
+
+        var day1Node = this.refs.day1.getDOMNode();
+        var day2Node = this.refs.day2.getDOMNode();
+        // console.log("----->")
+        // console.log(`${pageYOffset},`)
+        // console.log(day1Node.offsetTop)
+        // console.log(day1Node.offsetHeight)
+        // console.log(day2Node.offsetTop)
+        // console.log(day2Node.offsetHeight)
+
+        if(pageYOffset < day1Node.offsetTop && currentSection!=="before"){
+            this._setSectionArea("before");
+        }
+        else if(pageYOffset > day1Node.offsetTop && pageYOffset <= day1Node.offsetHeight && currentSection!=="day1"){
+            this._setSectionArea("day1");
+        }
+        else if(pageYOffset > day1Node.offsetHeight && currentSection!=="day2"){
+            this._setSectionArea("day2");
+        }
+        
+        
+    }).bind(this));
+  },
+
   render() {
     var {inScheduleArea, sessionHandler, showSession, setSessionHandler, currentSession,
          filterOn, categories,
-         toggleCategoryHandler, clearCategoryHandler} = this.props;
+         toggleCategoryHandler, clearCategoryHandler,
+         currentScrollHeight} = this.props;
+    var {currentSection} = this.state;
     /* ----------- */
     var categoryObj = {};
     categories.map((v,i)=>{
@@ -141,7 +179,6 @@ export default React.createClass({
         "is-show" : window.innerWidth < 1200 && this.state.showPanel,
         "is-fixed" : inScheduleArea==="within"
     })
-    console.log(">>>> inScheduleArea:"+inScheduleArea);
 
     var bar1Classes = classNames({
         "Schedule-bar1" : true,
@@ -152,14 +189,22 @@ export default React.createClass({
         "is-active" : window.innerWidth < 1200 && this.state.showPanel
     })
 
-
+    var day1Classes = classNames({
+        "Schedule-dayButton" : true,
+        "is-active" : currentSection === "day1"
+    })
+    var day2Classes = classNames({
+        "Schedule-dayButton" : true,
+        "is-active" : currentSection === "day2"
+    })
+    
    
     return (
         <div className={scheduleClasses}>
           <div className={titleClasses}
                style={titleStyle}>
-              <div className="Schedule-dayButton">Day 1</div>
-              <div className="Schedule-dayButton">Day 2</div>
+              <div className={day1Classes}>Day 1</div>
+              <div className={day2Classes}>Day 2</div>
               <div className={filterBtnClasses}
                    onClick={this._togglePanel}>{filterText}
                    <div className={bar1Classes}></div>
@@ -174,12 +219,12 @@ export default React.createClass({
                       clearCategoryHandler={clearCategoryHandler}
                       togglePanelHander={this._togglePanel}/>
           </div>
-          <div>
-              <div className="Schedule-day" ref="day1">8/15 (Sat)</div>
+          <div ref="day1">
+              <div className="Schedule-day">8/15 (Sat)</div>
         	    {items}
           </div>
-          <div>
-              <div className="Schedule-day" ref="day2">8/16 (Sun)</div>
+          <div ref="day2">
+              <div className="Schedule-day">8/16 (Sun)</div>
               {items}
           </div>
         </div>
