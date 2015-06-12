@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import AppBar from "../components/AppBar/AppBar.es6";
 import Filter from "../components/Filter/Filter.es6";
 import Schedule from "../components/Schedule/Schedule.es6";
 import Session from "../components/Session/Session.es6";
@@ -234,7 +235,7 @@ export default React.createClass({
 
     return (
       <div className="Home">
-        
+        <AppBar/>
         <div className="Home-cover" ref="cover">
             <img className="Home-coverImg" src={coverIMG} />
         </div>
