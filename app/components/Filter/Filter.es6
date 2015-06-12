@@ -27,10 +27,10 @@ export default React.createClass({
               "border" : `1px solid ${value.color}`
           }
       }
-    
+      
       return (
         <div className="Filter-category" key={i} onClick={toggleCategoryHandler.bind(null,i)}>
-            <div className="Filter-categoryIcon" style={style}></div>
+            <div className={`Filter-categoryIcon Filter-categoryIcon_${i}`} style={style}></div>
             <div className="Filter-categoryText">{value.title}</div>
         </div>
       )

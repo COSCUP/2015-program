@@ -178,7 +178,11 @@
     letter-spacing: .08em;
     display: inline-block;
     padding: 20px;
-    
+    cursor: pointer;
+}
+.Schedule-dayButton:hover, .Schedule-dayButton.is-active {
+    color: rgb(68,210,143);
+    text-decoration: underline;
 }
 .Schedule-day {
     background: rgb(220,220,220);

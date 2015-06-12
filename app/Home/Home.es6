@@ -267,7 +267,9 @@ export default React.createClass({
                         filterOn={categoryOn}
 
                         toggleCategoryHandler={this._toggleCategory}
-                        clearCategoryHandler={this._clearCategory}/>
+                        clearCategoryHandler={this._clearCategory}
+
+                        currentScrollHeight={currentScrollHeight}/>
             </div>
 
             

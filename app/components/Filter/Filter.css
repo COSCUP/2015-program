@@ -35,6 +35,23 @@
   -webkit-transition: background .3s;
   transition: background .3s;
 }
+/* THIS IS BAD */
+.Filter-category:hover .Filter-categoryIcon_0{
+  background: #d53e4f;
+  color: red;
+}
+.Filter-category:hover .Filter-categoryIcon_1{
+  background: rgb(237,199,19);
+}
+.Filter-category:hover .Filter-categoryIcon_2{
+  background: rgb(197,225,48);
+}
+.Filter-category:hover .Filter-categoryIcon_3{
+  background: #99d594;
+}
+.Filter-category:hover .Filter-categoryIcon_4{
+  background: #3288bd;
+}
 
 .Filter-categoryText {
   padding-left: 30px;
