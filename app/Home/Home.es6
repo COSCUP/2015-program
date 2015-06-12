@@ -21,7 +21,7 @@ export default React.createClass({
           }
         )
     });
-    console.log(categories);
+    
     return {
       inScheduleArea: "before",
       scheduleHeight: 0,
@@ -150,7 +150,7 @@ export default React.createClass({
   },
 
   _goToElement(value){
-    console.log(value);
+    
     var node = this.refs.cover.getDOMNode();
     var position = value + node.offsetHeight - 54;
     

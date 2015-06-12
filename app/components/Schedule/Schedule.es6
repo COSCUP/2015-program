@@ -31,7 +31,7 @@ export default React.createClass({
   },
 
    _goToElement(refName){
-    console.log(refName);
+    
     var node = this.refs[refName].getDOMNode();
     this.props.goToElementHandler(node.offsetTop);
 

@@ -7,7 +7,7 @@ export default React.createClass({
 
   render() {
   	var items = Object.keys(Data).map((data_key,i)=>{
-  		console.log(Data[data_key]);
+  		
   		var listItems = Data[data_key].map((value,index)=>{
     		return (
     			<div className="Sponser-item">
