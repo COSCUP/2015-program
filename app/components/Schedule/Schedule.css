@@ -205,9 +205,16 @@
 	background: white;
     position: relative;
     color: rgb(100,100,100);
+    overflow: hidden;
+}
+.Schedule-keynotePresenter {
+    color: rgb(125,124,123);
+    font-size: 14px;
+    margin-top: 4px;
+
 }
 .Schedule-itemWrapper {
-    
+    overflow: hidden;
     background: white;
     position: relative;
     padding-left: 80px;
@@ -235,6 +242,7 @@
     transition: background .3s;
     border-bottom: 1px solid rgb(220,220,220);
     position: relative;
+    overflow: hidden;
 }
 .Schedule-session.is-last {
     border-bottom: none;

@@ -80,7 +80,7 @@ export default React.createClass({
     });
     /* ----------- */
    
-    var items = Data.day1
+    var day1Items = Data.day1
     .filter((eventItem)=>{
         var shouldReturn = false;
         if(eventItem.event && filterOn){
@@ -106,7 +106,10 @@ export default React.createClass({
 
       var content = "";
       if(value.event){ //single event
-        content = value.event;
+        content = <div>
+          {value.event}
+          <div className="Schedule-keynotePresenter">{value.presenter}</div>
+        </div>;
 
       }else{ //multile event
         var filteredEvents = value.events
@@ -155,6 +158,86 @@ export default React.createClass({
           <div className="Schedule-event">{content}</div>
         </div>
     	)
+    });
+
+    var day2Items = Data.day2
+    .filter((eventItem)=>{
+        var shouldReturn = false;
+        if(eventItem.event && filterOn){
+            
+            if(categoryObj[eventItem.event.category]){
+                if(categoryObj[eventItem.event.category].active)  
+                    shouldReturn = true;
+            }
+           
+        }else{//events
+            shouldReturn = true;
+        }
+        if(shouldReturn) return eventItem;
+    })
+    .map((value,i)=>{
+      
+      var itemClasses = classNames({
+        "Schedule-item" : value.event,
+        "Schedule-itemWrapper" : value.events,
+        "has-top-border" : i !== 0
+      })
+
+
+      var content = "";
+      if(value.event){ //single event
+        content = <div>
+          {value.event}
+          <div className="Schedule-keynotePresenter">{value.presenter}</div>
+        </div>;
+
+      }else{ //multile event
+        var filteredEvents = value.events
+        .filter((sessionItem)=>{
+            
+            if(!filterOn) return sessionItem;
+
+            var shouldReturn = false;
+            if(categoryObj[sessionItem.category].active)  
+                shouldReturn = true;
+            
+            if(shouldReturn) return sessionItem;
+        });
+        content = filteredEvents
+        .map((v,k)=>{
+            var sessionClasses = classNames({
+              "Schedule-session" : true,
+              "is-last" : k === filteredEvents.length-1,
+              "is-active" : currentSession.event === v.event 
+            })
+            var categoryStyle = {};
+            if(filterOn){
+               categoryStyle = {
+                  "border" : `1px solid ${categoryObj[v.category].color}`,
+                  "background" : categoryObj[v.category].color
+               }
+            }
+            var language = (v.EN) ? <div className="Schedule-en">EN</div> : "";
+
+            return(
+              <div className={sessionClasses} 
+                    onClick={setSessionHandler.bind(null,v)} 
+                    key={k}>
+                    <div className="Schedule-venue">{v.venue}</div>
+                    <div>{v.event}{language}</div>
+                    <div className="Schedule-presenter">{v.presenter}</div>
+                    <div className="Schedule-categoryIcon" style={categoryStyle}></div>
+              </div>
+            )
+        })
+      }
+      return (
+        <div className={itemClasses} 
+             key={i}>
+          <div className="Schedule-time">{value.time}</div>
+          <div className="Schedule-event">{content}</div>
+        </div>
+      )
     });
 
     var scheduleClasses = classNames({
@@ -233,11 +316,11 @@ export default React.createClass({
           </div>
           <div ref="day1">
               <div className="Schedule-day">8/15 (Sat)</div>
-        	    {items}
+        	    {day1Items}
           </div>
           <div ref="day2">
               <div className="Schedule-day">8/16 (Sun)</div>
-              {items}
+              {day2Items}
           </div>
         </div>
     );
