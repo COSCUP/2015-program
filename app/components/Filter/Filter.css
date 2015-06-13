@@ -16,6 +16,9 @@
 	list-style: none;
   margin: 0;
   padding: 10px 20px 0px 0;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
 }
 .Filter-category {
 	font-size: 13px;
@@ -23,7 +26,11 @@
   margin-bottom: 10px;
   position: relative;
   cursor: pointer;
-  	
+}
+@media screen and (max-width: 402px){
+    .Filter-category {
+        font-size: 10px !important;;
+    }
 }
 .Filter-categoryIcon {
 	position: absolute;
@@ -35,23 +42,51 @@
   -webkit-transition: background .3s;
   transition: background .3s;
 }
+
 /* THIS IS BAD */
 .Filter-category:hover .Filter-categoryIcon_0{
-  background: rgb(197,225,48);
+  background: hsl(47, 100%, 50%);
 }
 .Filter-category:hover .Filter-categoryIcon_1{
-  background: rgb(237,199,19);
+  background: hsl(47, 100%, 70%);
 }
 .Filter-category:hover .Filter-categoryIcon_2{
-  background: rgb(213, 62, 79);
- 
+  background: hsl(47, 100%, 40%);
 }
 .Filter-category:hover .Filter-categoryIcon_3{
-  background: #99d594;
+  background: hsl(81, 100%, 40%);
 }
 .Filter-category:hover .Filter-categoryIcon_4{
-  background: #3288bd;
+  background: hsl(81, 100%, 70%);
 }
+.Filter-category:hover .Filter-categoryIcon_5{
+  background: hsl(0, 100%, 40%);
+}
+.Filter-category:hover .Filter-categoryIcon_6{
+  background: hsl(0, 100%, 70%);
+}
+.Filter-category:hover .Filter-categoryIcon_7{
+  background: hsl(189, 100%, 50%);
+}
+.Filter-category:hover .Filter-categoryIcon_8{
+  background: hsl(216, 100%, 50%);
+}
+.Filter-category:hover .Filter-categoryIcon_9{
+  background: hsl(243, 100%, 50%);
+}
+.Filter-category:hover .Filter-categoryIcon_10{
+  background: hsl(270, 100%, 50%);
+}
+.Filter-category:hover .Filter-categoryIcon_11{
+  background: hsl(297, 100%, 50%);
+}
+.Filter-category:hover .Filter-categoryIcon_12{
+  background: rgb(200,200,200);
+}
+.Filter-category:hover .Filter-categoryIcon_13{
+  background: rgb(0, 0, 0);
+}
+
 
 .Filter-categoryText {
   padding-left: 30px;
@@ -79,7 +114,7 @@
   text-decoration: underline;
   color: transparent;
   display: inline-block;
- 
+
 }
 .Filter-clearAll.is-active {
   color: rgb(120,120,120);
