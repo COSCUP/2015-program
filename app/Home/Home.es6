@@ -230,6 +230,11 @@ export default React.createClass({
       "is-hide" : shouldHide
     });
 
+     var appbarClass = classNames({
+      "Home-AppBar" : true,
+      "is-hide" : shouldHide
+    });
+
 
     var coverIMG = (window.innerWidth > 500) ? require("./images/cover.jpg") : require("./images/cover-mobile.jpg");
 
@@ -240,7 +245,7 @@ export default React.createClass({
 
     return (
       <div className="Home">
-        <AppBar/>
+        <div className={appbarClass}><AppBar/></div>
         
         <div className={coverClass} ref="cover">
             <img className="Home-coverImg" src={coverIMG} />
