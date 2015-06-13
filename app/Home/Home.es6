@@ -263,6 +263,10 @@ export default React.createClass({
       "is-show" : showSession
     });
 
+    // <a className="Home-patch"
+    //    href=""
+    //    target="_blank">patches welcome</a>
+
     return (
       <div className="Home">
         <div className={appbarClass}><AppBar/></div>
@@ -316,9 +320,7 @@ export default React.createClass({
             </div>
           
             <div className={footerClass}>
-              <a className="Home-patch"
-                 href="https://github.com/soidid/coscup-schedule"
-                 target="_blank">patches welcome</a>
+              
             </div>
 
         </div>

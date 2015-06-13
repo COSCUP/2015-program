@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fddaffd8abc1a8339e8f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e5a53c075ef010b130d9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32512,7 +32512,7 @@
 	    var position = value + node.offsetHeight; /* 會有 54 的差，不過 AppBar 抵掉了 */
 
 	    ////// TO BE REFINE: Don't use jquery
-	    $("body").animate({ scrollTop: position }, 1000);
+	    $("body,html").animate({ scrollTop: position }, 1000);
 	  },
 
 	  componentDidUpdate: function componentDidUpdate() {
@@ -32623,6 +32623,10 @@
 	      "is-show": showSession
 	    });
 
+	    // <a className="Home-patch"
+	    //    href=""
+	    //    target="_blank">patches welcome</a>
+
 	    return React.createElement(
 	      "div",
 	      { className: "Home" },
@@ -32689,17 +32693,7 @@
 	            data: currentSession,
 	            categories: categories })
 	        ),
-	        React.createElement(
-	          "div",
-	          { className: footerClass },
-	          React.createElement(
-	            "a",
-	            { className: "Home-patch",
-	              href: "https://github.com/soidid/coscup-schedule",
-	              target: "_blank" },
-	            "patches welcome"
-	          )
-	        )
+	        React.createElement("div", { className: footerClass })
 	      )
 	    );
 	  }
@@ -32955,7 +32949,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".Home {\n  position: relative;\n  height: 100%;\n}\n\n.Home-shadow {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  pointer-events: none;\n\n}\n.Home-shadow.is-show {\n  display: none;\n}\n.Home-cover {\n  width: 100%;\n  padding: 30px 0 10px 0;\n  border-bottom: 1px solid gray;\n}\n.Home-cover.is-hide {\n    display: none;\n}\n.Home-AppBar.is-hide {\n    display: none;\n}\n.Home-footer.is-hide {\n    display: none;\n}\n.Home-coverImg {\n    width: 100%;\n}\n.Home-coverNotice {\n    font-size: 13px;\n    color: rgb(183,185,184);\n    margin: 0 auto;\n    \n    padding: 10px 12px 4px 16px;\n}\n.Home-main {\n    position: relative;\n}\n.Home-filter {\n    display: none;\n}\n.Home-schedule {\n    display: block;\n    z-index: 10;\n}\n.Home-schedule.is-fixed, .Home-schedule.with-session {\n    display: block;\n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-schedule.with-session.is-hide {\n    display: none;\n\n}\n.Home-sponser {\n    display: block;\n}\n.Home-sponser.is-hide {\n    display: none;\n}\n.Home-session {\n    position: absolute;\n    top: 0;\n    right: -100%;\n    width: 0px;\n    overflow: hidden;\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n    z-index: 200;\n}\n.Home-session.is-show, .Home-session.is-show.is-fixed {\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 100%;\n    \n\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n}\n\n.Home-footer, .Home-footer:after {\n    content: '';\n    height: 100px;\n    margin-top: 100px;\n    background: rgb(230,230,230);\n    border-top: 1px solid rgb(220,220,220);\n    text-align: center;\n    z-index: 10;\n\n}\n@media screen and (min-width: 500px){\n    .Home-cover {\n        padding: 30px 0 0px 0;\n    }\n}\n@media screen and (min-width: 768px){\n    .Home-cover.is-hide {\n        display: block;\n    }\n    .Home-AppBar.is-hide {\n        display: block;\n    }\n    .Home-footer.is-hide {\n        display: block;\n    }\n    .Home-coverNotice {\n        text-align: center;\n    }\n    \n}\n\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Home-main {\n        position: relative;\n        height: auto;\n        width: 100%;\n    }\n    .Home-filter {\n        display: none;\n    }\n\n    .Home-schedule {\n        display: inline-block;\n        width: 50%;\n        \n\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed, .Home-schedule.with-session {\n        width: 50%;\n        \n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n   \n    .Home-sponser, .Home-sponser.is-hide {\n        width: 50%;\n        top: 0;\n        position: absolute;\n        \n        left: 50%;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -calc(50% - 30px);\n\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 50%;\n        width: 50%;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n        top: 0;\n    }\n   \n\n}\n\n@media screen and (min-width: 1200px){\n\t.Home-main {\n        position: relative;\n        height: auto;\n    }\n    .Home-filter {\n    \tmargin-left: 120px;\n    \twidth: 240px;\n    \tposition: absolute;\n        display: block;\n    }\n    .Home-filter.is-fixed {\n    \tposition: fixed;\n    \ttop: 0;\n        left: 0;\n    }\n    .Home-filter.is-passed{\n    \tposition: absolute;\n    \t/* top dynamically decided*/\n    }\n    .Home-schedule {\n    \twidth: 550px;\n    \tmargin-left: 360px;\n        will-change: margin-left;\n        /*-webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); \n        transition: margin-left .2s cubic-bezier(.4,0,.2,1); */\n        z-index: 10;\n        margin-bottom: 200px;\n    }\n    .Home-schedule.is-fixed {\n        width: 550px;\n        margin-left: 360px;\n        will-change: margin-left;\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session {\n        width: 550px;\n        margin-left: 160px;\n        will-change: margin-left;\n         -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1);\n        \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n    .Home-sponser, .Home-sponser.is-hide {\n        width: 280px;\n        position: absolute;\n        top: -0px;\n        left: 950px;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -570px;\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 711px;\n        width: 570px;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n        top: 0;\n    }\n    .Home-shadow.is-show {\n        display: block;\n        position: absolute;\n        top: 0;\n        left: 0;\n        height: calc(100% - 200px);\n        width: 50%;\n        z-index: 1;\n        background: rgba(255,255,255,0.7);\n        -webkit-transition: background .2s ease-in-out;\n        transition: background .2s ease-in-out;\n        cursor: pointer;\n        pointer-events: all;\n   }\n    \n\n}\n.Home-patch, .Home-patch:visited {\n    display: inline-block;\n    text-decoration: none;\n    padding: 20px 36px 0 0 ;\n    color: rgb(153,155,154);\n    font-size: 14px;\n    font-family: 'Gentium Basic', Gentium, serif;\n}\n.Home-patch:hover {\n    color: rgb(53,55,54);\n}\n", ""]);
+	exports.push([module.id, ".Home {\n  position: relative;\n  height: 100%;\n}\n\n.Home-shadow {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  pointer-events: none;\n\n}\n.Home-shadow.is-show {\n  display: none;\n}\n.Home-cover {\n  width: 100%;\n  padding: 30px 0 10px 0;\n  border-bottom: 1px solid gray;\n}\n.Home-cover.is-hide {\n    display: none;\n}\n.Home-AppBar.is-hide {\n    display: none;\n}\n.Home-footer.is-hide {\n    display: none;\n}\n.Home-coverImg {\n    width: 100%;\n}\n.Home-coverNotice {\n    font-size: 13px;\n    color: rgb(183,185,184);\n    margin: 0 auto;\n    \n    padding: 10px 12px 4px 16px;\n}\n.Home-main {\n    position: relative;\n}\n.Home-filter {\n    display: none;\n}\n.Home-schedule {\n    display: block;\n    z-index: 10;\n}\n.Home-schedule.is-fixed, .Home-schedule.with-session {\n    display: block;\n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-schedule.with-session.is-hide {\n    display: none;\n\n}\n.Home-sponser {\n    display: block;\n}\n.Home-sponser.is-hide {\n    display: none;\n}\n.Home-session {\n    position: absolute;\n    top: 0;\n    right: -100%;\n    width: 0px;\n    overflow: hidden;\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n    z-index: 200;\n}\n.Home-session.is-show, .Home-session.is-show.is-fixed {\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 100%;\n    \n\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n}\n\n.Home-footer, .Home-footer:after {\n    content: '';\n    height: 100px;\n    margin-top: 100px;\n    background: rgb(230,230,230);\n    border-top: 1px solid rgb(220,220,220);\n    text-align: center;\n    z-index: 10;\n\n}\n@media screen and (min-width: 500px){\n    .Home-cover {\n        padding: 30px 0 0px 0;\n    }\n}\n@media screen and (min-width: 768px){\n    .Home-cover.is-hide {\n        display: block;\n    }\n    .Home-AppBar.is-hide {\n        display: block;\n    }\n    .Home-footer.is-hide {\n        display: block;\n    }\n    .Home-coverNotice {\n        text-align: center;\n    }\n    \n}\n\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Home-main {\n        position: relative;\n        height: auto;\n        width: 100%;\n    }\n    .Home-filter {\n        display: none;\n    }\n\n    .Home-schedule {\n        display: inline-block;\n        width: 50%;\n        \n\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed, .Home-schedule.with-session {\n        width: 50%;\n        \n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n   \n    .Home-sponser, .Home-sponser.is-hide {\n        width: 50%;\n        top: 0;\n        position: absolute;\n        \n        left: 50%;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -calc(50% - 30px);\n\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 50%;\n        width: 50%;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n        top: 0;\n         width: 50%;\n    }\n   \n\n}\n\n@media screen and (min-width: 1200px){\n\t.Home-main {\n        position: relative;\n        height: auto;\n    }\n    .Home-filter {\n    \tmargin-left: 120px;\n    \twidth: 240px;\n    \tposition: absolute;\n        display: block;\n    }\n    .Home-filter.is-fixed {\n    \tposition: fixed;\n    \ttop: 0;\n        left: 0;\n    }\n    .Home-filter.is-passed{\n    \tposition: absolute;\n    \t/* top dynamically decided*/\n    }\n    .Home-schedule {\n    \twidth: 550px;\n    \tmargin-left: 360px;\n        will-change: margin-left;\n        /*-webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); \n        transition: margin-left .2s cubic-bezier(.4,0,.2,1); */\n        z-index: 10;\n        margin-bottom: 200px;\n    }\n    .Home-schedule.is-fixed {\n        width: 550px;\n        margin-left: 360px;\n        will-change: margin-left;\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session {\n        width: 550px;\n        margin-left: 160px;\n        will-change: margin-left;\n         -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1);\n        \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n    .Home-sponser, .Home-sponser.is-hide {\n        width: 280px;\n        position: absolute;\n        top: -0px;\n        left: 950px;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -570px;\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 711px;\n        width: 570px;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n        top: 0;\n        width: 570px;\n    }\n    .Home-shadow.is-show {\n        display: block;\n        position: absolute;\n        top: 0;\n        left: 0;\n        height: calc(100% - 200px);\n        width: 50%;\n        z-index: 1;\n        background: rgba(255,255,255,0.7);\n        -webkit-transition: background .2s ease-in-out;\n        transition: background .2s ease-in-out;\n        cursor: pointer;\n        pointer-events: all;\n   }\n    \n\n}\n.Home-patch, .Home-patch:visited {\n    display: inline-block;\n    text-decoration: none;\n    padding: 20px 36px 0 0 ;\n    color: rgb(153,155,154);\n    font-size: 14px;\n    font-family: 'Gentium Basic', Gentium, serif;\n}\n.Home-patch:hover {\n    color: rgb(53,55,54);\n}\n", ""]);
 
 /***/ },
 /* 281 */
@@ -33602,7 +33596,7 @@
 	            ),
 	            React.createElement(
 	                "div",
-	                { ref: "day1" },
+	                { ref: "day1", id: "day1" },
 	                React.createElement(
 	                    "div",
 	                    { className: "Schedule-day" },
@@ -33612,7 +33606,7 @@
 	            ),
 	            React.createElement(
 	                "div",
-	                { ref: "day2" },
+	                { ref: "day2", id: "day2" },
 	                React.createElement(
 	                    "div",
 	                    { className: "Schedule-day" },
@@ -33677,7 +33671,7 @@
 			events: [{
 				time: "09:00-12:00, 13:00-14:00",
 				venue: "H2",
-				event: "親子工作坊",
+				event: "Workshop: 親子工作坊",
 				presenter: "鄭鴻旗（Honki）",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -33687,7 +33681,7 @@
 			}, {
 				time: "09:00-10:40",
 				venue: "H3",
-				event: "How to contribute to OpenStack upstream",
+				event: "Workshop: How to contribute to OpenStack upstream",
 				presenter: "macJack",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -33697,7 +33691,7 @@
 			}, {
 				time: "09:00-10:40",
 				venue: "H4",
-				event: "來試試 RPM 打包吧！",
+				event: "Workshop: 來試試 RPM 打包吧！",
 				presenter: "曾政嘉",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -33710,6 +33704,7 @@
 			events: [{
 				time: "09:10-10:00",
 				event: "BYOC: Build Your Own COSCUP",
+				venue: "R0",
 				presenter: "Bob",
 				category: "Program / 一般議程",
 				abstract: "<p>時至今日，每年在台灣有許多的技術研討會，其中的志工社群日益壯大，甚至已經進化到專注部分籌辦功能、跨不同研討會專業團隊出現。開源人年會 COSCUP 是其中重要的一份子，而從 2006 年到現在也面臨許多不同的挑戰。稟持「COSCUP 本身就該是個開源專案，它的未來由貢獻者們共同雕琢」的信念，Bob 將藉此機會與大家簡介 COSCUP 的歷史、志工團隊如何運作、面臨的問題，並試圖與聽眾一起找出 COSCUP 接下來各種可能的努力方向。</p>",
@@ -33811,7 +33806,7 @@
 			events: [{
 				time: "10:55-12:25",
 				venue: "H3",
-				event: "Laravel Installfest",
+				event: "Workshop: Workshop: Laravel Installfest",
 				presenter: "范聖佑 (Shengyou Fan)",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -33821,7 +33816,7 @@
 			}, {
 				time: "10:55-12:25",
 				venue: "H4",
-				event: "Ubuntu Install Workshop",
+				event: "Workshop: Ubuntu Install Workshop",
 				presenter: "RJ",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -33880,13 +33875,13 @@
 			event: "Lunch"
 		}, {
 			time: "13:20",
-			event: "Keynote"
+			event: "Keynote (TBD)"
 		}, {
 			time: "13:25",
 			events: [{
 				time: "13:25-17:00",
 				venue: "H3",
-				event: "樹莓派工作坊/自作遙控車",
+				event: "Workshop: 樹莓派工作坊/自作遙控車",
 				presenter: "台灣樹莓派",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -33895,7 +33890,7 @@
 			}, {
 				time: "10:55-12:25",
 				venue: "H4",
-				event: "Let's Chat via XMPP",
+				event: "Workshop: Let's Chat via XMPP",
 				presenter: "佟輝(Tong Hui)",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -33954,7 +33949,7 @@
 			events: [{
 				time: "14:15-14:55",
 				venue: "H3",
-				event: "Open Build Service 實作練習",
+				event: "Workshop: Open Build Service 實作練習",
 				presenter: "Gary Lin",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34003,7 +33998,7 @@
 				time: "15:10-15:50",
 				venue: "H1",
 				event: "開源在中國--一個台灣開源人的觀察",
-				presenter: "強哥",
+				presenter: "Richard 林旅強",
 				category: "Program / 一般議程",
 				abstract: "<p>講者將分享他在中國大陸進行開源推廣工作之餘的觀察和心得，包含中國 IT 互聯網產業在開源方面的應用、政府部門的開源政策、高校在開源教育方面的投入、學生對於開源的認知和態度以及開源社群的貢獻和發展情況。</p>",
 				biography: "<p>Richard Lin 林旅強 (Legist 強)，台北人，現居上海，在大中華地區從事開源佈道的志業，擔任中國知名代碼託管平台 GitCafe.com 市場總監，並組織運營開源社群如上海 Linux 用戶組 (SHLUG) 和開源社 (kaiyuanshe.org) 等。</p><p>Richard Lin 林旅強 (Legist 強), an Open Source Evangelist in the Greater China. He is CMO of GitCafe.com, the most famous open source project hosting platform in China. He devotes himself to organize and operate open source communities like Shanghai Linux User Group and Kaiyuanshe.org.</p>"
@@ -34013,7 +34008,7 @@
 			events: [{
 				time: "15:10-17:00",
 				venue: "H2",
-				event: "MySQL Fabric",
+				event: "Workshop: MySQL Fabric",
 				presenter: "杜修文",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34022,7 +34017,7 @@
 			}, {
 				time: "15:10-17:00",
 				venue: "H4",
-				event: "Webmaker 工作坊",
+				event: "Workshop: Webmaker 工作坊",
 				presenter: "Irvin",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34075,20 +34070,26 @@
 			}]
 		}, {
 			time: "17:00",
-			event: "高村長拍賣會"
+			venue: "交誼廳",
+			events: [{
+				time: "17:00-18:00",
+				event: "clkao’s yard sale / 高村長拍賣會",
+				presenter: "clkao",
+				venue: "交誼廳"
+			}]
 		}, {
 			time: "18:00",
 			event: "BOF"
 		}],
 		day2: [{
 			time: "09:00",
-			event: "Opening / 開幕式"
+			event: "Announcement"
 		}, {
 			time: "09:00",
 			events: [{
 				time: "09:00-12:00",
 				venue: "H2",
-				event: "LinkIt ONE 物聯網應用入門",
+				event: "Workshop: LinkIt ONE 物聯網應用入門",
 				presenter: "曾吉弘",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34097,7 +34098,7 @@
 			}, {
 				time: "09:00-12:00",
 				venue: "H3",
-				event: "開源之道－Git 基礎教學",
+				event: "Workshop: 開源之道－Git 基礎教學",
 				presenter: "Richard Lin 林旅強",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34106,7 +34107,7 @@
 			}, {
 				time: "09:00-12:00",
 				venue: "H4",
-				event: "第一次自幹 Open Data SimCity 就上手",
+				event: "Workshop: 第一次自幹 Open Data SimCity 就上手",
 				presenter: "李慕約",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34115,7 +34116,7 @@
 			}]
 		}, {
 			time: "09:10",
-			event: "Keynote"
+			event: "Keynote (TBD)"
 		}, {
 			time: "10:00",
 			events: [{
@@ -34160,16 +34161,16 @@
 				biography: ""
 			}, {
 				time: "10:00-10:40",
-				venue: "Unconf 1",
-				event: "TBD",
+				venue: "交誼廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
 				biography: ""
 			}, {
 				time: "10:00-10:40",
-				venue: "Unconf 2",
-				event: "TBD",
+				venue: "平面演講廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
@@ -34222,16 +34223,16 @@
 				biography: ""
 			}, {
 				time: "10:50-11:30",
-				venue: "Unconf 1",
-				event: "TBD",
+				venue: "交誼廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
 				biography: ""
 			}, {
 				time: "10:50-11:30",
-				venue: "Unconf 2",
-				event: "TBD",
+				venue: "平面演講廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
@@ -34284,16 +34285,16 @@
 				biography: "<p>Chia-Yi Yen, you can call her \"Yen\" just like the Japanese dollar yen, is a financial engineer in a local hedge fund. She has been responsible for multi-factor model construction, data infrastructure, data Extract-Transform-Load solution, and other numeric analysis projects. She is active in many open-source communities like Python and R, and she is also the organizer of Taiwan R-Ladies community, which is a female meetup of everything about data in the world of R language.</p>"
 			}, {
 				time: "11:40-12:20",
-				venue: "Unconf 1",
-				event: "TBD",
+				venue: "交誼廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
 				biography: ""
 			}, {
 				time: "11:40-12:20",
-				venue: "Unconf 2",
-				event: "TBD",
+				venue: "平面演講廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
@@ -34307,6 +34308,7 @@
 			events: [{
 				time: "13:20-14:00",
 				event: "「封麥」演說：台灣開放原始碼生態圈回顧",
+				venue: "R0",
 				presenter: "jserv",
 				category: "Program / 一般議程",
 				abstract: "<p>作為一位有幸能連續 10 年在 COSCUP 分享心得的講者，決定在「封麥」前，簡短回顧台灣開放原始碼生態圈的轉變，諸如源自本土的專案、開發者社群、各式推廣活動、大學相關課程，以及台灣人在國際開放原始碼專案的投入狀況。</p>",
@@ -34317,7 +34319,7 @@
 			events: [{
 				time: "13:20-16:00",
 				venue: "H2",
-				event: "Open Networking Workshop",
+				event: "Workshop: Open Networking Workshop",
 				presenter: "黃秉鈞",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34326,7 +34328,7 @@
 			}, {
 				time: "13:20-16:00",
 				venue: "H3",
-				event: "Git Workflows",
+				event: "Workshop: Git Workflows",
 				presenter: "Carl Su",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34335,7 +34337,7 @@
 			}, {
 				time: "13:20-16:00",
 				venue: "H4",
-				event: "自由的圖資－如何hack開放街圖",
+				event: "Workshop: 自由的圖資－如何hack開放街圖",
 				presenter: "陳瑞霖",
 				category: "Workshop / 工作坊",
 				cross_time: true,
@@ -34391,16 +34393,16 @@
 				biography: "<p>Sammy Fung 從中學起至今是一位二十多年經驗的開發者，目前主要使用 python 語言，也是一位喜歡出外打球、跑步、聽搖滾音樂、外遊交流的 IT 人。1997年創立香港Linux用家協會成為會長，目前是 Open Source Hong Kong 會長、Mozilla Rep、GNOME Asia 成員、HKOSCon 及 PyCON HK 主辦人。他一直相信科技、開放、自由、民主能改變人們的生活。</p><p>Sammy Fung is a developer with 20+ year experiences starting from secondary school, he uses python nowadays, he also likes to go out to play basketball & soccer, running, listen to rock music, travel. He formed Hong Kong Linux User Group as chairman, currently he is president of Open Source Hong Kong, Mozilla Rep, member of GNOME Asia, organizer of HKOSCon and PyCON HK. He always believe that technology, openness, freedom and democracy can change people's lives.</p>"
 			}, {
 				time: "14:10-14:50",
-				venue: "Unconf 1",
-				event: "TBD",
+				venue: "交誼廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
 				biography: ""
 			}, {
 				time: "14:10-14:50",
-				venue: "Unconf 2",
-				event: "TBD",
+				venue: "平面演講廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
@@ -34455,16 +34457,16 @@
 				biography: "<p>馬克泡，曾在COSCUP多次分享OpenWrt相關心得。</p><p>發現台灣產業變遷，體認到要貢獻開放源碼社群，必須從產業鏈上游開始會比較好。</p><p>於是從系統廠轉換跑道到IC設計產業服務。後來服務於台灣自主CPU開發公司 - 晶心科技，從事NDS32 u-boot官方開發及維護工作。</p><p>目前於M社從事手機USB相關驗證開發。</p>"
 			}, {
 				time: "15:10-15:50",
-				venue: "Unconf 1",
-				event: "TBD",
+				venue: "交誼廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
 				biography: ""
 			}, {
 				time: "15:10-15:50",
-				venue: "Unconf 2",
-				event: "TBD",
+				venue: "平面演講廳",
+				event: "Unconference (TBD)",
 				presenter: "",
 				category: "Unconference / 開放議程",
 				abstract: "",
