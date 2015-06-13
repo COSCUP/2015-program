@@ -166,10 +166,10 @@ export default React.createClass({
 
     var {currentScrollHeight, showSession} = this.state;
 
-    console.log("component did upate, scrolling height:"+currentScrollHeight);
+    //console.log("component did upate, scrolling height:"+currentScrollHeight);
 
     if((currentScrollHeight!==0 && showSession === false)){ 
-        console.log("reload scroll position");
+        //console.log("reload scroll position");
         window.scrollTo(0, currentScrollHeight);
         this.setState({
           currentScrollHeight: 0
@@ -225,6 +225,11 @@ export default React.createClass({
       "is-hide" : shouldHide
     });
 
+    var coverClass = classNames({
+      "Home-cover" : true,
+      "is-hide" : shouldHide
+    });
+
 
     var coverIMG = (window.innerWidth > 500) ? require("./images/cover.jpg") : require("./images/cover-mobile.jpg");
 
@@ -236,7 +241,8 @@ export default React.createClass({
     return (
       <div className="Home">
         <AppBar/>
-        <div className="Home-cover" ref="cover">
+        
+        <div className={coverClass} ref="cover">
             <img className="Home-coverImg" src={coverIMG} />
         </div>
 
