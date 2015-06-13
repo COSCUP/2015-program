@@ -37,14 +37,14 @@
 }
 /* THIS IS BAD */
 .Filter-category:hover .Filter-categoryIcon_0{
-  background: #d53e4f;
-  color: red;
+  background: rgb(197,225,48);
 }
 .Filter-category:hover .Filter-categoryIcon_1{
   background: rgb(237,199,19);
 }
 .Filter-category:hover .Filter-categoryIcon_2{
-  background: rgb(197,225,48);
+  background: rgb(213, 62, 79);
+ 
 }
 .Filter-category:hover .Filter-categoryIcon_3{
   background: #99d594;

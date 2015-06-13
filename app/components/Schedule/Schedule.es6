@@ -143,10 +143,14 @@ export default React.createClass({
               <div className={sessionClasses} 
                     onClick={setSessionHandler.bind(null,v)} 
                     key={k}>
-                    <div className="Schedule-venue">{v.venue}</div>
-                    <div>{v.event}{language}</div>
-                    <div className="Schedule-presenter">{v.presenter}</div>
-                    <div className="Schedule-categoryIcon" style={categoryStyle}></div>
+                    <div className="Schedule-meta">
+                      <div className="Schedule-venue">{v.venue}</div>
+                    </div>
+                    <div className="Schedule-main">
+                      <div>{v.event}{language}</div>
+                      <div className="Schedule-presenter">{v.presenter}</div>
+                      <div className="Schedule-categoryIcon" style={categoryStyle}></div>
+                    </div>
               </div>
             )
         })
@@ -223,10 +227,14 @@ export default React.createClass({
               <div className={sessionClasses} 
                     onClick={setSessionHandler.bind(null,v)} 
                     key={k}>
-                    <div className="Schedule-venue">{v.venue}</div>
-                    <div>{v.event}{language}</div>
-                    <div className="Schedule-presenter">{v.presenter}</div>
-                    <div className="Schedule-categoryIcon" style={categoryStyle}></div>
+                    <div className="Schedule-meta">
+                      <div className="Schedule-venue">{v.venue}</div>
+                    </div>
+                    <div className="Schedule-main">
+                      <div>{v.event}{language}</div>
+                      <div className="Schedule-presenter">{v.presenter}</div>
+                      <div className="Schedule-categoryIcon" style={categoryStyle}></div>
+                    </div>
               </div>
             )
         })

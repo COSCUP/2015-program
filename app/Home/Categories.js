@@ -1,8 +1,8 @@
 module.exports = {
 	"categories" : [
-	   { "title":"Program / 一般議程", "color":"#d53e4f" },
+	   { "title":"Program / 一般議程", "color":"rgb(197,225,48)" },
 	   { "title":"Unconference / 開放議程", "color":"rgb(237,199,19)" },
-	   { "title":"Open Source Culture & Communities", "color":"rgb(197,225,48)" }
+	   { "title":"Workshop / 工作坊", "color":"rgb(213, 62, 79)" }
 	   
 	]
 }

@@ -234,7 +234,7 @@
     color: rgb(53,55,54);
 }
 .Schedule-session {
-    padding: 14px 20px 14px 10px;
+    padding: 14px 30px 14px 10px;
     cursor: pointer;
     will-change: background;
     line-height: 1.4;
@@ -269,13 +269,14 @@
 @media screen and (min-width: 776px){
     
     .Schedule-session {
-        padding: 20px 20px 20px 46px;
+        display: flex;
     }
-    .Schedule-venue {
-        position: absolute;
-        top: 22px;
-        left: 8px;
-
+    .Schedule-meta {
+        
+    }
+    .Schedule-main {
+        margin-left: 8px;
+        flex: 1;
     }
 }
 .Schedule-presenter {
@@ -290,8 +291,8 @@
 }
 .Schedule-categoryIcon {
   position: absolute;
-  top: 34px;
-  right: 25px;
+  top: 20px;
+  right: 10px;
   width: 12px;
   height: 12px;
   border-radius: 2px;
