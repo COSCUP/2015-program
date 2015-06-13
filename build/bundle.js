@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8ef7c6fda52c8c2c243c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4d39de2dc17397bd3cc1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32380,8 +32380,7 @@
 
 	    return {
 	      inScheduleArea: "before",
-	      scheduleHeight: 0,
-	      filterHeight: 0,
+
 	      sessionClass: false,
 	      categories: categories,
 	      categoryOn: false,
@@ -32406,6 +32405,7 @@
 	    //// Why offsetHeight will only be correct after first scrolling? Dynamic generated elements?
 	    addEventListener("scroll", function () {
 	      //console.log("->"+pageYOffset)
+
 	      var top = coverNode.offsetHeight;
 	      var height = scheduleNode.offsetHeight;
 
@@ -32415,7 +32415,7 @@
 	      if (pageYOffset < top) {
 	        _setInScheduleArea("before");
 	      }
-	      if (pageYOffset > height) {
+	      if (pageYOffset > height + 80) {
 	        _setInScheduleArea("passed");
 	      }
 	    });
@@ -32451,7 +32451,7 @@
 	    }
 	    //Saving current scrolling position
 	    if (this.state.currentScrollHeight === 0) {
-	      console.log("Saving scrolling: " + pageYOffset);
+	      //console.log("Saving scrolling: "+ pageYOffset);
 	      this.setState({
 	        currentScrollHeight: pageYOffset
 	      });
@@ -32464,7 +32464,7 @@
 	    });
 	    //Saving current scrolling position
 	    if (this.state.currentScrollHeight === 0) {
-	      console.log("Saving scrolling: " + pageYOffset);
+	      //console.log("Saving scrolling: "+ pageYOffset);
 	      this.setState({
 	        currentScrollHeight: pageYOffset
 	      });
@@ -32551,14 +32551,24 @@
 
 	    var filterStyle = {};
 	    var sessionStyle = {};
+
+	    ///////////////////////////////////////// TO BE refine
+	    var top, height;
 	    if (inScheduleArea === "passed") {
+	      var coverNode = this.refs.cover.getDOMNode();
+	      var scheduleNode = this.refs.schedule.getDOMNode();
+	      top = coverNode.offsetHeight;
+	      height = scheduleNode.offsetHeight;
+
 	      filterStyle = {
 	        position: "absolute",
-	        top: scheduleHeight - filterHeight - 80 + "px"
+	        top: height - top + "px",
+	        transiton: "all .3s"
 	      };
 	      sessionStyle = {
 	        position: "absolute",
-	        top: scheduleHeight - filterHeight - 80 + "px"
+	        top: height - top - 240 + "px",
+	        transiton: "all .3s"
 	      };
 	    }
 
@@ -32566,7 +32576,7 @@
 	    var shouldHide = showSession;
 
 	    var scheduleStyle = shouldHide && window.innerWidth < 776 ? {
-	      transform: "translate3d(0," + -currentScrollHeight + "px,0)"
+	      transform: "translate3d(0," + (-currentScrollHeight - 80) + "px,0)"
 	    } : {};
 
 	    var scheduleClass = classNames({
@@ -32651,7 +32661,7 @@
 	          React.createElement(Schedule, { inScheduleArea: inScheduleArea,
 	            sessionHandler: this._toggleSession,
 	            showSession: showSession,
-	            top: scheduleHeight - filterHeight - 80,
+	            top: height - top - 80,
 	            setSessionHandler: this._setSession,
 	            currentSession: currentSession,
 	            categories: categories,
@@ -32942,7 +32952,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".Home {\n  position: relative;\n  height: 100%;\n}\n\n.Home-shadow {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  pointer-events: none;\n\n}\n.Home-shadow.is-show {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: calc(100% - 200px);\n  width: 50%;\n  z-index: 1;\n  background: rgba(255,255,255,0.7);\n  -webkit-transition: background .2s ease-in-out;\n  transition: background .2s ease-in-out;\n  cursor: pointer;\n  pointer-events: all;\n}\n.Home-cover {\n  width: 100%;\n  padding: 30px 0 10px 0;\n  border-bottom: 1px solid gray;\n}\n.Home-cover.is-hide {\n    display: none;\n}\n.Home-AppBar.is-hide {\n    display: none;\n}\n.Home-footer.is-hide {\n    display: none;\n}\n.Home-coverImg {\n    width: 100%;\n}\n.Home-coverNotice {\n    font-size: 13px;\n    color: rgb(183,185,184);\n    margin: 0 auto;\n    \n    padding: 10px 12px 4px 16px;\n}\n.Home-main {\n    position: relative;\n}\n.Home-filter {\n    display: none;\n}\n.Home-schedule {\n    display: block;\n    z-index: 10;\n}\n.Home-schedule.is-fixed, .Home-schedule.with-session {\n    display: block;\n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-schedule.with-session.is-hide {\n    display: none;\n\n}\n.Home-sponser {\n    display: block;\n}\n.Home-sponser.is-hide {\n    display: none;\n}\n.Home-session {\n    position: absolute;\n    top: 0;\n    right: -100%;\n    width: 0px;\n    overflow: hidden;\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n    z-index: 200;\n}\n.Home-session.is-show {\n    position: fixed;\n    top: 0;\n    right: 0;\n    width: 100%;\n    height: 100%;\n    min-height: 100vh;\n    overflow: scroll;\n\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-session.is-show.is-fixed {\n    height: 100vh;\n    overflow: scroll;\n    position: fixed;\n    top: 0;\n}\n.Home-footer, .Home-footer:after {\n    content: '';\n    height: 100px;\n    margin-top: 100px;\n    background: rgb(230,230,230);\n    border-top: 1px solid rgb(220,220,220);\n    text-align: center;\n    z-index: 10;\n}\n@media screen and (min-width: 500px){\n    .Home-cover {\n        padding: 30px 0 0px 0;\n    }\n}\n@media screen and (min-width: 768px){\n    .Home-cover.is-hide {\n        display: block;\n    }\n    .Home-AppBar.is-hide {\n        display: block;\n    }\n    .Home-footer.is-hide {\n        display: block;\n    }\n    .Home-coverNotice {\n        text-align: center;\n    }\n}\n\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Home-main {\n        position: relative;\n        height: auto;\n        width: 100%;\n    }\n    .Home-filter {\n        display: none;\n    }\n\n    .Home-schedule {\n        display: inline-block;\n        width: 50%;\n        \n\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed, .Home-schedule.with-session {\n        width: 50%;\n        \n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n   \n    .Home-sponser, .Home-sponser.is-hide {\n        width: 50%;\n        top: 0;\n        position: absolute;\n        \n        left: 50%;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -calc(50% - 30px);\n\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 50%;\n        width: 50%;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n    }\n   \n\n}\n\n@media screen and (min-width: 1200px){\n\t.Home-main {\n        position: relative;\n        height: auto;\n    }\n    .Home-filter {\n    \tmargin-left: 120px;\n    \twidth: 240px;\n    \tposition: absolute;\n        display: block;\n    }\n    .Home-filter.is-fixed {\n    \tposition: fixed;\n    \ttop: 0;\n        left: 0;\n    }\n    .Home-filter.is-passed{\n    \tposition: absolute;\n    \t/* top dynamically decided*/\n    }\n    .Home-schedule {\n    \twidth: 550px;\n    \tmargin-left: 360px;\n        will-change: margin-left;\n        /*-webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); \n        transition: margin-left .2s cubic-bezier(.4,0,.2,1); */\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed {\n        width: 550px;\n        margin-left: 360px;\n        will-change: margin-left;\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session {\n        width: 550px;\n        margin-left: 160px;\n        will-change: margin-left;\n         -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1);\n        \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n    .Home-sponser, .Home-sponser.is-hide {\n        width: 280px;\n        position: absolute;\n        top: -0px;\n        left: 950px;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -570px;\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 711px;\n        width: 570px;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n    }\n    \n\n}\n.Home-patch, .Home-patch:visited {\n    display: inline-block;\n    text-decoration: none;\n    padding: 20px 36px 0 0 ;\n    color: rgb(153,155,154);\n    font-size: 14px;\n    font-family: 'Gentium Basic', Gentium, serif;\n}\n.Home-patch:hover {\n    color: rgb(53,55,54);\n}\n", ""]);
+	exports.push([module.id, ".Home {\n  position: relative;\n  height: 100%;\n}\n\n.Home-shadow {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  pointer-events: none;\n\n}\n.Home-shadow.is-show {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: calc(100% - 200px);\n  width: 50%;\n  z-index: 1;\n  background: rgba(255,255,255,0.7);\n  -webkit-transition: background .2s ease-in-out;\n  transition: background .2s ease-in-out;\n  cursor: pointer;\n  pointer-events: all;\n}\n.Home-cover {\n  width: 100%;\n  padding: 30px 0 10px 0;\n  border-bottom: 1px solid gray;\n}\n.Home-cover.is-hide {\n    display: none;\n}\n.Home-AppBar.is-hide {\n    display: none;\n}\n.Home-footer.is-hide {\n    display: none;\n}\n.Home-coverImg {\n    width: 100%;\n}\n.Home-coverNotice {\n    font-size: 13px;\n    color: rgb(183,185,184);\n    margin: 0 auto;\n    \n    padding: 10px 12px 4px 16px;\n}\n.Home-main {\n    position: relative;\n}\n.Home-filter {\n    display: none;\n}\n.Home-schedule {\n    display: block;\n    z-index: 10;\n}\n.Home-schedule.is-fixed, .Home-schedule.with-session {\n    display: block;\n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-schedule.with-session.is-hide {\n    display: none;\n\n}\n.Home-sponser {\n    display: block;\n}\n.Home-sponser.is-hide {\n    display: none;\n}\n.Home-session {\n    position: absolute;\n    top: 0;\n    right: -100%;\n    width: 0px;\n    overflow: hidden;\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n    z-index: 200;\n}\n.Home-session.is-show {\n    position: fixed;\n    top: 0;\n    right: 0;\n    width: 100%;\n    \n    min-height: 100vh;\n    overflow: scroll;\n\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-session.is-show.is-fixed {\n    height: 100vh;\n    overflow: scroll;\n    position: fixed;\n    top: 0;\n}\n.Home-footer, .Home-footer:after {\n    content: '';\n    height: 100px;\n    margin-top: 100px;\n    background: rgb(230,230,230);\n    border-top: 1px solid rgb(220,220,220);\n    text-align: center;\n    z-index: 10;\n    \n}\n@media screen and (min-width: 500px){\n    .Home-cover {\n        padding: 30px 0 0px 0;\n    }\n}\n@media screen and (min-width: 768px){\n    .Home-cover.is-hide {\n        display: block;\n    }\n    .Home-AppBar.is-hide {\n        display: block;\n    }\n    .Home-footer.is-hide {\n        display: block;\n    }\n    .Home-coverNotice {\n        text-align: center;\n    }\n}\n\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Home-main {\n        position: relative;\n        height: auto;\n        width: 100%;\n    }\n    .Home-filter {\n        display: none;\n    }\n\n    .Home-schedule {\n        display: inline-block;\n        width: 50%;\n        \n\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed, .Home-schedule.with-session {\n        width: 50%;\n        \n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n   \n    .Home-sponser, .Home-sponser.is-hide {\n        width: 50%;\n        top: 0;\n        position: absolute;\n        \n        left: 50%;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -calc(50% - 30px);\n\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 50%;\n        width: 50%;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n    }\n   \n\n}\n\n@media screen and (min-width: 1200px){\n\t.Home-main {\n        position: relative;\n        height: auto;\n    }\n    .Home-filter {\n    \tmargin-left: 120px;\n    \twidth: 240px;\n    \tposition: absolute;\n        display: block;\n    }\n    .Home-filter.is-fixed {\n    \tposition: fixed;\n    \ttop: 0;\n        left: 0;\n    }\n    .Home-filter.is-passed{\n    \tposition: absolute;\n    \t/* top dynamically decided*/\n    }\n    .Home-schedule {\n    \twidth: 550px;\n    \tmargin-left: 360px;\n        will-change: margin-left;\n        /*-webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); \n        transition: margin-left .2s cubic-bezier(.4,0,.2,1); */\n        z-index: 10;\n        margin-bottom: 200px;\n    }\n    .Home-schedule.is-fixed {\n        width: 550px;\n        margin-left: 360px;\n        will-change: margin-left;\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session {\n        width: 550px;\n        margin-left: 160px;\n        will-change: margin-left;\n         -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1);\n        \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n    .Home-sponser, .Home-sponser.is-hide {\n        width: 280px;\n        position: absolute;\n        top: -0px;\n        left: 950px;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -570px;\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 711px;\n        width: 570px;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n    }\n    \n\n}\n.Home-patch, .Home-patch:visited {\n    display: inline-block;\n    text-decoration: none;\n    padding: 20px 36px 0 0 ;\n    color: rgb(153,155,154);\n    font-size: 14px;\n    font-family: 'Gentium Basic', Gentium, serif;\n}\n.Home-patch:hover {\n    color: rgb(53,55,54);\n}\n", ""]);
 
 /***/ },
 /* 281 */
@@ -33196,418 +33206,419 @@
 	var Data = _interopRequire(__webpack_require__(291));
 
 	module.exports = React.createClass({
-	  displayName: "Schedule",
+	    displayName: "Schedule",
 
-	  getInitialState: function getInitialState() {
-	    return {
-	      showPanel: false,
-	      currentSection: "before"
-	    };
-	  },
+	    getInitialState: function getInitialState() {
+	        return {
+	            showPanel: false,
+	            currentSection: "before"
+	        };
+	    },
 
-	  _togglePanel: function _togglePanel() {
+	    _togglePanel: function _togglePanel() {
 
-	    this.setState({
-	      showPanel: !this.state.showPanel
-	    });
-	  },
-
-	  _setSectionArea: function _setSectionArea(value) {
-	    this.setState({
-	      currentSection: value
-	    });
-	  },
-
-	  _goToElement: function _goToElement(refName) {
-
-	    var node = this.refs[refName].getDOMNode();
-	    this.props.goToElementHandler(node.offsetTop);
-	  },
-
-	  componentDidMount: function componentDidMount() {
-
-	    addEventListener("scroll", (function () {
-	      var currentSection = this.state.currentSection;
-
-	      var day1Node = this.refs.day1.getDOMNode();
-	      var day2Node = this.refs.day2.getDOMNode();
-	      // console.log("----->")
-	      // console.log(`${pageYOffset},`)
-	      // console.log(day1Node.offsetTop)
-	      // console.log(day1Node.offsetHeight)
-	      // console.log(day2Node.offsetTop)
-	      // console.log(day2Node.offsetHeight)
-
-	      if (pageYOffset < day1Node.offsetTop && currentSection !== "before") {
-	        this._setSectionArea("before");
-	      } else if (pageYOffset > day1Node.offsetTop && pageYOffset <= day1Node.offsetHeight && currentSection !== "day1") {
-	        this._setSectionArea("day1");
-	      } else if (pageYOffset > day1Node.offsetHeight && currentSection !== "day2") {
-	        this._setSectionArea("day2");
-	      }
-	    }).bind(this));
-	  },
-
-	  render: function render() {
-	    var _props = this.props;
-	    var inScheduleArea = _props.inScheduleArea;
-	    var sessionHandler = _props.sessionHandler;
-	    var showSession = _props.showSession;
-	    var setSessionHandler = _props.setSessionHandler;
-	    var currentSession = _props.currentSession;
-	    var filterOn = _props.filterOn;
-	    var categories = _props.categories;
-	    var toggleCategoryHandler = _props.toggleCategoryHandler;
-	    var clearCategoryHandler = _props.clearCategoryHandler;
-	    var currentScrollHeight = _props.currentScrollHeight;
-	    var currentSection = this.state.currentSection;
-
-	    /* ----------- */
-	    var categoryObj = {};
-	    categories.map(function (v, i) {
-	      categoryObj[v.title] = v;
-	    });
-	    /* ----------- */
-
-	    var day1Items = Data.day1.filter(function (eventItem) {
-	      var shouldReturn = false;
-	      if (eventItem.event && filterOn) {
-
-	        if (categoryObj[eventItem.event.category]) {
-	          if (categoryObj[eventItem.event.category].active) shouldReturn = true;
-	        }
-	      } else {
-	        //events
-	        shouldReturn = true;
-	      }
-	      if (shouldReturn) return eventItem;
-	    }).map(function (value, i) {
-
-	      var itemClasses = classNames({
-	        "Schedule-item": value.event,
-	        "Schedule-itemWrapper": value.events,
-	        "has-top-border": i !== 0
-	      });
-
-	      var content = "";
-	      if (value.event) {
-	        //single event
-	        content = React.createElement(
-	          "div",
-	          null,
-	          value.event,
-	          React.createElement(
-	            "div",
-	            { className: "Schedule-keynotePresenter" },
-	            value.presenter
-	          )
-	        );
-	      } else {
-	        //multile event
-	        var filteredEvents = value.events.filter(function (sessionItem) {
-
-	          if (!filterOn) return sessionItem;
-
-	          var shouldReturn = false;
-	          if (categoryObj[sessionItem.category].active) shouldReturn = true;
-
-	          if (shouldReturn) return sessionItem;
+	        this.setState({
+	            showPanel: !this.state.showPanel
 	        });
-	        content = filteredEvents.map(function (v, k) {
-	          var sessionClasses = classNames({
-	            "Schedule-session": true,
-	            "is-last": k === filteredEvents.length - 1,
-	            "is-active": currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
-	          });
-	          var categoryStyle = {};
-	          if (filterOn) {
-	            categoryStyle = {
-	              border: "1px solid " + categoryObj[v.category].color,
-	              background: categoryObj[v.category].color
+	    },
+
+	    _setSectionArea: function _setSectionArea(value) {
+	        this.setState({
+	            currentSection: value
+	        });
+	    },
+
+	    _goToElement: function _goToElement(refName) {
+
+	        var node = this.refs[refName].getDOMNode();
+	        this.props.goToElementHandler(node.offsetTop);
+	    },
+
+	    componentDidMount: function componentDidMount() {
+
+	        addEventListener("scroll", (function () {
+	            var currentSection = this.state.currentSection;
+
+	            var day1Node = this.refs.day1.getDOMNode();
+	            var day2Node = this.refs.day2.getDOMNode();
+	            // console.log("----->")
+	            // console.log(`${pageYOffset},`)
+	            // console.log(day1Node.offsetTop)
+	            // console.log(day1Node.offsetHeight)
+	            // console.log(day2Node.offsetTop)
+	            // console.log(day2Node.offsetHeight)
+
+	            if (pageYOffset < day1Node.offsetTop && currentSection !== "before") {
+	                this._setSectionArea("before");
+	            } else if (pageYOffset > day1Node.offsetTop && pageYOffset <= day1Node.offsetHeight && currentSection !== "day1") {
+	                this._setSectionArea("day1");
+	            } else if (pageYOffset > day1Node.offsetHeight && currentSection !== "day2") {
+	                this._setSectionArea("day2");
+	            }
+	        }).bind(this));
+	    },
+
+	    render: function render() {
+	        var _props = this.props;
+	        var inScheduleArea = _props.inScheduleArea;
+	        var sessionHandler = _props.sessionHandler;
+	        var showSession = _props.showSession;
+	        var setSessionHandler = _props.setSessionHandler;
+	        var currentSession = _props.currentSession;
+	        var filterOn = _props.filterOn;
+	        var categories = _props.categories;
+	        var toggleCategoryHandler = _props.toggleCategoryHandler;
+	        var clearCategoryHandler = _props.clearCategoryHandler;
+	        var currentScrollHeight = _props.currentScrollHeight;
+	        var currentSection = this.state.currentSection;
+
+	        /* ----------- */
+	        var categoryObj = {};
+	        categories.map(function (v, i) {
+	            categoryObj[v.title] = v;
+	        });
+	        /* ----------- */
+
+	        var day1Items = Data.day1.filter(function (eventItem) {
+	            var shouldReturn = false;
+	            if (eventItem.event && filterOn) {
+
+	                if (categoryObj[eventItem.event.category]) {
+	                    if (categoryObj[eventItem.event.category].active) shouldReturn = true;
+	                }
+	            } else {
+	                //events
+	                shouldReturn = true;
+	            }
+	            if (shouldReturn) return eventItem;
+	        }).map(function (value, i) {
+
+	            var itemClasses = classNames({
+	                "Schedule-item": value.event,
+	                "Schedule-itemWrapper": value.events,
+	                "has-top-border": i !== 0
+	            });
+
+	            var content = "";
+	            if (value.event) {
+	                //single event
+	                content = React.createElement(
+	                    "div",
+	                    null,
+	                    value.event,
+	                    React.createElement(
+	                        "div",
+	                        { className: "Schedule-keynotePresenter" },
+	                        value.presenter
+	                    )
+	                );
+	            } else {
+	                //multile event
+	                var filteredEvents = value.events.filter(function (sessionItem) {
+
+	                    if (!filterOn) return sessionItem;
+
+	                    var shouldReturn = false;
+	                    if (categoryObj[sessionItem.category].active) shouldReturn = true;
+
+	                    if (shouldReturn) return sessionItem;
+	                });
+	                content = filteredEvents.map(function (v, k) {
+	                    var sessionClasses = classNames({
+	                        "Schedule-session": true,
+	                        "is-last": k === filteredEvents.length - 1,
+	                        "is-active": currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
+	                    });
+	                    var categoryStyle = {};
+	                    if (filterOn) {
+	                        categoryStyle = {
+	                            border: "1px solid " + categoryObj[v.category].color,
+	                            background: categoryObj[v.category].color
+	                        };
+	                    }
+	                    var language = v.EN ? React.createElement(
+	                        "div",
+	                        { className: "Schedule-en" },
+	                        "EN"
+	                    ) : "";
+
+	                    var venue = v.venue ? React.createElement(
+	                        "div",
+	                        { className: "Schedule-meta" },
+	                        React.createElement(
+	                            "div",
+	                            { className: "Schedule-venue" },
+	                            v.venue
+	                        )
+	                    ) : "";
+
+	                    return React.createElement(
+	                        "div",
+	                        { className: sessionClasses,
+	                            onClick: setSessionHandler.bind(null, v),
+	                            key: k },
+	                        venue,
+	                        React.createElement(
+	                            "div",
+	                            { className: "Schedule-main" },
+	                            React.createElement(
+	                                "div",
+	                                null,
+	                                v.event,
+	                                language
+	                            ),
+	                            React.createElement(
+	                                "div",
+	                                { className: "Schedule-presenter" },
+	                                v.presenter
+	                            ),
+	                            React.createElement("div", { className: "Schedule-categoryIcon", style: categoryStyle })
+	                        )
+	                    );
+	                });
+	            }
+	            return React.createElement(
+	                "div",
+	                { className: itemClasses,
+	                    key: i },
+	                React.createElement(
+	                    "div",
+	                    { className: "Schedule-time" },
+	                    value.time
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "Schedule-event" },
+	                    content
+	                )
+	            );
+	        });
+
+	        var day2Items = Data.day2.filter(function (eventItem) {
+	            var shouldReturn = false;
+	            if (eventItem.event && filterOn) {
+
+	                if (categoryObj[eventItem.event.category]) {
+	                    if (categoryObj[eventItem.event.category].active) shouldReturn = true;
+	                }
+	            } else {
+	                //events
+	                shouldReturn = true;
+	            }
+	            if (shouldReturn) return eventItem;
+	        }).map(function (value, i) {
+
+	            var itemClasses = classNames({
+	                "Schedule-item": value.event,
+	                "Schedule-itemWrapper": value.events,
+	                "has-top-border": i !== 0
+	            });
+
+	            var content = "";
+	            if (value.event) {
+	                //single event
+	                content = React.createElement(
+	                    "div",
+	                    null,
+	                    value.event,
+	                    React.createElement(
+	                        "div",
+	                        { className: "Schedule-keynotePresenter" },
+	                        value.presenter
+	                    )
+	                );
+	            } else {
+	                //multile event
+	                var filteredEvents = value.events.filter(function (sessionItem) {
+
+	                    if (!filterOn) return sessionItem;
+
+	                    var shouldReturn = false;
+	                    if (categoryObj[sessionItem.category].active) shouldReturn = true;
+
+	                    if (shouldReturn) return sessionItem;
+	                });
+	                content = filteredEvents.map(function (v, k) {
+	                    var sessionClasses = classNames({
+	                        "Schedule-session": true,
+	                        "is-last": k === filteredEvents.length - 1,
+	                        "is-active": currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
+	                    });
+	                    var categoryStyle = {};
+	                    if (filterOn) {
+	                        categoryStyle = {
+	                            border: "1px solid " + categoryObj[v.category].color,
+	                            background: categoryObj[v.category].color
+	                        };
+	                    }
+	                    var language = v.EN ? React.createElement(
+	                        "div",
+	                        { className: "Schedule-en" },
+	                        "EN"
+	                    ) : "";
+
+	                    var venue = v.venue ? React.createElement(
+	                        "div",
+	                        { className: "Schedule-meta" },
+	                        React.createElement(
+	                            "div",
+	                            { className: "Schedule-venue" },
+	                            v.venue
+	                        )
+	                    ) : "";
+
+	                    return React.createElement(
+	                        "div",
+	                        { className: sessionClasses,
+	                            onClick: setSessionHandler.bind(null, v),
+	                            key: k },
+	                        venue,
+	                        React.createElement(
+	                            "div",
+	                            { className: "Schedule-main" },
+	                            React.createElement(
+	                                "div",
+	                                null,
+	                                v.event,
+	                                language
+	                            ),
+	                            React.createElement(
+	                                "div",
+	                                { className: "Schedule-presenter" },
+	                                v.presenter
+	                            ),
+	                            React.createElement("div", { className: "Schedule-categoryIcon", style: categoryStyle })
+	                        )
+	                    );
+	                });
+	            }
+	            return React.createElement(
+	                "div",
+	                { className: itemClasses,
+	                    key: i },
+	                React.createElement(
+	                    "div",
+	                    { className: "Schedule-time" },
+	                    value.time
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "Schedule-event" },
+	                    content
+	                )
+	            );
+	        });
+
+	        var scheduleClasses = classNames({
+	            Schedule: true,
+	            "is-fixed": inScheduleArea === "within" });
+
+	        var titleClasses = classNames({
+	            "Schedule-title": true,
+	            "is-fixed": inScheduleArea === "within",
+	            "with-session": showSession,
+	            "without-session": !showSession
+	        });
+	        var titleStyle = {};
+	        if (inScheduleArea === "passed") {
+
+	            titleStyle = {
+	                position: "absolute",
+	                top: this.props.top
 	            };
-	          }
-	          var language = v.EN ? React.createElement(
-	            "div",
-	            { className: "Schedule-en" },
-	            "EN"
-	          ) : "";
-
-	          var venue = v.venue ? React.createElement(
-	            "div",
-	            { className: "Schedule-meta" },
-	            React.createElement(
-	              "div",
-	              { className: "Schedule-venue" },
-	              v.venue
-	            )
-	          ) : "";
-
-	          return React.createElement(
-	            "div",
-	            { className: sessionClasses,
-	              onClick: setSessionHandler.bind(null, v),
-	              key: k },
-	            venue,
-	            React.createElement(
-	              "div",
-	              { className: "Schedule-main" },
-	              React.createElement(
-	                "div",
-	                null,
-	                v.event,
-	                language
-	              ),
-	              React.createElement(
-	                "div",
-	                { className: "Schedule-presenter" },
-	                v.presenter
-	              ),
-	              React.createElement("div", { className: "Schedule-categoryIcon", style: categoryStyle })
-	            )
-	          );
-	        });
-	      }
-	      return React.createElement(
-	        "div",
-	        { className: itemClasses,
-	          key: i },
-	        React.createElement(
-	          "div",
-	          { className: "Schedule-time" },
-	          value.time
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "Schedule-event" },
-	          content
-	        )
-	      );
-	    });
-
-	    var day2Items = Data.day2.filter(function (eventItem) {
-	      var shouldReturn = false;
-	      if (eventItem.event && filterOn) {
-
-	        if (categoryObj[eventItem.event.category]) {
-	          if (categoryObj[eventItem.event.category].active) shouldReturn = true;
 	        }
-	      } else {
-	        //events
-	        shouldReturn = true;
-	      }
-	      if (shouldReturn) return eventItem;
-	    }).map(function (value, i) {
 
-	      var itemClasses = classNames({
-	        "Schedule-item": value.event,
-	        "Schedule-itemWrapper": value.events,
-	        "has-top-border": i !== 0
-	      });
+	        var filterBtnClasses = classNames({
+	            "Schedule-filterBtn": true,
+	            "is-active": window.innerWidth < 1200 && this.state.showPanel
+	        });
 
-	      var content = "";
-	      if (value.event) {
-	        //single event
-	        content = React.createElement(
-	          "div",
-	          null,
-	          value.event,
-	          React.createElement(
+	        var filterText = window.innerWidth < 1200 && this.state.showPanel ? "" : "Filter";
+
+	        var filterClasses = classNames({
+	            "Schedule-filterPanel": true,
+	            "is-show": window.innerWidth < 1200 && this.state.showPanel,
+	            "is-fixed": inScheduleArea === "within"
+	        });
+
+	        var bar1Classes = classNames({
+	            "Schedule-bar1": true,
+	            "is-active": window.innerWidth < 1200 && this.state.showPanel
+	        });
+	        var bar2Classes = classNames({
+	            "Schedule-bar2": true,
+	            "is-active": window.innerWidth < 1200 && this.state.showPanel
+	        });
+
+	        var day1Classes = classNames({
+	            "Schedule-dayButton": true,
+	            "is-active": currentSection === "day1"
+	        });
+	        var day2Classes = classNames({
+	            "Schedule-dayButton": true,
+	            "is-active": currentSection === "day2"
+	        });
+
+	        return React.createElement(
 	            "div",
-	            { className: "Schedule-keynotePresenter" },
-	            value.presenter
-	          )
+	            { className: scheduleClasses },
+	            React.createElement(
+	                "div",
+	                { className: titleClasses,
+	                    style: titleStyle },
+	                React.createElement(
+	                    "div",
+	                    { className: day1Classes,
+	                        onClick: this._goToElement.bind(this, "day1") },
+	                    "Day 1"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: day2Classes,
+	                        onClick: this._goToElement.bind(this, "day2") },
+	                    "Day 2"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: filterBtnClasses,
+	                        onClick: this._togglePanel },
+	                    filterText,
+	                    React.createElement("div", { className: bar1Classes }),
+	                    React.createElement("div", { className: bar2Classes })
+	                )
+	            ),
+	            React.createElement(
+	                "div",
+	                { className: filterClasses },
+	                React.createElement(Filter, { ref: "filter",
+	                    data: categories,
+	                    filterOn: filterOn,
+	                    toggleCategoryHandler: toggleCategoryHandler,
+	                    clearCategoryHandler: clearCategoryHandler,
+	                    togglePanelHander: this._togglePanel })
+	            ),
+	            React.createElement(
+	                "div",
+	                { ref: "day1" },
+	                React.createElement(
+	                    "div",
+	                    { className: "Schedule-day" },
+	                    "8/15 (Sat)"
+	                ),
+	                day1Items
+	            ),
+	            React.createElement(
+	                "div",
+	                { ref: "day2" },
+	                React.createElement(
+	                    "div",
+	                    { className: "Schedule-day" },
+	                    "8/16 (Sun)"
+	                ),
+	                day2Items
+	            )
 	        );
-	      } else {
-	        //multile event
-	        var filteredEvents = value.events.filter(function (sessionItem) {
-
-	          if (!filterOn) return sessionItem;
-
-	          var shouldReturn = false;
-	          if (categoryObj[sessionItem.category].active) shouldReturn = true;
-
-	          if (shouldReturn) return sessionItem;
-	        });
-	        content = filteredEvents.map(function (v, k) {
-	          var sessionClasses = classNames({
-	            "Schedule-session": true,
-	            "is-last": k === filteredEvents.length - 1,
-	            "is-active": currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
-	          });
-	          var categoryStyle = {};
-	          if (filterOn) {
-	            categoryStyle = {
-	              border: "1px solid " + categoryObj[v.category].color,
-	              background: categoryObj[v.category].color
-	            };
-	          }
-	          var language = v.EN ? React.createElement(
-	            "div",
-	            { className: "Schedule-en" },
-	            "EN"
-	          ) : "";
-
-	          var venue = v.venue ? React.createElement(
-	            "div",
-	            { className: "Schedule-meta" },
-	            React.createElement(
-	              "div",
-	              { className: "Schedule-venue" },
-	              v.venue
-	            )
-	          ) : "";
-
-	          return React.createElement(
-	            "div",
-	            { className: sessionClasses,
-	              onClick: setSessionHandler.bind(null, v),
-	              key: k },
-	            venue,
-	            React.createElement(
-	              "div",
-	              { className: "Schedule-main" },
-	              React.createElement(
-	                "div",
-	                null,
-	                v.event,
-	                language
-	              ),
-	              React.createElement(
-	                "div",
-	                { className: "Schedule-presenter" },
-	                v.presenter
-	              ),
-	              React.createElement("div", { className: "Schedule-categoryIcon", style: categoryStyle })
-	            )
-	          );
-	        });
-	      }
-	      return React.createElement(
-	        "div",
-	        { className: itemClasses,
-	          key: i },
-	        React.createElement(
-	          "div",
-	          { className: "Schedule-time" },
-	          value.time
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "Schedule-event" },
-	          content
-	        )
-	      );
-	    });
-
-	    var scheduleClasses = classNames({
-	      Schedule: true,
-	      "is-fixed": inScheduleArea === "within" });
-
-	    var titleClasses = classNames({
-	      "Schedule-title": true,
-	      "is-fixed": inScheduleArea === "within",
-	      "with-session": showSession,
-	      "without-session": !showSession
-	    });
-	    var titleStyle = {};
-	    if (inScheduleArea === "passed") {
-	      titleStyle = {
-	        position: "absolute",
-	        top: this.props.top
-	      };
 	    }
-
-	    var filterBtnClasses = classNames({
-	      "Schedule-filterBtn": true,
-	      "is-active": window.innerWidth < 1200 && this.state.showPanel
-	    });
-
-	    var filterText = window.innerWidth < 1200 && this.state.showPanel ? "" : "Filter";
-
-	    var filterClasses = classNames({
-	      "Schedule-filterPanel": true,
-	      "is-show": window.innerWidth < 1200 && this.state.showPanel,
-	      "is-fixed": inScheduleArea === "within"
-	    });
-
-	    var bar1Classes = classNames({
-	      "Schedule-bar1": true,
-	      "is-active": window.innerWidth < 1200 && this.state.showPanel
-	    });
-	    var bar2Classes = classNames({
-	      "Schedule-bar2": true,
-	      "is-active": window.innerWidth < 1200 && this.state.showPanel
-	    });
-
-	    var day1Classes = classNames({
-	      "Schedule-dayButton": true,
-	      "is-active": currentSection === "day1"
-	    });
-	    var day2Classes = classNames({
-	      "Schedule-dayButton": true,
-	      "is-active": currentSection === "day2"
-	    });
-
-	    return React.createElement(
-	      "div",
-	      { className: scheduleClasses },
-	      React.createElement(
-	        "div",
-	        { className: titleClasses,
-	          style: titleStyle },
-	        React.createElement(
-	          "div",
-	          { className: day1Classes,
-	            onClick: this._goToElement.bind(this, "day1") },
-	          "Day 1"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: day2Classes,
-	            onClick: this._goToElement.bind(this, "day2") },
-	          "Day 2"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: filterBtnClasses,
-	            onClick: this._togglePanel },
-	          filterText,
-	          React.createElement("div", { className: bar1Classes }),
-	          React.createElement("div", { className: bar2Classes })
-	        )
-	      ),
-	      React.createElement(
-	        "div",
-	        { className: filterClasses },
-	        React.createElement(Filter, { ref: "filter",
-	          data: categories,
-	          filterOn: filterOn,
-	          toggleCategoryHandler: toggleCategoryHandler,
-	          clearCategoryHandler: clearCategoryHandler,
-	          togglePanelHander: this._togglePanel })
-	      ),
-	      React.createElement(
-	        "div",
-	        { ref: "day1" },
-	        React.createElement(
-	          "div",
-	          { className: "Schedule-day" },
-	          "8/15 (Sat)"
-	        ),
-	        day1Items
-	      ),
-	      React.createElement(
-	        "div",
-	        { ref: "day2" },
-	        React.createElement(
-	          "div",
-	          { className: "Schedule-day" },
-	          "8/16 (Sun)"
-	        ),
-	        day2Items
-	      )
-	    );
-	  }
 	});
 
 	/* REACT HOT LOADER */ }).call(this); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(271), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(63))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Schedule.es6" + ": " + err.message); } }); } } })(); }
