@@ -96,20 +96,15 @@
     top: 0;
     right: 0;
     width: 100%;
-    
     min-height: 100vh;
+    height: 100%;
     overflow: scroll;
 
     will-change: right;
     -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); 
     transition: right .2s cubic-bezier(.4,0,.2,1); 
 }
-.Home-session.is-show.is-fixed {
-    height: 100vh;
-    overflow: scroll;
-    position: fixed;
-    top: 0;
-}
+
 .Home-footer, .Home-footer:after {
     content: '';
     height: var(--FooterHeight);
@@ -118,7 +113,7 @@
     border-top: 1px solid var(--FooterLine);
     text-align: center;
     z-index: 10;
-    
+
 }
 @media screen and (min-width: 500px){
     .Home-cover {
@@ -202,6 +197,7 @@
         height: 100vh;
         overflow: scroll;
         position: fixed;
+        top: 0;
     }
    
 
@@ -286,6 +282,7 @@
         height: 100vh;
         overflow: scroll;
         position: fixed;
+        top: 0;
     }
     
 
