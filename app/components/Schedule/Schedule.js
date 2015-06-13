@@ -9,6 +9,45 @@ module.exports = {
 	    	"event" : "Opening / 開幕式"
 	    },
 	    {
+	    	"time" : "09:00",
+	    	"events" : [
+	    		{
+	    			"time" : "09:00-12:00, 13:00-14:00",
+	    			"venue" : "H2",
+	    			"event" : "親子工作坊",
+	    			"presenter" : "鄭鴻旗（Honki）",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/workshop2015sp",
+	    			"abstract" : "<p>COSCUP首次親子工作坊<br/>帶孩子踏入自造世界！<br/></p><p>Workshop(工作坊)這個名詞開始於工業革命時代，最早是指一個房間或是一棟建築，提供器具或機具讓人們完成作品；現代對於場地較無嚴格限制，主要是強調參與工作坊的人們動手做的概念。</p><p>本工作坊就是這麼一個準備好材料與工具，讓孩子體驗自己動手設計、製做機器人樂趣的園地！歡迎家長陪同參與，內容將讓小朋友親手操作手工具，為安全考量，參與的小朋友年齡需為10-15歲。參與者將一併納入大會保險，請家長們放心。</p>",
+	    			"biography" : "<p>openLab.Taipei 的共同創辦人，擁有豐富的工作坊設計與帶領經驗。<a href='http://buzzorange.com/techorange/2014/03/17/openlab-taipei-arduino/'>看他的專訪</a>。</p>"
+	    		},
+	    		{
+	    			"time" : "09:00-10:40",
+	    			"venue" : "H3",
+	    			"event" : "How to contribute to OpenStack upstream",
+	    			"presenter" : "macJack",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/openstacktwug-contribute",
+	    			"abstract" : "<p>This workshop are welcome everyone who is interested in learning how to contribute to OpenStack upstream.</p><p>這個工作坊非常歡迎對於想要貢獻文件或是原始碼到OpenStack開發社群但是對於流程不太熟悉的朋友加入</p><p>我們講師跟助教都已經成功的送出貢獻到OpenStack上游開發者社群</p><p>各位參加的朋友將會在這個過程當中學習到如何成功送出patch或是程式碼所需要相關大小能力以及知識</p><p>還有如何跟OpenStack開發者社群互動</p><p>並且利用CI系統以及邀請他人做CodeReview</p><p>我們會把最困難的部份簡化到當天就可以成功送出Patch</p><p>並且讓上游開發社群接受你或妳送出的貢獻文件</p><p>真的一點都不困難</p><p>趕快來加入我們吧!!</p>",
+	    			"biography" : ""
+	    		},
+	    		{
+	    			"time" : "09:00-10:40",
+	    			"venue" : "H4",
+	    			"event" : "來試試 RPM 打包吧！",
+	    			"presenter" : "曾政嘉",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/fedroa-rpm",
+	    			"abstract" : "<p>簡述打包 RPM 時的注意事項，並帶著參與者動手實作。</p><p>希望透過這個工作坊讓更多人瞭解如何幫忙軟體打包，參與社群幫忙貢獻。</p>",
+	    			"biography" : ""
+	    		}
+
+	    	]
+	    },
+	    {
 	    	"time" : "09:10",
 	    	"events" : [
 	    		{
@@ -128,6 +167,34 @@ module.exports = {
 	    	]
 	    },
 	    {
+	    	"time" : "10:55",
+	    	"events" : [
+	    		{
+	    			"time" : "10:55-12:25",
+	    			"venue" : "H3",
+	    			"event" : "Laravel Installfest",
+	    			"presenter" : "范聖佑 (Shengyou Fan)",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/laravel-installfest",
+	    			"abstract" : "<p>Laravel 是目前當紅 PHP Framework 之一，許多 PHP 開發者都對其有高度的興趣且躍躍欲試。但對於許多新手而言，由於不熟悉 PHP 的進階設定，因此在建置 Laravel 開發環境時往往碰壁而不得其門而入。</p><p>為了協助新手跨過這個門檻，Laravel 台灣此次希望能在 COSCUP 活動時間內舉辦 Laravel Installfest 活動，邀請對 Laravel 有興趣的朋友將自己的筆電帶到活動現場，由現場的社群志工講解如何建置 Laravel 開發環境 (包括使用 Homestead 及 wagon 兩種方式)，並在現場完成 Laravel 開發環境的安裝。活動結束前會再分享 Laravel 相關學習資源及社群活動，讓對 Laravel 有興趣的朋友可以進入 Laravel 的開發生態圈！</p>",
+	    			"biography" : ""
+	    		},
+	    		{
+	    			"time" : "10:55-12:25",
+	    			"venue" : "H4",
+	    			"event" : "Ubuntu Install Workshop",
+	    			"presenter" : "RJ",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/ubuntu-tw-install",
+	    			"abstract" : "<p>由於 Linux 作業系統的穩定性、自由度及免費授權得以使之在伺服器市場市佔率遙遙領先對手，加上近年來其桌面環境對使用者日漸友善，以及其分支 Android 系統在手持裝置、嵌入式系統上面大放異彩，使得越來越多的使用者有興趣及需求來安裝 Linux 作業系統。</p><p>在眾多 Linux 作業系統的發行版之中，Ubuntu 致力於成為一個對使用者友善的發行版，也成為許多人第一個接觸的發行版，以及被推薦給初學者入門的發行版。我們將手把手、一步一步的帶領使用者將 Ubuntu 桌面版/伺服器版安裝起來，解決可能會遇到的問題，並進一步的協助有 Linux/Windows雙作業系統需求的使用者建立起安裝雙系統的電腦。</p><p>P.S.使用者請先自備電腦及安裝媒體(光碟/USB隨身碟)。如有需要安裝雙系統，請先預載Windows作業系統，或是自行攜帶 Windows 的安裝媒體(光碟/USB隨身碟)，並確認擁有 Windows 的合法使用授權。</p>",
+	    			"biography" : ""
+	    		}
+
+	    	]
+	    },
+	    {
 	    	"time" : "11:30",
 	    	"event" : "Break"
 	    },
@@ -190,6 +257,33 @@ module.exports = {
 	    	"event" : "Keynote"
 	    },
 	    {
+	    	"time" : "13:25",
+	    	"events" : [
+	    		{
+	    			"time" : "13:25-17:00",
+	    			"venue" : "H3",
+	    			"event" : "樹莓派工作坊/自作遙控車",
+	    			"presenter" : "台灣樹莓派",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/raspberry-pi-car",
+	    			"abstract" : "<p>A. 環境設定\n\t1. 使用 Serial + WiFi\n\t2. 使用 VNC 和 X-Forwarding\n</p><p>B. Raspberry Pi GPIO 簡介\n\t1. Raspberry Pi GPIO 介紹\n\t2. 使用 Python 控制 GPIO</p><p>C. 馬達原理簡介\n\t1. 直流馬達介紹\n\t2.用 Raspberry Pi 控制直流馬達</p><p>D. 無線網路與藍牙控制\n\t1. 透過無線網路控制\n\t2. 藍牙原理與控制</p>"
+	    		},
+	    		{
+	    			"time" : "10:55-12:25",
+	    			"venue" : "H4",
+	    			"event" : "Let's Chat via XMPP",
+	    			"presenter" : "佟輝(Tong Hui)",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/bjglug-xmpp",
+	    			"abstract" : "<p>最近一段時間，北京GNU/Linux用戶組嘗試使用完全自由開源的XMPP協議即時聊天（IM）方式，替代傳統的非自由開源，且受到政府監控的WeChat/Slack聊天軟件，經過數月的測試，我們取得了非常好的效果，在成員中有超高的普及，並成為了我們的主要線上溝通方式。此外，由於XMPP即時聊天支持非對稱的OTR（Off the Record）加密和OpenPGP加密，因此躲避政府大規模監控成為可能，可以更好保護我們的隱私。</p><p>此Workshop主要面向初學者，介紹XMPP協議的基本架構，演示幾款常用的XMPP即時聊天軟件的主要使用，帶大家一起申請註冊賬戶，一對一聊天和多人Group Chat，使用OTR加密聊天。此外，還會面向希望自己搭建XMPP平臺的朋友，介紹如何自己搭建XMPP聊天平臺供別人使用，以及我正在部署的Web前端XMPP聊天平臺lets-chat。</p><p>相關文章：<a href='https://tonghuix.io/2015/03/xmpp-chat/'>https://tonghuix.io/2015/03/xmpp-chat/</a></p>"
+
+	    		}
+
+	    	]
+	    },
+	    {
 	    	"time" : "14:00",
 	    	"event" : "Break"
 	    },
@@ -241,6 +335,21 @@ module.exports = {
 	    	    	"abstract" : "",
 	    	    	"biography" : ""
 	    	    }
+	    	]
+	    },
+	    {
+	    	"time" : "14:15",
+	    	"events" : [
+	    		{
+	    			"time" : "14:15-14:55",
+	    			"venue" : "H3",
+	    			"event" : "Open Build Service 實作練習",
+	    			"presenter" : "Gary Lin",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/obs-opensuse",
+	    			"abstract" : "<p>Open Build Service (OBS) 原先是 openSUSE/SUSE 建立安裝套件的專屬服務，經過多年開發後，也可以支援各個熱門的 Linux 發行版，如 Fedora, Debian, Ubuntu 等。除此之外，支援的 CPU 架構也愈來愈廣，常見的 x86, x86_64, ARM 甚至是 PowerPC 64 等都可以用 OBS 來打包。只要設定得宜，一個套件同時支援不同 Linux 及不同 CPU 架構可以是很輕鬆的事。歡迎對 Linux 打包有興趣的人一起來試試這個方便的服務。</p>"
+	    		}
 	    	]
 	    },
 	    {
@@ -296,6 +405,31 @@ module.exports = {
 	    	    	"abstract" : "<p>講者將分享他在中國大陸進行開源推廣工作之餘的觀察和心得，包含中國 IT 互聯網產業在開源方面的應用、政府部門的開源政策、高校在開源教育方面的投入、學生對於開源的認知和態度以及開源社群的貢獻和發展情況。</p>",
 	    	    	"biography" : "<p>Richard Lin 林旅強 (Legist 強)，台北人，現居上海，在大中華地區從事開源佈道的志業，擔任中國知名代碼託管平台 GitCafe.com 市場總監，並組織運營開源社群如上海 Linux 用戶組 (SHLUG) 和開源社 (kaiyuanshe.org) 等。</p><p>Richard Lin 林旅強 (Legist 強), an Open Source Evangelist in the Greater China. He is CMO of GitCafe.com, the most famous open source project hosting platform in China. He devotes himself to organize and operate open source communities like Shanghai Linux User Group and Kaiyuanshe.org.</p>"
 	    	    }
+	    	]
+	    },
+	    {
+	    	"time" : "15:10",
+	    	"events" : [
+	    		{
+	    			"time" : "15:10-17:00",
+	    			"venue" : "H2",
+	    			"event" : "MySQL Fabric",
+	    			"presenter" : "杜修文",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/mysql-fabric",
+	    			"abstract" : "<p>如何快速建立資料庫服務的私有雲(DBaaS)-以OpenStack和MySQL為建置基礎DBaaS with OpenStack and MySQL-Implementation and digital transformation</p>"
+	    		},
+	    		{
+	    			"time" : "15:10-17:00",
+	    			"venue" : "H4",
+	    			"event" : "Webmaker 工作坊",
+	    			"presenter" : "Irvin",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/moztw-webmaker",
+	    			"abstract" : "<p>Webmaker (webmaker.org) 是 Mozilla 的教育專案，目標是「教導網路的知識給大眾」。專案包含數項工具與數百個教案，提供人們用以學習╱教導如何創作網頁與 Web App，並提升人們的 Web 素養。</p><p>這個工作坊將帶領大家使用這些工具，介紹 Webmaker 專案中的資源，讓參加者建立簡單的網頁與 App，並讓參加者瞭解 Webmaker 的目標為何。</p>"
+	    		}
 	    	]
 	    },
 	    {
@@ -362,6 +496,41 @@ module.exports = {
 	    {
 	    	"time" : "09:00",
 	    	"event" : "Opening / 開幕式"
+	    },
+	    {
+	    	"time" : "09:00",
+	    	"events" : [
+	    		{
+	    			"time" : "09:00-12:00",
+	    			"venue" : "H2",
+	    			"event" : "LinkIt ONE 物聯網應用入門",
+	    			"presenter" : "曾吉弘",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/cavedu-arduino",
+	    			"abstract" : "<p>簡介：</p><p>LinkIt™是 MediaTek Labs 專為穿戴式裝置和物聯網而設計的操作系統，同時可以連接到其他智慧裝置或雲端服務。由於Linklt one開發板能與Arduino的相容，更有豐富的通訊介面與專屬的雲端服務，想要一探物聯網神奇之處的朋友，請別錯過本次工作坊喔！</p><p>流程 ：<ul><li>介紹LinkIt ONE 開發板硬體與開發環境</li><li>LinkIt ONE使用環境建置，安裝SDK 與驅動程式</li><li>基本電子元件與工具介紹及運用：包括麵包板、LED、開關、電阻、可變電阻、光敏電阻等入門者常用的電子元件</li><li>Wifi：網路爬文取得Facebook 粉絲頁按讚數</li><li>認識 MCS 雲端服務：REstFul API應用與 Data Channel 應用</li><li>LinkIt One 結合 MCS：搭配繼電器來控制檯燈亮滅，並可以由網頁與智慧型手機來控制並檢視開發板狀態</li></ul></p>"
+	    		},
+	    		{
+	    			"time" : "09:00-12:00",
+	    			"venue" : "H3",
+	    			"event" : "開源之道－Git 基礎教學",
+	    			"presenter" : "Richard Lin 林旅強",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/gitcafe-git",
+	    			"abstract" : "<p>Git 是當今開源世界中最流行的版本控制系統，它發源在 2005 年，Linux 的發起人 Linus Torvalds 為瞭解決 Linux kernel 在多人共同協作開發的問題，於是打造出了這套分散式的開源版本控制系統；經過了十年，它成為了許多開源軟體的協作標準。</p><p>如果你有志於步上開源之道，投入到開源專案的開發，「開源之道－Git 基礎教學」會是你的入門磚。歡迎與我們一起加入開源人的行列！</p>"
+	    		},
+	    		{
+	    			"time" : "09:00-12:00",
+	    			"venue" : "H4",
+	    			"event" : "第一次自幹 Open Data SimCity 就上手",
+	    			"presenter" : "李慕約",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/opendata-simcity",
+	    			"abstract" : "<p>SheetHub.com 開放資料，d3.js 資料視覺化，turf.js 地理資訊分析，wit.ai 聲控/自然語言，Open StreetMap 地圖等技術。  （語言目前設定是中文，可能會調整為英文）</p>"
+	    		}
+	    	]
 	    },
 	    {
 	    	"time" : "09:10",
@@ -594,6 +763,41 @@ module.exports = {
 	    	    	"abstract" : "<p>作為一位有幸能連續 10 年在 COSCUP 分享心得的講者，決定在「封麥」前，簡短回顧台灣開放原始碼生態圈的轉變，諸如源自本土的專案、開發者社群、各式推廣活動、大學相關課程，以及台灣人在國際開放原始碼專案的投入狀況。</p>",
 	    	    	"biography" : "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p>"
 	    	    }
+	    	]
+	    },
+	    {
+	    	"time" : "13:20",
+	    	"events" : [
+	    		{
+	    			"time" : "13:20-16:00",
+	    			"venue" : "H2",
+	    			"event" : "Open Networking Workshop",
+	    			"presenter" : "黃秉鈞",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/opennetworking-workshop",
+	    			"abstract" : "<p><p>類似於開放原始碼/開放硬體，近年來網路也出現了一股開放的風潮。有別於傳統的網路設備(如交換機/路由器)都是各家廠商私有且不公開的介面，開放網路推崇的理念是提供一公開的介面，撰寫網路協定的工程師和製造網路設備的廠商，只要共同遵循相同的介面，就可以自由地開發各種應用如同數十年前大型主機只有特定廠商可以生產，只有特定工程師能撰寫上面的應用，如今PC的規格大家都相同，人人可在PC上開發軟體，我們相信未來網路設備也會朝這一個趨勢發展。</p><p>在開放網路的浪潮中，最有名的莫過於軟體定義網路 (Software-Defined Networking； SDN)，其概念是將網路設備的控制層(路由決策)和資料層(資料繞送)分離，並將所有網路設備的控制層集中到控制器上，由分散式轉為集中管理開發者或網管只要根據特定的 SDN 協定 (其中最有名的是 OpenFlow)，就可以自行撰寫控制器應用程式控制網路行為。SDN 大幅提高了網路的彈性，開發者只需修改控制器的程式邏輯即可快速實現並部署新的網路協定。除此之外，SDN 集中管理的特性使開發人員能獲取更多分散式環境中無法獲取的全局網路資訊，進而做更有效率的網路資源管理。</p><p>SDN的理念已在世界各地網通產業萌芽，其中又以美國、日本、中國大陸投入最多資源，而加入開放網路基金會 (Open Network Foundation) 會員的廠商/研究機構更高達近 150 個，其中不乏 Google、FB、Cisco 等重量級廠商。台灣也於去年成立了相關的開放社群 SDN Developer Society (SDNDS-TW: http://sdnds.tw/ )， 讓 SDN 相關的產業、學界和社群在台灣能有一個交流的平台。目前SDNDS-TW社群每兩三個月就會舉辦一次定期聚會，邀請各界專家前來演講，每次活動都有約 數十人參加，FB社群的人數更已高達 213 人。</p><p>今年我們會邀請一些產業及學界朋友，針對 SDN 整體概唸作仔細介紹，讓大家都能透過這次 Workshop 輕鬆理解下一代網路的全新樣貌，也期盼能透過此機會推廣開放網路的理念。</p>"
+	    		},
+	    		{
+	    			"time" : "13:20-16:00",
+	    			"venue" : "H3",
+	    			"event" : "Git Workflows",
+	    			"presenter" : "Carl Su",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/h4-gitlab-flow",
+	    			"abstract" : "<p>日益複雜的程式碼，您的團隊如何應對？若您具備 Git 基礎，來參加就對了！<br/>從需求到實作，從測試到上線。本工作坊將針對數種情境，帶您動手實際演練。<br/>活動結束後，可以設計出適合自己的 Git 流程，降低溝通、開發和部署成本。<br/></p><p>目標聽眾：</p><ul><li>已安裝 Git，不排斥打指令</li><li>具備 Git 入門基礎 (clone, diff, add, push, pull, checkout, branch, merge, rebase)</li></ul><p>預計內容：</p><ul><li>社群與工作坊簡介</li><li>Git 從單人到協作</li><li>軟體開發流程概述</li><li>Git Flow / GitHub Flow / GitLab Flow</li></ul>"
+	    		},
+	    		{
+	    			"time" : "13:20-16:00",
+	    			"venue" : "H4",
+	    			"event" : "自由的圖資－如何hack開放街圖",
+	    			"presenter" : "陳瑞霖",
+	    			"category" : "Workshop / 工作坊",
+	    			"cross_time" : true,
+	    			"kktix" : "http://coscup2015.kktix.cc/events/osmtw-hackosm",
+	    			"abstract" : "<p><p>開放街圖在2015年躍上主流媒體，大家也漸漸熟悉採用開源方式運作的群眾編輯地圖。這次在2015 COSCUP的工作坊，流程如下：</p><ul><li>開放街圖簡介</li><li>回報地圖問題添加資料</li><li>客制化截取資料與進階編輯</li></ul><p>我們會先簡介如何回報地圖資料問題，使用線上編輯器增添資料，接著透過OverPass API來探究開放街圖資料的豐富性，嘗試客制化自己所需要的資料。</p>"
+	    		}
 	    	]
 	    },
 	    {

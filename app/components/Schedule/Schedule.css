@@ -208,6 +208,9 @@
     color: rgb(100,100,100);
     overflow: hidden;
 }
+.Schedule-event {
+    overflow: hidden;
+}
 .Schedule-keynotePresenter {
     color: rgb(125,124,123);
     font-size: 14px;
@@ -219,6 +222,7 @@
     background: white;
     position: relative;
     padding-left: 80px;
+    overflow: hidden;
     
 }
 .Schedule-item.has-top-border, .Schedule-itemWrapper.has-top-border {

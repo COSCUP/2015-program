@@ -5,11 +5,18 @@
 	position: relative;
 	
 }
+.Session a, .Session a:visited{
+  color: rgb(153,155,154);
+
+}
+.Session p {
+  white-space: pre-wrap;
+}
 .Session-close {
 	width: 42px;
-    height: 42px;
-    border-radius: 44px;
-    cursor: pointer;
+  height: 42px;
+  border-radius: 44px;
+  cursor: pointer;
 }
 .Session-close:before {
   -webkit-transform: rotate(45deg);
@@ -54,11 +61,13 @@
 }
 .Session-time {
   display: inline-block;
-  margin: 0 10px;
+  margin-right: 10px;
+ 
 }
 .Session-venue {
   display: inline-block;
   padding: 0px 6px;
+  margin-right: 10px;
   color: gray;
   background: rgb(220,220,220);
   border-radius: 14px;
@@ -98,6 +107,13 @@
   color: rgb(80,80,80);
   margin-top: 20px;
 }
+a.Session-kktixLink, a.Session-kktixLink:visited {
+  color: rgb(213,62,79);
+  text-decoration: none;
+}
+a.Session-kktixLink:hover {
+  text-decoration: underline;
+}
 .Session-categoryIcon {
   display: inline-block;
 
@@ -116,6 +132,20 @@
 .Session-biography {
   margin: 20px 0;
   color: rgb(53,55,54);
+}
+a.Session-workshop, a.Session-workshop:visited {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid rgb(180,180,180);
+  text-decoration: none;
+  transition: all .2s;
+}
+a.Session-workshop:hover {
+  color: rgb(213,62,79);
+  border-color: rgb(213,62,79);
+  transition: all .2s;
+ 
 }
 
 
