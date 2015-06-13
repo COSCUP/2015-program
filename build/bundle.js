@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0daf6b7481559552516c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e5d4e42a7b1bd8130af4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33810,7 +33810,7 @@
 			events: [{
 				time: "10:55-12:25",
 				venue: "H3",
-				event: "Workshop: Workshop: Laravel Installfest",
+				event: "Workshop: Laravel Installfest",
 				presenter: "范聖佑 (Shengyou Fan)",
 				category: "Workshop / 工作坊",
 				cross_time: true,

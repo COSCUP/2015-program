@@ -173,7 +173,7 @@ module.exports = {
 	    		{
 	    			"time" : "10:55-12:25",
 	    			"venue" : "H3",
-	    			"event" : "Workshop: Workshop: Laravel Installfest",
+	    			"event" : "Workshop: Laravel Installfest",
 	    			"presenter" : "范聖佑 (Shengyou Fan)",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
