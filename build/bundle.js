@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "042c0697ac953fef757b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9a4a1c77d434f2aa2822"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32347,21 +32347,21 @@
 
 	var React = _interopRequire(__webpack_require__(63));
 
-	__webpack_require__(275);
+	__webpack_require__(279);
 
-	var AppBar = _interopRequire(__webpack_require__(277));
+	var AppBar = _interopRequire(__webpack_require__(281));
 
-	var Filter = _interopRequire(__webpack_require__(281));
+	var Filter = _interopRequire(__webpack_require__(285));
 
-	var Schedule = _interopRequire(__webpack_require__(285));
+	var Schedule = _interopRequire(__webpack_require__(288));
 
-	var Session = _interopRequire(__webpack_require__(289));
+	var Session = _interopRequire(__webpack_require__(275));
 
 	var Sponser = _interopRequire(__webpack_require__(292));
 
 	var Data = _interopRequire(__webpack_require__(296));
 
-	var classNames = _interopRequire(__webpack_require__(282));
+	var classNames = _interopRequire(__webpack_require__(276));
 
 	var $ = _interopRequire(__webpack_require__(297));
 
@@ -32522,10 +32522,10 @@
 	    var currentScrollHeight = _state.currentScrollHeight;
 	    var showSession = _state.showSession;
 
-	    console.log("component did upate, scrolling height:" + currentScrollHeight);
+	    //console.log("component did upate, scrolling height:"+currentScrollHeight);
 
 	    if (currentScrollHeight !== 0 && showSession === false) {
-	      console.log("reload scroll position");
+	      //console.log("reload scroll position");
 	      window.scrollTo(0, currentScrollHeight);
 	      this.setState({
 	        currentScrollHeight: 0
@@ -32588,7 +32588,12 @@
 	      "is-hide": shouldHide
 	    });
 
-	    var coverIMG = __webpack_require__(298);
+	    var coverClass = classNames({
+	      "Home-cover": true,
+	      "is-hide": shouldHide
+	    });
+
+	    var coverIMG = window.innerWidth > 500 ? __webpack_require__(298) : __webpack_require__(299);
 
 	    var shadowClass = classNames({
 	      "Home-shadow": true,
@@ -32601,8 +32606,15 @@
 	      React.createElement(AppBar, null),
 	      React.createElement(
 	        "div",
-	        { className: "Home-cover", ref: "cover" },
-	        React.createElement("img", { className: "Home-coverImg", src: coverIMG })
+	        { className: coverClass, ref: "cover" },
+	        React.createElement("img", { className: "Home-coverImg", src: coverIMG }),
+	        React.createElement(
+	          "div",
+	          { className: "Home-coverNotice" },
+	          "議程表仍有變動，請常回來查看本網頁，不另通知",
+	          React.createElement("br", null),
+	          "We are still updating, check out often!"
+	        )
 	      ),
 	      React.createElement(
 	        "div",
@@ -32673,18 +32685,207 @@
 /* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(256), RootInstanceProvider = __webpack_require__(254), ReactMount = __webpack_require__(128), React = __webpack_require__(63); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+	var React = _interopRequire(__webpack_require__(63));
+
+	var classNames = _interopRequire(__webpack_require__(276));
+
+	__webpack_require__(277);
+
+	module.exports = React.createClass({
+	  displayName: "Session",
+
+	  render: function render() {
+	    var _props = this.props;
+	    var sessionHandler = _props.sessionHandler;
+	    var data = _props.data;
+	    var categories = _props.categories;
+
+	    var categoryObj = {};
+	    categories.map(function (v, i) {
+	      categoryObj[v.title] = v;
+	    });
+	    var categoryStyle = {};
+	    if (categoryObj[data.category]) {
+	      categoryStyle = {
+	        border: "1px solid " + categoryObj[data.category].color,
+	        background: categoryObj[data.category].color
+	      };
+	    }
+
+	    var venue = data.venue ? React.createElement(
+	      "div",
+	      { className: "Session-venue" },
+	      data.venue
+	    ) : "";
+	    var language = data.EN ? React.createElement(
+	      "div",
+	      { className: "Session-en" },
+	      "EN"
+	    ) : "";
+	    var crossTime = data.cross_time ? React.createElement(
+	      "div",
+	      { className: "Session-crossTime" },
+	      "cross-time session / 跨時段議程"
+	    ) : "";
+	    var kktix = data.kktix ? React.createElement(
+	      "div",
+	      { className: "Session-kktix" },
+	      "需另外報名，詳情請見",
+	      React.createElement(
+	        "a",
+	        { className: "Session-kktixLink", href: data.kktix },
+	        "活動報名頁面"
+	      )
+	    ) : "";
+	    var workshop = data.kktix ? React.createElement(
+	      "a",
+	      { className: "Session-workshop", href: "http://coscup2015.kktix.cc/events/workshop2015" },
+	      "COSCUP 2015 Workshp 總表"
+	    ) : "";
+
+	    var bio = data.biography ? React.createElement(
+	      "div",
+	      { className: "Session-biography" },
+	      React.createElement(
+	        "div",
+	        { className: "Session-subTitle" },
+	        "Biography"
+	      ),
+	      React.createElement("div", { dangerouslySetInnerHTML: { __html: data.biography } })
+	    ) : "";
+	    return React.createElement(
+	      "div",
+	      { className: "Session" },
+	      React.createElement("div", { className: "Session-close",
+	        onClick: sessionHandler }),
+	      React.createElement(
+	        "div",
+	        { className: "Session-content" },
+	        React.createElement(
+	          "div",
+	          { className: "Session-meta" },
+	          venue,
+	          React.createElement(
+	            "div",
+	            { className: "Session-time" },
+	            data.time
+	          ),
+	          language
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "Session-title" },
+	          data.event
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "Session-presenter" },
+	          data.presenter
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "Session-category" },
+	          React.createElement("div", { className: "Session-categoryIcon", style: categoryStyle }),
+	          data.category,
+	          kktix
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "Session-abstract" },
+	          React.createElement(
+	            "div",
+	            { className: "Session-subTitle" },
+	            "Abstract"
+	          ),
+	          React.createElement("div", { dangerouslySetInnerHTML: { __html: data.abstract } })
+	        ),
+	        bio,
+	        workshop
+	      )
+	    );
+	  }
+	});
+
+	/* REACT HOT LOADER */ }).call(this); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(271), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(63))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Session.es6" + ": " + err.message); } }); } } })(); }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2015 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+
+	(function () {
+		'use strict';
+
+		function classNames () {
+
+			var classes = '';
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if ('string' === argType || 'number' === argType) {
+					classes += ' ' + arg;
+
+				} else if (Array.isArray(arg)) {
+					classes += ' ' + classNames.apply(null, arg);
+
+				} else if ('object' === argType) {
+					for (var key in arg) {
+						if (arg.hasOwnProperty(key) && arg[key]) {
+							classes += ' ' + key;
+						}
+					}
+				}
+			}
+
+			return classes.substr(1);
+		}
+
+		if (true) {
+			// AMD. Register as an anonymous module.
+			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else {
+			window.classNames = classNames;
+		}
+
+	}());
+
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(276);
+	var content = __webpack_require__(278);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(268)(content, {});
 	// Hot Module Replacement
 	if(true) {
 		// When the styles change, update the <style> tags
-		module.hot.accept(276, function() {
-			var newContent = __webpack_require__(276);
+		module.hot.accept(278, function() {
+			var newContent = __webpack_require__(278);
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -32693,14 +32894,44 @@
 	}
 
 /***/ },
-/* 276 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".Home {\n  position: relative;\n  height: 100%;\n}\n\n.Home-shadow {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  pointer-events: none;\n\n}\n.Home-shadow.is-show {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: calc(100% - 200px);\n  width: 50%;\n  z-index: 1;\n  background: rgba(255,255,255,0.7);\n  -webkit-transition: background .2s ease-in-out;\n  transition: background .2s ease-in-out;\n  cursor: pointer;\n  pointer-events: all;\n}\n.Home-cover {\n  width: 100%;\n  padding: 30px 0 60px 0;\n  border-bottom: 1px solid gray;\n}\n.Home-coverImg {\n  width: 100%;\n}\n.Home-main {\n  position: relative;\n}\n.Home-filter {\n    display: none;\n}\n.Home-schedule {\n    display: block;\n    z-index: 10;\n}\n.Home-schedule.is-fixed, .Home-schedule.with-session {\n    display: block;\n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-schedule.with-session.is-hide {\n    display: none;\n\n}\n.Home-sponser {\n    display: block;\n}\n.Home-sponser.is-hide {\n    display: none;\n}\n.Home-session {\n    position: absolute;\n    top: 0;\n    right: -100%;\n    width: 0px;\n    overflow: hidden;\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n    z-index: 200;\n}\n.Home-session.is-show {\n    position: fixed;\n    top: 0;\n    right: 0;\n    width: 100%;\n    height: 100vh;\n    overflow: scroll;\n\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-session.is-show.is-fixed {\n    height: 100vh;\n    overflow: scroll;\n    position: fixed;\n    top: 0;\n}\n.Home-footer, .Home-footer:after {\n    content: '';\n    height: 100px;\n    margin-top: 100px;\n    background: rgb(230,230,230);\n    border-top: 1px solid rgb(220,220,220);\n    text-align: center;\n    z-index: 10;\n}\n\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Home-main {\n        position: relative;\n        height: auto;\n        width: 100%;\n    }\n    .Home-filter {\n        display: none;\n    }\n\n    .Home-schedule {\n        display: inline-block;\n        width: 50%;\n        \n\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed, .Home-schedule.with-session {\n        width: 50%;\n        \n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n   \n    .Home-sponser, .Home-sponser.is-hide {\n        width: 50%;\n        top: 0;\n        position: absolute;\n        \n        left: 50%;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -calc(50% - 30px);\n\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 50%;\n        width: 50%;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n    }\n   \n\n}\n\n@media screen and (min-width: 1200px){\n\t.Home-main {\n        position: relative;\n        height: auto;\n    }\n    .Home-filter {\n    \tmargin-left: 120px;\n    \twidth: 240px;\n    \tposition: absolute;\n        display: block;\n    }\n    .Home-filter.is-fixed {\n    \tposition: fixed;\n    \ttop: 0;\n        left: 0;\n    }\n    .Home-filter.is-passed{\n    \tposition: absolute;\n    \t/* top dynamically decided*/\n    }\n    .Home-schedule {\n    \twidth: 550px;\n    \tmargin-left: 360px;\n        will-change: margin-left;\n        /*-webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); \n        transition: margin-left .2s cubic-bezier(.4,0,.2,1); */\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed {\n        width: 550px;\n        margin-left: 360px;\n        will-change: margin-left;\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session {\n        width: 550px;\n        margin-left: 160px;\n        will-change: margin-left;\n         -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1);\n        \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n    .Home-sponser, .Home-sponser.is-hide {\n        width: 280px;\n        position: absolute;\n        top: -0px;\n        left: 950px;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -570px;\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 711px;\n        width: 570px;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n    }\n    \n\n}\n.Home-patch, .Home-patch:visited {\n    display: inline-block;\n    text-decoration: none;\n    padding: 20px 36px 0 0 ;\n    color: rgb(153,155,154);\n    font-size: 14px;\n    font-family: 'Gentium Basic', Gentium, serif;\n}\n.Home-patch:hover {\n    color: rgb(53,55,54);\n}\n", ""]);
+	exports.push([module.id, ".Session {\n\tbackground: white;\n\twidth: 100%;\n\theight: 100%;\n\tposition: relative;\n\t\n}\n.Session a, .Session a:visited{\n  color: rgb(153,155,154);\n\n}\n.Session p {\n  white-space: pre-wrap;\n}\n.Session-close {\n\twidth: 42px;\n  height: 42px;\n  border-radius: 44px;\n  cursor: pointer;\n}\n.Session-close:before {\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  transform: rotate(45deg); \n  content: '';\n}\n.Session-close:after {\n  -webkit-transform: rotate(-45deg);\n  -ms-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n  content: '';\n}\n.Session-close:before, .Session-close:after {\n  -webkit-transition: background .3s;\n  transition: background .3s;\n  width: 18px;\n  height: 1px;\n  top: 30px;\n  left: 30px;\n  position: absolute;\n  margin-left: -10px;\n  margin-top: -1px;\n  background: gray;\n  \n}\n.Session-close:hover:before, .Session-close:hover:after {\n  background: rgb(53,55,54);\n}\n.Session-content {\n    padding: 20px;\n    line-height: 1.6;\n    background: white;\n}\n@media screen and (min-width: 1200px){\n    .Session-content {\n        padding: 20px 40px 20px 20px;\n    }\n}\n.Session-meta {\n  font-size: 14px;\n}\n.Session-time {\n  display: inline-block;\n  margin-right: 10px;\n \n}\n.Session-venue {\n  display: inline-block;\n  padding: 0px 6px;\n  margin-right: 10px;\n  color: gray;\n  background: rgb(220,220,220);\n  border-radius: 14px;\n}\n.Session-en {\n  display: inline-block;\n  background: rgb(207,43,43);\n /* rgb(213,62,79);*/\n  color: white;\n  padding: 0 4px ;\n}\n.Session-crossTime {\n  display: inline-block;\n  color: rgb(207,43,43);\n}\n\n.Session-title {\n  font-size: 26px;\n  font-weight: 700;\n  color: rgb(49, 153, 122);\n  \n  position: relative;\n}\n.Session-subTitle {\n  font-weight: 600;\n  font-size: 20px;\n  color: rgb(53,55,54);\n}\n.Session-presenter {\n  color: rgb(55,54,53);\n}\n\n.Session-category {\n  position: relative;\n  vertical-align: top;\n  font-size: 14px;\n  color: rgb(80,80,80);\n  margin-top: 20px;\n}\na.Session-kktixLink, a.Session-kktixLink:visited {\n  color: rgb(213,62,79);\n  text-decoration: none;\n}\na.Session-kktixLink:hover {\n  text-decoration: underline;\n}\n.Session-categoryIcon {\n  display: inline-block;\n\n  width: 12px;\n  height: 12px;\n  vertical-align: top;\n  margin-top: 5px;\n  margin-right: 6px;\n  border-radius: 2px;\n}\n\n.Session-abstract {\n  margin: 20px 0;\n  color: rgb(53,55,54);\n}\n.Session-biography {\n  margin: 20px 0;\n  color: rgb(53,55,54);\n}\na.Session-workshop, a.Session-workshop:visited {\n  margin-top: 40px;\n  display: inline-block;\n  padding: 10px;\n  border: 1px solid rgb(180,180,180);\n  text-decoration: none;\n  -webkit-transition: all .2s;\n          transition: all .2s;\n}\na.Session-workshop:hover {\n  color: rgb(213,62,79);\n  border-color: rgb(213,62,79);\n  -webkit-transition: all .2s;\n          transition: all .2s;\n \n}\n\n\n\n\n\n", ""]);
 
 /***/ },
-/* 277 */
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(280);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(268)(content, {});
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		module.hot.accept(280, function() {
+			var newContent = __webpack_require__(280);
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(267)();
+	exports.push([module.id, ".Home {\n  position: relative;\n  height: 100%;\n}\n\n.Home-shadow {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: transparent;\n  pointer-events: none;\n\n}\n.Home-shadow.is-show {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: calc(100% - 200px);\n  width: 50%;\n  z-index: 1;\n  background: rgba(255,255,255,0.7);\n  -webkit-transition: background .2s ease-in-out;\n  transition: background .2s ease-in-out;\n  cursor: pointer;\n  pointer-events: all;\n}\n.Home-cover {\n  width: 100%;\n  padding: 30px 0 10px 0;\n  border-bottom: 1px solid gray;\n}\n.Home-cover.is-hide {\n    display: none;\n}\n.Home-coverImg {\n    width: 100%;\n}\n.Home-coverNotice {\n    font-size: 13px;\n    color: rgb(183,185,184);\n    margin: 0 auto;\n    \n    padding: 10px 12px 4px 16px;\n}\n.Home-main {\n    position: relative;\n}\n.Home-filter {\n    display: none;\n}\n.Home-schedule {\n    display: block;\n    z-index: 10;\n}\n.Home-schedule.is-fixed, .Home-schedule.with-session {\n    display: block;\n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-schedule.with-session.is-hide {\n    display: none;\n\n}\n.Home-sponser {\n    display: block;\n}\n.Home-sponser.is-hide {\n    display: none;\n}\n.Home-session {\n    position: absolute;\n    top: 0;\n    right: -100%;\n    width: 0px;\n    overflow: hidden;\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n    z-index: 200;\n}\n.Home-session.is-show {\n    position: fixed;\n    top: 0;\n    right: 0;\n    width: 100%;\n    height: 100vh;\n    overflow: scroll;\n\n    will-change: right;\n    -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n    transition: right .2s cubic-bezier(.4,0,.2,1); \n}\n.Home-session.is-show.is-fixed {\n    height: 100vh;\n    overflow: scroll;\n    position: fixed;\n    top: 0;\n}\n.Home-footer, .Home-footer:after {\n    content: '';\n    height: 100px;\n    margin-top: 100px;\n    background: rgb(230,230,230);\n    border-top: 1px solid rgb(220,220,220);\n    text-align: center;\n    z-index: 10;\n}\n@media screen and (min-width: 500px){\n    .Home-cover {\n        padding: 30px 0 0px 0;\n    }\n}\n@media screen and (min-width: 768px){\n    .Home-cover.is-hide {\n        display: block;\n    }\n    .Home-coverNotice {\n        text-align: center;\n    }\n}\n\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Home-main {\n        position: relative;\n        height: auto;\n        width: 100%;\n    }\n    .Home-filter {\n        display: none;\n    }\n\n    .Home-schedule {\n        display: inline-block;\n        width: 50%;\n        \n\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed, .Home-schedule.with-session {\n        width: 50%;\n        \n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n   \n    .Home-sponser, .Home-sponser.is-hide {\n        width: 50%;\n        top: 0;\n        position: absolute;\n        \n        left: 50%;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -calc(50% - 30px);\n\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 50%;\n        width: 50%;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n    }\n   \n\n}\n\n@media screen and (min-width: 1200px){\n\t.Home-main {\n        position: relative;\n        height: auto;\n    }\n    .Home-filter {\n    \tmargin-left: 120px;\n    \twidth: 240px;\n    \tposition: absolute;\n        display: block;\n    }\n    .Home-filter.is-fixed {\n    \tposition: fixed;\n    \ttop: 0;\n        left: 0;\n    }\n    .Home-filter.is-passed{\n    \tposition: absolute;\n    \t/* top dynamically decided*/\n    }\n    .Home-schedule {\n    \twidth: 550px;\n    \tmargin-left: 360px;\n        will-change: margin-left;\n        /*-webkit-transition: margin-left .2s cubic-bezier(.4,0,.2,1); \n        transition: margin-left .2s cubic-bezier(.4,0,.2,1); */\n        z-index: 10;\n    }\n    .Home-schedule.is-fixed {\n        width: 550px;\n        margin-left: 360px;\n        will-change: margin-left;\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-schedule.with-session {\n        width: 550px;\n        margin-left: 160px;\n        will-change: margin-left;\n         -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1);\n        \n    }\n    .Home-schedule.with-session.is-hide {\n        display: inline-block;\n\n    }\n    .Home-sponser, .Home-sponser.is-hide {\n        width: 280px;\n        position: absolute;\n        top: -0px;\n        left: 950px;\n        \n    }\n    .Home-session {\n        position: absolute;\n        top: 0;\n        right: -570px;\n        width: 0px;\n        overflow: hidden;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show {\n        position: absolute;\n        left: 711px;\n        width: 570px;\n        height: 100vh;\n        overflow: scroll;\n        will-change: right;\n        -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); \n        transition: right .2s cubic-bezier(.4,0,.2,1); \n    }\n    .Home-session.is-show.is-fixed {\n        height: 100vh;\n        overflow: scroll;\n        position: fixed;\n    }\n    \n\n}\n.Home-patch, .Home-patch:visited {\n    display: inline-block;\n    text-decoration: none;\n    padding: 20px 36px 0 0 ;\n    color: rgb(153,155,154);\n    font-size: 14px;\n    font-family: 'Gentium Basic', Gentium, serif;\n}\n.Home-patch:hover {\n    color: rgb(53,55,54);\n}\n", ""]);
+
+/***/ },
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(256), RootInstanceProvider = __webpack_require__(254), ReactMount = __webpack_require__(128), React = __webpack_require__(63); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -32711,14 +32942,14 @@
 
 	var React = _interopRequire(__webpack_require__(63));
 
-	__webpack_require__(278);
+	__webpack_require__(282);
 
 	module.exports = React.createClass({
 	    displayName: "AppBar",
 
 	    render: function render() {
 
-	        var logo = __webpack_require__(280);
+	        var logo = __webpack_require__(284);
 
 	        return React.createElement(
 	            "div",
@@ -32764,21 +32995,21 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ },
-/* 278 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(279);
+	var content = __webpack_require__(283);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(268)(content, {});
 	// Hot Module Replacement
 	if(true) {
 		// When the styles change, update the <style> tags
-		module.hot.accept(279, function() {
-			var newContent = __webpack_require__(279);
+		module.hot.accept(283, function() {
+			var newContent = __webpack_require__(283);
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -32787,20 +33018,20 @@
 	}
 
 /***/ },
-/* 279 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".AppBar {\n\t/*background: rgb(250,250,250);*/\n\t/*background: rgb(53,55,54);*/\n\t/*box-shadow: 0px 1px 0 0 rgba(0,0,0,0.12);*/\n\twidth: 100%;\n\theight: 52px;\n}\n.AppBar-wrap {\n\tmax-width: 960px;\n\tmargin: 0 auto;\n\tposition: relative;\n}\n.AppBar-logo {\n\tposition: absolute;\n\tleft: 0;\n\ttop: 10px;\n\tcursor: pointer;\n}\n.AppBar-items {\n\ttext-align: right;\n}\n.AppBar-item {\n\tdisplay: inline-block;\n\tpadding: 10px 6px 7px 6px;\n\tfont-size: 14px;\n\tmargin: 10px 8px;\n\ttext-align: center;\n\tcolor: rgb(80,80,80);\n\tcursor: pointer;\n\ttext-decoration: none;\n}\n.AppBar-item.is-active, .AppBar-item:hover {\n\tborder-bottom: 2px solid rgb(100,100,100);\n}", ""]);
+	exports.push([module.id, ".AppBar {\n\t/*background: rgb(250,250,250);*/\n\t/*background: rgb(53,55,54);*/\n\t/*box-shadow: 0px 1px 0 0 rgba(0,0,0,0.12);*/\n\twidth: 100%;\n\theight: 52px;\n}\n.AppBar-wrap {\n\tmax-width: 960px;\n\tmargin: 0 auto;\n\tposition: relative;\n}\n.AppBar-logo {\n\tposition: absolute;\n\tleft: 0;\n\ttop: 10px;\n\tcursor: pointer;\n}\n.AppBar-items {\n\ttext-align: right;\n}\n.AppBar-item {\n\tdisplay: inline-block;\n\tpadding: 10px 2px 7px 2px;\n\tfont-size: 14px;\n\tmargin: 10px 8px;\n\ttext-align: center;\n\tcolor: rgb(80,80,80);\n\tcursor: pointer;\n\ttext-decoration: none;\n}\n@media screen and (min-width: 776px){\n\t.AppBar-item {\n\t\tpadding: 10px 6px 7px 6px;\n\t}\n\n}\n.AppBar-item.is-active, .AppBar-item:hover {\n\tborder-bottom: 2px solid rgb(100,100,100);\n}", ""]);
 
 /***/ },
-/* 280 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAhCAYAAABZTbwAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMDBFNjBGQkQ2OTJFMjExQUZCMjk2QkFBRUVFMjY5NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDMzYwODA2OTk4NzkxMUUyOTE4RkQ5RDlCMUU1RjE4RSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDMzYwODA2ODk4NzkxMUUyOTE4RkQ5RDlCMUU1RjE4RSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0UwNEM0Nzk2OTdFMjExOEY0N0NDQUE2MDhFQkI1RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozMDBFNjBGQkQ2OTJFMjExQUZCMjk2QkFBRUVFMjY5NSIvPiA8L3JkZjpEZXNjcmlwdGlv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"
 
 /***/ },
-/* 281 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(256), RootInstanceProvider = __webpack_require__(254), ReactMount = __webpack_require__(128), React = __webpack_require__(63); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -32811,9 +33042,9 @@
 
 	var React = _interopRequire(__webpack_require__(63));
 
-	var classNames = _interopRequire(__webpack_require__(282));
+	var classNames = _interopRequire(__webpack_require__(276));
 
-	__webpack_require__(283);
+	__webpack_require__(286);
 
 	module.exports = React.createClass({
 	  displayName: "Filter",
@@ -32901,76 +33132,21 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ },
-/* 282 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2015 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-
-	(function () {
-		'use strict';
-
-		function classNames () {
-
-			var classes = '';
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if ('string' === argType || 'number' === argType) {
-					classes += ' ' + arg;
-
-				} else if (Array.isArray(arg)) {
-					classes += ' ' + classNames.apply(null, arg);
-
-				} else if ('object' === argType) {
-					for (var key in arg) {
-						if (arg.hasOwnProperty(key) && arg[key]) {
-							classes += ' ' + key;
-						}
-					}
-				}
-			}
-
-			return classes.substr(1);
-		}
-
-		if (true) {
-			// AMD. Register as an anonymous module.
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else {
-			window.classNames = classNames;
-		}
-
-	}());
-
-
-/***/ },
-/* 283 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(284);
+	var content = __webpack_require__(287);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(268)(content, {});
 	// Hot Module Replacement
 	if(true) {
 		// When the styles change, update the <style> tags
-		module.hot.accept(284, function() {
-			var newContent = __webpack_require__(284);
+		module.hot.accept(287, function() {
+			var newContent = __webpack_require__(287);
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -32979,14 +33155,14 @@
 	}
 
 /***/ },
-/* 284 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
 	exports.push([module.id, ".Fitler {\n\tposition: relative;\n  padding-bottom: 20px;\n}\n\n.Fitler-title {\n  padding: 20px 20px 20px 10px;\n  background: white;\n  border-bottom: 1px solid gray;\n  font-family: Polaris-Bold,Helvetica,Arial,sans-serif;\n  font-size: 14px;\n  text-transform: uppercase;\n  letter-spacing: .08em;\n}\n.Filter-categories {\n\tlist-style: none;\n  margin: 0;\n  padding: 10px 20px 0px 0;\n}\n.Filter-category {\n\tfont-size: 13px;\n  line-height: 14px;\n  margin-bottom: 10px;\n  position: relative;\n  cursor: pointer;\n  \t\n}\n.Filter-categoryIcon {\n\tposition: absolute;\n  top: 5px;\n  left: 10px;\n  width: 12px;\n  height: 12px;\n  border-radius: 2px;\n  -webkit-transition: background .3s;\n  transition: background .3s;\n}\n/* THIS IS BAD */\n.Filter-category:hover .Filter-categoryIcon_0{\n  background: rgb(197,225,48);\n}\n.Filter-category:hover .Filter-categoryIcon_1{\n  background: rgb(237,199,19);\n}\n.Filter-category:hover .Filter-categoryIcon_2{\n  background: rgb(213, 62, 79);\n \n}\n.Filter-category:hover .Filter-categoryIcon_3{\n  background: #99d594;\n}\n.Filter-category:hover .Filter-categoryIcon_4{\n  background: #3288bd;\n}\n\n.Filter-categoryText {\n  padding-left: 30px;\n  line-height: 1.6;\n}\n.Filter-actions {\n  padding: 10px;\n\n}\n.Filter-close {\n  font-size: 12px;\n  cursor: pointer;\n  text-decoration: underline;\n  display: inline-block;\n  margin-right: 20px;\n}\n.Filter-complete:hover{\n  color: rgb(50,53,52);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}\n.Filter-clearAll {\n  font-size: 12px;\n  cursor: pointer;\n  text-decoration: underline;\n  color: transparent;\n  display: inline-block;\n \n}\n.Filter-clearAll.is-active {\n  color: rgb(120,120,120);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}\n.Filter-clearAll.is-active:hover{\n  color: rgb(50,53,52);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}", ""]);
 
 /***/ },
-/* 285 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(256), RootInstanceProvider = __webpack_require__(254), ReactMount = __webpack_require__(128), React = __webpack_require__(63); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -32997,13 +33173,13 @@
 
 	var React = _interopRequire(__webpack_require__(63));
 
-	var classNames = _interopRequire(__webpack_require__(282));
+	var classNames = _interopRequire(__webpack_require__(276));
 
-	__webpack_require__(286);
+	__webpack_require__(289);
 
-	var Filter = _interopRequire(__webpack_require__(281));
+	var Filter = _interopRequire(__webpack_require__(285));
 
-	var Data = _interopRequire(__webpack_require__(288));
+	var Data = _interopRequire(__webpack_require__(291));
 
 	module.exports = React.createClass({
 	  displayName: "Schedule",
@@ -33424,21 +33600,21 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ },
-/* 286 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(287);
+	var content = __webpack_require__(290);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(268)(content, {});
 	// Hot Module Replacement
 	if(true) {
 		// When the styles change, update the <style> tags
-		module.hot.accept(287, function() {
-			var newContent = __webpack_require__(287);
+		module.hot.accept(290, function() {
+			var newContent = __webpack_require__(290);
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -33447,14 +33623,14 @@
 	}
 
 /***/ },
-/* 287 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".Schedule {\n\twidth: 100%;\n    min-height: 100vh;\n\tposition: relative;\n\tbackground: white;\n\tborder-left: 1px solid gray;\n    border-right: 1px solid gray;\n    z-index: 10;\n    \n}\n.Schedule.is-fixed {\n    padding-top: 56px;\n}\n.Schedule-title {\n    background: white;\n    border-bottom: 1px solid gray;\n    width: 100%;\n    z-index: 20;\n\n}\n.Schedule-title.is-fixed {\n    position: fixed;\n    top: 0;\n    \n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n@media screen and (min-width: 776px) and (max-width: 1199px){\n    .Schedule-title {\n        background: white;\n        border-bottom: 1px solid gray;\n        width: 100%;\n        z-index: 20;\n\n    }\n    .Schedule-title.is-fixed {\n        position: fixed;\n        top: 0;\n        max-width: calc(50% - 2px);\n        \n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    \n}\n@media screen and (min-width: 1200px){\n    .Schedule-title {\n        background: white;\n        border-bottom: 1px solid gray;\n        width: 100%;\n        z-index: 20;\n    }\n    .Schedule-title.is-fixed.without-session {\n        left: 361px;\n        \n        position: fixed;\n        top: 0;\n        max-width: 548px;\n    \n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n        will-change: left;\n    }\n    .Schedule-title.is-fixed.with-session {\n        left: 161px;\n        \n        position: fixed;\n        top: 0;\n        max-width: 548px;\n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n        will-change: left;\n    }\n}\n\n/* FILTER */\n.Schedule-filterBtn {\n    position: absolute;\n    right: 8px;\n    top: 0;\n    color: rgb(80,80,80);\n    text-align: center;\n    line-height: 54px;\n    width: 56px;\n    height: 56px;\n    cursor: pointer;\n    -webkit-transition: all .3s;\n            transition: all .3s;\n}\n.Schedule-filterBtn:hover {\n    color: rgb(53,55,54);\n}\n.Schedule-filterBtn:before {\n    \n    \n}\n.Schedule-bar1 {\n    content: '';\n    border-top: 2px solid transparent;\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n\n}\n.Schedule-bar2 {\n    content: '';\n    border-top: 2px solid transparent;\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;  \n}\n.Schedule-bar1.is-active {\n    content: '';\n    border-top: 2px solid rgb(213,62,79);\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n    -webkit-transform: rotate(45deg);\n        -ms-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-transition: all .3s cubic-bezier(.4,0,.2,1); \n    transition: all .3s cubic-bezier(.4,0,.2,1); \n    \n}\n.Schedule-bar2.is-active {\n    content: '';\n    border-top: 2px solid rgb(213,62,79);\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n\n    -webkit-transform: rotate(-45deg);\n\n        -ms-transform: rotate(-45deg);\n\n            transform: rotate(-45deg);\n    -webkit-transition: all .3s cubic-bezier(.4,0,.2,1); \n    transition: all .3s cubic-bezier(.4,0,.2,1); \n    \n}\n\n@media screen and (min-width: 1200px) {\n    .Schedule-filterBtn {\n        display: none;\n    }\n}\n.Schedule-filterPanel {\n    max-height: 0px;\n    overflow: hidden;\n    will-change: max-height;\n    transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n}\n.Schedule-filterPanel.is-show {\n    max-height: 500px;\n    will-change: max-height;\n    transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n}\n.Schedule-filterPanel.is-show.is-fixed {\n    position: fixed;\n    top: 57px;\n    z-index: 200;\n    width: 100%;\n    background: white;\n}\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Schedule-filterPanel.is-show.is-fixed {\n        width: calc(50% - 2px);\n        box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);\n    }\n\n}\n@media screen and (min-width: 1200px){\n    .Schedule-filterPanel.is-show.is-fixed {\n       display: none; \n    }\n\n}\n/* ===================== */\n\n.Schedule-dayButton {\n    font-family: Polaris-Bold,Helvetica,Arial,sans-serif;\n    font-size: 14px;\n    text-transform: uppercase;\n    letter-spacing: .08em;\n    display: inline-block;\n    padding: 20px;\n    cursor: pointer;\n    \n}\n.Schedule-dayButton:hover, .Schedule-dayButton.is-active {\n    color: rgb(68,210,143);\n    text-decoration: underline; \n}\n.Schedule-day {\n    background: rgb(220,220,220);\n    padding: 20px 20px 20px 26px;\n    font-family: Polaris-Book,\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n    /*'Gentium Basic',Gentium,serif;*/\n    font-weight: 800;\n    letter-spacing: 1px;\n}\n.Schedule-item {\n\tpadding: 30px;\n\tpadding-left: 92px;\n\n\tbackground: white;\n    position: relative;\n    color: rgb(100,100,100);\n    overflow: hidden;\n}\n.Schedule-event {\n    overflow: hidden;\n}\n.Schedule-keynotePresenter {\n    color: rgb(125,124,123);\n    font-size: 14px;\n    margin-top: 4px;\n\n}\n.Schedule-itemWrapper {\n    overflow: hidden;\n    background: white;\n    position: relative;\n    padding-left: 80px;\n    overflow: hidden;\n    \n}\n.Schedule-item.has-top-border, .Schedule-itemWrapper.has-top-border {\n\tborder-top: 1px solid rgb(220,220,220);\n}\n.Schedule-time {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 90px;\n    line-height: 80px;\n    font-size: 14px;\n    text-align: center;\n    color: rgb(53,55,54);\n}\n.Schedule-session {\n    padding: 14px 30px 14px 10px;\n    cursor: pointer;\n    will-change: background;\n    line-height: 1.4;\n    -webkit-transition: background .3s;\n    transition: background .3s;\n    border-bottom: 1px solid rgb(220,220,220);\n    position: relative;\n    overflow: hidden;\n}\n.Schedule-session.is-last {\n    border-bottom: none;\n    /*background: rgba(215, 253, 236, 0.82);*/\n}\n.Schedule-session.is-active {\n    background: rgba(215, 253, 236, 0.82);\n}\n.Schedule-session:hover {\n    background: rgba(215, 253, 236, 0.82);\n    -webkit-transition: background .3s;\n    transition: background .3s;\n}\n.Schedule-venue {\n    display: inline-block;\n    padding: 1px 5px;\n    margin-bottom: 5px;\n    font-size: 14px;\n    background: rgb(220,220,220);\n    border-radius: 12px;\n    color: gray;\n\n}\n@media screen and (min-width: 776px){\n    \n    .Schedule-session {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -ms-flexbox;\n        display: flex;\n    }\n    .Schedule-meta {\n        \n    }\n    .Schedule-main {\n        margin-left: 8px;\n        -webkit-box-flex: 1;\n        -webkit-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n    }\n}\n.Schedule-presenter {\n    color: rgb(125,124,123);\n    font-size: 14px;\n    margin-left: 1px;\n}\n.Schedule-en {\n    color: rgb(207,43,43);\n    display: inline-block;\n    padding: 0 4px ;\n}\n.Schedule-categoryIcon {\n  position: absolute;\n  top: 20px;\n  right: 10px;\n  width: 12px;\n  height: 12px;\n  border-radius: 2px;\n  background: transparent;\n  will-change: background;\n  -webkit-transition: background .3s;\n  transition: background .3s;\n}\n", ""]);
+	exports.push([module.id, ".Schedule {\n\twidth: 100%;\n    min-height: 100vh;\n\tposition: relative;\n\tbackground: white;\n\tborder-left: 1px solid gray;\n    border-right: 1px solid gray;\n    z-index: 10;\n    \n}\n.Schedule.is-fixed {\n    padding-top: 56px;\n}\n.Schedule-title {\n    background: white;\n    border-bottom: 1px solid gray;\n    width: 100%;\n    z-index: 20;\n\n}\n.Schedule-title.is-fixed {\n    position: fixed;\n    top: 0;\n    \n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n@media screen and (min-width: 776px) and (max-width: 1199px){\n    .Schedule-title {\n        background: white;\n        border-bottom: 1px solid gray;\n        width: 100%;\n        z-index: 20;\n\n    }\n    .Schedule-title.is-fixed {\n        position: fixed;\n        top: 0;\n        max-width: calc(50% - 2px);\n        \n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    \n}\n@media screen and (min-width: 1200px){\n    .Schedule-title {\n        background: white;\n        border-bottom: 1px solid gray;\n        width: 100%;\n        z-index: 20;\n    }\n    .Schedule-title.is-fixed.without-session {\n        left: 361px;\n        \n        position: fixed;\n        top: 0;\n        max-width: 548px;\n    \n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n        will-change: left;\n    }\n    .Schedule-title.is-fixed.with-session {\n        left: 161px;\n        \n        position: fixed;\n        top: 0;\n        max-width: 548px;\n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n        will-change: left;\n    }\n}\n\n/* FILTER */\n.Schedule-filterBtn {\n    position: absolute;\n    right: 8px;\n    top: 0;\n    color: rgb(80,80,80);\n    text-align: center;\n    line-height: 54px;\n    width: 56px;\n    height: 56px;\n    cursor: pointer;\n    -webkit-transition: all .3s;\n            transition: all .3s;\n}\n.Schedule-filterBtn:hover {\n    color: rgb(53,55,54);\n}\n.Schedule-filterBtn:before {\n    \n    \n}\n.Schedule-bar1 {\n    content: '';\n    border-top: 2px solid transparent;\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n\n}\n.Schedule-bar2 {\n    content: '';\n    border-top: 2px solid transparent;\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;  \n}\n.Schedule-bar1.is-active {\n    content: '';\n    border-top: 2px solid rgb(213,62,79);\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n    -webkit-transform: rotate(45deg);\n        -ms-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-transition: all .3s cubic-bezier(.4,0,.2,1); \n    transition: all .3s cubic-bezier(.4,0,.2,1); \n    \n}\n.Schedule-bar2.is-active {\n    content: '';\n    border-top: 2px solid rgb(213,62,79);\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n\n    -webkit-transform: rotate(-45deg);\n\n        -ms-transform: rotate(-45deg);\n\n            transform: rotate(-45deg);\n    -webkit-transition: all .3s cubic-bezier(.4,0,.2,1); \n    transition: all .3s cubic-bezier(.4,0,.2,1); \n    \n}\n\n@media screen and (min-width: 1200px) {\n    .Schedule-filterBtn {\n        display: none;\n    }\n}\n.Schedule-filterPanel {\n    max-height: 0px;\n    overflow: hidden;\n    will-change: max-height;\n    transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n}\n.Schedule-filterPanel.is-show {\n    max-height: 500px;\n    will-change: max-height;\n    transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n}\n.Schedule-filterPanel.is-show.is-fixed {\n    position: fixed;\n    top: 57px;\n    z-index: 200;\n    width: 100%;\n    background: white;\n    box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);\n}\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Schedule-filterPanel.is-show.is-fixed {\n        width: calc(50% - 2px);\n        box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);\n    }\n\n}\n@media screen and (min-width: 1200px){\n    .Schedule-filterPanel.is-show.is-fixed {\n       display: none; \n    }\n\n}\n/* ===================== */\n\n.Schedule-dayButton {\n    font-family: Polaris-Bold,Helvetica,Arial,sans-serif;\n    font-size: 14px;\n    text-transform: uppercase;\n    letter-spacing: .08em;\n    display: inline-block;\n    padding: 20px;\n    cursor: pointer;\n    \n}\n.Schedule-dayButton:hover, .Schedule-dayButton.is-active {\n    color: rgb(68,210,143);\n    text-decoration: underline; \n}\n.Schedule-day {\n    background: rgb(220,220,220);\n    padding: 20px 20px 20px 26px;\n    font-family: Polaris-Book,\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n    /*'Gentium Basic',Gentium,serif;*/\n    font-weight: 800;\n    letter-spacing: 1px;\n}\n.Schedule-item {\n\tpadding: 30px;\n\tpadding-left: 92px;\n\n\tbackground: white;\n    position: relative;\n    color: rgb(100,100,100);\n    overflow: hidden;\n}\n.Schedule-event {\n    overflow: hidden;\n}\n.Schedule-keynotePresenter {\n    color: rgb(125,124,123);\n    font-size: 14px;\n    margin-top: 4px;\n\n}\n.Schedule-itemWrapper {\n    overflow: hidden;\n    background: white;\n    position: relative;\n    padding-left: 80px;\n    overflow: hidden;\n    \n}\n.Schedule-item.has-top-border, .Schedule-itemWrapper.has-top-border {\n\tborder-top: 1px solid rgb(220,220,220);\n}\n.Schedule-time {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 90px;\n    line-height: 80px;\n    font-size: 14px;\n    text-align: center;\n    color: rgb(53,55,54);\n}\n.Schedule-session {\n    padding: 14px 30px 14px 10px;\n    cursor: pointer;\n    will-change: background;\n    line-height: 1.4;\n    -webkit-transition: background .3s;\n    transition: background .3s;\n    border-bottom: 1px solid rgb(220,220,220);\n    position: relative;\n    overflow: hidden;\n}\n.Schedule-session.is-last {\n    border-bottom: none;\n    /*background: rgba(215, 253, 236, 0.82);*/\n}\n.Schedule-session.is-active {\n    background: rgba(215, 253, 236, 0.82);\n}\n.Schedule-session:hover {\n    background: rgba(215, 253, 236, 0.82);\n    -webkit-transition: background .3s;\n    transition: background .3s;\n}\n.Schedule-venue {\n    display: inline-block;\n    padding: 1px 5px;\n    margin-bottom: 5px;\n    font-size: 14px;\n    background: rgb(220,220,220);\n    border-radius: 12px;\n    color: gray;\n\n}\n@media screen and (min-width: 776px){\n    \n    .Schedule-session {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -ms-flexbox;\n        display: flex;\n    }\n    .Schedule-meta {\n        \n    }\n    .Schedule-main {\n        margin-left: 8px;\n        -webkit-box-flex: 1;\n        -webkit-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n    }\n}\n.Schedule-presenter {\n    color: rgb(125,124,123);\n    font-size: 14px;\n    margin-left: 1px;\n}\n.Schedule-en {\n    color: rgb(207,43,43);\n    display: inline-block;\n    padding: 0 4px ;\n}\n.Schedule-categoryIcon {\n  position: absolute;\n  top: 20px;\n  right: 10px;\n  width: 12px;\n  height: 12px;\n  border-radius: 2px;\n  background: transparent;\n  will-change: background;\n  -webkit-transition: background .3s;\n  transition: background .3s;\n}\n", ""]);
 
 /***/ },
-/* 288 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(256), RootInstanceProvider = __webpack_require__(254), ReactMount = __webpack_require__(128), React = __webpack_require__(63); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -34279,170 +34455,6 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ },
-/* 289 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(256), RootInstanceProvider = __webpack_require__(254), ReactMount = __webpack_require__(128), React = __webpack_require__(63); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
-
-	"use strict";
-
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-	var React = _interopRequire(__webpack_require__(63));
-
-	var classNames = _interopRequire(__webpack_require__(282));
-
-	__webpack_require__(290);
-
-	module.exports = React.createClass({
-	  displayName: "Session",
-
-	  render: function render() {
-	    var _props = this.props;
-	    var sessionHandler = _props.sessionHandler;
-	    var data = _props.data;
-	    var categories = _props.categories;
-
-	    var categoryObj = {};
-	    categories.map(function (v, i) {
-	      categoryObj[v.title] = v;
-	    });
-	    var categoryStyle = {};
-	    if (categoryObj[data.category]) {
-	      categoryStyle = {
-	        border: "1px solid " + categoryObj[data.category].color,
-	        background: categoryObj[data.category].color
-	      };
-	    }
-
-	    var venue = data.venue ? React.createElement(
-	      "div",
-	      { className: "Session-venue" },
-	      data.venue
-	    ) : "";
-	    var language = data.EN ? React.createElement(
-	      "div",
-	      { className: "Session-en" },
-	      "EN"
-	    ) : "";
-	    var crossTime = data.cross_time ? React.createElement(
-	      "div",
-	      { className: "Session-crossTime" },
-	      "cross-time session / 跨時段議程"
-	    ) : "";
-	    var kktix = data.kktix ? React.createElement(
-	      "div",
-	      { className: "Session-kktix" },
-	      "需另外報名，詳情請見",
-	      React.createElement(
-	        "a",
-	        { className: "Session-kktixLink", href: data.kktix },
-	        "活動報名頁面"
-	      )
-	    ) : "";
-	    var workshop = data.kktix ? React.createElement(
-	      "a",
-	      { className: "Session-workshop", href: "http://coscup2015.kktix.cc/events/workshop2015" },
-	      "COSCUP 2015 Workshp 總表"
-	    ) : "";
-
-	    var bio = data.biography ? React.createElement(
-	      "div",
-	      { className: "Session-biography" },
-	      React.createElement(
-	        "div",
-	        { className: "Session-subTitle" },
-	        "Biography"
-	      ),
-	      React.createElement("div", { dangerouslySetInnerHTML: { __html: data.biography } })
-	    ) : "";
-	    return React.createElement(
-	      "div",
-	      { className: "Session" },
-	      React.createElement("div", { className: "Session-close",
-	        onClick: sessionHandler }),
-	      React.createElement(
-	        "div",
-	        { className: "Session-content" },
-	        React.createElement(
-	          "div",
-	          { className: "Session-meta" },
-	          venue,
-	          React.createElement(
-	            "div",
-	            { className: "Session-time" },
-	            data.time
-	          ),
-	          language
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "Session-title" },
-	          data.event
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "Session-presenter" },
-	          data.presenter
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "Session-category" },
-	          React.createElement("div", { className: "Session-categoryIcon", style: categoryStyle }),
-	          data.category,
-	          kktix
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "Session-abstract" },
-	          React.createElement(
-	            "div",
-	            { className: "Session-subTitle" },
-	            "Abstract"
-	          ),
-	          React.createElement("div", { dangerouslySetInnerHTML: { __html: data.abstract } })
-	        ),
-	        bio,
-	        workshop
-	      )
-	    );
-	  }
-	});
-
-	/* REACT HOT LOADER */ }).call(this); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(271), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(63))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Session.es6" + ": " + err.message); } }); } } })(); }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
-
-/***/ },
-/* 290 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(291);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(268)(content, {});
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		module.hot.accept(291, function() {
-			var newContent = __webpack_require__(291);
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 291 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".Session {\n\tbackground: white;\n\twidth: 100%;\n\theight: 100%;\n\tposition: relative;\n\t\n}\n.Session a, .Session a:visited{\n  color: rgb(153,155,154);\n\n}\n.Session p {\n  white-space: pre-wrap;\n}\n.Session-close {\n\twidth: 42px;\n  height: 42px;\n  border-radius: 44px;\n  cursor: pointer;\n}\n.Session-close:before {\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  transform: rotate(45deg); \n  content: '';\n}\n.Session-close:after {\n  -webkit-transform: rotate(-45deg);\n  -ms-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n  content: '';\n}\n.Session-close:before, .Session-close:after {\n  -webkit-transition: background .3s;\n  transition: background .3s;\n  width: 18px;\n  height: 1px;\n  top: 30px;\n  left: 30px;\n  position: absolute;\n  margin-left: -10px;\n  margin-top: -1px;\n  background: gray;\n  \n}\n.Session-close:hover:before, .Session-close:hover:after {\n  background: rgb(53,55,54);\n}\n.Session-content {\n    padding: 20px;\n    line-height: 1.6;\n    background: white;\n}\n@media screen and (min-width: 1200px){\n    .Session-content {\n        padding: 20px 40px 20px 20px;\n    }\n}\n.Session-meta {\n  font-size: 14px;\n}\n.Session-time {\n  display: inline-block;\n  margin-right: 10px;\n \n}\n.Session-venue {\n  display: inline-block;\n  padding: 0px 6px;\n  margin-right: 10px;\n  color: gray;\n  background: rgb(220,220,220);\n  border-radius: 14px;\n}\n.Session-en {\n  display: inline-block;\n  background: rgb(207,43,43);\n /* rgb(213,62,79);*/\n  color: white;\n  padding: 0 4px ;\n}\n.Session-crossTime {\n  display: inline-block;\n  color: rgb(207,43,43);\n}\n\n.Session-title {\n  font-size: 26px;\n  font-weight: 700;\n  color: rgb(49, 153, 122);\n  \n  position: relative;\n}\n.Session-subTitle {\n  font-weight: 600;\n  font-size: 20px;\n  color: rgb(53,55,54);\n}\n.Session-presenter {\n  color: rgb(55,54,53);\n}\n\n.Session-category {\n  position: relative;\n  vertical-align: top;\n  font-size: 14px;\n  color: rgb(80,80,80);\n  margin-top: 20px;\n}\na.Session-kktixLink, a.Session-kktixLink:visited {\n  color: rgb(213,62,79);\n  text-decoration: none;\n}\na.Session-kktixLink:hover {\n  text-decoration: underline;\n}\n.Session-categoryIcon {\n  display: inline-block;\n\n  width: 12px;\n  height: 12px;\n  vertical-align: top;\n  margin-top: 5px;\n  margin-right: 6px;\n  border-radius: 2px;\n}\n\n.Session-abstract {\n  margin: 20px 0;\n  color: rgb(53,55,54);\n}\n.Session-biography {\n  margin: 20px 0;\n  color: rgb(53,55,54);\n}\na.Session-workshop, a.Session-workshop:visited {\n  margin-top: 40px;\n  display: inline-block;\n  padding: 10px;\n  border: 1px solid rgb(180,180,180);\n  text-decoration: none;\n  -webkit-transition: all .2s;\n          transition: all .2s;\n}\na.Session-workshop:hover {\n  color: rgb(213,62,79);\n  border-color: rgb(213,62,79);\n  -webkit-transition: all .2s;\n          transition: all .2s;\n \n}\n\n\n\n\n\n", ""]);
-
-/***/ },
 /* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -34454,7 +34466,7 @@
 
 	var React = _interopRequire(__webpack_require__(63));
 
-	var classNames = _interopRequire(__webpack_require__(282));
+	var classNames = _interopRequire(__webpack_require__(276));
 
 	__webpack_require__(293);
 
@@ -43812,6 +43824,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "8daed165881a22133fe3d6f39d5ad290.jpg"
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "7fe3b2a763789482a0e6154872436ace.jpg"
 
 /***/ }
 /******/ ]);
