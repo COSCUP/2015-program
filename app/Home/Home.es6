@@ -99,6 +99,7 @@ export default React.createClass({
           currentScrollHeight: pageYOffset
         })
     }
+    window.scrollTo(0, 0);
   },
   _setSession(value){
     this.setState({
