@@ -19,17 +19,7 @@
 
 }
 .Home-shadow.is-show {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: calc(100% - 200px);
-  width: 50%;
-  z-index: 1;
-  background: rgba(255,255,255,0.7);
-  -webkit-transition: background .2s ease-in-out;
-  transition: background .2s ease-in-out;
-  cursor: pointer;
-  pointer-events: all;
+  display: none;
 }
 .Home-cover {
   width: 100%;
@@ -133,6 +123,7 @@
     .Home-coverNotice {
         text-align: center;
     }
+    
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px){
@@ -284,6 +275,20 @@
         position: fixed;
         top: 0;
     }
+    .Home-shadow.is-show {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(100% - 200px);
+        width: 50%;
+        z-index: 1;
+        background: rgba(255,255,255,0.7);
+        -webkit-transition: background .2s ease-in-out;
+        transition: background .2s ease-in-out;
+        cursor: pointer;
+        pointer-events: all;
+   }
     
 
 }
