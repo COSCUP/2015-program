@@ -226,7 +226,7 @@ export default React.createClass({
     });
 
 
-    var coverIMG = require("./images/cover.jpg");
+    var coverIMG = (window.innerWidth > 500) ? require("./images/cover.jpg") : require("./images/cover-mobile.jpg");
 
     var shadowClass = classNames({
       "Home-shadow" : true,
