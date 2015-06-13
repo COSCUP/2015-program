@@ -48,11 +48,11 @@ export default React.createClass({
 
                 <div className="Session-abstract">
                     <div className="Session-subTitle">Abstract</div>
-                    {data.abstract}
+                    <div dangerouslySetInnerHTML={{__html: data.abstract}}></div>
                 </div>
                 <div className="Session-biography">
                     <div className="Session-subTitle">Biography</div>
-                    {data.biography}
+                    <div dangerouslySetInnerHTML={{__html: data.biography}}></div>
                 </div>
             </div>      
         </div>

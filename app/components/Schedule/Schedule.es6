@@ -128,7 +128,7 @@ export default React.createClass({
             var sessionClasses = classNames({
               "Schedule-session" : true,
               "is-last" : k === filteredEvents.length-1,
-              "is-active" : currentSession.event === v.event 
+              "is-active" : currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
             })
             var categoryStyle = {};
             if(filterOn){
@@ -139,13 +139,16 @@ export default React.createClass({
             }
             var language = (v.EN) ? <div className="Schedule-en">EN</div> : "";
 
+            var venue = (v.venue) ? (
+                    <div className="Schedule-meta">
+                      <div className="Schedule-venue">{v.venue}</div>
+                    </div>) : "";
+
             return(
               <div className={sessionClasses} 
                     onClick={setSessionHandler.bind(null,v)} 
                     key={k}>
-                    <div className="Schedule-meta">
-                      <div className="Schedule-venue">{v.venue}</div>
-                    </div>
+                      {venue}
                     <div className="Schedule-main">
                       <div>{v.event}{language}</div>
                       <div className="Schedule-presenter">{v.presenter}</div>
@@ -212,7 +215,7 @@ export default React.createClass({
             var sessionClasses = classNames({
               "Schedule-session" : true,
               "is-last" : k === filteredEvents.length-1,
-              "is-active" : currentSession.event === v.event 
+              "is-active" : currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
             })
             var categoryStyle = {};
             if(filterOn){
@@ -223,13 +226,16 @@ export default React.createClass({
             }
             var language = (v.EN) ? <div className="Schedule-en">EN</div> : "";
 
+            var venue = (v.venue) ? (
+                    <div className="Schedule-meta">
+                      <div className="Schedule-venue">{v.venue}</div>
+                    </div>) : "";
+
             return(
               <div className={sessionClasses} 
                     onClick={setSessionHandler.bind(null,v)} 
                     key={k}>
-                    <div className="Schedule-meta">
-                      <div className="Schedule-venue">{v.venue}</div>
-                    </div>
+                    {venue}
                     <div className="Schedule-main">
                       <div>{v.event}{language}</div>
                       <div className="Schedule-presenter">{v.presenter}</div>
