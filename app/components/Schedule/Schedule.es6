@@ -118,8 +118,10 @@ export default React.createClass({
             if(!filterOn) return sessionItem;
 
             var shouldReturn = false;
-            if(categoryObj[sessionItem.category].active)  
-                shouldReturn = true;
+            if(categoryObj[sessionItem.category]){
+                if(categoryObj[sessionItem.category].active)  
+                  shouldReturn = true;
+            }
             
             if(shouldReturn) return sessionItem;
         });
@@ -205,8 +207,10 @@ export default React.createClass({
             if(!filterOn) return sessionItem;
 
             var shouldReturn = false;
-            if(categoryObj[sessionItem.category].active)  
-                shouldReturn = true;
+            if(categoryObj[sessionItem.category]){
+                if(categoryObj[sessionItem.category].active)  
+                  shouldReturn = true;
+            }
             
             if(shouldReturn) return sessionItem;
         });

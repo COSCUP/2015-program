@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e5a53c075ef010b130d9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0daf6b7481559552516c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33203,419 +33203,423 @@
 	var Data = _interopRequire(__webpack_require__(291));
 
 	module.exports = React.createClass({
-	    displayName: "Schedule",
+	  displayName: "Schedule",
 
-	    getInitialState: function getInitialState() {
-	        return {
-	            showPanel: false,
-	            currentSection: "before"
-	        };
-	    },
+	  getInitialState: function getInitialState() {
+	    return {
+	      showPanel: false,
+	      currentSection: "before"
+	    };
+	  },
 
-	    _togglePanel: function _togglePanel() {
+	  _togglePanel: function _togglePanel() {
 
-	        this.setState({
-	            showPanel: !this.state.showPanel
-	        });
-	    },
+	    this.setState({
+	      showPanel: !this.state.showPanel
+	    });
+	  },
 
-	    _setSectionArea: function _setSectionArea(value) {
-	        this.setState({
-	            currentSection: value
-	        });
-	    },
+	  _setSectionArea: function _setSectionArea(value) {
+	    this.setState({
+	      currentSection: value
+	    });
+	  },
 
-	    _goToElement: function _goToElement(refName) {
+	  _goToElement: function _goToElement(refName) {
 
-	        var node = this.refs[refName].getDOMNode();
-	        this.props.goToElementHandler(node.offsetTop);
-	    },
+	    var node = this.refs[refName].getDOMNode();
+	    this.props.goToElementHandler(node.offsetTop);
+	  },
 
-	    componentDidMount: function componentDidMount() {
+	  componentDidMount: function componentDidMount() {
 
-	        addEventListener("scroll", (function () {
-	            var currentSection = this.state.currentSection;
+	    addEventListener("scroll", (function () {
+	      var currentSection = this.state.currentSection;
 
-	            var day1Node = this.refs.day1.getDOMNode();
-	            var day2Node = this.refs.day2.getDOMNode();
-	            // console.log("----->")
-	            // console.log(`${pageYOffset},`)
-	            // console.log(day1Node.offsetTop)
-	            // console.log(day1Node.offsetHeight)
-	            // console.log(day2Node.offsetTop)
-	            // console.log(day2Node.offsetHeight)
+	      var day1Node = this.refs.day1.getDOMNode();
+	      var day2Node = this.refs.day2.getDOMNode();
+	      // console.log("----->")
+	      // console.log(`${pageYOffset},`)
+	      // console.log(day1Node.offsetTop)
+	      // console.log(day1Node.offsetHeight)
+	      // console.log(day2Node.offsetTop)
+	      // console.log(day2Node.offsetHeight)
 
-	            if (pageYOffset < day1Node.offsetTop && currentSection !== "before") {
-	                this._setSectionArea("before");
-	            } else if (pageYOffset > day1Node.offsetTop && pageYOffset <= day1Node.offsetHeight && currentSection !== "day1") {
-	                this._setSectionArea("day1");
-	            } else if (pageYOffset > day1Node.offsetHeight && currentSection !== "day2") {
-	                this._setSectionArea("day2");
-	            }
-	        }).bind(this));
-	    },
+	      if (pageYOffset < day1Node.offsetTop && currentSection !== "before") {
+	        this._setSectionArea("before");
+	      } else if (pageYOffset > day1Node.offsetTop && pageYOffset <= day1Node.offsetHeight && currentSection !== "day1") {
+	        this._setSectionArea("day1");
+	      } else if (pageYOffset > day1Node.offsetHeight && currentSection !== "day2") {
+	        this._setSectionArea("day2");
+	      }
+	    }).bind(this));
+	  },
 
-	    render: function render() {
-	        var _props = this.props;
-	        var inScheduleArea = _props.inScheduleArea;
-	        var sessionHandler = _props.sessionHandler;
-	        var showSession = _props.showSession;
-	        var setSessionHandler = _props.setSessionHandler;
-	        var currentSession = _props.currentSession;
-	        var filterOn = _props.filterOn;
-	        var categories = _props.categories;
-	        var toggleCategoryHandler = _props.toggleCategoryHandler;
-	        var clearCategoryHandler = _props.clearCategoryHandler;
-	        var currentScrollHeight = _props.currentScrollHeight;
-	        var currentSection = this.state.currentSection;
+	  render: function render() {
+	    var _props = this.props;
+	    var inScheduleArea = _props.inScheduleArea;
+	    var sessionHandler = _props.sessionHandler;
+	    var showSession = _props.showSession;
+	    var setSessionHandler = _props.setSessionHandler;
+	    var currentSession = _props.currentSession;
+	    var filterOn = _props.filterOn;
+	    var categories = _props.categories;
+	    var toggleCategoryHandler = _props.toggleCategoryHandler;
+	    var clearCategoryHandler = _props.clearCategoryHandler;
+	    var currentScrollHeight = _props.currentScrollHeight;
+	    var currentSection = this.state.currentSection;
 
-	        /* ----------- */
-	        var categoryObj = {};
-	        categories.map(function (v, i) {
-	            categoryObj[v.title] = v;
-	        });
-	        /* ----------- */
+	    /* ----------- */
+	    var categoryObj = {};
+	    categories.map(function (v, i) {
+	      categoryObj[v.title] = v;
+	    });
+	    /* ----------- */
 
-	        var day1Items = Data.day1.filter(function (eventItem) {
-	            var shouldReturn = false;
-	            if (eventItem.event && filterOn) {
+	    var day1Items = Data.day1.filter(function (eventItem) {
+	      var shouldReturn = false;
+	      if (eventItem.event && filterOn) {
 
-	                if (categoryObj[eventItem.event.category]) {
-	                    if (categoryObj[eventItem.event.category].active) shouldReturn = true;
-	                }
-	            } else {
-	                //events
-	                shouldReturn = true;
-	            }
-	            if (shouldReturn) return eventItem;
-	        }).map(function (value, i) {
-
-	            var itemClasses = classNames({
-	                "Schedule-item": value.event,
-	                "Schedule-itemWrapper": value.events,
-	                "has-top-border": i !== 0
-	            });
-
-	            var content = "";
-	            if (value.event) {
-	                //single event
-	                content = React.createElement(
-	                    "div",
-	                    null,
-	                    value.event,
-	                    React.createElement(
-	                        "div",
-	                        { className: "Schedule-keynotePresenter" },
-	                        value.presenter
-	                    )
-	                );
-	            } else {
-	                //multile event
-	                var filteredEvents = value.events.filter(function (sessionItem) {
-
-	                    if (!filterOn) return sessionItem;
-
-	                    var shouldReturn = false;
-	                    if (categoryObj[sessionItem.category].active) shouldReturn = true;
-
-	                    if (shouldReturn) return sessionItem;
-	                });
-	                content = filteredEvents.map(function (v, k) {
-	                    var sessionClasses = classNames({
-	                        "Schedule-session": true,
-	                        "is-last": k === filteredEvents.length - 1,
-	                        "is-active": currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
-	                    });
-	                    var categoryStyle = {};
-	                    if (filterOn) {
-	                        categoryStyle = {
-	                            border: "1px solid " + categoryObj[v.category].color,
-	                            background: categoryObj[v.category].color
-	                        };
-	                    }
-	                    var language = v.EN ? React.createElement(
-	                        "div",
-	                        { className: "Schedule-en" },
-	                        "EN"
-	                    ) : "";
-
-	                    var venue = v.venue ? React.createElement(
-	                        "div",
-	                        { className: "Schedule-meta" },
-	                        React.createElement(
-	                            "div",
-	                            { className: "Schedule-venue" },
-	                            v.venue
-	                        )
-	                    ) : "";
-
-	                    return React.createElement(
-	                        "div",
-	                        { className: sessionClasses,
-	                            onClick: setSessionHandler.bind(null, v),
-	                            key: k },
-	                        venue,
-	                        React.createElement(
-	                            "div",
-	                            { className: "Schedule-main" },
-	                            React.createElement(
-	                                "div",
-	                                null,
-	                                v.event,
-	                                language
-	                            ),
-	                            React.createElement(
-	                                "div",
-	                                { className: "Schedule-presenter" },
-	                                v.presenter
-	                            ),
-	                            React.createElement("div", { className: "Schedule-categoryIcon", style: categoryStyle })
-	                        )
-	                    );
-	                });
-	            }
-	            return React.createElement(
-	                "div",
-	                { className: itemClasses,
-	                    key: i },
-	                React.createElement(
-	                    "div",
-	                    { className: "Schedule-time" },
-	                    value.time
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "Schedule-event" },
-	                    content
-	                )
-	            );
-	        });
-
-	        var day2Items = Data.day2.filter(function (eventItem) {
-	            var shouldReturn = false;
-	            if (eventItem.event && filterOn) {
-
-	                if (categoryObj[eventItem.event.category]) {
-	                    if (categoryObj[eventItem.event.category].active) shouldReturn = true;
-	                }
-	            } else {
-	                //events
-	                shouldReturn = true;
-	            }
-	            if (shouldReturn) return eventItem;
-	        }).map(function (value, i) {
-
-	            var itemClasses = classNames({
-	                "Schedule-item": value.event,
-	                "Schedule-itemWrapper": value.events,
-	                "has-top-border": i !== 0
-	            });
-
-	            var content = "";
-	            if (value.event) {
-	                //single event
-	                content = React.createElement(
-	                    "div",
-	                    null,
-	                    value.event,
-	                    React.createElement(
-	                        "div",
-	                        { className: "Schedule-keynotePresenter" },
-	                        value.presenter
-	                    )
-	                );
-	            } else {
-	                //multile event
-	                var filteredEvents = value.events.filter(function (sessionItem) {
-
-	                    if (!filterOn) return sessionItem;
-
-	                    var shouldReturn = false;
-	                    if (categoryObj[sessionItem.category].active) shouldReturn = true;
-
-	                    if (shouldReturn) return sessionItem;
-	                });
-	                content = filteredEvents.map(function (v, k) {
-	                    var sessionClasses = classNames({
-	                        "Schedule-session": true,
-	                        "is-last": k === filteredEvents.length - 1,
-	                        "is-active": currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
-	                    });
-	                    var categoryStyle = {};
-	                    if (filterOn) {
-	                        categoryStyle = {
-	                            border: "1px solid " + categoryObj[v.category].color,
-	                            background: categoryObj[v.category].color
-	                        };
-	                    }
-	                    var language = v.EN ? React.createElement(
-	                        "div",
-	                        { className: "Schedule-en" },
-	                        "EN"
-	                    ) : "";
-
-	                    var venue = v.venue ? React.createElement(
-	                        "div",
-	                        { className: "Schedule-meta" },
-	                        React.createElement(
-	                            "div",
-	                            { className: "Schedule-venue" },
-	                            v.venue
-	                        )
-	                    ) : "";
-
-	                    return React.createElement(
-	                        "div",
-	                        { className: sessionClasses,
-	                            onClick: setSessionHandler.bind(null, v),
-	                            key: k },
-	                        venue,
-	                        React.createElement(
-	                            "div",
-	                            { className: "Schedule-main" },
-	                            React.createElement(
-	                                "div",
-	                                null,
-	                                v.event,
-	                                language
-	                            ),
-	                            React.createElement(
-	                                "div",
-	                                { className: "Schedule-presenter" },
-	                                v.presenter
-	                            ),
-	                            React.createElement("div", { className: "Schedule-categoryIcon", style: categoryStyle })
-	                        )
-	                    );
-	                });
-	            }
-	            return React.createElement(
-	                "div",
-	                { className: itemClasses,
-	                    key: i },
-	                React.createElement(
-	                    "div",
-	                    { className: "Schedule-time" },
-	                    value.time
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "Schedule-event" },
-	                    content
-	                )
-	            );
-	        });
-
-	        var scheduleClasses = classNames({
-	            Schedule: true,
-	            "is-fixed": inScheduleArea === "within" });
-
-	        var titleClasses = classNames({
-	            "Schedule-title": true,
-	            "is-fixed": inScheduleArea === "within",
-	            "with-session": showSession,
-	            "without-session": !showSession
-	        });
-	        var titleStyle = {};
-	        if (inScheduleArea === "passed") {
-
-	            titleStyle = {
-	                position: "absolute",
-	                top: this.props.top
-	            };
+	        if (categoryObj[eventItem.event.category]) {
+	          if (categoryObj[eventItem.event.category].active) shouldReturn = true;
 	        }
+	      } else {
+	        //events
+	        shouldReturn = true;
+	      }
+	      if (shouldReturn) return eventItem;
+	    }).map(function (value, i) {
 
-	        var filterBtnClasses = classNames({
-	            "Schedule-filterBtn": true,
-	            "is-active": window.innerWidth < 1200 && this.state.showPanel
-	        });
+	      var itemClasses = classNames({
+	        "Schedule-item": value.event,
+	        "Schedule-itemWrapper": value.events,
+	        "has-top-border": i !== 0
+	      });
 
-	        var filterText = window.innerWidth < 1200 && this.state.showPanel ? "" : "Filter";
-
-	        var filterClasses = classNames({
-	            "Schedule-filterPanel": true,
-	            "is-show": window.innerWidth < 1200 && this.state.showPanel,
-	            "is-fixed": inScheduleArea === "within"
-	        });
-
-	        var bar1Classes = classNames({
-	            "Schedule-bar1": true,
-	            "is-active": window.innerWidth < 1200 && this.state.showPanel
-	        });
-	        var bar2Classes = classNames({
-	            "Schedule-bar2": true,
-	            "is-active": window.innerWidth < 1200 && this.state.showPanel
-	        });
-
-	        var day1Classes = classNames({
-	            "Schedule-dayButton": true,
-	            "is-active": currentSection === "day1"
-	        });
-	        var day2Classes = classNames({
-	            "Schedule-dayButton": true,
-	            "is-active": currentSection === "day2"
-	        });
-
-	        return React.createElement(
+	      var content = "";
+	      if (value.event) {
+	        //single event
+	        content = React.createElement(
+	          "div",
+	          null,
+	          value.event,
+	          React.createElement(
 	            "div",
-	            { className: scheduleClasses },
-	            React.createElement(
-	                "div",
-	                { className: titleClasses,
-	                    style: titleStyle },
-	                React.createElement(
-	                    "div",
-	                    { className: day1Classes,
-	                        onClick: this._goToElement.bind(this, "day1") },
-	                    "Day 1"
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: day2Classes,
-	                        onClick: this._goToElement.bind(this, "day2") },
-	                    "Day 2"
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: filterBtnClasses,
-	                        onClick: this._togglePanel },
-	                    filterText,
-	                    React.createElement("div", { className: bar1Classes }),
-	                    React.createElement("div", { className: bar2Classes })
-	                )
-	            ),
-	            React.createElement(
-	                "div",
-	                { className: filterClasses },
-	                React.createElement(Filter, { ref: "filter",
-	                    data: categories,
-	                    filterOn: filterOn,
-	                    toggleCategoryHandler: toggleCategoryHandler,
-	                    clearCategoryHandler: clearCategoryHandler,
-	                    togglePanelHander: this._togglePanel })
-	            ),
-	            React.createElement(
-	                "div",
-	                { ref: "day1", id: "day1" },
-	                React.createElement(
-	                    "div",
-	                    { className: "Schedule-day" },
-	                    "8/15 (Sat)"
-	                ),
-	                day1Items
-	            ),
-	            React.createElement(
-	                "div",
-	                { ref: "day2", id: "day2" },
-	                React.createElement(
-	                    "div",
-	                    { className: "Schedule-day" },
-	                    "8/16 (Sun)"
-	                ),
-	                day2Items
-	            )
+	            { className: "Schedule-keynotePresenter" },
+	            value.presenter
+	          )
 	        );
+	      } else {
+	        //multile event
+	        var filteredEvents = value.events.filter(function (sessionItem) {
+
+	          if (!filterOn) return sessionItem;
+
+	          var shouldReturn = false;
+	          if (categoryObj[sessionItem.category]) {
+	            if (categoryObj[sessionItem.category].active) shouldReturn = true;
+	          }
+
+	          if (shouldReturn) return sessionItem;
+	        });
+	        content = filteredEvents.map(function (v, k) {
+	          var sessionClasses = classNames({
+	            "Schedule-session": true,
+	            "is-last": k === filteredEvents.length - 1,
+	            "is-active": currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
+	          });
+	          var categoryStyle = {};
+	          if (filterOn) {
+	            categoryStyle = {
+	              border: "1px solid " + categoryObj[v.category].color,
+	              background: categoryObj[v.category].color
+	            };
+	          }
+	          var language = v.EN ? React.createElement(
+	            "div",
+	            { className: "Schedule-en" },
+	            "EN"
+	          ) : "";
+
+	          var venue = v.venue ? React.createElement(
+	            "div",
+	            { className: "Schedule-meta" },
+	            React.createElement(
+	              "div",
+	              { className: "Schedule-venue" },
+	              v.venue
+	            )
+	          ) : "";
+
+	          return React.createElement(
+	            "div",
+	            { className: sessionClasses,
+	              onClick: setSessionHandler.bind(null, v),
+	              key: k },
+	            venue,
+	            React.createElement(
+	              "div",
+	              { className: "Schedule-main" },
+	              React.createElement(
+	                "div",
+	                null,
+	                v.event,
+	                language
+	              ),
+	              React.createElement(
+	                "div",
+	                { className: "Schedule-presenter" },
+	                v.presenter
+	              ),
+	              React.createElement("div", { className: "Schedule-categoryIcon", style: categoryStyle })
+	            )
+	          );
+	        });
+	      }
+	      return React.createElement(
+	        "div",
+	        { className: itemClasses,
+	          key: i },
+	        React.createElement(
+	          "div",
+	          { className: "Schedule-time" },
+	          value.time
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "Schedule-event" },
+	          content
+	        )
+	      );
+	    });
+
+	    var day2Items = Data.day2.filter(function (eventItem) {
+	      var shouldReturn = false;
+	      if (eventItem.event && filterOn) {
+
+	        if (categoryObj[eventItem.event.category]) {
+	          if (categoryObj[eventItem.event.category].active) shouldReturn = true;
+	        }
+	      } else {
+	        //events
+	        shouldReturn = true;
+	      }
+	      if (shouldReturn) return eventItem;
+	    }).map(function (value, i) {
+
+	      var itemClasses = classNames({
+	        "Schedule-item": value.event,
+	        "Schedule-itemWrapper": value.events,
+	        "has-top-border": i !== 0
+	      });
+
+	      var content = "";
+	      if (value.event) {
+	        //single event
+	        content = React.createElement(
+	          "div",
+	          null,
+	          value.event,
+	          React.createElement(
+	            "div",
+	            { className: "Schedule-keynotePresenter" },
+	            value.presenter
+	          )
+	        );
+	      } else {
+	        //multile event
+	        var filteredEvents = value.events.filter(function (sessionItem) {
+
+	          if (!filterOn) return sessionItem;
+
+	          var shouldReturn = false;
+	          if (categoryObj[sessionItem.category]) {
+	            if (categoryObj[sessionItem.category].active) shouldReturn = true;
+	          }
+
+	          if (shouldReturn) return sessionItem;
+	        });
+	        content = filteredEvents.map(function (v, k) {
+	          var sessionClasses = classNames({
+	            "Schedule-session": true,
+	            "is-last": k === filteredEvents.length - 1,
+	            "is-active": currentSession.event === v.event && currentSession.time === v.time && currentSession.venue === v.venue
+	          });
+	          var categoryStyle = {};
+	          if (filterOn) {
+	            categoryStyle = {
+	              border: "1px solid " + categoryObj[v.category].color,
+	              background: categoryObj[v.category].color
+	            };
+	          }
+	          var language = v.EN ? React.createElement(
+	            "div",
+	            { className: "Schedule-en" },
+	            "EN"
+	          ) : "";
+
+	          var venue = v.venue ? React.createElement(
+	            "div",
+	            { className: "Schedule-meta" },
+	            React.createElement(
+	              "div",
+	              { className: "Schedule-venue" },
+	              v.venue
+	            )
+	          ) : "";
+
+	          return React.createElement(
+	            "div",
+	            { className: sessionClasses,
+	              onClick: setSessionHandler.bind(null, v),
+	              key: k },
+	            venue,
+	            React.createElement(
+	              "div",
+	              { className: "Schedule-main" },
+	              React.createElement(
+	                "div",
+	                null,
+	                v.event,
+	                language
+	              ),
+	              React.createElement(
+	                "div",
+	                { className: "Schedule-presenter" },
+	                v.presenter
+	              ),
+	              React.createElement("div", { className: "Schedule-categoryIcon", style: categoryStyle })
+	            )
+	          );
+	        });
+	      }
+	      return React.createElement(
+	        "div",
+	        { className: itemClasses,
+	          key: i },
+	        React.createElement(
+	          "div",
+	          { className: "Schedule-time" },
+	          value.time
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "Schedule-event" },
+	          content
+	        )
+	      );
+	    });
+
+	    var scheduleClasses = classNames({
+	      Schedule: true,
+	      "is-fixed": inScheduleArea === "within" });
+
+	    var titleClasses = classNames({
+	      "Schedule-title": true,
+	      "is-fixed": inScheduleArea === "within",
+	      "with-session": showSession,
+	      "without-session": !showSession
+	    });
+	    var titleStyle = {};
+	    if (inScheduleArea === "passed") {
+
+	      titleStyle = {
+	        position: "absolute",
+	        top: this.props.top
+	      };
 	    }
+
+	    var filterBtnClasses = classNames({
+	      "Schedule-filterBtn": true,
+	      "is-active": window.innerWidth < 1200 && this.state.showPanel
+	    });
+
+	    var filterText = window.innerWidth < 1200 && this.state.showPanel ? "" : "Filter";
+
+	    var filterClasses = classNames({
+	      "Schedule-filterPanel": true,
+	      "is-show": window.innerWidth < 1200 && this.state.showPanel,
+	      "is-fixed": inScheduleArea === "within"
+	    });
+
+	    var bar1Classes = classNames({
+	      "Schedule-bar1": true,
+	      "is-active": window.innerWidth < 1200 && this.state.showPanel
+	    });
+	    var bar2Classes = classNames({
+	      "Schedule-bar2": true,
+	      "is-active": window.innerWidth < 1200 && this.state.showPanel
+	    });
+
+	    var day1Classes = classNames({
+	      "Schedule-dayButton": true,
+	      "is-active": currentSection === "day1"
+	    });
+	    var day2Classes = classNames({
+	      "Schedule-dayButton": true,
+	      "is-active": currentSection === "day2"
+	    });
+
+	    return React.createElement(
+	      "div",
+	      { className: scheduleClasses },
+	      React.createElement(
+	        "div",
+	        { className: titleClasses,
+	          style: titleStyle },
+	        React.createElement(
+	          "div",
+	          { className: day1Classes,
+	            onClick: this._goToElement.bind(this, "day1") },
+	          "Day 1"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: day2Classes,
+	            onClick: this._goToElement.bind(this, "day2") },
+	          "Day 2"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: filterBtnClasses,
+	            onClick: this._togglePanel },
+	          filterText,
+	          React.createElement("div", { className: bar1Classes }),
+	          React.createElement("div", { className: bar2Classes })
+	        )
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: filterClasses },
+	        React.createElement(Filter, { ref: "filter",
+	          data: categories,
+	          filterOn: filterOn,
+	          toggleCategoryHandler: toggleCategoryHandler,
+	          clearCategoryHandler: clearCategoryHandler,
+	          togglePanelHander: this._togglePanel })
+	      ),
+	      React.createElement(
+	        "div",
+	        { ref: "day1", id: "day1" },
+	        React.createElement(
+	          "div",
+	          { className: "Schedule-day" },
+	          "8/15 (Sat)"
+	        ),
+	        day1Items
+	      ),
+	      React.createElement(
+	        "div",
+	        { ref: "day2", id: "day2" },
+	        React.createElement(
+	          "div",
+	          { className: "Schedule-day" },
+	          "8/16 (Sun)"
+	        ),
+	        day2Items
+	      )
+	    );
+	  }
 	});
 
 	/* REACT HOT LOADER */ }).call(this); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(271), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(63))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Schedule.es6" + ": " + err.message); } }); } } })(); }
@@ -34075,7 +34079,8 @@
 				time: "17:00-18:00",
 				event: "clkao’s yard sale / 高村長拍賣會",
 				presenter: "clkao",
-				venue: "交誼廳"
+				venue: "交誼廳",
+				category: "others"
 			}]
 		}, {
 			time: "18:00",

@@ -492,7 +492,8 @@ module.exports = {
 	    			"time" : "17:00-18:00",
 	    			"event" : "clkao’s yard sale / 高村長拍賣會",
 	    			"presenter" : "clkao",
-	    			"venue" : "交誼廳"
+	    			"venue" : "交誼廳",
+	    			"category" : "others"
 	    		}
 	    	]
 	    },
