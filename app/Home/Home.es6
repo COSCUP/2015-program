@@ -153,7 +153,7 @@ export default React.createClass({
   _goToElement(value){
     
     var node = this.refs.cover.getDOMNode();
-    var position = value + node.offsetHeight - 54;
+    var position = value + node.offsetHeight;/* 會有 54 的差，不過 AppBar 抵掉了 */
     
     ////// TO BE REFINE: Don't use jquery
     $('body').animate({ scrollTop: position}, 1000);
