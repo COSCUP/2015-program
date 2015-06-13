@@ -21,13 +21,19 @@
 }
 .AppBar-item {
 	display: inline-block;
-	padding: 10px 6px 7px 6px;
+	padding: 10px 2px 7px 2px;
 	font-size: 14px;
 	margin: 10px 8px;
 	text-align: center;
 	color: rgb(80,80,80);
 	cursor: pointer;
 	text-decoration: none;
+}
+@media screen and (min-width: 776px){
+	.AppBar-item {
+		padding: 10px 6px 7px 6px;
+	}
+
 }
 .AppBar-item.is-active, .AppBar-item:hover {
 	border-bottom: 2px solid rgb(100,100,100);
