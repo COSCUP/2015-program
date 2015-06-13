@@ -14,7 +14,7 @@ module.exports = {
 	    		{
 	    			"time" : "09:00-12:00, 13:00-14:00",
 	    			"venue" : "H2",
-	    			"event" : "親子工作坊",
+	    			"event" : "Workshop: 親子工作坊",
 	    			"presenter" : "鄭鴻旗（Honki）",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -25,7 +25,7 @@ module.exports = {
 	    		{
 	    			"time" : "09:00-10:40",
 	    			"venue" : "H3",
-	    			"event" : "How to contribute to OpenStack upstream",
+	    			"event" : "Workshop: How to contribute to OpenStack upstream",
 	    			"presenter" : "macJack",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -36,7 +36,7 @@ module.exports = {
 	    		{
 	    			"time" : "09:00-10:40",
 	    			"venue" : "H4",
-	    			"event" : "來試試 RPM 打包吧！",
+	    			"event" : "Workshop: 來試試 RPM 打包吧！",
 	    			"presenter" : "曾政嘉",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -53,6 +53,7 @@ module.exports = {
 	    		{
 	    			"time" : "09:10-10:00",
 	    			"event" : "BYOC: Build Your Own COSCUP",
+	    			"venue" : "R0",
 	    			"presenter" : "Bob",
 	    			"category" : "Program / 一般議程",
 	    			"abstract" : "<p>時至今日，每年在台灣有許多的技術研討會，其中的志工社群日益壯大，甚至已經進化到專注部分籌辦功能、跨不同研討會專業團隊出現。開源人年會 COSCUP 是其中重要的一份子，而從 2006 年到現在也面臨許多不同的挑戰。稟持「COSCUP 本身就該是個開源專案，它的未來由貢獻者們共同雕琢」的信念，Bob 將藉此機會與大家簡介 COSCUP 的歷史、志工團隊如何運作、面臨的問題，並試圖與聽眾一起找出 COSCUP 接下來各種可能的努力方向。</p>",
@@ -172,7 +173,7 @@ module.exports = {
 	    		{
 	    			"time" : "10:55-12:25",
 	    			"venue" : "H3",
-	    			"event" : "Laravel Installfest",
+	    			"event" : "Workshop: Workshop: Laravel Installfest",
 	    			"presenter" : "范聖佑 (Shengyou Fan)",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -183,7 +184,7 @@ module.exports = {
 	    		{
 	    			"time" : "10:55-12:25",
 	    			"venue" : "H4",
-	    			"event" : "Ubuntu Install Workshop",
+	    			"event" : "Workshop: Ubuntu Install Workshop",
 	    			"presenter" : "RJ",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -254,7 +255,7 @@ module.exports = {
 	    },
 	    {
 	    	"time" : "13:20",
-	    	"event" : "Keynote"
+	    	"event" : "Keynote (TBD)"
 	    },
 	    {
 	    	"time" : "13:25",
@@ -262,7 +263,7 @@ module.exports = {
 	    		{
 	    			"time" : "13:25-17:00",
 	    			"venue" : "H3",
-	    			"event" : "樹莓派工作坊/自作遙控車",
+	    			"event" : "Workshop: 樹莓派工作坊/自作遙控車",
 	    			"presenter" : "台灣樹莓派",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -272,7 +273,7 @@ module.exports = {
 	    		{
 	    			"time" : "10:55-12:25",
 	    			"venue" : "H4",
-	    			"event" : "Let's Chat via XMPP",
+	    			"event" : "Workshop: Let's Chat via XMPP",
 	    			"presenter" : "佟輝(Tong Hui)",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -343,7 +344,7 @@ module.exports = {
 	    		{
 	    			"time" : "14:15-14:55",
 	    			"venue" : "H3",
-	    			"event" : "Open Build Service 實作練習",
+	    			"event" : "Workshop: Open Build Service 實作練習",
 	    			"presenter" : "Gary Lin",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -400,7 +401,7 @@ module.exports = {
 	    	    	"time" : "15:10-15:50",
 	    	    	"venue" : "H1",
 	    	    	"event" : "開源在中國--一個台灣開源人的觀察",
-	    	    	"presenter" : "強哥",
+	    	    	"presenter" : "Richard 林旅強",
 	    	    	"category" : "Program / 一般議程",
 	    	    	"abstract" : "<p>講者將分享他在中國大陸進行開源推廣工作之餘的觀察和心得，包含中國 IT 互聯網產業在開源方面的應用、政府部門的開源政策、高校在開源教育方面的投入、學生對於開源的認知和態度以及開源社群的貢獻和發展情況。</p>",
 	    	    	"biography" : "<p>Richard Lin 林旅強 (Legist 強)，台北人，現居上海，在大中華地區從事開源佈道的志業，擔任中國知名代碼託管平台 GitCafe.com 市場總監，並組織運營開源社群如上海 Linux 用戶組 (SHLUG) 和開源社 (kaiyuanshe.org) 等。</p><p>Richard Lin 林旅強 (Legist 強), an Open Source Evangelist in the Greater China. He is CMO of GitCafe.com, the most famous open source project hosting platform in China. He devotes himself to organize and operate open source communities like Shanghai Linux User Group and Kaiyuanshe.org.</p>"
@@ -413,7 +414,7 @@ module.exports = {
 	    		{
 	    			"time" : "15:10-17:00",
 	    			"venue" : "H2",
-	    			"event" : "MySQL Fabric",
+	    			"event" : "Workshop: MySQL Fabric",
 	    			"presenter" : "杜修文",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -423,7 +424,7 @@ module.exports = {
 	    		{
 	    			"time" : "15:10-17:00",
 	    			"venue" : "H4",
-	    			"event" : "Webmaker 工作坊",
+	    			"event" : "Workshop: Webmaker 工作坊",
 	    			"presenter" : "Irvin",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -485,7 +486,15 @@ module.exports = {
 	    },
 	    {
 	    	"time" : "17:00",
-	    	"event" : "高村長拍賣會"
+	    	"venue" : "交誼廳",
+	    	"events" : [
+	    		{
+	    			"time" : "17:00-18:00",
+	    			"event" : "clkao’s yard sale / 高村長拍賣會",
+	    			"presenter" : "clkao",
+	    			"venue" : "交誼廳"
+	    		}
+	    	]
 	    },
 	    {
 	    	"time" : "18:00",
@@ -495,7 +504,7 @@ module.exports = {
 	"day2" : [
 	    {
 	    	"time" : "09:00",
-	    	"event" : "Opening / 開幕式"
+	    	"event" : "Announcement"
 	    },
 	    {
 	    	"time" : "09:00",
@@ -503,7 +512,7 @@ module.exports = {
 	    		{
 	    			"time" : "09:00-12:00",
 	    			"venue" : "H2",
-	    			"event" : "LinkIt ONE 物聯網應用入門",
+	    			"event" : "Workshop: LinkIt ONE 物聯網應用入門",
 	    			"presenter" : "曾吉弘",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -513,7 +522,7 @@ module.exports = {
 	    		{
 	    			"time" : "09:00-12:00",
 	    			"venue" : "H3",
-	    			"event" : "開源之道－Git 基礎教學",
+	    			"event" : "Workshop: 開源之道－Git 基礎教學",
 	    			"presenter" : "Richard Lin 林旅強",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -523,7 +532,7 @@ module.exports = {
 	    		{
 	    			"time" : "09:00-12:00",
 	    			"venue" : "H4",
-	    			"event" : "第一次自幹 Open Data SimCity 就上手",
+	    			"event" : "Workshop: 第一次自幹 Open Data SimCity 就上手",
 	    			"presenter" : "李慕約",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -534,7 +543,7 @@ module.exports = {
 	    },
 	    {
 	    	"time" : "09:10",
-	    	"event" : "Keynote"
+	    	"event" : "Keynote (TBD)"
 	    },
 	    {
 	    	"time" : "10:00",
@@ -586,8 +595,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "10:00-10:40",
-	    	    	"venue" : "Unconf 1",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "交誼廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -595,8 +604,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "10:00-10:40",
-	    	    	"venue" : "Unconf 2",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "平面演講廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -658,8 +667,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "10:50-11:30",
-	    	    	"venue" : "Unconf 1",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "交誼廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -667,8 +676,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "10:50-11:30",
-	    	    	"venue" : "Unconf 2",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "平面演講廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -730,8 +739,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "11:40-12:20",
-	    	    	"venue" : "Unconf 1",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "交誼廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -739,8 +748,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "11:40-12:20",
-	    	    	"venue" : "Unconf 2",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "平面演講廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -758,6 +767,7 @@ module.exports = {
 	    	    {   
 	    	    	"time" : "13:20-14:00",
 	    	    	"event" : "「封麥」演說：台灣開放原始碼生態圈回顧",
+	    	    	"venue" : "R0",
 	    	    	"presenter" : "jserv",
 	    	    	"category" : "Program / 一般議程",
 	    	    	"abstract" : "<p>作為一位有幸能連續 10 年在 COSCUP 分享心得的講者，決定在「封麥」前，簡短回顧台灣開放原始碼生態圈的轉變，諸如源自本土的專案、開發者社群、各式推廣活動、大學相關課程，以及台灣人在國際開放原始碼專案的投入狀況。</p>",
@@ -771,7 +781,7 @@ module.exports = {
 	    		{
 	    			"time" : "13:20-16:00",
 	    			"venue" : "H2",
-	    			"event" : "Open Networking Workshop",
+	    			"event" : "Workshop: Open Networking Workshop",
 	    			"presenter" : "黃秉鈞",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -781,7 +791,7 @@ module.exports = {
 	    		{
 	    			"time" : "13:20-16:00",
 	    			"venue" : "H3",
-	    			"event" : "Git Workflows",
+	    			"event" : "Workshop: Git Workflows",
 	    			"presenter" : "Carl Su",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -791,7 +801,7 @@ module.exports = {
 	    		{
 	    			"time" : "13:20-16:00",
 	    			"venue" : "H4",
-	    			"event" : "自由的圖資－如何hack開放街圖",
+	    			"event" : "Workshop: 自由的圖資－如何hack開放街圖",
 	    			"presenter" : "陳瑞霖",
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
@@ -856,8 +866,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "14:10-14:50",
-	    	    	"venue" : "Unconf 1",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "交誼廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -865,8 +875,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "14:10-14:50",
-	    	    	"venue" : "Unconf 2",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "平面演講廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -930,8 +940,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "15:10-15:50",
-	    	    	"venue" : "Unconf 1",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "交誼廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
@@ -939,8 +949,8 @@ module.exports = {
 	    	    },
 	    	    {
 	    	    	"time" : "15:10-15:50",
-	    	    	"venue" : "Unconf 2",
-	    	    	"event" : "TBD",
+	    	    	"venue" : "平面演講廳",
+	    	    	"event" : "Unconference (TBD)",
 	    	    	"presenter" : "",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "",
