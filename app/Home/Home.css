@@ -81,14 +81,12 @@
     transition: right .2s cubic-bezier(.4,0,.2,1); 
     z-index: 200;
 }
-.Home-session.is-show {
-    position: fixed;
+.Home-session.is-show, .Home-session.is-show.is-fixed {
+    position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    min-height: 100vh;
-    height: 100%;
-    overflow: scroll;
+    
 
     will-change: right;
     -webkit-transition: right .2s cubic-bezier(.4,0,.2,1); 

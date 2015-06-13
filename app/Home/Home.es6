@@ -202,11 +202,15 @@ export default React.createClass({
           top: (height - top) + "px",
           transiton: "all .3s"
         }
-        sessionStyle = { 
-          position: "absolute", 
-          top: (height - top - 240) + "px",
-          transiton: "all .3s"
+        if(window.innerWidth > 776){
+              sessionStyle = { 
+              position: "absolute", 
+              top: (height - top - 240) + "px",
+              transiton: "all .3s"
+          }
+
         }
+        
     }
 
     /* ------------------- */
