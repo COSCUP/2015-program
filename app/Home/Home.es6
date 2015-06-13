@@ -25,8 +25,7 @@ export default React.createClass({
     
     return {
       inScheduleArea: "before",
-      scheduleHeight: 0,
-      filterHeight: 0,
+      
       sessionClass: false,
       categories: categories,
       categoryOn: false,
@@ -47,6 +46,7 @@ export default React.createClass({
     //// Why offsetHeight will only be correct after first scrolling? Dynamic generated elements?
     addEventListener("scroll", function() {
         //console.log("->"+pageYOffset)
+
         var top = coverNode.offsetHeight;
         var height = scheduleNode.offsetHeight;
 
@@ -56,7 +56,7 @@ export default React.createClass({
         if(pageYOffset < top){
             _setInScheduleArea("before");
         }
-        if(pageYOffset > height){
+        if(pageYOffset > height + 80){
             _setInScheduleArea("passed");
         }
     });
@@ -94,7 +94,7 @@ export default React.createClass({
     }
     //Saving current scrolling position
     if(this.state.currentScrollHeight===0){
-        console.log("Saving scrolling: "+ pageYOffset);
+        //console.log("Saving scrolling: "+ pageYOffset);
         this.setState({
           currentScrollHeight: pageYOffset
         })
@@ -107,7 +107,7 @@ export default React.createClass({
     });
     //Saving current scrolling position
     if(this.state.currentScrollHeight===0){
-        console.log("Saving scrolling: "+ pageYOffset);
+        //console.log("Saving scrolling: "+ pageYOffset);
         this.setState({
           currentScrollHeight: pageYOffset
         })
@@ -188,14 +188,24 @@ export default React.createClass({
 
     var filterStyle = {};
     var sessionStyle = {};
+
+    ///////////////////////////////////////// TO BE refine
+    var top, height;
     if(inScheduleArea === "passed"){
+        var coverNode = this.refs.cover.getDOMNode();
+        var scheduleNode = this.refs.schedule.getDOMNode();
+        top = coverNode.offsetHeight;
+        height = scheduleNode.offsetHeight;
+       
         filterStyle = { 
           position: "absolute", 
-          top: (scheduleHeight - filterHeight - 80) + "px"
+          top: (height - top) + "px",
+          transiton: "all .3s"
         }
         sessionStyle = { 
           position: "absolute", 
-          top: (scheduleHeight - filterHeight - 80) + "px"
+          top: (height - top - 240) + "px",
+          transiton: "all .3s"
         }
     }
 
@@ -203,7 +213,7 @@ export default React.createClass({
     var shouldHide = showSession;
     
     var scheduleStyle = (shouldHide && window.innerWidth < 776) ? {
-        "transform" : `translate3d(0,${-currentScrollHeight}px,0)`
+        "transform" : `translate3d(0,${-currentScrollHeight - 80}px,0)`
     }: {};
 
     var scheduleClass = classNames({
@@ -230,8 +240,13 @@ export default React.createClass({
       "is-hide" : shouldHide
     });
 
-     var appbarClass = classNames({
+    var appbarClass = classNames({
       "Home-AppBar" : true,
+      "is-hide" : shouldHide
+    });
+
+    var footerClass = classNames({
+      "Home-footer" : true,
       "is-hide" : shouldHide
     });
 
@@ -270,7 +285,7 @@ export default React.createClass({
               <Schedule inScheduleArea={inScheduleArea}
                         sessionHandler={this._toggleSession}
                         showSession={showSession}
-                        top={scheduleHeight - filterHeight - 80}
+                        top={height - top - 80}
                         setSessionHandler={this._setSession}
                         currentSession={currentSession}
                         categories={categories}
@@ -295,7 +310,7 @@ export default React.createClass({
                        categories={categories}/>
             </div>
           
-            <div className="Home-footer">
+            <div className={footerClass}>
               <a className="Home-patch"
                  href="https://github.com/soidid/coscup-schedule"
                  target="_blank">patches welcome</a>

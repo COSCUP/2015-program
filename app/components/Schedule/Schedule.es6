@@ -267,6 +267,7 @@ export default React.createClass({
     })
     var titleStyle = {};
     if(inScheduleArea==="passed"){
+     
       titleStyle = { 
           position: "absolute", 
           top: this.props.top
