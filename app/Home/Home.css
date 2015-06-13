@@ -33,17 +33,24 @@
 }
 .Home-cover {
   width: 100%;
-  padding: 30px 0 30px 0;
+  padding: 30px 0 10px 0;
   border-bottom: 1px solid gray;
 }
 .Home-cover.is-hide {
-  display: none;
+    display: none;
 }
 .Home-coverImg {
-  width: 100%;
+    width: 100%;
+}
+.Home-coverNotice {
+    font-size: 13px;
+    color: rgb(183,185,184);
+    margin: 0 auto;
+    
+    padding: 10px 12px 4px 16px;
 }
 .Home-main {
-  position: relative;
+    position: relative;
 }
 .Home-filter {
     display: none;
@@ -107,12 +114,15 @@
 }
 @media screen and (min-width: 500px){
     .Home-cover {
-        padding: 30px 0 30px 0;
+        padding: 30px 0 0px 0;
     }
 }
 @media screen and (min-width: 768px){
     .Home-cover.is-hide {
         display: block;
+    }
+    .Home-coverNotice {
+        text-align: center;
     }
 }
 

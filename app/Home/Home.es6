@@ -244,6 +244,7 @@ export default React.createClass({
         
         <div className={coverClass} ref="cover">
             <img className="Home-coverImg" src={coverIMG} />
+            <div className="Home-coverNotice">議程表仍有變動，請常回來查看本網頁，不另通知<br/>We are still updating, check out often!</div>
         </div>
 
         <div className="Home-main" ref="main" id="Home-main">
