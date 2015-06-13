@@ -187,6 +187,7 @@
         overflow: scroll;
         position: fixed;
         top: 0;
+         width: 50%;
     }
    
 
@@ -272,6 +273,7 @@
         overflow: scroll;
         position: fixed;
         top: 0;
+        width: 570px;
     }
     .Home-shadow.is-show {
         display: block;
