@@ -157,7 +157,7 @@ export default React.createClass({
     var position = value + node.offsetHeight;/* 會有 54 的差，不過 AppBar 抵掉了 */
     
     ////// TO BE REFINE: Don't use jquery
-    $('body').animate({ scrollTop: position}, 1000);
+    $('body,html').animate({ scrollTop: position}, 1000);
 
   },
 

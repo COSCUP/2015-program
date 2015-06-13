@@ -329,11 +329,11 @@ export default React.createClass({
                       clearCategoryHandler={clearCategoryHandler}
                       togglePanelHander={this._togglePanel}/>
           </div>
-          <div ref="day1">
+          <div ref="day1" id="day1">
               <div className="Schedule-day">8/15 (Sat)</div>
         	    {day1Items}
           </div>
-          <div ref="day2">
+          <div ref="day2" id="day2">
               <div className="Schedule-day">8/16 (Sun)</div>
               {day2Items}
           </div>
