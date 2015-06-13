@@ -42,8 +42,17 @@
     font-size: 13px;
     color: rgb(183,185,184);
     margin: 0 auto;
-    
     padding: 10px 12px 4px 16px;
+}
+.Home-docLink, .Home-docLink:visited {
+    display: block;
+    text-decoration: none;
+    color: rgb(53,55,54);
+    padding-right: 3px;
+    margin-bottom: 10px;
+}
+.Home-docLink:hover {
+    text-decoration: underline;
 }
 .Home-main {
     position: relative;
