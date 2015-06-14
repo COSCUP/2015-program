@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e4b6799d26a552a11e49"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "77e0d73a6bdc44d867e0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33602,7 +33602,7 @@
 	          filterOn: filterOn,
 	          toggleCategoryHandler: toggleCategoryHandler,
 	          clearCategoryHandler: clearCategoryHandler,
-	          togglePanelHander: this._togglePanel })
+	          togglePanelHander: togglePanelHander })
 	      ),
 	      React.createElement(
 	        "div",

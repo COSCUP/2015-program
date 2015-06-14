@@ -326,7 +326,7 @@ export default React.createClass({
                       filterOn={filterOn}
                       toggleCategoryHandler={toggleCategoryHandler}
                       clearCategoryHandler={clearCategoryHandler}
-                      togglePanelHander={this._togglePanel}/>
+                      togglePanelHander={togglePanelHander}/>
           </div>
           <div ref="day1" id="day1">
               <div className="Schedule-day">8/15 (Sat)</div>
