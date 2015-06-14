@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5805eb086ddd5d5fa122"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e4b6799d26a552a11e49"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32386,8 +32386,17 @@
 	      categoryOn: false,
 	      currentSession: {},
 	      showSession: false,
-	      currentScrollHeight: 0
+	      currentScrollHeight: 0,
+
+	      showPanel: false
 	    };
+	  },
+
+	  _togglePanel: function _togglePanel() {
+
+	    this.setState({
+	      showPanel: !this.state.showPanel
+	    });
 	  },
 
 	  componentDidMount: function componentDidMount() {
@@ -32544,10 +32553,11 @@
 	    var categoryOn = _state.categoryOn;
 	    var currentSession = _state.currentSession;
 	    var currentScrollHeight = _state.currentScrollHeight;
+	    var showPanel = _state.showPanel;
 
 	    var filterClass = classNames({
 	      "Home-filter": true,
-	      "is-fixed": inScheduleArea === "within"
+	      "is-fixed": inScheduleArea === "within" || showPanel
 	    });
 
 	    var filterStyle = {};
@@ -32555,24 +32565,17 @@
 
 	    ///////////////////////////////////////// TO BE refine
 	    var top, height;
-	    if (inScheduleArea === "passed") {
-	      var coverNode = this.refs.cover.getDOMNode();
-	      var scheduleNode = this.refs.schedule.getDOMNode();
-	      top = coverNode.offsetHeight;
-	      height = scheduleNode.offsetHeight;
-
+	    if (inScheduleArea === "passed" && window.innerWidth > 776) {
 	      filterStyle = {
 	        position: "absolute",
 	        top: height - top + "px",
 	        transiton: "all .3s"
 	      };
-	      if (window.innerWidth > 776) {
-	        sessionStyle = {
-	          position: "absolute",
-	          top: height - top - 240 + "px",
-	          transiton: "all .3s"
-	        };
-	      }
+	      sessionStyle = {
+	        position: "absolute",
+	        top: height - top - 240 + "px",
+	        transiton: "all .3s"
+	      };
 	    }
 
 	    /* ------------------- */
@@ -32584,7 +32587,7 @@
 
 	    var scheduleClass = classNames({
 	      "Home-schedule": true,
-	      "is-fixed": inScheduleArea !== "before",
+	      "is-fixed": inScheduleArea === "within" || showPanel,
 	      "with-session": showSession,
 	      "is-hide": shouldHide
 	    });
@@ -32593,7 +32596,7 @@
 	    var sessionClass = classNames({
 	      "Home-session": true,
 	      "is-show": showSession,
-	      "is-fixed": inScheduleArea === "within"
+	      "is-fixed": inScheduleArea === "within" || showPanel
 	    });
 
 	    var sponserClass = classNames({
@@ -32683,7 +32686,10 @@
 	            clearCategoryHandler: this._clearCategory,
 
 	            currentScrollHeight: currentScrollHeight,
-	            goToElementHandler: this._goToElement })
+	            goToElementHandler: this._goToElement,
+
+	            showPanel: showPanel,
+	            togglePanelHander: this._togglePanel })
 	        ),
 	        React.createElement(
 	          "div",
@@ -33185,7 +33191,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".Fitler {\n\tposition: relative;\n  padding-bottom: 20px;\n}\n\n.Fitler-title {\n  padding: 20px 20px 20px 10px;\n  background: white;\n  border-bottom: 1px solid gray;\n  font-family: Polaris-Bold,Helvetica,Arial,sans-serif;\n  font-size: 14px;\n  text-transform: uppercase;\n  letter-spacing: .08em;\n}\n.Filter-categories {\n\tlist-style: none;\n  margin: 0;\n  padding: 10px 20px 0px 0;\n\t-moz-column-count: 2;\n\t-webkit-column-count: 2;\n\tcolumn-count: 2;\n}\n.Filter-category {\n\tfont-size: 13px;\n  line-height: 14px;\n  margin-bottom: 10px;\n  position: relative;\n  cursor: pointer;\n}\n@media screen and (max-width: 402px){\n    .Filter-category {\n        font-size: 10px !important;;\n    }\n}\n.Filter-categoryIcon {\n\tposition: absolute;\n  top: 5px;\n  left: 10px;\n  width: 12px;\n  height: 12px;\n  border-radius: 2px;\n  -webkit-transition: background .3s;\n  transition: background .3s;\n}\n\n/* THIS IS BAD */\n.Filter-category:hover .Filter-categoryIcon_0{\n  background: hsl(47, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_1{\n  background: hsl(47, 100%, 70%);\n}\n.Filter-category:hover .Filter-categoryIcon_2{\n  background: hsl(47, 100%, 40%);\n}\n.Filter-category:hover .Filter-categoryIcon_3{\n  background: hsl(81, 100%, 40%);\n}\n.Filter-category:hover .Filter-categoryIcon_4{\n  background: hsl(81, 100%, 70%);\n}\n.Filter-category:hover .Filter-categoryIcon_5{\n  background: hsl(0, 100%, 40%);\n}\n.Filter-category:hover .Filter-categoryIcon_6{\n  background: hsl(0, 100%, 70%);\n}\n.Filter-category:hover .Filter-categoryIcon_7{\n  background: hsl(189, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_8{\n  background: hsl(216, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_9{\n  background: hsl(243, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_10{\n  background: hsl(270, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_11{\n  background: hsl(297, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_12{\n  background: rgb(200,200,200);\n}\n.Filter-category:hover .Filter-categoryIcon_13{\n  background: rgb(0, 0, 0);\n}\n\n\n.Filter-categoryText {\n  padding-left: 30px;\n  line-height: 1.6;\n}\n.Filter-actions {\n  padding: 10px;\n\n}\n.Filter-close {\n  font-size: 12px;\n  cursor: pointer;\n  text-decoration: underline;\n  display: inline-block;\n  margin-right: 20px;\n}\n.Filter-complete:hover{\n  color: rgb(50,53,52);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}\n.Filter-clearAll {\n  font-size: 12px;\n  cursor: pointer;\n  text-decoration: underline;\n  color: transparent;\n  display: inline-block;\n\n}\n.Filter-clearAll.is-active {\n  color: rgb(120,120,120);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}\n.Filter-clearAll.is-active:hover{\n  color: rgb(50,53,52);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}\n", ""]);
+	exports.push([module.id, ".Fitler {\n\tposition: relative;\n  padding-bottom: 20px;\n}\n\n.Fitler-title {\n  padding: 20px 20px 20px 10px;\n  background: white;\n  border-bottom: 1px solid gray;\n  font-family: Polaris-Bold,Helvetica,Arial,sans-serif;\n  font-size: 14px;\n  text-transform: uppercase;\n  letter-spacing: .08em;\n}\n.Filter-categories {\n\tlist-style: none;\n  margin: 0;\n  padding: 10px 10px 0px 0;\n\t\n}\n@media screen and (min-width: 776px){\n  .Filter-categories {\n      padding: 10px 20px 0px 0;   \n  }\n}\n.Filter-category {\n\tfont-size: 13px;\n  line-height: 14px;\n  margin-bottom: 10px;\n  position: relative;\n  cursor: pointer;\n  width: 50%;\n  vertical-align: top;\n  display: inline-block;\n}\n@media screen and (min-width: 776px){\n  .Filter-category {\n      width: 100%; \n  }\n}\n@media screen and (max-width: 402px){\n    .Filter-category {\n        font-size: 10px !important;\n    }\n}\n.Filter-categoryIcon {\n\tposition: absolute;\n  top: 5px;\n  left: 10px;\n  width: 12px;\n  height: 12px;\n  border-radius: 2px;\n  -webkit-transition: background .3s;\n  transition: background .3s;\n}\n\n/* THIS IS BAD */\n.Filter-category:hover .Filter-categoryIcon_0{\n  background: hsl(47, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_1{\n  background: hsl(47, 100%, 70%);\n}\n.Filter-category:hover .Filter-categoryIcon_2{\n  background: hsl(47, 100%, 40%);\n}\n.Filter-category:hover .Filter-categoryIcon_3{\n  background: hsl(81, 100%, 40%);\n}\n.Filter-category:hover .Filter-categoryIcon_4{\n  background: hsl(81, 100%, 70%);\n}\n.Filter-category:hover .Filter-categoryIcon_5{\n  background: hsl(0, 100%, 40%);\n}\n.Filter-category:hover .Filter-categoryIcon_6{\n  background: hsl(0, 100%, 70%);\n}\n.Filter-category:hover .Filter-categoryIcon_7{\n  background: hsl(189, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_8{\n  background: hsl(216, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_9{\n  background: hsl(243, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_10{\n  background: hsl(270, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_11{\n  background: hsl(297, 100%, 50%);\n}\n.Filter-category:hover .Filter-categoryIcon_12{\n  background: rgb(200,200,200);\n}\n.Filter-category:hover .Filter-categoryIcon_13{\n  background: rgb(0, 0, 0);\n}\n\n\n.Filter-categoryText {\n  padding-left: 30px;\n  line-height: 1.6;\n\n}\n.Filter-actions {\n  padding: 10px;\n\n}\n.Filter-close {\n  font-size: 12px;\n  cursor: pointer;\n  text-decoration: underline;\n  display: inline-block;\n  margin-right: 20px;\n}\n.Filter-complete:hover{\n  color: rgb(50,53,52);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}\n.Filter-clearAll {\n  font-size: 12px;\n  cursor: pointer;\n  text-decoration: underline;\n  color: transparent;\n  display: inline-block;\n\n}\n.Filter-clearAll.is-active {\n  color: rgb(120,120,120);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}\n.Filter-clearAll.is-active:hover{\n  color: rgb(50,53,52);\n  -webkit-transition: all .3s;\n  transition: all .3s;\n}\n", ""]);
 
 /***/ },
 /* 288 */
@@ -33212,16 +33218,8 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      showPanel: false,
 	      currentSection: "before"
 	    };
-	  },
-
-	  _togglePanel: function _togglePanel() {
-
-	    this.setState({
-	      showPanel: !this.state.showPanel
-	    });
 	  },
 
 	  _setSectionArea: function _setSectionArea(value) {
@@ -33272,6 +33270,8 @@
 	    var toggleCategoryHandler = _props.toggleCategoryHandler;
 	    var clearCategoryHandler = _props.clearCategoryHandler;
 	    var currentScrollHeight = _props.currentScrollHeight;
+	    var showPanel = _props.showPanel;
+	    var togglePanelHander = _props.togglePanelHander;
 	    var currentSection = this.state.currentSection;
 
 	    /* ----------- */
@@ -33517,43 +33517,44 @@
 
 	    var scheduleClasses = classNames({
 	      Schedule: true,
-	      "is-fixed": inScheduleArea === "within" });
+	      "is-fixed": inScheduleArea === "within" || showPanel });
 
 	    var titleClasses = classNames({
 	      "Schedule-title": true,
-	      "is-fixed": inScheduleArea === "within",
+	      "is-fixed": inScheduleArea === "within" || showPanel,
 	      "with-session": showSession,
 	      "without-session": !showSession
 	    });
 	    var titleStyle = {};
-	    if (inScheduleArea === "passed") {
+	    // if(inScheduleArea==="passed" && !showPanel){
 
-	      titleStyle = {
-	        position: "absolute",
-	        top: this.props.top
-	      };
-	    }
+	    //   titleStyle = {
+	    //       position: "absolute",
+	    //       top: this.props.top
+	    //   }
+
+	    // }
 
 	    var filterBtnClasses = classNames({
 	      "Schedule-filterBtn": true,
-	      "is-active": window.innerWidth < 1200 && this.state.showPanel
+	      "is-active": window.innerWidth < 1200 && showPanel
 	    });
 
-	    var filterText = window.innerWidth < 1200 && this.state.showPanel ? "" : "Filter";
+	    var filterText = window.innerWidth < 1200 && showPanel ? "" : "Filter";
 
 	    var filterClasses = classNames({
 	      "Schedule-filterPanel": true,
-	      "is-show": window.innerWidth < 1200 && this.state.showPanel,
-	      "is-fixed": inScheduleArea === "within"
+	      "is-show": window.innerWidth < 1200 && showPanel,
+	      "is-fixed": inScheduleArea === "within" || showPanel
 	    });
 
 	    var bar1Classes = classNames({
 	      "Schedule-bar1": true,
-	      "is-active": window.innerWidth < 1200 && this.state.showPanel
+	      "is-active": window.innerWidth < 1200 && showPanel
 	    });
 	    var bar2Classes = classNames({
 	      "Schedule-bar2": true,
-	      "is-active": window.innerWidth < 1200 && this.state.showPanel
+	      "is-active": window.innerWidth < 1200 && showPanel
 	    });
 
 	    var day1Classes = classNames({
@@ -33587,7 +33588,7 @@
 	        React.createElement(
 	          "div",
 	          { className: filterBtnClasses,
-	            onClick: this._togglePanel },
+	            onClick: togglePanelHander },
 	          filterText,
 	          React.createElement("div", { className: bar1Classes }),
 	          React.createElement("div", { className: bar2Classes })
@@ -33658,7 +33659,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".Schedule {\n\twidth: 100%;\n    min-height: 100vh;\n\tposition: relative;\n\tbackground: white;\n\tborder-left: 1px solid gray;\n    border-right: 1px solid gray;\n    z-index: 10;\n    \n}\n.Schedule.is-fixed {\n    padding-top: 56px;\n}\n.Schedule-title {\n    background: white;\n    border-bottom: 1px solid gray;\n    width: 100%;\n    z-index: 20;\n\n}\n.Schedule-title.is-fixed {\n    position: fixed;\n    top: 0;\n    \n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n@media screen and (min-width: 776px) and (max-width: 1199px){\n    .Schedule-title {\n        background: white;\n        border-bottom: 1px solid gray;\n        width: 100%;\n        z-index: 20;\n\n    }\n    .Schedule-title.is-fixed {\n        position: fixed;\n        top: 0;\n        max-width: calc(50% - 2px);\n        \n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    \n}\n@media screen and (min-width: 1200px){\n    .Schedule-title {\n        background: white;\n        border-bottom: 1px solid gray;\n        width: 100%;\n        z-index: 20;\n    }\n    .Schedule-title.is-fixed.without-session {\n        left: 361px;\n        \n        position: fixed;\n        top: 0;\n        max-width: 548px;\n    \n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n        will-change: left;\n    }\n    .Schedule-title.is-fixed.with-session {\n        left: 161px;\n        \n        position: fixed;\n        top: 0;\n        max-width: 548px;\n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n        will-change: left;\n    }\n}\n\n/* FILTER */\n.Schedule-filterBtn {\n    position: absolute;\n    right: 8px;\n    top: 0;\n    color: rgb(80,80,80);\n    text-align: center;\n    line-height: 54px;\n    width: 56px;\n    height: 56px;\n    cursor: pointer;\n    -webkit-transition: all .3s;\n            transition: all .3s;\n}\n.Schedule-filterBtn:hover {\n    color: rgb(53,55,54);\n}\n.Schedule-filterBtn:before {\n    \n    \n}\n.Schedule-bar1 {\n    content: '';\n    border-top: 2px solid transparent;\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n\n}\n.Schedule-bar2 {\n    content: '';\n    border-top: 2px solid transparent;\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;  \n}\n.Schedule-bar1.is-active {\n    content: '';\n    border-top: 2px solid rgb(213,62,79);\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n    -webkit-transform: rotate(45deg);\n        -ms-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-transition: all .3s cubic-bezier(.4,0,.2,1); \n    transition: all .3s cubic-bezier(.4,0,.2,1); \n    \n}\n.Schedule-bar2.is-active {\n    content: '';\n    border-top: 2px solid rgb(213,62,79);\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n\n    -webkit-transform: rotate(-45deg);\n\n        -ms-transform: rotate(-45deg);\n\n            transform: rotate(-45deg);\n    -webkit-transition: all .3s cubic-bezier(.4,0,.2,1); \n    transition: all .3s cubic-bezier(.4,0,.2,1); \n    \n}\n\n@media screen and (min-width: 1200px) {\n    .Schedule-filterBtn {\n        display: none;\n    }\n}\n.Schedule-filterPanel {\n    max-height: 0px;\n    overflow: hidden;\n    will-change: max-height;\n    transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n}\n.Schedule-filterPanel.is-show {\n    max-height: 500px;\n    will-change: max-height;\n    transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n}\n.Schedule-filterPanel.is-show.is-fixed {\n    position: fixed;\n    top: 57px;\n    z-index: 200;\n    width: 100%;\n    background: white;\n    box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);\n}\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Schedule-filterPanel.is-show.is-fixed {\n        width: calc(50% - 2px);\n        box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);\n    }\n\n}\n@media screen and (min-width: 1200px){\n    .Schedule-filterPanel.is-show.is-fixed {\n       display: none; \n    }\n\n}\n/* ===================== */\n\n.Schedule-dayButton {\n    font-family: Polaris-Bold,Helvetica,Arial,sans-serif;\n    font-size: 14px;\n    text-transform: uppercase;\n    letter-spacing: .08em;\n    display: inline-block;\n    padding: 20px;\n    cursor: pointer;\n    \n}\n.Schedule-dayButton:hover, .Schedule-dayButton.is-active {\n    color: rgb(68,210,143);\n    text-decoration: underline; \n}\n.Schedule-day {\n    background: rgb(220,220,220);\n    padding: 20px 20px 20px 26px;\n    font-family: Polaris-Book,\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n    /*'Gentium Basic',Gentium,serif;*/\n    font-weight: 800;\n    letter-spacing: 1px;\n}\n.Schedule-item {\n\tpadding: 30px;\n\tpadding-left: 92px;\n\n\tbackground: white;\n    position: relative;\n    color: rgb(100,100,100);\n    overflow: hidden;\n}\n.Schedule-event {\n    overflow: hidden;\n}\n.Schedule-keynotePresenter {\n    color: rgb(125,124,123);\n    font-size: 14px;\n    margin-top: 4px;\n\n}\n.Schedule-itemWrapper {\n    overflow: hidden;\n    background: white;\n    position: relative;\n    padding-left: 80px;\n    overflow: hidden;\n    \n}\n.Schedule-item.has-top-border, .Schedule-itemWrapper.has-top-border {\n\tborder-top: 1px solid rgb(220,220,220);\n}\n.Schedule-time {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 90px;\n    line-height: 80px;\n    font-size: 14px;\n    text-align: center;\n    color: rgb(53,55,54);\n}\n.Schedule-session {\n    padding: 14px 30px 14px 10px;\n    cursor: pointer;\n    will-change: background;\n    line-height: 1.4;\n    -webkit-transition: background .3s;\n    transition: background .3s;\n    border-bottom: 1px solid rgb(220,220,220);\n    position: relative;\n    overflow: hidden;\n}\n.Schedule-session.is-last {\n    border-bottom: none;\n    /*background: rgba(215, 253, 236, 0.82);*/\n}\n.Schedule-session.is-active {\n    background: rgba(215, 253, 236, 0.82);\n}\n.Schedule-session:hover {\n    background: rgba(215, 253, 236, 0.82);\n    -webkit-transition: background .3s;\n    transition: background .3s;\n}\n.Schedule-venue {\n    display: inline-block;\n    padding: 1px 5px;\n    margin-bottom: 5px;\n    font-size: 14px;\n    background: rgb(220,220,220);\n    border-radius: 12px;\n    color: gray;\n\n}\n@media screen and (min-width: 776px){\n    \n    .Schedule-session {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -ms-flexbox;\n        display: flex;\n    }\n    .Schedule-meta {\n        \n    }\n    .Schedule-main {\n        margin-left: 8px;\n        -webkit-box-flex: 1;\n        -webkit-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n    }\n}\n.Schedule-presenter {\n    color: rgb(125,124,123);\n    font-size: 14px;\n    margin-left: 1px;\n}\n.Schedule-en {\n    color: rgb(207,43,43);\n    display: inline-block;\n    padding: 0 4px ;\n}\n.Schedule-categoryIcon {\n  position: absolute;\n  top: 20px;\n  right: 10px;\n  width: 12px;\n  height: 12px;\n  border-radius: 2px;\n  background: transparent;\n  will-change: background;\n  -webkit-transition: background .3s;\n  transition: background .3s;\n}\n", ""]);
+	exports.push([module.id, ".Schedule {\n\twidth: 100%;\n    min-height: 100vh;\n\tposition: relative;\n\tbackground: white;\n\tborder-left: 1px solid gray;\n    border-right: 1px solid gray;\n    z-index: 10;\n    \n}\n.Schedule.is-fixed {\n    padding-top: 56px;\n}\n.Schedule-title {\n    background: white;\n    border-bottom: 1px solid gray;\n    width: 100%;\n    z-index: 20;\n\n}\n.Schedule-title.is-fixed {\n    position: fixed;\n    top: 0;\n    \n    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n    transition: all .2s cubic-bezier(.4,0,.2,1); \n}\n@media screen and (min-width: 776px) and (max-width: 1199px){\n    .Schedule-title {\n        background: white;\n        border-bottom: 1px solid gray;\n        width: 100%;\n        z-index: 20;\n\n    }\n    .Schedule-title.is-fixed {\n        position: fixed;\n        top: 0;\n        max-width: calc(50% - 2px);\n        \n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n    }\n    \n}\n@media screen and (min-width: 1200px){\n    .Schedule-title {\n        background: white;\n        border-bottom: 1px solid gray;\n        width: 100%;\n        z-index: 20;\n    }\n    .Schedule-title.is-fixed.without-session {\n        left: 361px;\n        \n        position: fixed;\n        top: 0;\n        max-width: 548px;\n    \n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n        will-change: left;\n    }\n    .Schedule-title.is-fixed.with-session {\n        left: 161px;\n        \n        position: fixed;\n        top: 0;\n        max-width: 548px;\n\n        -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); \n        transition: all .2s cubic-bezier(.4,0,.2,1); \n        will-change: left;\n    }\n}\n\n/* FILTER */\n.Schedule-filterBtn {\n    position: absolute;\n    right: 8px;\n    top: 0;\n    color: rgb(80,80,80);\n    text-align: center;\n    line-height: 54px;\n    width: 56px;\n    height: 56px;\n    cursor: pointer;\n    -webkit-transition: all .3s;\n            transition: all .3s;\n}\n.Schedule-filterBtn:hover {\n    color: rgb(53,55,54);\n}\n.Schedule-filterBtn:before {\n    \n    \n}\n.Schedule-bar1 {\n    content: '';\n    border-top: 2px solid transparent;\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n\n}\n.Schedule-bar2 {\n    content: '';\n    border-top: 2px solid transparent;\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;  \n}\n.Schedule-bar1.is-active {\n    content: '';\n    border-top: 2px solid rgb(213,62,79);\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n    -webkit-transform: rotate(45deg);\n        -ms-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-transition: all .3s cubic-bezier(.4,0,.2,1); \n    transition: all .3s cubic-bezier(.4,0,.2,1); \n    \n}\n.Schedule-bar2.is-active {\n    content: '';\n    border-top: 2px solid rgb(213,62,79);\n    position: absolute;\n    top: 28px;\n    width: 40px;\n    left: 8px;\n\n    -webkit-transform: rotate(-45deg);\n\n        -ms-transform: rotate(-45deg);\n\n            transform: rotate(-45deg);\n    -webkit-transition: all .3s cubic-bezier(.4,0,.2,1); \n    transition: all .3s cubic-bezier(.4,0,.2,1); \n    \n}\n\n@media screen and (min-width: 1200px) {\n    .Schedule-filterBtn {\n        display: none;\n    }\n}\n.Schedule-filterPanel {\n    max-height: 0px;\n    overflow: hidden;\n    will-change: max-height;\n    transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n}\n.Schedule-filterPanel.is-show {\n    max-height: calc(100vh - 80px);\n    \n    will-change: max-height;\n    transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);\n    width: 100%;\n}\n.Schedule-filterPanel.is-show.is-fixed {\n    position: fixed;\n    top: 57px;\n    z-index: 200;\n    width: 100%;\n    background: white;\n    box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);\n}\n@media screen and (min-width: 768px) and (max-width: 1199px){\n    .Schedule-filterPanel.is-show.is-fixed {\n        width: calc(50% - 2px);\n        box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);\n    }\n\n}\n@media screen and (min-width: 1200px){\n    .Schedule-filterPanel.is-show.is-fixed {\n       display: none; \n    }\n\n}\n/* ===================== */\n\n.Schedule-dayButton {\n    font-family: Polaris-Bold,Helvetica,Arial,sans-serif;\n    font-size: 14px;\n    text-transform: uppercase;\n    letter-spacing: .08em;\n    display: inline-block;\n    padding: 20px;\n    cursor: pointer;\n    \n}\n.Schedule-dayButton:hover, .Schedule-dayButton.is-active {\n    color: rgb(68,210,143);\n    text-decoration: underline; \n}\n.Schedule-day {\n    background: rgb(220,220,220);\n    padding: 20px 20px 20px 26px;\n    font-family: Polaris-Book,\"Helvetica Neue\",Helvetica,Arial,sans-serif;\n    /*'Gentium Basic',Gentium,serif;*/\n    font-weight: 800;\n    letter-spacing: 1px;\n}\n.Schedule-item {\n\tpadding: 30px;\n\tpadding-left: 92px;\n\n\tbackground: white;\n    position: relative;\n    color: rgb(100,100,100);\n    overflow: hidden;\n}\n.Schedule-event {\n    overflow: hidden;\n}\n.Schedule-keynotePresenter {\n    color: rgb(125,124,123);\n    font-size: 14px;\n    margin-top: 4px;\n\n}\n.Schedule-itemWrapper {\n    overflow: hidden;\n    background: white;\n    position: relative;\n    padding-left: 80px;\n    overflow: hidden;\n    \n}\n.Schedule-item.has-top-border, .Schedule-itemWrapper.has-top-border {\n\tborder-top: 1px solid rgb(220,220,220);\n}\n.Schedule-time {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 90px;\n    line-height: 80px;\n    font-size: 14px;\n    text-align: center;\n    color: rgb(53,55,54);\n}\n.Schedule-session {\n    padding: 14px 30px 14px 10px;\n    cursor: pointer;\n    will-change: background;\n    line-height: 1.4;\n    -webkit-transition: background .3s;\n    transition: background .3s;\n    border-bottom: 1px solid rgb(220,220,220);\n    position: relative;\n    overflow: hidden;\n}\n.Schedule-session.is-last {\n    border-bottom: none;\n    /*background: rgba(215, 253, 236, 0.82);*/\n}\n.Schedule-session.is-active {\n    background: rgba(215, 253, 236, 0.82);\n}\n.Schedule-session:hover {\n    background: rgba(215, 253, 236, 0.82);\n    -webkit-transition: background .3s;\n    transition: background .3s;\n}\n.Schedule-venue {\n    display: inline-block;\n    padding: 1px 5px;\n    margin-bottom: 5px;\n    font-size: 14px;\n    background: rgb(220,220,220);\n    border-radius: 12px;\n    color: gray;\n\n}\n@media screen and (min-width: 776px){\n    \n    .Schedule-session {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -ms-flexbox;\n        display: flex;\n    }\n    .Schedule-meta {\n        \n    }\n    .Schedule-main {\n        margin-left: 8px;\n        -webkit-box-flex: 1;\n        -webkit-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n    }\n}\n.Schedule-presenter {\n    color: rgb(125,124,123);\n    font-size: 14px;\n    margin-left: 1px;\n}\n.Schedule-en {\n    color: rgb(207,43,43);\n    display: inline-block;\n    padding: 0 4px ;\n}\n.Schedule-categoryIcon {\n  position: absolute;\n  top: 20px;\n  right: 10px;\n  width: 12px;\n  height: 12px;\n  border-radius: 2px;\n  background: transparent;\n  will-change: background;\n  -webkit-transition: background .3s;\n  transition: background .3s;\n}\n", ""]);
 
 /***/ },
 /* 291 */
