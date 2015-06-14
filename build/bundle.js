@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0b1b3b1b623a2dd58905"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e4d339a3c954bc3de806"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33498,11 +33498,12 @@
 
 	    var scheduleClasses = classNames({
 	      Schedule: true,
-	      "is-fixed": inScheduleArea === "within" || showPanel });
+	      "is-fixed": inScheduleArea === "within" || inScheduleArea === "passed" && showPanel
+	    });
 
 	    var titleClasses = classNames({
 	      "Schedule-title": true,
-	      "is-fixed": inScheduleArea === "within" || showPanel,
+	      "is-fixed": inScheduleArea === "within" || inScheduleArea === "passed" && showPanel,
 	      "with-session": showSession,
 	      "without-session": !showSession
 	    });
@@ -33526,7 +33527,7 @@
 	    var filterClasses = classNames({
 	      "Schedule-filterPanel": true,
 	      "is-show": window.innerWidth < 1200 && showPanel,
-	      "is-fixed": inScheduleArea === "within" || showPanel
+	      "is-fixed": inScheduleArea === "within" || inScheduleArea === "passed" && showPanel
 	    });
 
 	    var bar1Classes = classNames({

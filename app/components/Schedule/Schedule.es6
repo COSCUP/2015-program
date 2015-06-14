@@ -255,12 +255,12 @@ export default React.createClass({
 
     var scheduleClasses = classNames({
         "Schedule" : true,
-        "is-fixed" : inScheduleArea==="within"  || showPanel,
+        "is-fixed" : inScheduleArea==="within" || (inScheduleArea==="passed" && showPanel)
     })
 
     var titleClasses = classNames({
         "Schedule-title" : true,
-        "is-fixed" : inScheduleArea==="within" || showPanel,
+        "is-fixed" : inScheduleArea==="within" || (inScheduleArea==="passed" && showPanel),
         "with-session" : showSession,
         "without-session" : !showSession
     })
@@ -284,7 +284,7 @@ export default React.createClass({
     var filterClasses = classNames({
         "Schedule-filterPanel" : true,
         "is-show" : window.innerWidth < 1200 && showPanel,
-        "is-fixed" : inScheduleArea==="within" || showPanel
+        "is-fixed" : inScheduleArea==="within" || (inScheduleArea==="passed" && showPanel)
     })
 
     var bar1Classes = classNames({
