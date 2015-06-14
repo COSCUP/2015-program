@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e79f5ca433f1d0187da0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "926aab0c88d24c6cbe9c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33862,7 +33862,7 @@
 										event: "台灣個性與 Open Source 開發/ Taiwaners and Open Source Development",
 										presenter: "Thinker",
 										category: "Taiwan / 開源與台灣",
-										abstract: "<p>語言因素之外，台灣人內斂、保守和缺乏自性，一方面又充滿熱情，形成一種悶騷的情況。對於參與 Open Source，始終不易和全球的開發社群接軌，形成一種封閉的狀態。敝人以近年淺薄的經驗，比較台灣人和一般歐美人士的運作方式的差異，希望有助突破困境。</p>",
+										abstract: "<p>語言因素之外，台灣人內斂、保守和缺乏自信，一方面又充滿熱情，形成一種悶騷的情況。對於參與 Open Source，始終不易和全球的開發社群接軌，形成一種封閉的狀態。敝人以近年淺薄的經驗，比較台灣人和一般歐美人士的運作方式的差異，希望有助突破困境。</p>",
 										biography: "<p>參與 Open Source 近二十年，近三年致力於 B2G project。</p><p>Have attended Open Source activities for nearly 20 yrs.<br/>I dedicate to B2G project in last 3 years.</p>"
 							}]
 				}, {
