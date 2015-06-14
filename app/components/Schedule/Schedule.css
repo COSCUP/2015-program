@@ -150,10 +150,12 @@
     -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);
 }
 .Schedule-filterPanel.is-show {
-    max-height: 500px;
+    max-height: calc(100vh - 80px);
+    
     will-change: max-height;
     transition: all .2s cubic-bezier(0, 1, 0.5, 1);
     -webkit-transition: all .2s cubic-bezier(0, 1, 0.5, 1);
+    width: 100%;
 }
 .Schedule-filterPanel.is-show.is-fixed {
     position: fixed;

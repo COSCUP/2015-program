@@ -12,17 +12,11 @@ export default React.createClass({
 
   getInitialState () {
     return {
-      showPanel: false,
       currentSection: "before"
     };
   },
 
-  _togglePanel(){
-   
-    this.setState({
-      showPanel: !this.state.showPanel
-    })
-  },
+
 
   _setSectionArea(value){
      this.setState({
@@ -70,7 +64,8 @@ export default React.createClass({
     var {inScheduleArea, sessionHandler, showSession, setSessionHandler, currentSession,
          filterOn, categories,
          toggleCategoryHandler, clearCategoryHandler,
-         currentScrollHeight} = this.props;
+         currentScrollHeight,
+         showPanel, togglePanelHander} = this.props;
     var {currentSection} = this.state;
     /* ----------- */
     var categoryObj = {};
@@ -260,45 +255,45 @@ export default React.createClass({
 
     var scheduleClasses = classNames({
         "Schedule" : true,
-        "is-fixed" : inScheduleArea==="within",
+        "is-fixed" : inScheduleArea==="within"  || showPanel,
     })
 
     var titleClasses = classNames({
         "Schedule-title" : true,
-        "is-fixed" : inScheduleArea==="within",
+        "is-fixed" : inScheduleArea==="within" || showPanel,
         "with-session" : showSession,
         "without-session" : !showSession
     })
     var titleStyle = {};
-    if(inScheduleArea==="passed"){
+    // if(inScheduleArea==="passed" && !showPanel){
      
-      titleStyle = { 
-          position: "absolute", 
-          top: this.props.top
-      }
+    //   titleStyle = { 
+    //       position: "absolute", 
+    //       top: this.props.top
+    //   }
 
-    }
+    // }
 
     var filterBtnClasses = classNames({
         "Schedule-filterBtn" : true,
-        "is-active" : window.innerWidth < 1200 && this.state.showPanel
+        "is-active" : window.innerWidth < 1200 && showPanel
     })
 
-    var filterText = (window.innerWidth < 1200 && this.state.showPanel) ? "":"Filter";
+    var filterText = (window.innerWidth < 1200 && showPanel) ? "":"Filter";
 
     var filterClasses = classNames({
         "Schedule-filterPanel" : true,
-        "is-show" : window.innerWidth < 1200 && this.state.showPanel,
-        "is-fixed" : inScheduleArea==="within"
+        "is-show" : window.innerWidth < 1200 && showPanel,
+        "is-fixed" : inScheduleArea==="within" || showPanel
     })
 
     var bar1Classes = classNames({
         "Schedule-bar1" : true,
-        "is-active" : window.innerWidth < 1200 && this.state.showPanel
+        "is-active" : window.innerWidth < 1200 && showPanel
     })
     var bar2Classes = classNames({
         "Schedule-bar2" : true,
-        "is-active" : window.innerWidth < 1200 && this.state.showPanel
+        "is-active" : window.innerWidth < 1200 && showPanel
     })
 
     var day1Classes = classNames({
@@ -320,7 +315,7 @@ export default React.createClass({
               <div className={day2Classes}
                    onClick={this._goToElement.bind(this,"day2")}>Day 2</div>
               <div className={filterBtnClasses}
-                   onClick={this._togglePanel}>{filterText}
+                   onClick={togglePanelHander}>{filterText}
                    <div className={bar1Classes}></div>
                    <div className={bar2Classes}></div>
               </div>

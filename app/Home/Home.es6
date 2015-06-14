@@ -31,8 +31,17 @@ export default React.createClass({
       categoryOn: false,
       currentSession: {},
       showSession: false,
-      currentScrollHeight: 0
+      currentScrollHeight: 0,
+
+      showPanel: false
     };
+  },
+
+  _togglePanel(){
+   
+    this.setState({
+      showPanel: !this.state.showPanel
+    })
   },
 
   componentDidMount(){
@@ -181,10 +190,10 @@ export default React.createClass({
   render() {
     var {inScheduleArea, scheduleHeight, filterHeight, showSession,
          categories, categoryOn, currentSession,
-         currentScrollHeight} = this.state;
+         currentScrollHeight, showPanel} = this.state;
     var filterClass = classNames({
         "Home-filter": true,
-        "is-fixed": inScheduleArea === "within"
+        "is-fixed": inScheduleArea === "within" || showPanel
     });
 
     var filterStyle = {};
@@ -192,26 +201,18 @@ export default React.createClass({
 
     ///////////////////////////////////////// TO BE refine
     var top, height;
-    if(inScheduleArea === "passed"){
-        var coverNode = this.refs.cover.getDOMNode();
-        var scheduleNode = this.refs.schedule.getDOMNode();
-        top = coverNode.offsetHeight;
-        height = scheduleNode.offsetHeight;
-       
+    if((inScheduleArea === "passed")&&(window.innerWidth > 776)){
         filterStyle = { 
-          position: "absolute", 
-          top: (height - top) + "px",
-          transiton: "all .3s"
+            position: "absolute", 
+            top: (height - top) + "px",
+            transiton: "all .3s"
         }
-        if(window.innerWidth > 776){
-              sessionStyle = { 
-              position: "absolute", 
-              top: (height - top - 240) + "px",
-              transiton: "all .3s"
-          }
+        sessionStyle = { 
+            position: "absolute", 
+            top: (height - top - 240) + "px",
+            transiton: "all .3s"
+        }
 
-        }
-        
     }
 
     /* ------------------- */
@@ -223,7 +224,7 @@ export default React.createClass({
 
     var scheduleClass = classNames({
         "Home-schedule" : true,
-        "is-fixed" : inScheduleArea !== "before",
+        "is-fixed" : inScheduleArea === "within" || showPanel,
         "with-session" : showSession,
         "is-hide" : shouldHide
     });
@@ -232,7 +233,7 @@ export default React.createClass({
     var sessionClass = classNames({
         "Home-session" : true,
         "is-show" : showSession,
-        "is-fixed" : inScheduleArea === "within"
+        "is-fixed" : inScheduleArea === "within" || showPanel
     });
 
     var sponserClass = classNames({
@@ -310,7 +311,10 @@ export default React.createClass({
                         clearCategoryHandler={this._clearCategory}
 
                         currentScrollHeight={currentScrollHeight}
-                        goToElementHandler = {this._goToElement}/>
+                        goToElementHandler = {this._goToElement}
+
+                        showPanel={showPanel}
+                        togglePanelHander={this._togglePanel}/>
             </div>
 
             
