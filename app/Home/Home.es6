@@ -1,19 +1,25 @@
 import React from "react";
+
 import "./Home.css";
 import AppBar from "../components/AppBar/AppBar.es6";
 import Filter from "../components/Filter/Filter.es6";
 import Schedule from "../components/Schedule/Schedule.es6";
 import Session from "../components/Session/Session.es6";
 import Sponser from "../components/Sponser/Sponser.es6";
-import Data from "./Categories";
+import Venues from "../components/Venues/Venues.es6";
+
+import CategoriesData from "./Categories";
+import VenuesData from "./Venues.json";
+
 import classNames from "classnames";
 import $ from "jquery";
+
 export default React.createClass({
   displayName: "Home",
 
   getInitialState () {
     
-    var categories = Data.categories.map((value,index)=>{
+    var categories = CategoriesData.categories.map((value,index)=>{
         return (
           {
             "title" : value.title,
@@ -264,9 +270,7 @@ export default React.createClass({
       "is-show" : showSession
     });
 
-    // <a className="Home-patch"
-    //    href=""
-    //    target="_blank">patches welcome</a>
+  
 
     return (
       <div className="Home">
@@ -330,7 +334,12 @@ export default React.createClass({
             </div>
           
             <div className={footerClass}>
-              
+              <Venues data={VenuesData}/>
+              <div className="Home-patchSection">
+                <a className="Home-patch"
+                   href="https://github.com/COSCUP/coscup-schedule"
+                   target="_blank">patches welcome</a>
+              </div>
             </div>
 
         </div>

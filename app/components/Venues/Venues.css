@@ -1,0 +1,35 @@
+.Venues {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: left;
+    padding: 10px;
+}
+.Venues-title {
+	padding: 10px 6px;
+}
+.Venues-items {
+	column-count: 2;
+}
+.Venues-item {
+	display: inline-block;
+	font-size: 14px;
+	color: rgb(80,80,80);
+	margin: 3px;
+	width: 100%;
+}
+.Venues-key {
+	background: rgb(220,220,220);
+	padding: 2px 6px;
+	
+}
+@media screen and (min-width: 776px){
+	.Venues-key {
+		display: inline-block;
+    	border-radius: 9px;
+    	
+	}
+}
+.Venues-text {
+	padding: 2px 6px;
+	display: inline-block;
+}
