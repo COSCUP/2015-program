@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e4d339a3c954bc3de806"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e79f5ca433f1d0187da0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32754,8 +32754,8 @@
 
 	            var listItems = Data[data_key].map(function (value, index) {
 	                return React.createElement(
-	                    "div",
-	                    { className: "Sponser-item" },
+	                    "a",
+	                    { className: "Sponser-item", href: value.link, target: "_blank" },
 	                    React.createElement("img", { src: value.logo, alt: value.title })
 	                );
 	            });
@@ -32883,7 +32883,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(267)();
-	exports.push([module.id, ".Sponser {\t\n\twidth: 100%;\n\tmin-height: 100vh;\n\tposition: relative;\n\tbackground: white;\n}\n.Sponser:after {\n    content: '';\n    position: absolute;\n    top: -10px;\n    left: 0;\n    border-top: 10px solid;\n}\n.Sponser-sectionTitle {\n\tpadding: 20px;\n\tfont-size: 18px;\n\tfont-weight: 600;\n\tbackground: #44C98F; \n\t/*#96D996;*/\n\t/*#A3D1A9;*/\n\tcolor: rgb(240,244,240);\n\tpadding-left: 30px;\n}\n.Sponser-item {\n\tborder: 1px solid #A3D1A9;\n\tpadding: 4px;\n\ttext-align: center;\n}\n.Sponser-text {\n\tline-height: 1.6;\n\tfont-size: 16px;\n\ttext-align: left;\n\tcolor: rgb(53,55,54);\n\tpadding: 10px;\n}", ""]);
+	exports.push([module.id, ".Sponser {\t\n\twidth: 100%;\n\tmin-height: 100vh;\n\tposition: relative;\n\tbackground: white;\n}\n.Sponser:after {\n    content: '';\n    position: absolute;\n    top: -10px;\n    left: 0;\n    border-top: 10px solid;\n}\n.Sponser-sectionTitle {\n\tpadding: 20px;\n\tfont-size: 18px;\n\tfont-weight: 600;\n\tbackground: #44C98F; \n\t/*#96D996;*/\n\t/*#A3D1A9;*/\n\tcolor: rgb(240,244,240);\n\tpadding-left: 30px;\n}\n.Sponser-item {\n\tborder: 1px solid #A3D1A9;\n\tpadding: 4px;\n\ttext-align: center;\n\tdisplay: block;\n}\n.Sponser-text {\n\tline-height: 1.6;\n\tfont-size: 16px;\n\ttext-align: left;\n\tcolor: rgb(53,55,54);\n\tpadding: 10px;\n}", ""]);
 
 /***/ },
 /* 279 */
@@ -32899,11 +32899,13 @@
 	    黃金級贊助: [],
 	    白銀級贊助: [{
 	        title: "祐生研究基金會",
-	        logo: "//coscup.org/2015/assets//images/sponsor-archilife.jpg"
+	        logo: "//coscup.org/2015/assets//images/sponsor-archilife.jpg",
+	        link: "http://www.archilife.org/"
 	    }],
 	    青銅級贊助: [{
 	        title: "哇寶國際資訊",
-	        logo: "//coscup.org/2015/assets//images/sponsor-wabow.jpg"
+	        logo: "//coscup.org/2015/assets//images/sponsor-wabow.jpg",
+	        link: "http://www.wabow.com/"
 	    }],
 	    協辦單位: [],
 	    媒體夥伴: []

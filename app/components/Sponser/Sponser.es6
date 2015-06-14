@@ -10,9 +10,9 @@ export default React.createClass({
   		
   		var listItems = Data[data_key].map((value,index)=>{
     		return (
-    			<div className="Sponser-item">
+    			<a className="Sponser-item" href={value.link} target="_blank">
     				<img src={value.logo} alt={value.title} />
-    			</div>
+    			</a>
     		)
     	});
         return (
