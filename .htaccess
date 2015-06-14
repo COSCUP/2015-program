@@ -1,34 +1,4 @@
-<Location .*>
+<FilesMatch "^(app|lib|server|webpack|package|\.)">
   Order allow, deny
   Deny from all
-</Location>
-
-<Location app>
-  Order allow, deny
-  Deny from all
-</Location>
-
-<Location lib>
-  Order allow, deny
-  Deny from all
-</Location>
-
-<Location server>
-  Order allow, deny
-  Deny from all
-</Location>
-
-<Location *.es6>
-  Order allow, deny
-  Deny from all
-</Location>
-
-<Location webpack.*>
-  Order allow, deny
-  Deny from all
-</Location>
-
-<Location package.json>
-  Order allow, deny
-  Deny from all
-</Location>
+</FilesMatch>
