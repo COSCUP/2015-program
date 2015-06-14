@@ -1,4 +1,4 @@
 <FilesMatch "^(app|lib|server|webpack|package|\.)">
-  Order allow, deny
+  Order allow,deny
   Deny from all
 </FilesMatch>
