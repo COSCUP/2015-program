@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "926aab0c88d24c6cbe9c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fe0d237c1bcdb9a0c8c6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -34202,7 +34202,7 @@
 										presenter: "小說",
 										category: "Others / 一般議程",
 										abstract: "<p>很慶幸的，設計是有原理的，並非完全來自天份，解讀設計不只需要美感，還需要一些些的科學。講題中將介紹一些科學層面的介紹，提供另一個面向來詮釋高階設計者的巧思。</p>",
-										biography: "<p>資訊工程與心理背景，喜好以心理學與科學層面解讀設計。目前任職於割闌尾計畫、麻吉波波之初階程式設計師。</p>"
+										biography: "<p>資訊工程與心理學背景，喜好以心理學與科學層面解讀設計。目前服務於割闌尾計畫(台灣實踐民權發展社)與Leisure App之新手程式設計師。</p>"
 							}, {
 										time: "10:50-11:30",
 										venue: "H0",
