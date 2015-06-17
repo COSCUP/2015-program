@@ -239,7 +239,7 @@ export default React.createClass({
     var sessionClass = classNames({
         "Home-session" : true,
         "is-show" : showSession,
-        "is-fixed" : inScheduleArea === "within" || showPanel
+        "is-fixed" : inScheduleArea === "within" || (showPanel && window.innerWidth < 776)
     });
 
     var sponserClass = classNames({

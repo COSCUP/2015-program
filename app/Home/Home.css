@@ -137,7 +137,7 @@
     
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px){
+@media screen and (min-width: 768px) and (max-width: 1236px){
     .Home-main {
         position: relative;
         height: auto;
@@ -206,7 +206,7 @@
 
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1237px){
 	.Home-main {
         position: relative;
         height: auto;

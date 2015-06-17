@@ -276,24 +276,24 @@ export default React.createClass({
 
     var filterBtnClasses = classNames({
         "Schedule-filterBtn" : true,
-        "is-active" : window.innerWidth < 1200 && showPanel
+        "is-active" : window.innerWidth < 1237 && showPanel
     })
 
-    var filterText = (window.innerWidth < 1200 && showPanel) ? "":"Filter";
+    var filterText = (window.innerWidth < 1237 && showPanel) ? "":"Filter";
 
     var filterClasses = classNames({
         "Schedule-filterPanel" : true,
-        "is-show" : window.innerWidth < 1200 && showPanel,
+        "is-show" : window.innerWidth < 1237 && showPanel,
         "is-fixed" : inScheduleArea==="within" || (inScheduleArea==="passed" && showPanel)
     })
 
     var bar1Classes = classNames({
         "Schedule-bar1" : true,
-        "is-active" : window.innerWidth < 1200 && showPanel
+        "is-active" : window.innerWidth < 1237 && showPanel
     })
     var bar2Classes = classNames({
         "Schedule-bar2" : true,
-        "is-active" : window.innerWidth < 1200 && showPanel
+        "is-active" : window.innerWidth < 1237 && showPanel
     })
 
     var day1Classes = classNames({

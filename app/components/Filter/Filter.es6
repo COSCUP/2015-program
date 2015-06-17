@@ -41,7 +41,7 @@ export default React.createClass({
       "is-active" : filterOn
     });
 
-    var closeItem = (window.innerWidth < 1200) ? <div className="Filter-close" onClick={togglePanelHander}>Close</div> : "";
+    var closeItem = (window.innerWidth < 1237) ? <div className="Filter-close" onClick={togglePanelHander}>Close</div> : "";
     
     return (
       <div className="Fitler">

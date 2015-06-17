@@ -25,7 +25,7 @@
     -webkit-transition: all .2s cubic-bezier(.4,0,.2,1); 
     transition: all .2s cubic-bezier(.4,0,.2,1); 
 }
-@media screen and (min-width: 776px) and (max-width: 1199px){
+@media screen and (min-width: 776px) and (max-width: 1236px){
     .Schedule-title {
         background: white;
         border-bottom: 1px solid gray;
@@ -43,7 +43,7 @@
     }
     
 }
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1237px){
     .Schedule-title {
         background: white;
         border-bottom: 1px solid gray;
@@ -137,7 +137,7 @@
     
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1237px) {
     .Schedule-filterBtn {
         display: none;
     }
@@ -165,14 +165,17 @@
     background: white;
     box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);
 }
-@media screen and (min-width: 768px) and (max-width: 1199px){
+@media screen and (min-width: 768px) and (max-width: 1236px){
     .Schedule-filterPanel.is-show.is-fixed {
-        width: calc(50% - 2px);
+        width: calc(50% - 1px);
+        
         box-shadow: 0px 2px 2px 0 rgba(0,0,0,.22);
+        border-right: 1px solid rgb(100,100,100);
+        
     }
 
 }
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1237px){
     .Schedule-filterPanel.is-show.is-fixed {
        display: none; 
     }
