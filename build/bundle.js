@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2ba9f705c404520d5127"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "72a6c04ed0f0b3bee391"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -34451,7 +34451,7 @@
 										event: "在公司成立開放源碼社團的原因與實踐",
 										presenter: "馬克泡",
 										category: "Community / 社群經驗",
-										abstract: "<p>現在這個總統跟女模，都能在業餘寫上一手好程式的時代。<br/>寫程式應該成為一種樂趣，而不只是謀生工具。<br/時代不一樣了，你應該在公司成立開放源碼社團。<br/本演講將分享在公司成立開放源碼社團的原因和好處，<br/並以M社的開放資料社團為例，提供運作半年的經驗和實踐分享給大家。<br/</p>",
+										abstract: "<p>現在這個總統跟女模，都能在業餘寫上一手好程式的時代。<br/>寫程式應該成為一種樂趣，而不只是謀生工具。<br/>時代不一樣了，你應該在公司成立開放源碼社團。<br/>本演講將分享在公司成立開放源碼社團的原因和好處，<br/>並以M社的開放資料社團為例，提供運作半年的經驗和實踐分享給大家。<br/></p>",
 										biography: "<p>馬克泡，曾在COSCUP多次分享OpenWrt相關心得。</p><p>發現台灣產業變遷，體認到要貢獻開放源碼社群，必須從產業鏈上游開始會比較好。</p><p>於是從系統廠轉換跑道到IC設計產業服務。後來服務於台灣自主CPU開發公司 - 晶心科技，從事NDS32 u-boot官方開發及維護工作。</p><p>目前於M社從事手機USB相關驗證開發。</p>"
 							}, {
 										time: "15:10-15:50",
