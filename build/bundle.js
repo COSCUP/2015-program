@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "72a6c04ed0f0b3bee391"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e2279894f244298d40a8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32896,7 +32896,11 @@
 	module.exports = {
 
 	    鑽石級贊助: [],
-	    黃金級贊助: [],
+	    黃金級贊助: [{
+	        title: "Appier",
+	        logo: "//coscup.org/2015/assets//images/sponsor-appier.png",
+	        link: "http://appier.com/"
+	    }],
 	    白銀級贊助: [{
 	        title: "祐生研究基金會",
 	        logo: "//coscup.org/2015/assets//images/sponsor-archilife.jpg",
