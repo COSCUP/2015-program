@@ -11,8 +11,8 @@ Browser.localhost('localhost', 3000);
 
 const browser = new Browser({ waitDuration: '10s' })
 const path = paths.shift() || '/'
-try { fs.mkdirSync("build/" + path) } catch (e) {}
-const outputFile = "build/" + path + "/index.html"
+try { fs.mkdirSync("./" + path) } catch (e) {}
+const outputFile = "./" + path + "/index.html"
 fs.writeFileSync(outputFile, `<body>Error: Building ${path} failed!`)
 
 browser.visit(path, ()=>{
@@ -20,23 +20,28 @@ browser.visit(path, ()=>{
     let meta = browser.document.querySelector('meta[property="og:image"]')
     if (meta && meta.getAttribute('content')) { image = 'http://coscup.org' + meta.getAttribute('content').replace('http://coscup.org', '') }
     let output = `<!DOCTYPE html>
-        <html>
-        <head>
+<html>
+    <head>
         <meta charset="utf-8" />
         <title>${ browser.document.title }</title>
+        <meta property="og:title" content="2015 COSCUP">
+        <meta name="og:description" content="COSCUP 2015, 8/15-16 中央研究院。台灣 Opens Source 相關社群聯合舉辦的大型開放源碼研討會。讓世界各地的 FLOSS 愛好者、專家藉由開源人年會齊聚一堂，分享經驗、想法與新技術，共同激發群眾投入貢獻開源 / 自由軟體。">
+        <meta property="og:url" content="http://coscup.org/2015/">
+        <meta property="og:site_name" content="2015 COSCUP">
         <meta content="${ image }" property="og:image">
         <meta content="website" property="og:type">
-        <link rel="icon" type="image/png" href="${ image }">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <meta content="${ image }" name="twitter:image">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href="styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="build/css/font-awesome.min.css">
+        <link rel="stylesheet" href="build/styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        </head>
-        <body id='production'>${browser.document.body.innerHTML.replace(
+    </head>
+    <body id='production'>${browser.document.body.innerHTML.replace(
             /<script[^>]*>.*?<\/script>/ig, ''
-        )}</body>
-        <script src="bundle.js"></script>
-    </html>`
+        )}
+        <script src="build/bundle.js"></script>
+    </body>
+</html>`
     fs.writeFile(outputFile, output, ()=>{
         const seen = {}
         let waitFor = 0
@@ -44,7 +49,7 @@ browser.visit(path, ()=>{
             output = output.replace(/href="(\/[^/."][^."]+)"/, '')
             const p = RegExp.$1
             if (seen[p]) { continue }
-            if (fs.existsSync("build/" + p + "/index.html")) { continue }
+            if (fs.existsSync("./" + p + "/index.html")) { continue }
             seen[p] = true
             waitFor++
             console.log(p)
