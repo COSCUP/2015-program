@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "69be6dc6fdebdd9a0922"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3946ed9fc77dbf360243"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33714,11 +33714,11 @@
 							events: [{
 										time: "10:00-10:40",
 										venue: "R0",
-										event: "TBD",
-										presenter: "",
+										event: "眾志成城：基進、人本、科學的開放協同議論平台",
+										presenter: "游知澔",
 										category: "Others / 一般議程",
-										abstract: "",
-										biography: ""
+										abstract: "<p>我相信對話能改造社會。試想基於開放、基進、人本與科學精神的對話；試想十萬人同時平等的對話；試想多個以同樣精神建造的系統，彼此協同，收錄資訊，分析論述，協助參與對話的人。讓我們一起建造這樣的系統吧！</p>",
+										biography: "<p>我是游知澔，出生於台灣台北。語言、代碼及系統是我的創作媒體，同時也是我批判思考的對象。利用藝術，我盡所能地在作品中檢視社會經濟結構及道德價值，為社會正義發聲，為人類全體之美好生活而努力。我創造替代性質的討論及協作平台，並冀望新的社會能自此展開。我自羅德島設計學院取得藝術碩士學位，自台灣大學取得企業管理學士學位。經過研究、反覆思辨，我希望最終能合眾人之力，重造或取代這些現有的權力機構及社會階層。</p>"
 							}, {
 										time: "10:00-10:40",
 										venue: "R1",
@@ -33730,11 +33730,11 @@
 							}, {
 										time: "10:00-10:40",
 										venue: "R2",
-										event: "TBD",
-										presenter: "",
+										event: "Build your own Embedded Linux distributions by Yocto project",
+										presenter: "coldnew",
 										category: "Others / 一般議程",
-										abstract: "",
-										biography: ""
+										abstract: "<p>Yocto project 衍生自 OpenEmbedded 專案，是近幾年來 SOC 開發商 (Intel, Freescale, TI ...etc) 以及開發板 (Raspberry pi、Wandboard ...etc) 皆具有支援的 Embedded Linux 建構工具。透過 Yocto 可以輕鬆的建立自己的 Linux 發行版、SDK 並可以提供 deb、rpm、ipk 等套件管理程式的支援。</p><p>本議題將探討如何使用 Yocto 去構建自己的 Embedded Linux 系統以及如何參與/協助 Yocto 的開發。</p>",
+										biography: "<p>從事 Embedded Linux 開發工作，假日則習慣以 Emacs Lisp 或是 Clojure 為開源專案的程式開發。</p>"
 							}, {
 										time: "10:00-10:40",
 										venue: "H0",
@@ -33938,11 +33938,11 @@
 							}, {
 										time: "14:10-14:50",
 										venue: "H1",
-										event: "TBD",
-										presenter: "",
+										event: "學校學不到的開源精神！",
+										presenter: "蔡富名",
 										category: "Others / 一般議程",
-										abstract: "",
-										biography: ""
+										abstract: "<p>我現在是一名國中二年級的學生，在這一年多來，因為自己的興趣，我參與了自造者社群活動，甚至為了較複雜的作品，來到了Fablab Taipei，遇到喜歡在這邊動手製作的人們，透過這些朋友，我學會使用數位機具，完成了我的創作。</p>",
+										biography: "<p>我是現在就讀國二的蔡富名</p>"
 							}]
 				}, {
 							time: "14:15",
@@ -34156,11 +34156,11 @@
 							}, {
 										time: "10:00-10:40",
 										venue: "H1",
-										event: "TBD",
-										presenter: "",
+										event: "Build a Minimal Operating System Kernel for ARM",
+										presenter: "Jserv",
 										category: "Others / 一般議程",
-										abstract: "",
-										biography: ""
+										abstract: "<p>與其說 C 是一種程式語言，不如說是一種掌握系統的態度，你必須連同硬體架構的行為一併學習，方可成為「電腦的主人」。而和 UNIX一脈相承的「讓你作任何事」的指導原則，更是一絕。本議程示範用 C 語言，從無到有開發具體而微的 ARM 作業系統核心，並善用開放原始碼技術。</p>",
+										biography: "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p>"
 							}, {
 										time: "10:00-10:40",
 										venue: "交誼廳",
@@ -34218,11 +34218,11 @@
 							}, {
 										time: "10:50-11:30",
 										venue: "H1",
-										event: "TBD",
-										presenter: "",
+										event: "The e820 trap of Linux kernel hibernating",
+										presenter: "jlee",
 										category: "Others / 一般議程",
-										abstract: "",
-										biography: ""
+										abstract: "<p>The core mechanism of Linux hibernate(S4) is snapshotting the page table and memory content, then restoring it back to memory. There have a important foundation of hibernate mechanism that is the memory map that's exposing by BIOS through e820 or EFI memory map protocol should not be changed.</p><p>My presentation is talking about the e820 trap of current Linux kernel hibernating, and the status of fixing the problem.</p>",
+										biography: "<p>Joey Lee, SUSE Labs Engineer in Taipei office. He is working on ACPI, EFI, Secure Boot, Hibernate Signature Verification, NVDIMM. One of the main jobs of him is following up mailing list on kernel upstream and contribute patch to kernel.</p>"
 							}, {
 										time: "10:50-11:30",
 										venue: "交誼廳",
@@ -34264,11 +34264,11 @@
 							}, {
 										time: "11:40-12:20",
 										venue: "R2",
-										event: "TBD",
-										presenter: "",
+										event: "Turf.js - 地理資訊的視覺化分析",
+										presenter: "Kuro",
 										category: "Others / 一般議程",
-										abstract: "",
-										biography: ""
+										abstract: "<p>Turf.js 是一個快速，輕量且開源的 JavaScript GIS 引擎，透過 Turf.js 我們可以很輕易的計算並分析地理資訊，並且可以套用至任何支援 GeoJson 的電子地圖。</p><p>此場議程將為各位介紹如何透過電子地圖 (如 Google Map) 與 Turf.js 分析資訊，並產生可互動的地理資訊視覺化圖表。</p>",
+										biography: "<p>前端工程師，長期專注網頁前端標準技術。曾任 JSDC、WebConf 及 DrupalCamp 等研討會講者，也多次參與前端技術社群分享心得。近期積極關注資訊視覺化 (圖表化) 與 GIS 相關應用領域，期望透過技術能夠在傳統產業掀起不同的新浪潮。</p>"
 							}, {
 										time: "11:40-12:20",
 										venue: "H0",
@@ -34354,11 +34354,11 @@
 							events: [{
 										time: "14:10-14:50",
 										venue: "R0",
-										event: "TBD",
-										presenter: "",
+										event: "如何快速建立資料庫服務的私有雲(DBaaS)-以OpenStack和MySQL為建置基礎",
+										presenter: "Ivan",
 										category: "Others / 一般議程",
-										abstract: "",
-										biography: ""
+										abstract: "<p>DBaaS with OpenStack and MySQL-Implementation and digital transformation.</p><p>By join this session you would have an understanding to the essential and benefits of DBaaS. This talk would address the architecture of OpenStack and features from MySQL that support the architecture. This session also show you the best practice of implementing DBaaS by a demo that implementing DBaaS with OpenStack and MySQL.</p>",
+										biography: "<p>一介IT老兵，目前在MySQL的原廠負責大中華區的MySQL技術推廣及協大型專案的實施及技術指導，同時也是台灣MySQL社群的推動者及主要參與者，詳情請參見<a href='https://www.facebook.com/groups/297728497041569/'>https://www.facebook.com/groups/297728497041569/</a></p>"
 							}, {
 										time: "14:10-14:50",
 										venue: "R1",
@@ -34436,11 +34436,11 @@
 							}, {
 										time: "15:10-15:50",
 										venue: "R2",
-										event: "TBD",
-										presenter: "",
+										event: "自己的機器人自己做",
+										presenter: "ted99tw",
 										category: "Others / 一般議程",
-										abstract: "",
-										biography: ""
+										abstract: "<p>如何製作一個包含軟韌硬體的開源雙足機器人</p>",
+										biography: "<p>連宏城，交大資訊系畢，長期浸淫IT領域，從業務到外商經理歷經各種職務，現在自行創業並投入自造潮流，已有3個募資專案在Indiegogo。最近作品為 MeArm.Joystick 機器手臂，在 FlyingV 創下1700%紀錄，迄今已在全省辦過40餘場DIY活動。目前正進行融合軟韌硬體的二足機器人開源專案。</p>"
 							}, {
 										time: "15:10-15:50",
 										venue: "H0",
