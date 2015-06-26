@@ -5,7 +5,7 @@
   "scripts": {
     "start-dev": "babel-node app.es6",
     "start": "NODE_ENV=production babel-node app.es6",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "static": "babel-node scripts/gen-static.js",
     "test": "jest"
   },
