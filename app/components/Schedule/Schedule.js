@@ -256,8 +256,17 @@ module.exports = {
 	    },
 	    {
 	    	"time" : "13:20",
-	    	"event" : "Keynote (TBD)",
-				"venue" : "全場聯播"
+	    	"events" : [
+	    		{
+	    	    	"time" : "10:50-11:30",
+	    	    	"venue" : "全場聯播",
+	    	    	"event" : "立委哩公蝦",
+	    	    	"presenter" : "Ly",
+	    	    	"category" : "Government / 開放政府",
+	    	    	"abstract" : "<p>分享介接立院 ivod 到 youtube 和 處理立院質詢資料的過程</p>",
+	    	    	"biography" : "<p>javascript 開發者，是個技術宅，喜歡學習及接觸各種新技術。在沃草擔任工程師，負責拍貓屁股。患有重度的 g0v 依存症，目前兩年了還無法治癒，同時也是 reactjs.tw 的門衛。</p>"
+	    	    }
+	    	]
 	    },
 	    {
 	    	"time" : "13:25",
@@ -323,11 +332,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "14:10-14:50",
 	    	    	"venue" : "H0",
-	    	    	"event" : "TBD",
-	    	    	"presenter" : "",
-	    	    	"category" : "Others / 一般議程",
-	    	    	"abstract" : "",
-	    	    	"biography" : ""
+	    	    	"event" : "從 backbone 進化成 React",
+	    	    	"presenter" : "Austin Huang",
+	    	    	"category" : "New / 新東西",
+	    	    	"abstract" : "<p>Vpon威朋是亞洲領先的大數據行動廣告平台，我們將分享如何將基於 backbone.js的 single page application，轉換至React framework及Flux 架構，用以解決日益複雜的事件邏輯，大幅減低HTML template維護成本，提高元件重複使用性，讓我們的前端開發者，能用更清楚簡潔的架構，快速開發並測試各類元件。</p>",
+	    	    	"biography" : "<p>現任 Vpon Inc. 技術長，IT 年資 20年，足跡遍及 Backend / Frontend / Operation / Network Infra. 等。相信技術只是起點，解決問題及滿足人類需求才是重點。熱愛挑戰各式系統應用問題，夢想跟一群志同道合的朋友，開發出世界級的系統。</p>"
 	    	    },
 	    	    {
 	    	    	"time" : "14:10-14:50",
@@ -450,11 +459,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "16:00-17:00",
 	    	    	"venue" : "R1",
-	    	    	"event" : "TBD",
-	    	    	"presenter" : "",
-	    	    	"category" : "Others / 一般議程",
-	    	    	"abstract" : "",
-	    	    	"biography" : ""
+	    	    	"event" : "運用 QNAP Docker 輕鬆打造持續整合開發環境",
+	    	    	"presenter" : "Doro Wu",
+	    	    	"category" : "Tips / 講秘訣",
+	    	    	"abstract" : "<p>Docker 的出現改變了 NAS 軟體生態，過去將軟體移殖到 NAS 上高不可攀的學習曲線已不在在，因應 Docker 和 LXC 的出現，QNAP 推出了 Container Station 來輔助 Container 在 NAS 的使用，如今 NAS 不在只是單純的儲存設備而已，它在運算上也能扮演著不錯的角色。在這場議題中，將分享 QNAP 如何運用 Docker 及 Container Station 在軟體專案上達成持續整合。</p>",
+	    	    	"biography" : "<p>Doro Wu 在 QNAP System 擔任專案經理，熱衷於 LXC and Docker 技術，目前在公司負責的專案為 Container Station。</p>"
 	    	    },
 	    	    {
 	    	    	"time" : "16:00-17:00",
@@ -492,8 +501,8 @@ module.exports = {
 	    	"events" : [
 	    		{
 	    			"time" : "17:00-18:00",
-	    			"event" : "clkao’s yard sale / 高村長拍賣會",
-	    			"presenter" : "clkao",
+	    			"event" : "COSCUP charity auction / COSCUP 慈善拍賣會",
+	    			"presenter" : "主持：clkao",
 	    			"venue" : "交誼廳",
 	    			"category" : "歡樂拍賣會"
 	    		}
@@ -546,8 +555,18 @@ module.exports = {
 	    },
 	    {
 	    	"time" : "09:10",
-	    	"event" : "Keynote (TBD)",
-				"venue" : "全場聯播"
+	    	"events" : [
+	    	{
+	    		
+	    		"time" : "09:10-10:00",
+	    		"venue" : "全場聯播",
+	    		"event" : "How Redis Powers Your Web Service & Flurry analytics Intro",
+	    		"presenter": "Gene Lian & Roger Lo",
+	    		"category" : "Tips / 講秘訣",
+	    	    "abstract" : "<p>Redis is an advanced key-value cache and store to achieve better performance, which has been widely applied in lots of popular products over the past couple of years, including Flickr and Twitter. In this talk, we're going to introduce how we leverage Redis to improve recommendation system in terms of the faster web service, the morescalable data store and the auto-failover mechanism. The following topics will be covered:</p><ol><li>What Redis features and how it works in general?</li><li>How to operate Redis (a simple command-line demo)?</li><li>How Redis powers your web service on top of the Yahoo! experience.</li></ol><p>Flurry from Yahoo presents the latest stats on app usage in mobile based on the 700,000 apps, Flurry Analytics tracks and the Mobile Developer Suite. App growth in Asia nearly doubled last year-98%! Dive deep into what’s driving growth in Asia app usage and how usage differs across countries.</p>",
+	    	    "biography" : "<p>Ann is a research engineer in Yahoo. She is responsible for designing and implementing algorithms powering personalized experience for search result pages and recommendation modules of Taiwan Yahoo eCommerce sites.</p>"
+				
+			}]
 	    },
 	    {
 	    	"time" : "10:00",
@@ -654,11 +673,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "10:50-11:30",
 	    	    	"venue" : "H0",
-	    	    	"event" : "立委哩公蝦",
-	    	    	"presenter" : "Ly",
-	    	    	"category" : "Government / 開放政府",
-	    	    	"abstract" : "<p>分享介接立院 ivod 到 youtube 和 處理立院質詢資料的過程</p>",
-	    	    	"biography" : "<p>javascript 開發者，是個技術宅，喜歡學習及接觸各種新技術。在沃草擔任工程師，負責拍貓屁股。患有重度的 g0v 依存症，目前兩年了還無法治癒，同時也是 reactjs.tw 的門衛。</p>"
+	    	    	"event" : "TBD",
+	    	    	"presenter" : "",
+	    	    	"category" : "Others / 一般議程",
+	    	    	"abstract" : "",
+	    	    	"biography" : ""
 	    	    },
 	    	    {
 	    	    	"time" : "10:50-11:30",
@@ -736,10 +755,10 @@ module.exports = {
 	    	    	"time" : "11:40-12:20",
 	    	    	"venue" : "H1",
 	    	    	"event" : "Millions way to avoid overfitting when building a portfolio",
-	    	    	"presenter" : "Yen",
+	    	    	"presenter" : "顏嘉儀",
 	    	    	"category" : "Tips / 講秘訣",
-	    	    	"abstract" : "<p>You never know how to build a successful portfolio that always gives you significant return, but you definitely should know what would make you build a model that is doomed to be a failure.</p><p>Overfitting is the most common one. In the brief talk, I would like to share some experience how to avoid overfitting. At least in some ways.</p><p>The examples would be shown in Python toolkit like ipython, pandas, numpy, matplotlib, and seaborn.</p>",
-	    	    	"biography" : "<p>Chia-Yi Yen, you can call her \"Yen\" just like the Japanese dollar yen, is a financial engineer in a local hedge fund. She has been responsible for multi-factor model construction, data infrastructure, data Extract-Transform-Load solution, and other numeric analysis projects. She is active in many open-source communities like Python and R, and she is also the organizer of Taiwan R-Ladies community, which is a female meetup of everything about data in the world of R language.</p>"
+	    	    	"abstract" : "<p>當有人告訴你，什麼樣的選股模型可以讓你找到永遠賺錢的投資組合，那絕對是騙人的，但如果有人告訴你，什麼樣的模型絕對會讓你賠錢，那我想你可以聽聽他怎麼說。</p><p>在建立投資組合模型時，如果心中沒有警覺，你可能會犯錯下讓你賠錢的錯誤，像是 survival bias、looking-forward bias、backtest overfitting 等等，其中我認為最難纏也最令人害怕的是 Backtest overfitting。這邊我會跟大家分享一些檢驗錯誤的方法與經驗。</p><p>最後，在這次的分享中，我主要會使用 Python 與 R 作為工具。</p><p>You never know how to build a successful portfolio that always gives you significant return, but you definitely should know what would make you build a model that is doomed to be a failure.</p><p>Overfitting is the most common one. In the brief talk, I would like to share some experience how to avoid overfitting. At least in some ways.</p><p>The examples would be shown in Python toolkit like ipython, pandas, numpy, matplotlib, and seaborn.</p>",
+	    	    	"biography" : "<p>Yen，目前任職於本土避險基金財務工程師。 目前她的工作涵蓋：多因子模型的建構、資料 Extract-Transform-Load、機器學習、以及各種數值分析。她熱衷於參與 open source 社群活動，特別是與 Python 或 R 有關的活動，同時她也是 TW R-Ladies 的發起人之一。</p><p>Chia-Yi Yen, you can call her \"Yen\" just like the Japanese dollar yen, is a financial engineer in a local hedge fund. She has been responsible for multi-factor model construction, data infrastructure, data Extract-Transform-Load solution, and other numeric analysis projects. She is active in many open-source communities like Python and R, and she is also the organizer of Taiwan R-Ladies community, which is a female meetup of everything about data in the world of R language.</p>"
 	    	    },
 	    	    {
 	    	    	"time" : "11:40-12:20",
