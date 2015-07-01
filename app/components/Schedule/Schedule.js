@@ -334,7 +334,7 @@ module.exports = {
 	    	    	"venue" : "H0",
 	    	    	"event" : "從 backbone 進化成 React",
 	    	    	"presenter" : "Austin Huang",
-	    	    	"category" : "New / 新東西",
+	    	    	"category" : "Tips / 講秘訣",
 	    	    	"abstract" : "<p>Vpon威朋是亞洲領先的大數據行動廣告平台，我們將分享如何將基於 backbone.js的 single page application，轉換至React framework及Flux 架構，用以解決日益複雜的事件邏輯，大幅減低HTML template維護成本，提高元件重複使用性，讓我們的前端開發者，能用更清楚簡潔的架構，快速開發並測試各類元件。</p>",
 	    	    	"biography" : "<p>現任 Vpon Inc. 技術長，IT 年資 20年，足跡遍及 Backend / Frontend / Operation / Network Infra. 等。相信技術只是起點，解決問題及滿足人類需求才是重點。熱愛挑戰各式系統應用問題，夢想跟一群志同道合的朋友，開發出世界級的系統。</p>"
 	    	    },
