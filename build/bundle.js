@@ -25100,11 +25100,11 @@
 			}, {
 				time: "15:10-15:50",
 				venue: "H0",
-				event: "TBD",
-				presenter: "",
-				category: "Others / 一般議程",
-				abstract: "",
-				biography: ""
+				event: "快快樂樂管理 Log: Logstash + Cloud Logging",
+				presenter: "edwardc",
+				category: "Tips / 講秘訣",
+				abstract: "<p>Log 管理是所有 SA 的痛，想要輕鬆管理卻又不傷 (老闆的) 荷包似乎不太容易。Logstash 是一個開源的 Log 收集系統，透過搭配 Google 的 Cloud Logging 作為儲存以及搜尋的前端，在數量可觀的海量 Log 管理中，找到了一盞明燈 ...</p>",
+				biography: "<p>IT小雜工，一些技術都略懂。以 C/C++ 起家，但也熟 PHP。用了18年的 FreeBSD，卻也離不開 debian ...</p>"
 			}, {
 				time: "15:10-15:50",
 				venue: "H1",
