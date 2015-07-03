@@ -224,11 +224,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "11:40-12:20",
 	    	    	"venue" : "R2",
-	    	    	"event" : "TBD",
-	    	    	"presenter" : "",
-	    	    	"category" : "Others / 一般議程",
-	    	    	"abstract" : "",
-	    	    	"biography" : ""
+	    	    	"event" : "How Open-Source enables Real-time Analytics at Scale in the Cloud",
+	    	    	"presenter" : "Olivier Klein",
+	    	    	"category" : "Tips / 講秘訣",
+	    	    	"abstract" : "<p>Working with big volumes of data is a complicated task, but it's even harder if you have to do everything in real time and try to figure it all out yourself. Over the past decades many open-source projects helped solve problems within the data analytics lifecycle around ingestion, storage, processing and visualisation of data. This session will use practical examples to discuss architectural best practices and lessons learned when solving real-time analytics and data visualisation decision-making problems with open-source at scale with the power of AWS. It furthermore dives into a demo using source code from the AWS Labs to visualises live data streams at scale.</p>",
+	    	    	"biography" : "<p>Olivier has been working for Amazon Web Services across Asia-Pacific and Europe with a strong focus on building resilient, scalable, secure and cost effective application architectures. Together with various incubators and accelerators, he actively assisted startups to adopt a lean and agile concept to build platforms that align revenue model with their IT infrastructure spending, effectively reducing waste and disrupting how product development has been executed over the past decades. Entrepreneurial agility is driven through quick iterations of lean and quantifiable developments in Olivier’s beliefs, the reason he has worked with key customers and partners to build intelligent analytics platforms using industry best practices to repeatedly streamline service usage, reduce costs and increase customer satisfaction. Prior to his AWS time, Olivier was responsible to run the digital product strategy for an educational book publisher across Asia and he actively lead key development efforts in building a virtualised web service platform for a Luxembourgish Internet Service Provider. </p>"
 	    	    },
 	    	    {
 	    	    	"time" : "11:40-12:20",
@@ -323,20 +323,20 @@ module.exports = {
 	    	    {
 	    	    	"time" : "14:10-14:50",
 	    	    	"venue" : "R2",
-	    	    	"event" : "Web + Mobile + Desktop in one using Firefox Marketplace",
-	    	    	"presenter" : "ariestiyansyah",
-	    	    	"category" : "Tips / 講秘訣",
-	    	    	"abstract" : "<p>Developing application in multi-platform cost more money and spend more time, using the open web technology will make us more happy to develop our application fast. The open Web presents incredible opportunities for developers. To take full advantage of these technologies, you need to know how to use them. In this session I will talk how HTML5 + JS Framework + CSS and Firefox Marketplace can be use on multi-platform.</p>",
-	    	    	"biography" : "<p>Travel in shadow, Open Source & Open Web Evangelist. Guardian of mozilla and knight of Mozilla Developer Network.</p>"
-	    	    },
-	    	    {
-	    	    	"time" : "14:10-14:50",
-	    	    	"venue" : "H0",
 	    	    	"event" : "從 backbone 進化成 React",
 	    	    	"presenter" : "Austin Huang",
 	    	    	"category" : "Tips / 講秘訣",
 	    	    	"abstract" : "<p>Vpon威朋是亞洲領先的大數據行動廣告平台，我們將分享如何將基於 backbone.js的 single page application，轉換至React framework及Flux 架構，用以解決日益複雜的事件邏輯，大幅減低HTML template維護成本，提高元件重複使用性，讓我們的前端開發者，能用更清楚簡潔的架構，快速開發並測試各類元件。</p>",
 	    	    	"biography" : "<p>現任 Vpon Inc. 技術長，IT 年資 20年，足跡遍及 Backend / Frontend / Operation / Network Infra. 等。相信技術只是起點，解決問題及滿足人類需求才是重點。熱愛挑戰各式系統應用問題，夢想跟一群志同道合的朋友，開發出世界級的系統。</p>"
+	    	    },
+	    	    {
+	    	    	"time" : "14:10-14:50",
+	    	    	"venue" : "H0",
+	    	    	"event" : "Web + Mobile + Desktop in one using Firefox Marketplace",
+	    	    	"presenter" : "ariestiyansyah",
+	    	    	"category" : "Tips / 講秘訣",
+	    	    	"abstract" : "<p>Developing application in multi-platform cost more money and spend more time, using the open web technology will make us more happy to develop our application fast. The open Web presents incredible opportunities for developers. To take full advantage of these technologies, you need to know how to use them. In this session I will talk how HTML5 + JS Framework + CSS and Firefox Marketplace can be use on multi-platform.</p>",
+	    	    	"biography" : "<p>Travel in shadow, Open Source & Open Web Evangelist. Guardian of mozilla and knight of Mozilla Developer Network.</p>"
 	    	    },
 	    	    {
 	    	    	"time" : "14:10-14:50",
@@ -393,20 +393,20 @@ module.exports = {
 	    	    {
 	    	    	"time" : "15:10-15:50",
 	    	    	"venue" : "R2",
-	    	    	"event" : "Writing SASS Compiler in Go",
-	    	    	"presenter" : "c9s",
-	    	    	"category" : "Hacking / 探究竟",
-	    	    	"abstract" : "<p>Introducing common patterns and strategies used for writing compilers in Go.</p><ul><li>SASS syntax</li><li>Lexer</li><li>Recursive Descent Parser</li><li>Ambiguity grammar of SASS</li><li>Optimizer with concurrency in Go</li><li>Development with other Go technologies</li></ul>",
-	    	    	"biography" : "<p>Perl / PHP Hacker, 從 2009 年起於 GitHub 開始陸續發表多項開源專案， 牽涉技術從後端至前端，包含 PHP, Go, Perl, JavaScript, VimL 等程式語言相關項目。 2013 年</p><p>GitHub Top 1 Contribution User。 知名專案有 phpbrew, Pux, r3, Vimana ... 等等。為 Facebook HHVM Contributor 之一。</p><p>With high activity on Github, Lin has 200+ open source projects on GitHub,programming language includes PHP, Go, Perl, JavaScript and VimL. he was the top3 active user on GitHub by contributions in 2013.</p>"
-	    	    },
-	    	    {
-	    	    	"time" : "15:10-15:50",
-	    	    	"venue" : "H0",
 	    	    	"event" : "快快樂樂管理 Log: Logstash + Cloud Logging",
 	    	    	"presenter" : "edwardc",
 	    	    	"category" : "Tips / 講秘訣",
 	    	    	"abstract" : "<p>Log 管理是所有 SA 的痛，想要輕鬆管理卻又不傷 (老闆的) 荷包似乎不太容易。Logstash 是一個開源的 Log 收集系統，透過搭配 Google 的 Cloud Logging 作為儲存以及搜尋的前端，在數量可觀的海量 Log 管理中，找到了一盞明燈 ...</p>",
 	    	    	"biography" : "<p>IT小雜工，一些技術都略懂。以 C/C++ 起家，但也熟 PHP。用了18年的 FreeBSD，卻也離不開 debian ...</p>"
+	    	    },
+	    	    {
+	    	    	"time" : "15:10-15:50",
+	    	    	"venue" : "H0",
+	    	    	"event" : "Writing SASS Compiler in Go",
+	    	    	"presenter" : "c9s",
+	    	    	"category" : "Hacking / 探究竟",
+	    	    	"abstract" : "<p>Introducing common patterns and strategies used for writing compilers in Go.</p><ul><li>SASS syntax</li><li>Lexer</li><li>Recursive Descent Parser</li><li>Ambiguity grammar of SASS</li><li>Optimizer with concurrency in Go</li><li>Development with other Go technologies</li></ul>",
+	    	    	"biography" : "<p>Perl / PHP Hacker, 從 2009 年起於 GitHub 開始陸續發表多項開源專案， 牽涉技術從後端至前端，包含 PHP, Go, Perl, JavaScript, VimL 等程式語言相關項目。 2013 年</p><p>GitHub Top 1 Contribution User。 知名專案有 phpbrew, Pux, r3, Vimana ... 等等。為 Facebook HHVM Contributor 之一。</p><p>With high activity on Github, Lin has 200+ open source projects on GitHub,programming language includes PHP, Go, Perl, JavaScript and VimL. he was the top3 active user on GitHub by contributions in 2013.</p>"
 	    	    },
 	    	    {
 	    	    	"time" : "15:10-15:50",
@@ -592,11 +592,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "10:00-10:40",
 	    	    	"venue" : "R2",
-	    	    	"event" : "自製私房地圖不必寫程式",
-	    	    	"presenter" : "資訊人權貴",
-	    	    	"category" : "Tips / 講秘訣",
-	    	    	"abstract" : "<p>幫助麻瓜享用 OSM： 不會寫程式也可以自製私房地圖。<br/>可用於旅遊行程規畫、展示連鎖店位置、貼在你的美食部落格、<br/>幫助規畫拜訪客戶或示威遊行的路線、...<br/>程式設計師則會感受到 RESTful API 對除錯的幫助。</p>",
-	    	    	"biography" : "<ul><li>撰寫「玩具烏托邦」自由軟體教學部落格</li><li>撰寫 mk-boot-usb 及 mbootu2 並推廣 linux 開機隨身碟</li><li>撰寫 drgeo 講義 (for 舊版) 推廣自由軟體融入數理教學</li><li>朝陽科大資訊管理系副教授<li>軟體自由協會監事</li><li>科技與社會學會秘書長</li></ul>"
+	    	    	"event" : "TBD",
+	    	    	"presenter" : "",
+	    	    	"category" : "Others / 一般議程",
+	    	    	"abstract" : "",
+	    	    	"biography" : ""
 	    	    },
 	    	    {
 	    	    	"time" : "10:00-10:40",
@@ -673,11 +673,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "10:50-11:30",
 	    	    	"venue" : "H0",
-	    	    	"event" : "TBD",
-	    	    	"presenter" : "",
-	    	    	"category" : "Others / 一般議程",
-	    	    	"abstract" : "",
-	    	    	"biography" : ""
+	    	    	"event" : "動民主血淚史",
+	    	    	"presenter" : "ETBlue",
+	    	    	"category" : "Government / 開放政府",
+	    	    	"abstract" : "<p>pirate feedback 、動民主 2.0、全民記者會、動民主松、零時廣場、經貿國是會議、公民憲政推動聯盟，一個資訊新手在網路審議系統開發道路上的各種血淚。</p>",
+	    	    	"biography" : "<p>在 g0v 自稱插畫家，在 NGO 自稱工程師，打工頭銜 UI designer，實際都在做企劃。</p>"
 	    	    },
 	    	    {
 	    	    	"time" : "10:50-11:30",
@@ -745,11 +745,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "11:40-12:20",
 	    	    	"venue" : "H0",
-	    	    	"event" : "動民主血淚史",
-	    	    	"presenter" : "ETBlue",
-	    	    	"category" : "Government / 開放政府",
-	    	    	"abstract" : "<p>pirate feedback 、動民主 2.0、全民記者會、動民主松、零時廣場、經貿國是會議、公民憲政推動聯盟，一個資訊新手在網路審議系統開發道路上的各種血淚。</p>",
-	    	    	"biography" : "<p>在 g0v 自稱插畫家，在 NGO 自稱工程師，打工頭銜 UI designer，實際都在做企劃。</p>"
+	    	    	"event" : "自製私房地圖不必寫程式",
+	    	    	"presenter" : "資訊人權貴",
+	    	    	"category" : "Tips / 講秘訣",
+	    	    	"abstract" : "<p>幫助麻瓜享用 OSM： 不會寫程式也可以自製私房地圖。<br/>可用於旅遊行程規畫、展示連鎖店位置、貼在你的美食部落格、<br/>幫助規畫拜訪客戶或示威遊行的路線、...<br/>程式設計師則會感受到 RESTful API 對除錯的幫助。</p>",
+	    	    	"biography" : "<ul><li>撰寫「玩具烏托邦」自由軟體教學部落格</li><li>撰寫 mk-boot-usb 及 mbootu2 並推廣 linux 開機隨身碟</li><li>撰寫 drgeo 講義 (for 舊版) 推廣自由軟體融入數理教學</li><li>朝陽科大資訊管理系副教授<li>軟體自由協會監事</li><li>科技與社會學會秘書長</li></ul>"
 	    	    },
 	    	    {
 	    	    	"time" : "11:40-12:20",
