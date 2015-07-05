@@ -25766,7 +25766,7 @@
 	module.exports = Transmit.createContainer(Sponser, {
 	  queries: {
 	    data: function data() {
-	      return agent.get("http://localhost:8000/2015/api/sponsors").then(function (res) {
+	      return agent.get("http://coscup.org/2015/api/sponsors").then(function (res) {
 	        return JSON.parse(res.text);
 	      });
 	    }
