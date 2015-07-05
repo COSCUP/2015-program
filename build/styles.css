@@ -425,43 +425,7 @@ th {
     box-sizing: border-box;
     font-family: "Lucida Grande", "Lucida Sans Unicode","微軟正黑體", Arial, Verdana, sans-serif;
 }
-.Venues {
-	max-width: 600px;
-	margin: 0 auto;
-	text-align: left;
-    padding: 10px;
-}
-.Venues-title {
-	padding: 10px 6px;
-}
-.Venues-items {
-	-webkit-column-count: 2;
-	   -moz-column-count: 2;
-	        column-count: 2;
-}
-.Venues-item {
-	display: inline-block;
-	font-size: 14px;
-	color: rgb(80,80,80);
-	margin: 3px;
-	width: 100%;
-}
-.Venues-key {
-	background: rgb(220,220,220);
-	padding: 2px 6px;
-	
-}
-@media screen and (min-width: 776px){
-	.Venues-key {
-		display: inline-block;
-    	border-radius: 9px;
-    	
-	}
-}
-.Venues-text {
-	padding: 2px 6px;
-	display: inline-block;
-}
+
 .Home {
   position: relative;
   height: 100%;
@@ -1476,4 +1440,40 @@ a.Session-workshop:hover {
 	text-align: left;
 	color: rgb(53,55,54);
 	padding: 10px;
+}.Venues {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: left;
+    padding: 10px;
+}
+.Venues-title {
+	padding: 10px 6px;
+}
+.Venues-items {
+	-webkit-column-count: 2;
+	   -moz-column-count: 2;
+	        column-count: 2;
+}
+.Venues-item {
+	display: inline-block;
+	font-size: 14px;
+	color: rgb(80,80,80);
+	margin: 3px;
+	width: 100%;
+}
+.Venues-key {
+	background: rgb(220,220,220);
+	padding: 2px 6px;
+	
+}
+@media screen and (min-width: 776px){
+	.Venues-key {
+		display: inline-block;
+    	border-radius: 9px;
+    	
+	}
+}
+.Venues-text {
+	padding: 2px 6px;
+	display: inline-block;
 }

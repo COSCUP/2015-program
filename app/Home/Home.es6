@@ -6,6 +6,7 @@ import Filter from "../components/Filter/Filter.es6";
 import Schedule from "../components/Schedule/Schedule.es6";
 import Session from "../components/Session/Session.es6";
 import Sponser from "../components/Sponser/Sponser.es6";
+import SponserData from "../components/Sponser/Sponser.js";
 import Venues from "../components/Venues/Venues.es6";
 
 import CategoriesData from "./Categories";
@@ -18,7 +19,7 @@ export default React.createClass({
   displayName: "Home",
 
   getInitialState () {
-    
+
     var categories = CategoriesData.categories.map((value,index)=>{
         return (
           {
@@ -28,10 +29,10 @@ export default React.createClass({
           }
         )
     });
-    
+
     return {
       inScheduleArea: "before",
-      
+
       sessionClass: false,
       categories: categories,
       categoryOn: false,
@@ -44,14 +45,14 @@ export default React.createClass({
   },
 
   _togglePanel(){
-   
+
     this.setState({
       showPanel: !this.state.showPanel
     })
   },
 
   componentDidMount(){
-   
+
     var { inScheduleArea } = this.state;
     var { _setInScheduleArea, _setScheduleHeight, _setFilterHeight } = this;
 
@@ -86,7 +87,7 @@ export default React.createClass({
         inScheduleArea: value
       })
     }
-    
+
   },
   _setScheduleHeight(value){
     this.setState({
@@ -134,7 +135,7 @@ export default React.createClass({
   _toggleCategory(index){
     var current = this.state.categories;
     current[index].active = !current[index].active;
-    
+
     var sum = current.reduce((pre, current)=>{
         if(current.active){
            return pre + 1;
@@ -150,7 +151,7 @@ export default React.createClass({
     })
   },
   _clearCategory(){
-   
+
     var current = this.state.categories.map((value,i)=>{
         return {
             title: value.title,
@@ -167,10 +168,10 @@ export default React.createClass({
   },
 
   _goToElement(value){
-    
+
     var node = this.refs.cover.getDOMNode();
     var position = value + node.offsetHeight;/* 會有 54 的差，不過 AppBar 抵掉了 */
-    
+
     ////// TO BE REFINE: Don't use jquery
     $('body,html').animate({ scrollTop: position}, 1000);
 
@@ -184,7 +185,7 @@ export default React.createClass({
 
     //console.log("component did upate, scrolling height:"+currentScrollHeight);
 
-    if((currentScrollHeight!==0 && showSession === false)){ 
+    if((currentScrollHeight!==0 && showSession === false)){
         //console.log("reload scroll position");
         window.scrollTo(0, currentScrollHeight);
         this.setState({
@@ -208,13 +209,13 @@ export default React.createClass({
     ///////////////////////////////////////// TO BE refine
     var top, height;
     if((inScheduleArea === "passed")&&(window.innerWidth > 776)){
-        filterStyle = { 
-            position: "absolute", 
+        filterStyle = {
+            position: "absolute",
             top: (height - top) + "px",
             transiton: "all .3s"
         }
-        sessionStyle = { 
-            position: "absolute", 
+        sessionStyle = {
+            position: "absolute",
             top: (height - top - 240) + "px",
             transiton: "all .3s"
         }
@@ -223,7 +224,7 @@ export default React.createClass({
 
     /* ------------------- */
     var shouldHide = showSession;
-    
+
     var scheduleStyle = (shouldHide && window.innerWidth < 776) ? {
         "transform" : `translate3d(0,${-currentScrollHeight - 80}px,0)`
     }: {};
@@ -270,12 +271,12 @@ export default React.createClass({
       "is-show" : showSession
     });
 
-  
+
 
     return (
       <div className="Home">
         <div className={appbarClass}><AppBar/></div>
-        
+
         <div className={coverClass} ref="cover">
             <img className="Home-coverImg" src={coverIMG} />
             <div className="Home-coverNotice">
@@ -299,7 +300,7 @@ export default React.createClass({
                         toggleCategoryHandler={this._toggleCategory}
                         clearCategoryHandler={this._clearCategory}/>
             </div>
-            
+
 
             <div className={scheduleClass} ref="schedule" style={scheduleStyle}>
               <Schedule inScheduleArea={inScheduleArea}
@@ -321,18 +322,18 @@ export default React.createClass({
                         togglePanelHander={this._togglePanel}/>
             </div>
 
-            
+
             <div className={sponserClass}>
-              <Sponser />
+              <Sponser/>
             </div>
-  
+
             <div className={sessionClass}
                  style={sessionStyle}>
-              <Session sessionHandler={this._toggleSession} 
-                       data={currentSession} 
+              <Session sessionHandler={this._toggleSession}
+                       data={currentSession}
                        categories={categories}/>
             </div>
-          
+
             <div className={footerClass}>
               <Venues data={VenuesData}/>
               <div className="Home-patchSection">
@@ -343,8 +344,8 @@ export default React.createClass({
             </div>
 
         </div>
-       
-        
+
+
       </div>
     );
   }
