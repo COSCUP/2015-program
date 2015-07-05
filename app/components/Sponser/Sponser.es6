@@ -56,7 +56,7 @@ const Sponser = React.createClass({
 export default Transmit.createContainer(Sponser, {
   queries: {
     data () {
-      return agent.get("http://localhost:8000/2015/api/sponsors").then(res => JSON.parse(res.text));
+      return agent.get("http://coscup.org/2015/api/sponsors").then(res => JSON.parse(res.text));
     }
   }
 });
