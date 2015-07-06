@@ -24232,13 +24232,13 @@
 			return classes.substr(1);
 		}
 
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true){
+		if (true) {
 			// AMD. Register as an anonymous module.
 			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 				return classNames;
 			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
 		} else {
 			window.classNames = classNames;
 		}
@@ -25216,10 +25216,10 @@
 				time: "10:00-10:40",
 				venue: "H1",
 				event: "Build a Minimal Operating System Kernel for ARM",
-				presenter: "Jserv",
+				presenter: "Jserv & 陳建霖",
 				category: "Hacking / 探究竟",
 				abstract: "<p>與其說 C 是一種程式語言，不如說是一種掌握系統的態度，你必須連同硬體架構的行為一併學習，方可成為「電腦的主人」。而和 UNIX一脈相承的「讓你作任何事」的指導原則，更是一絕。本議程示範用 C 語言，從無到有開發具體而微的 ARM 作業系統核心，並善用開放原始碼技術。</p>",
-				biography: "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p>"
+				biography: "<p>Jserv，Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p><p>陳建霖，慣用網路暱稱為\"Lecopzer\"，畢業於成大機械系，目前為清大資工所準研究生。 誰說讀機械不能寫程式？自從大三發現CS的書像讀小說一樣吸引人的時候，便一頭栽進CS的領域。</p><p>雖然起步的較晚，但在jserv強大的課程下也開始接觸自由軟體專案，期望能成為專業的科技人。</p>"
 			}, {
 				time: "10:00-10:40",
 				venue: "交誼廳",
@@ -25512,10 +25512,10 @@
 				time: "15:10-15:50",
 				venue: "H1",
 				event: "在公司成立開放源碼社團的原因與實踐",
-				presenter: "馬克泡",
+				presenter: "馬克泡 & 陳柏儒",
 				category: "Community / 社群經驗",
 				abstract: "<p>現在這個總統跟女模，都能在業餘寫上一手好程式的時代。<br/>寫程式應該成為一種樂趣，而不只是謀生工具。<br/>時代不一樣了，你應該在公司成立開放源碼社團。<br/>本演講將分享在公司成立開放源碼社團的原因和好處，<br/>並以M社的開放資料社團為例，提供運作半年的經驗和實踐分享給大家。<br/></p>",
-				biography: "<p>馬克泡，曾在COSCUP多次分享OpenWrt相關心得。</p><p>發現台灣產業變遷，體認到要貢獻開放源碼社群，必須從產業鏈上游開始會比較好。</p><p>於是從系統廠轉換跑道到IC設計產業服務。後來服務於台灣自主CPU開發公司 - 晶心科技，從事NDS32 u-boot官方開發及維護工作。</p><p>目前於M社從事手機USB相關驗證開發。</p>"
+				biography: "<p>馬克泡，曾在COSCUP多次分享OpenWrt相關心得。</p><p>發現台灣產業變遷，體認到要貢獻開放源碼社群，必須從產業鏈上游開始會比較好。</p><p>於是從系統廠轉換跑道到IC設計產業服務。後來服務於台灣自主CPU開發公司 - 晶心科技，從事NDS32 u-boot官方開發及維護工作。</p><p>目前於M社從事手機USB相關驗證開發。</p><p>陳柏儒，在M社擔任前端工程師，主要參與物聯網議題，積極在公司中培養開放軟體. 技術交流文化。</p>"
 			}, {
 				time: "15:10-15:50",
 				venue: "交誼廳",
