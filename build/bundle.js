@@ -23646,9 +23646,9 @@
 
 	var Session = _interopRequire(__webpack_require__(219));
 
-	var Sponser = _interopRequire(__webpack_require__(222));
+	var Sponsor = _interopRequire(__webpack_require__(222));
 
-	var SponserData = _interopRequire(__webpack_require__(239));
+	var SponsorData = _interopRequire(__webpack_require__(239));
 
 	var Venues = _interopRequire(__webpack_require__(240));
 
@@ -23894,8 +23894,8 @@
 	      "is-fixed": inScheduleArea === "within" || showPanel && window.innerWidth < 776
 	    });
 
-	    var sponserClass = classNames({
-	      "Home-sponser": true,
+	    var SponsorClass = classNames({
+	      "Home-Sponsor": true,
 	      "is-hide": shouldHide
 	    });
 
@@ -23984,8 +23984,8 @@
 	        ),
 	        React.createElement(
 	          "div",
-	          { className: sponserClass },
-	          React.createElement(Sponser, null)
+	          { className: SponsorClass },
+	          React.createElement(Sponsor, null)
 	        ),
 	        React.createElement(
 	          "div",
@@ -25708,8 +25708,8 @@
 
 	var donorsOrder = ["diamond", "gold", "silver", "bronze", "cohost", "media"];
 
-	var Sponser = React.createClass({
-	  displayName: "Sponser",
+	var Sponsor = React.createClass({
+	  displayName: "Sponsor",
 
 	  render: function render() {
 	    var _this = this;
@@ -25721,7 +25721,7 @@
 	      var listItems = _this.props.data.sponsors[data_key].map(function (value, index) {
 	        return React.createElement(
 	          "a",
-	          { className: "Sponser-item", href: value.url, target: "_blank" },
+	          { className: "Sponsor-item", href: value.url, target: "_blank" },
 	          React.createElement("img", { src: value.logoUrl, alt: value.name["zh-tw"] })
 	        );
 	      });
@@ -25730,7 +25730,7 @@
 	        { key: i },
 	        React.createElement(
 	          "div",
-	          { className: "Sponser-sectionTitle" },
+	          { className: "Sponsor-sectionTitle" },
 	          donors[data_key]
 	        ),
 	        listItems
@@ -25739,7 +25739,7 @@
 
 	    return React.createElement(
 	      "div",
-	      { className: "Sponser" },
+	      { className: "Sponsor" },
 	      React.createElement(
 	        "div",
 	        null,
@@ -25747,15 +25747,15 @@
 	      ),
 	      React.createElement(
 	        "div",
-	        { className: "Sponser-sectionTitle" },
+	        { className: "Sponsor-sectionTitle" },
 	        "贊助 COSCUP"
 	      ),
 	      React.createElement(
 	        "div",
-	        { className: "Sponser-item" },
+	        { className: "Sponsor-item" },
 	        React.createElement(
 	          "div",
-	          { className: "Sponser-text" },
+	          { className: "Sponsor-text" },
 	          "如果您欲贊助 COSCUP，請與 sponsorship@coscup.org 聯絡。"
 	        )
 	      )
@@ -25763,7 +25763,7 @@
 	  }
 	});
 
-	module.exports = Transmit.createContainer(Sponser, {
+	module.exports = Transmit.createContainer(Sponsor, {
 	  queries: {
 	    data: function data() {
 	      return agent.get("http://coscup.org/2015/api/sponsors").then(function (res) {

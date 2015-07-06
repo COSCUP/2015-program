@@ -1,17 +1,17 @@
-.Sponser {	
+.Sponsor {	
 	width: 100%;
 	min-height: 100vh;
 	position: relative;
 	background: white;
 }
-.Sponser:after {
+.Sponsor:after {
     content: '';
     position: absolute;
     top: -10px;
     left: 0;
     border-top: 10px solid;
 }
-.Sponser-sectionTitle {
+.Sponsor-sectionTitle {
 	padding: 20px;
 	font-size: 18px;
 	font-weight: 600;
@@ -21,13 +21,13 @@
 	color: rgb(240,244,240);
 	padding-left: 30px;
 }
-.Sponser-item {
+.Sponsor-item {
 	border: 1px solid #A3D1A9;
 	padding: 4px;
 	text-align: center;
 	display: block;
 }
-.Sponser-text {
+.Sponsor-text {
 	line-height: 1.6;
 	font-size: 16px;
 	text-align: left;

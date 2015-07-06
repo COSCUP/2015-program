@@ -2,7 +2,7 @@ import React from "react";
 import Transmit from "react-transmit";
 import classNames from "classnames";
 import agent from "superagent-bluebird-promise";
-import "./Sponser.css";
+import "./Sponsor.css";
 
 const donors = {
   "diamond": "鑽石級贊助",
@@ -15,8 +15,8 @@ const donors = {
 
 const donorsOrder = ["diamond", "gold", "silver", "bronze", "cohost", "media"];
 
-const Sponser = React.createClass({
-  displayName: "Sponser",
+const Sponsor = React.createClass({
+  displayName: "Sponsor",
 
   render() {
     console.log(this.props.data);
@@ -25,14 +25,14 @@ const Sponser = React.createClass({
 
   		var listItems = this.props.data.sponsors[data_key].map((value,index)=>{
     		return (
-    			<a className="Sponser-item" href={value.url} target="_blank">
+    			<a className="Sponsor-item" href={value.url} target="_blank">
     				<img src={value.logoUrl} alt={value.name["zh-tw"]} />
     			</a>
     		)
     	});
         return (
         	<div key={i}>
-        	    <div className="Sponser-sectionTitle">{donors[data_key]}</div>
+        	    <div className="Sponsor-sectionTitle">{donors[data_key]}</div>
         	    {listItems}
         	</div>
         )
@@ -40,12 +40,12 @@ const Sponser = React.createClass({
   	});
 
     return (
-        <div className="Sponser">
+        <div className="Sponsor">
             <div>{items}</div>
 
-            <div className="Sponser-sectionTitle">贊助 COSCUP</div>
-            <div className="Sponser-item">
-            	<div className="Sponser-text">如果您欲贊助 COSCUP，請與 sponsorship@coscup.org 聯絡。</div>
+            <div className="Sponsor-sectionTitle">贊助 COSCUP</div>
+            <div className="Sponsor-item">
+            	<div className="Sponsor-text">如果您欲贊助 COSCUP，請與 sponsorship@coscup.org 聯絡。</div>
             </div>
 
         </div>
@@ -53,7 +53,7 @@ const Sponser = React.createClass({
   }
 });
 
-export default Transmit.createContainer(Sponser, {
+export default Transmit.createContainer(Sponsor, {
   queries: {
     data () {
       return agent.get("http://coscup.org/2015/api/sponsors").then(res => JSON.parse(res.text));

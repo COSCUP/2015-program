@@ -5,8 +5,8 @@ import AppBar from "../components/AppBar/AppBar.es6";
 import Filter from "../components/Filter/Filter.es6";
 import Schedule from "../components/Schedule/Schedule.es6";
 import Session from "../components/Session/Session.es6";
-import Sponser from "../components/Sponser/Sponser.es6";
-import SponserData from "../components/Sponser/Sponser.js";
+import Sponsor from "../components/Sponsor/Sponsor.es6";
+import SponsorData from "../components/Sponsor/Sponsor.js";
 import Venues from "../components/Venues/Venues.es6";
 
 import CategoriesData from "./Categories";
@@ -243,8 +243,8 @@ export default React.createClass({
         "is-fixed" : inScheduleArea === "within" || (showPanel && window.innerWidth < 776)
     });
 
-    var sponserClass = classNames({
-      "Home-sponser" : true,
+    var SponsorClass = classNames({
+      "Home-Sponsor" : true,
       "is-hide" : shouldHide
     });
 
@@ -323,8 +323,8 @@ export default React.createClass({
             </div>
 
 
-            <div className={sponserClass}>
-              <Sponser/>
+            <div className={SponsorClass}>
+              <Sponsor/>
             </div>
 
             <div className={sessionClass}
