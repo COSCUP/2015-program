@@ -69,10 +69,10 @@
     display: none;
 
 }
-.Home-sponser {
+.Home-sponsor {
     display: block;
 }
-.Home-sponser.is-hide {
+.Home-sponsor.is-hide {
     display: none;
 }
 .Home-session {
@@ -166,7 +166,7 @@
 
     }
    
-    .Home-sponser, .Home-sponser.is-hide {
+    .Home-sponsor, .Home-sponsor.is-hide {
         width: 50%;
         top: 0;
         position: absolute;
@@ -254,7 +254,7 @@
         display: inline-block;
 
     }
-    .Home-sponser, .Home-sponser.is-hide {
+    .Home-sponsor, .Home-sponsor.is-hide {
         width: 280px;
         position: absolute;
         top: -0px;

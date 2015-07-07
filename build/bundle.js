@@ -23895,7 +23895,7 @@
 	    });
 
 	    var SponsorClass = classNames({
-	      "Home-Sponsor": true,
+	      "Home-sponsor": true,
 	      "is-hide": shouldHide
 	    });
 
