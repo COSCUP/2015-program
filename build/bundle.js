@@ -25095,20 +25095,19 @@
 			}, {
 				time: "16:00-17:00",
 				venue: "R2",
+				event: "Build a Minimal Operating System Kernel for ARM",
+				presenter: "Jserv & 陳建霖",
+				category: "Hacking / 探究竟",
+				abstract: "<p>與其說 C 是一種程式語言，不如說是一種掌握系統的態度，你必須連同硬體架構的行為一併學習，方可成為「電腦的主人」。而和 UNIX一脈相承的「讓你作任何事」的指導原則，更是一絕。本議程示範用 C 語言，從無到有開發具體而微的 ARM 作業系統核心，並善用開放原始碼技術。</p>",
+				biography: "<p>Jserv，Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p><p>陳建霖，慣用網路暱稱為\"Lecopzer\"，畢業於成大機械系，目前為清大資工所準研究生。 誰說讀機械不能寫程式？自從大三發現CS的書像讀小說一樣吸引人的時候，便一頭栽進CS的領域。</p><p>雖然起步的較晚，但在jserv強大的課程下也開始接觸自由軟體專案，期望能成為專業的科技人。</p>"
+			}, {
+				time: "16:00-17:00",
+				venue: "H0",
 				event: "A Peek into Python's Object Model and Bytecode from a Smalltalk User",
 				presenter: "freedom",
 				category: "Hacking / 探究竟",
 				abstract: "<p>Understanding object model and bytecode is a crucial part in understanding an interpreted object-oriented language. Smalltalk, one of the oldest object-oriented programming languages, has a great object model and has been used bytecode and VM since 1970s. It is interesting to compare Smalltalk's and Python's object model and bytecode. Guido once said \"I remember being surprised by its use of metaclasses (which is quite different from that in Python or Ruby!) when I read about them much later. \" and \"Smalltalk's bytecode was a bigger influence of Python's bytecode though.\" It is interesting to compare Smalltalk's and Python's metacalss and bytecode.</p>",
 				biography: "<p>Koan-Sin Tan is a long-time open source user. He learned to write program on MPF-II and learned to user Unix on VAX-11/780. He used to be a programming language junkie,  learned a bit Smalltalk during early 90s, used it on and off. Recently he renewed his interest in ST-80 because of Scratch and BYOB/SNAP. He knew little about Python. He talked about Smalltalk's and Ruby's object model and bytecode before (<a href='http://www.slideshare.net/kstan2/smalltalk-and-ruby-20121208-15542185'>http://www.slideshare.net/kstan2/smalltalk-and-ruby-20121208-15542185</a>).</p>"
-			}, {
-				time: "16:00-17:00",
-				venue: "H0",
-				event: "KDE : Journey of a SoK student to GCI organisation administrator",
-				presenter: "heena",
-				category: "Community / 社群經驗",
-				EN: true,
-				abstract: "<p>The talk involves my journey as a SoK student in 2012 where I worked with KDE under kde educational game pairs, then as a Google Summer of Code student in 2013 with plasma team, emerging as a Google Code In 2013 mentor as well as administrator of Season of KDE 2014 as well as Google Code In 2014 for KDE organization. The talk also involves the changes in plasma so far from plasma 1 to plasma 5, how the code quality has improved with the upcoming plasma development and how to get involved with open source development.</p>",
-				biography: "<p>I am a Season of KDE 2012 student(kde-edu game pairs), Google summer of code 2013 student under KDE where I worked with plasma team, Google Code In 2013 mentor where I provided tasks under KDE for plasma, co-administrator & mentor of Season of KDE 2014 and organization co-administrator & mentor of KDE for Google Code In 2014 as well. I am also a mentor in Learn IT, girl. Moreover, I am also the co-founder, organizer and director of Women Who Code Delhi, India. Recently, I presented a talk on KDE as a speaker at FOSSASIA 2015, Singapore. I also organized a GSoC meetup at Delhi recently which got featured at Google open source blog. I am also the layout developer of pairs theme editor. I also was one of the speakers at GSoC Symposium, Delhi where I presented a talk on the plasma development.I am looking forward to get involved with Rails community now.</p>"
 			}, {
 				time: "16:00-17:00",
 				venue: "H1",
@@ -25215,11 +25214,12 @@
 			}, {
 				time: "10:00-10:40",
 				venue: "H1",
-				event: "Build a Minimal Operating System Kernel for ARM",
-				presenter: "Jserv & 陳建霖",
-				category: "Hacking / 探究竟",
-				abstract: "<p>與其說 C 是一種程式語言，不如說是一種掌握系統的態度，你必須連同硬體架構的行為一併學習，方可成為「電腦的主人」。而和 UNIX一脈相承的「讓你作任何事」的指導原則，更是一絕。本議程示範用 C 語言，從無到有開發具體而微的 ARM 作業系統核心，並善用開放原始碼技術。</p>",
-				biography: "<p>Jserv，Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p><p>陳建霖，慣用網路暱稱為\"Lecopzer\"，畢業於成大機械系，目前為清大資工所準研究生。 誰說讀機械不能寫程式？自從大三發現CS的書像讀小說一樣吸引人的時候，便一頭栽進CS的領域。</p><p>雖然起步的較晚，但在jserv強大的課程下也開始接觸自由軟體專案，期望能成為專業的科技人。</p>"
+				event: "VLC media player",
+				presenter: "Remi Denis-Courmont",
+				category: "New / 新東西",
+				EN: true,
+				abstract: "<p>News update on upcoming VLC media player version 3.0.</p>",
+				biography: "<p>Remi has been involved with the VLC media player for 11 years first at university, the non his free time. He has since become of the lead developer for the project.</p><p>By day time, he currently works as a system software engineer for NVIDIA.</p>"
 			}, {
 				time: "10:00-10:40",
 				venue: "交誼廳",
@@ -25331,11 +25331,11 @@
 			}, {
 				time: "11:40-12:20",
 				venue: "H0",
-				event: "自製私房地圖不必寫程式",
-				presenter: "資訊人權貴",
-				category: "Tips / 講秘訣",
-				abstract: "<p>幫助麻瓜享用 OSM： 不會寫程式也可以自製私房地圖。<br/>可用於旅遊行程規畫、展示連鎖店位置、貼在你的美食部落格、<br/>幫助規畫拜訪客戶或示威遊行的路線、...<br/>程式設計師則會感受到 RESTful API 對除錯的幫助。</p>",
-				biography: "<ul><li>撰寫「玩具烏托邦」自由軟體教學部落格</li><li>撰寫 mk-boot-usb 及 mbootu2 並推廣 linux 開機隨身碟</li><li>撰寫 drgeo 講義 (for 舊版) 推廣自由軟體融入數理教學</li><li>朝陽科大資訊管理系副教授<li>軟體自由協會監事</li><li>科技與社會學會秘書長</li></ul>"
+				event: "為納稅人而教：開放原始碼應用於高等教育，可以帶來哪些轉變？",
+				presenter: "jserv",
+				category: "Education / 開源與教育",
+				abstract: "<p>講者在台灣國立大學任教三年，全程使用開放原始碼技術作為教材，並善用各式協作工具，現已累積一些開放成果，本議程從一個納稅人的觀點，回顧這過程中對於教學和成本控管的突破，甚至提供虛擬和實體參與的可能性。</p>",
+				biography: "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p>"
 			}, {
 				time: "11:40-12:20",
 				venue: "H1",
@@ -25368,12 +25368,58 @@
 			time: "13:20",
 			events: [{
 				time: "13:20-14:00",
-				event: "「封麥」演說：台灣開放原始碼生態圈回顧",
-				venue: "全場聯播",
-				presenter: "jserv",
-				category: "Taiwan / 開源與台灣",
-				abstract: "<p>作為一位有幸能連續 10 年在 COSCUP 分享心得的講者，決定在「封麥」前，簡短回顧台灣開放原始碼生態圈的轉變，諸如源自本土的專案、開發者社群、各式推廣活動、大學相關課程，以及台灣人在國際開放原始碼專案的投入狀況。</p>",
-				biography: "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p>"
+				venue: "R0",
+				event: "TBD",
+				presenter: "",
+				category: "Others / 一般議程" }, {
+				time: "13:20-14:00",
+				venue: "R1",
+				event: "open .NET technology explained",
+				presenter: "Atsushi Enomoto",
+				category: "New / 新東西",
+				EN: true,
+				abstract: "<p>.NET technology has become fully open source by now, ready for true OSS lovers. Let's see how so.</p>",
+				biography: "<p>Japanese Mono project developer at Xamarin Inc.</p>"
+			}, {
+				time: "13:20-14:00",
+				venue: "R2",
+				event: "自己的機器人自己做",
+				presenter: "ted99tw",
+				category: "Physical / 來硬的",
+				abstract: "<p>如何製作一個包含軟韌硬體的開源雙足機器人</p>",
+				biography: "<p>連宏城，交大資訊系畢，長期浸淫IT領域，從業務到外商經理歷經各種職務，現在自行創業並投入自造潮流，已有3個募資專案在Indiegogo。最近作品為 MeArm.Joystick 機器手臂，在 FlyingV 創下1700%紀錄，迄今已在全省辦過40餘場DIY活動。目前正進行融合軟韌硬體的二足機器人開源專案。</p>"
+			}, {
+				time: "13:20-14:00",
+				venue: "H0",
+				event: "自製私房地圖不必寫程式",
+				presenter: "資訊人權貴",
+				category: "Tips / 講秘訣",
+				abstract: "<p>幫助麻瓜享用 OSM： 不會寫程式也可以自製私房地圖。<br/>可用於旅遊行程規畫、展示連鎖店位置、貼在你的美食部落格、<br/>幫助規畫拜訪客戶或示威遊行的路線、...<br/>程式設計師則會感受到 RESTful API 對除錯的幫助。</p>",
+				biography: "<ul><li>撰寫「玩具烏托邦」自由軟體教學部落格</li><li>撰寫 mk-boot-usb 及 mbootu2 並推廣 linux 開機隨身碟</li><li>撰寫 drgeo 講義 (for 舊版) 推廣自由軟體融入數理教學</li><li>朝陽科大資訊管理系副教授<li>軟體自由協會監事</li><li>科技與社會學會秘書長</li></ul>"
+			}, {
+				time: "13:20-14:00",
+				venue: "H1",
+				event: "在公司成立開放源碼社團的原因與實踐",
+				presenter: "馬克泡 & 陳柏儒",
+				category: "Community / 社群經驗",
+				abstract: "<p>現在這個總統跟女模，都能在業餘寫上一手好程式的時代。<br/>寫程式應該成為一種樂趣，而不只是謀生工具。<br/>時代不一樣了，你應該在公司成立開放源碼社團。<br/>本演講將分享在公司成立開放源碼社團的原因和好處，<br/>並以M社的開放資料社團為例，提供運作半年的經驗和實踐分享給大家。<br/></p>",
+				biography: "<p>馬克泡，曾在COSCUP多次分享OpenWrt相關心得。</p><p>發現台灣產業變遷，體認到要貢獻開放源碼社群，必須從產業鏈上游開始會比較好。</p><p>於是從系統廠轉換跑道到IC設計產業服務。後來服務於台灣自主CPU開發公司 - 晶心科技，從事NDS32 u-boot官方開發及維護工作。</p><p>目前於M社從事手機USB相關驗證開發。</p><p>陳柏儒，在M社擔任前端工程師，主要參與物聯網議題，積極在公司中培養開放軟體. 技術交流文化。</p>"
+			}, {
+				time: "13:20-14:00",
+				venue: "交誼廳",
+				event: "Unconference (TBD)",
+				presenter: "",
+				category: "Unconference / 開放議程",
+				abstract: "",
+				biography: ""
+			}, {
+				time: "13:20-14:00",
+				venue: "平面演講廳",
+				event: "Unconference (TBD)",
+				presenter: "",
+				category: "Unconference / 開放議程",
+				abstract: "",
+				biography: ""
 			}]
 		}, {
 			time: "13:20",
@@ -25476,62 +25522,12 @@
 			time: "15:10",
 			events: [{
 				time: "15:10-15:50",
-				venue: "R0",
-				event: "VLC media player",
-				presenter: "Remi Denis-Courmont",
-				category: "New / 新東西",
-				EN: true,
-				abstract: "<p>News update on upcoming VLC media player version 3.0.</p>",
-				biography: "<p>Remi has been involved with the VLC media player for 11 years first at university, the non his free time. He has since become of the lead developer for the project.</p><p>By day time, he currently works as a system software engineer for NVIDIA.</p>"
-			}, {
-				time: "15:10-15:50",
-				venue: "R1",
-				event: "open .NET technology explained",
-				presenter: "Atsushi Enomoto",
-				category: "New / 新東西",
-				EN: true,
-				abstract: "<p>.NET technology has become fully open source by now, ready for true OSS lovers. Let's see how so.</p>",
-				biography: "<p>Japanese Mono project developer at Xamarin Inc.</p>"
-			}, {
-				time: "15:10-15:50",
-				venue: "R2",
-				event: "自己的機器人自己做",
-				presenter: "ted99tw",
-				category: "Physical / 來硬的",
-				abstract: "<p>如何製作一個包含軟韌硬體的開源雙足機器人</p>",
-				biography: "<p>連宏城，交大資訊系畢，長期浸淫IT領域，從業務到外商經理歷經各種職務，現在自行創業並投入自造潮流，已有3個募資專案在Indiegogo。最近作品為 MeArm.Joystick 機器手臂，在 FlyingV 創下1700%紀錄，迄今已在全省辦過40餘場DIY活動。目前正進行融合軟韌硬體的二足機器人開源專案。</p>"
-			}, {
-				time: "15:10-15:50",
-				venue: "H0",
-				event: "為納稅人而教：開放原始碼應用於高等教育，可以帶來哪些轉變？",
+				event: "「封麥」演說：台灣開放原始碼生態圈回顧",
+				venue: "全場聯播",
 				presenter: "jserv",
-				category: "Education / 開源與教育",
-				abstract: "<p>講者在台灣國立大學任教三年，全程使用開放原始碼技術作為教材，並善用各式協作工具，現已累積一些開放成果，本議程從一個納稅人的觀點，回顧這過程中對於教學和成本控管的突破，甚至提供虛擬和實體參與的可能性。</p>",
+				category: "Taiwan / 開源與台灣",
+				abstract: "<p>作為一位有幸能連續 10 年在 COSCUP 分享心得的講者，決定在「封麥」前，簡短回顧台灣開放原始碼生態圈的轉變，諸如源自本土的專案、開發者社群、各式推廣活動、大學相關課程，以及台灣人在國際開放原始碼專案的投入狀況。</p>",
 				biography: "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p>"
-			}, {
-				time: "15:10-15:50",
-				venue: "H1",
-				event: "在公司成立開放源碼社團的原因與實踐",
-				presenter: "馬克泡 & 陳柏儒",
-				category: "Community / 社群經驗",
-				abstract: "<p>現在這個總統跟女模，都能在業餘寫上一手好程式的時代。<br/>寫程式應該成為一種樂趣，而不只是謀生工具。<br/>時代不一樣了，你應該在公司成立開放源碼社團。<br/>本演講將分享在公司成立開放源碼社團的原因和好處，<br/>並以M社的開放資料社團為例，提供運作半年的經驗和實踐分享給大家。<br/></p>",
-				biography: "<p>馬克泡，曾在COSCUP多次分享OpenWrt相關心得。</p><p>發現台灣產業變遷，體認到要貢獻開放源碼社群，必須從產業鏈上游開始會比較好。</p><p>於是從系統廠轉換跑道到IC設計產業服務。後來服務於台灣自主CPU開發公司 - 晶心科技，從事NDS32 u-boot官方開發及維護工作。</p><p>目前於M社從事手機USB相關驗證開發。</p><p>陳柏儒，在M社擔任前端工程師，主要參與物聯網議題，積極在公司中培養開放軟體. 技術交流文化。</p>"
-			}, {
-				time: "15:10-15:50",
-				venue: "交誼廳",
-				event: "Unconference (TBD)",
-				presenter: "",
-				category: "Unconference / 開放議程",
-				abstract: "",
-				biography: ""
-			}, {
-				time: "15:10-15:50",
-				venue: "平面演講廳",
-				event: "Unconference (TBD)",
-				presenter: "",
-				category: "Unconference / 開放議程",
-				abstract: "",
-				biography: ""
 			}]
 		}, {
 			time: "16:00",
