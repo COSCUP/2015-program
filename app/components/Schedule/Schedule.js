@@ -591,11 +591,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "10:00-10:40",
 	    	    	"venue" : "R2",
-	    	    	"event" : "TBD",
-	    	    	"presenter" : "",
-	    	    	"category" : "Others / 一般議程",
-	    	    	"abstract" : "",
-	    	    	"biography" : ""
+	    	    	"event" : "WinAppDriver - 用 Selenium 驅動 Windows 應用程式",
+	    	    	"presenter" : "高正岳",
+	    	    	"category" : "Tips / 講秘訣",
+	    	    	"abstract" : "<p>說到 Web UI 自動化測試，相信多數人的答案會是 Selenium，但如果是 Windows 應用程式呢？（包括傳統的桌面應用程式、Windows 8 市集應用程式），除了 AutoIt、White 或 Coded UI Test 之外，將分享另一個更輕鬆的選擇 WinAppDriver。如果你會操作 Selenium，有了 WinAppDriver，不論你慣用的程式語言為何，那麼你已經具備自動化 Windows 應用程式的能力了！</p>",
+	    	    	"biography" : "<p>網路代號 imsardine，愛寫程式的魚，目前在 KKBOX 負責自動化測試開發工作。</p><p>更多關於我 <a href='https://about.me/imsardine'>https://about.me/imsardine</a></p>"
 	    	    },
 	    	    {
 	    	    	"time" : "10:00-10:40",
