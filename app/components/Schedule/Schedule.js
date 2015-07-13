@@ -282,7 +282,7 @@ module.exports = {
 	    			"abstract" : "<p>A. 環境設定\n\t1. 使用 Serial + WiFi\n\t2. 使用 VNC 和 X-Forwarding\n</p><p>B. Raspberry Pi GPIO 簡介\n\t1. Raspberry Pi GPIO 介紹\n\t2. 使用 Python 控制 GPIO</p><p>C. 馬達原理簡介\n\t1. 直流馬達介紹\n\t2.用 Raspberry Pi 控制直流馬達</p><p>D. 無線網路與藍牙控制\n\t1. 透過無線網路控制\n\t2. 藍牙原理與控制</p>"
 	    		},
 	    		{
-	    			"time" : "10:55-12:25",
+	    			"time" : "13:25-14:55",
 	    			"venue" : "H4",
 	    			"event" : "Workshop: Let's Chat via XMPP",
 	    			"presenter" : "佟輝(Tong Hui)",
