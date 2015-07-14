@@ -24918,7 +24918,7 @@
 		}, {
 			time: "13:20",
 			events: [{
-				time: "10:50-11:30",
+				time: "13:20-14:00",
 				venue: "全場聯播",
 				event: "立委哩公蝦",
 				presenter: "Ly",
