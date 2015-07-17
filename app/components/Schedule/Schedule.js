@@ -790,9 +790,12 @@ module.exports = {
 	    		{
 	    	    	"time" : "13:20-14:00",
 	    	    	"venue" : "R0",
-	    	    	"event" : "TBD",
-	    	    	"presenter" : "",
-	    	    	"category" : "Others / 一般議程",
+	    	    	"event" : "The CV is Dead!",
+	    	    	"presenter" : "Meghna Singh",
+	    	    	"category" : "Tips / 講秘訣",
+	    	    	"EN" : true,
+	    	    	"abstract" : "<p>How to create a great online presence and get noticed by your dream company.</p><p>A talk on how to create a profile of yourself as a candidate, using all the new age tools available and get noticed by companies.</p>",
+					"biography" : "<p>Technology Recruiter, Booking.com</p>"
 	    	    },
 	    	    {
 	    	    	"time" : "13:20-14:00",
