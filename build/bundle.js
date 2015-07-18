@@ -24907,11 +24907,12 @@
 			}, {
 				time: "11:40-12:20",
 				venue: "H1",
-				event: "台灣個性與 Open Source 開發/ Taiwaners and Open Source Development",
-				presenter: "Thinker",
-				category: "Taiwan / 開源與台灣",
-				abstract: "<p>語言因素之外，台灣人內斂、保守和缺乏自信，一方面又充滿熱情，形成一種悶騷的情況。對於參與 Open Source，始終不易和全球的開發社群接軌，形成一種封閉的狀態。敝人以近年淺薄的經驗，比較台灣人和一般歐美人士的運作方式的差異，希望有助突破困境。</p>",
-				biography: "<p>參與 Open Source 近二十年，近三年致力於 B2G project。</p><p>Have attended Open Source activities for nearly 20 yrs.<br/>I dedicate to B2G project in last 3 years.</p>"
+				event: "開源社群如何生存於商業社會 (Open Source Community: How to survive in a commercialized city)",
+				presenter: "Sammy Fung",
+				category: "Community / 社群經驗",
+				EN: true,
+				abstract: "<p>開源社群不少是從「免費」出發，義務地為社群內外提供交流機會，讓大家能有機會從知識以至金錢上獲得增長。</p><p>講者會從香港說起，在商業社會中，人人談錢、談利益、談個人光環，講者分享營運開源社群的苦與樂，說到近年講者和朋友在國外包括台灣的開源社群所見到的 passion！</p>",
+				biography: "<p>Sammy Fung 從中學起至今是一位二十多年經驗的開發者，目前主要使用 python 語言，也是一位喜歡出外打球、跑步、聽搖滾音樂、外遊交流的 IT 人。1997年創立香港Linux用家協會成為會長，目前是 Open Source Hong Kong 會長、Mozilla Rep、GNOME Asia 成員、HKOSCon 及 PyCON HK 主辦人。他一直相信科技、開放、自由、民主能改變人們的生活。</p><p>Sammy Fung is a developer with 20+ year experiences starting from secondary school, he uses python nowadays, he also likes to go out to play basketball & soccer, running, listen to rock music, travel. He formed Hong Kong Linux User Group as chairman, currently he is president of Open Source Hong Kong, Mozilla Rep, member of GNOME Asia, organizer of HKOSCon and PyCON HK. He always believe that technology, openness, freedom and democracy can change people's lives.</p>"
 			}]
 		}, {
 			time: "12:20",
@@ -25497,12 +25498,11 @@
 			}, {
 				time: "14:10-14:50",
 				venue: "H1",
-				event: "開源社群如何生存於商業社會 (Open Source Community: How to survive in a commercialized city)",
-				presenter: "Sammy Fung",
-				category: "Community / 社群經驗",
-				EN: true,
-				abstract: "<p>開源社群不少是從「免費」出發，義務地為社群內外提供交流機會，讓大家能有機會從知識以至金錢上獲得增長。</p><p>講者會從香港說起，在商業社會中，人人談錢、談利益、談個人光環，講者分享營運開源社群的苦與樂，說到近年講者和朋友在國外包括台灣的開源社群所見到的 passion！</p>",
-				biography: "<p>Sammy Fung 從中學起至今是一位二十多年經驗的開發者，目前主要使用 python 語言，也是一位喜歡出外打球、跑步、聽搖滾音樂、外遊交流的 IT 人。1997年創立香港Linux用家協會成為會長，目前是 Open Source Hong Kong 會長、Mozilla Rep、GNOME Asia 成員、HKOSCon 及 PyCON HK 主辦人。他一直相信科技、開放、自由、民主能改變人們的生活。</p><p>Sammy Fung is a developer with 20+ year experiences starting from secondary school, he uses python nowadays, he also likes to go out to play basketball & soccer, running, listen to rock music, travel. He formed Hong Kong Linux User Group as chairman, currently he is president of Open Source Hong Kong, Mozilla Rep, member of GNOME Asia, organizer of HKOSCon and PyCON HK. He always believe that technology, openness, freedom and democracy can change people's lives.</p>"
+				event: "台灣個性與 Open Source 開發/ Taiwaners and Open Source Development",
+				presenter: "Thinker",
+				category: "Taiwan / 開源與台灣",
+				abstract: "<p>語言因素之外，台灣人內斂、保守和缺乏自信，一方面又充滿熱情，形成一種悶騷的情況。對於參與 Open Source，始終不易和全球的開發社群接軌，形成一種封閉的狀態。敝人以近年淺薄的經驗，比較台灣人和一般歐美人士的運作方式的差異，希望有助突破困境。</p>",
+				biography: "<p>參與 Open Source 近二十年，近三年致力於 B2G project。</p><p>Have attended Open Source activities for nearly 20 yrs.<br/>I dedicate to B2G project in last 3 years.</p>"
 			}, {
 				time: "14:10-14:50",
 				venue: "交誼廳",
