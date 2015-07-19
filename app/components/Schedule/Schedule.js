@@ -243,12 +243,11 @@ module.exports = {
 	    	    {
 	    	    	"time" : "11:40-12:20",
 	    	    	"venue" : "H1",
-	    	    	"event" : "開源社群如何生存於商業社會 (Open Source Community: How to survive in a commercialized city)",
-	    	    	"presenter" : "Sammy Fung",
+	    	    	"event" : "學校學不到的開源精神！",
+	    	    	"presenter" : "蔡富名",
 	    	    	"category" : "Community / 社群經驗",
-	    	    	"EN" : true,
-	    	    	"abstract" : "<p>開源社群不少是從「免費」出發，義務地為社群內外提供交流機會，讓大家能有機會從知識以至金錢上獲得增長。</p><p>講者會從香港說起，在商業社會中，人人談錢、談利益、談個人光環，講者分享營運開源社群的苦與樂，說到近年講者和朋友在國外包括台灣的開源社群所見到的 passion！</p>",
-	    	    	"biography" : "<p>Sammy Fung 從中學起至今是一位二十多年經驗的開發者，目前主要使用 python 語言，也是一位喜歡出外打球、跑步、聽搖滾音樂、外遊交流的 IT 人。1997年創立香港Linux用家協會成為會長，目前是 Open Source Hong Kong 會長、Mozilla Rep、GNOME Asia 成員、HKOSCon 及 PyCON HK 主辦人。他一直相信科技、開放、自由、民主能改變人們的生活。</p><p>Sammy Fung is a developer with 20+ year experiences starting from secondary school, he uses python nowadays, he also likes to go out to play basketball & soccer, running, listen to rock music, travel. He formed Hong Kong Linux User Group as chairman, currently he is president of Open Source Hong Kong, Mozilla Rep, member of GNOME Asia, organizer of HKOSCon and PyCON HK. He always believe that technology, openness, freedom and democracy can change people's lives.</p>"
+	    	    	"abstract" : "<p>我現在是一名國中二年級的學生，在這一年多來，因為自己的興趣，我參與了自造者社群活動，甚至為了較複雜的作品，來到了Fablab Taipei，遇到喜歡在這邊動手製作的人們，透過這些朋友，我學會使用數位機具，完成了我的創作。</p>",
+	    	    	"biography" : "<p>我是現在就讀國二的蔡富名</p>"
 	    	    }
 	    	]
 	    },
@@ -343,11 +342,12 @@ module.exports = {
 	    	    {
 	    	    	"time" : "14:10-14:50",
 	    	    	"venue" : "H1",
-	    	    	"event" : "學校學不到的開源精神！",
-	    	    	"presenter" : "蔡富名",
+	    	    	"event" : "開源社群如何生存於商業社會 (Open Source Community: How to survive in a commercialized city)",
+	    	    	"presenter" : "Sammy Fung",
 	    	    	"category" : "Community / 社群經驗",
-	    	    	"abstract" : "<p>我現在是一名國中二年級的學生，在這一年多來，因為自己的興趣，我參與了自造者社群活動，甚至為了較複雜的作品，來到了Fablab Taipei，遇到喜歡在這邊動手製作的人們，透過這些朋友，我學會使用數位機具，完成了我的創作。</p>",
-	    	    	"biography" : "<p>我是現在就讀國二的蔡富名</p>"
+	    	    	"EN" : true,
+	    	    	"abstract" : "<p>開源社群不少是從「免費」出發，義務地為社群內外提供交流機會，讓大家能有機會從知識以至金錢上獲得增長。</p><p>講者會從香港說起，在商業社會中，人人談錢、談利益、談個人光環，講者分享營運開源社群的苦與樂，說到近年講者和朋友在國外包括台灣的開源社群所見到的 passion！</p>",
+	    	    	"biography" : "<p>Sammy Fung 從中學起至今是一位二十多年經驗的開發者，目前主要使用 python 語言，也是一位喜歡出外打球、跑步、聽搖滾音樂、外遊交流的 IT 人。1997年創立香港Linux用家協會成為會長，目前是 Open Source Hong Kong 會長、Mozilla Rep、GNOME Asia 成員、HKOSCon 及 PyCON HK 主辦人。他一直相信科技、開放、自由、民主能改變人們的生活。</p><p>Sammy Fung is a developer with 20+ year experiences starting from secondary school, he uses python nowadays, he also likes to go out to play basketball & soccer, running, listen to rock music, travel. He formed Hong Kong Linux User Group as chairman, currently he is president of Open Source Hong Kong, Mozilla Rep, member of GNOME Asia, organizer of HKOSCon and PyCON HK. He always believe that technology, openness, freedom and democracy can change people's lives.</p>"
 	    	    }
 	    	]
 	    },
