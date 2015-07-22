@@ -216,10 +216,10 @@ module.exports = {
 	    	    	"time" : "11:40-12:20",
 	    	    	"venue" : "R1",
 	    	    	"event" : "Linux 桌面系統在繁體中文資訊化的發展回顧",
-	    	    	"presenter" : "jserv",
+	    	    	"presenter" : "jserv & 曾政嘉",
 	    	    	"category" : "Chinese / 中文議題",
 	    	    	"abstract" : "<p>在 COSCUP 第一屆有個子主題是中文資訊化處理，邀請各界專家發表開發成果與未來展望，整整 10 年後，我們再來從 Linux 桌面技術的發展狀況回顧，介紹中間的演變，預期涵蓋中文交換碼、顯示系統、輸入法，還有包含網頁顯示技術等議題。</p>",
-	    	    	"biography" : "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p>"
+	    	    	"biography" : "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p><p>Cheng-Chia Tseng (曾政嘉)，網路常見 ID 為「zerng07」，長期的自由與開源軟體專案翻譯者。目前也是 The Document Foundation Member、GNOME Foundation Member、Ubuntu Member、和 Fedora Ambassador，並努力推動臺灣自由與開源軟體專案的參與。</p>"
 	    	    },
 	    	    {
 	    	    	"time" : "11:40-12:20",
@@ -558,7 +558,7 @@ module.exports = {
 	    	"time" : "09:10",
 	    	"events" : [
 	    	{
-	    		
+
 	    		"time" : "09:10-10:00",
 	    		"venue" : "全場聯播",
 	    		"event" : "How Redis Powers Your Web Service & Flurry analytics Intro",
@@ -566,7 +566,7 @@ module.exports = {
 	    		"category" : "Tips / 講秘訣",
 	    	    "abstract" : "<p>Redis is an advanced key-value cache and store to achieve better performance, which has been widely applied in lots of popular products over the past couple of years, including Flickr and Twitter. In this talk, we're going to introduce how we leverage Redis to improve recommendation system in terms of the faster web service, the morescalable data store and the auto-failover mechanism. The following topics will be covered:</p><ol><li>What Redis features and how it works in general?</li><li>How to operate Redis (a simple command-line demo)?</li><li>How Redis powers your web service on top of the Yahoo! experience.</li></ol><p>Flurry from Yahoo presents the latest stats on app usage in mobile based on the 700,000 apps, Flurry Analytics tracks and the Mobile Developer Suite. App growth in Asia nearly doubled last year-98%! Dive deep into what’s driving growth in Asia app usage and how usage differs across countries.</p>",
 	    	    "biography" : "<p>Ann is a research engineer in Yahoo. She is responsible for designing and implementing algorithms powering personalized experience for search result pages and recommendation modules of Taiwan Yahoo eCommerce sites.</p>"
-				
+
 			}]
 	    },
 	    {
@@ -854,7 +854,7 @@ module.exports = {
 	    	    	"abstract" : "",
 	    	    	"biography" : ""
 	    	    }
-	    	    
+
 	    	]
 	    },
 	    {
@@ -981,7 +981,7 @@ module.exports = {
 	    	    	"abstract" : "<p>作為一位有幸能連續 10 年在 COSCUP 分享心得的講者，決定在「封麥」前，簡短回顧台灣開放原始碼生態圈的轉變，諸如源自本土的專案、開發者社群、各式推廣活動、大學相關課程，以及台灣人在國際開放原始碼專案的投入狀況。</p>",
 	    	    	"biography" : "<p>Jim Huang (黃敬群)，慣用網路暱稱為\"jserv\"，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰</p>"
 	    	    }
-	    	    
+
 	    	]
 		},
 		{
