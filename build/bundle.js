@@ -24812,10 +24812,10 @@
 			}, {
 				time: "10:50-11:30",
 				venue: "R1",
-				event: "LibIME - Windows 下的 Open Source 中文輸入法開發",
+				event: "PIME - 用 \"Python\" 快速開發 Windows 的中文輸入法",
 				presenter: "PCMan",
 				category: "Chinese / 中文議題",
-				abstract: "<p>開源的中文輸入法框架，在Linux下選擇很多樣化，也已蓬勃發展多年，但在Windows 上則相對缺乏，尤其是 Windows 8 之後，新的 TSF 架構實做有相當的困難，使得很多開發者空有設計輸入法的構想，卻無法落實到很多人使用的 Windows 系統上。本議程將介紹 LibIME - 源自移植新酷音輸入法到 Windows 時，所製作的輸入法框架，幫助有志於改善中文輸入環境的朋友，在不了解太多細節的狀況下，也能做輸入法。</p>",
+				abstract: "<p>是的，你沒有看錯，真的是用 Python! 而且這能跑在 Windows 下。開源的中文輸入法框架，在Linux下選擇很多樣化，也已蓬勃發展多年，但在Windows 上則相對缺乏，尤其是 Windows 8 之後，新的 TSF 架構實做有相當的困難，使得很多開發者空有設計輸入法的構想，卻無法落實到很多人使用的 Windows 系統上。新的 metro mode 又加諸了許多限制，使得輸入法開發變得相當困難。本議程將介紹 PIME - 第一個嘗試在 Windows 上用 python 開發中文輸入法的架構，底層採用 C++ 開發的 LibIME (取自新酷音輸入 Windows 版)，幫助有志於改善中文輸入環境的朋友，在不了解太多細節，也不用會 C++ 的狀況下，也能用 Python 語言設計新的輸入法。</p>",
 				biography: "<ul><li>11 年參與自由軟體開發經驗</li><li>PCMan BBS/telnet client 系列 (2001 - 2007)</li><li>IE Tab Mozilla Firefox plugin/套件</li><li>LXDE/LXQt 桌面環境 (lightweight X11 desktop environment)</li><li>新酷音輸入法 Windows port</li></ul>"
 			}, {
 				time: "10:50-11:30",
