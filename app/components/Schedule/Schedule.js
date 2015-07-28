@@ -209,7 +209,7 @@ module.exports = {
 	    	    	"event" : "真全端工程師-從硬體到軟體",
 	    	    	"presenter" : "YuTin",
 	    	    	"category" : "Physical / 來硬的",
-	    	    	"abstract" : "<p>Raspberry Pi -> Cloud(Parse) -> ngCordova(ngChart) -> ionic.io(deploy)</p><p>Maker時代創造無限, 但要實踐IoT需要從 C, PHP, Database, Web, App(Java, Swift) 一路做到上架, 這肯定是想逼死工程師吧！不過現在只需要透過OpenSource專案加上免費資源</p><p>就可以在30min，快速實踐prototype甚至於立即上架，供其他人員測試獲得更多的Feedback。</p>",
+	    	    	"abstract" : "<p>Arduino -> Cloud(Parse) -> ngCordova(ngChart) -> ionic.io(deploy)</p><p>Maker時代創造無限, 但要實踐IoT需要從 C, PHP, Database, Web, App(Java, Swift) 一路做到上架, 這肯定是想逼死工程師吧！不過現在只需要透過OpenSource專案加上免費資源</p><p>就可以在30min，快速實踐prototype甚至於立即上架，供其他人員測試獲得更多的Feedback。</p>",
 	    	    	"biography" : "<ul><li>聯發科技 MediaTek, Inc. - 前端工程師</li><li>時間軸科技 Hiiir, Inc. - 資深工程師</li><li>威聯通科技 QNAP Systems, Inc. - 工程師</li></ul><ul><li>2013 Node.js Knockout 全球 Team 第三名</li><li>2012 Node.js Knockout Taiwan 第二名</li><li>2011 中華電信智慧家庭 創新應用獎 優選</li><li>2010 中華電信電信應用大賽 MOD 應用組 佳作</li><li>第 35 屆全國技能競賽網頁設計職類 第一名</li></ul>"
 	    	    },
 	    	    {
