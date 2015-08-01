@@ -25105,11 +25105,12 @@
 			}, {
 				time: "16:00-17:00",
 				venue: "H0",
-				event: "A Peek into Python's Object Model and Bytecode from a Smalltalk User",
-				presenter: "freedom",
-				category: "Hacking / 探究竟",
-				abstract: "<p>Understanding object model and bytecode is a crucial part in understanding an interpreted object-oriented language. Smalltalk, one of the oldest object-oriented programming languages, has a great object model and has been used bytecode and VM since 1970s. It is interesting to compare Smalltalk's and Python's object model and bytecode. Guido once said \"I remember being surprised by its use of metaclasses (which is quite different from that in Python or Ruby!) when I read about them much later. \" and \"Smalltalk's bytecode was a bigger influence of Python's bytecode though.\" It is interesting to compare Smalltalk's and Python's metacalss and bytecode.</p>",
-				biography: "<p>Koan-Sin Tan is a long-time open source user. He learned to write program on MPF-II and learned to user Unix on VAX-11/780. He used to be a programming language junkie,  learned a bit Smalltalk during early 90s, used it on and off. Recently he renewed his interest in ST-80 because of Scratch and BYOB/SNAP. He knew little about Python. He talked about Smalltalk's and Ruby's object model and bytecode before (<a href='http://www.slideshare.net/kstan2/smalltalk-and-ruby-20121208-15542185'>http://www.slideshare.net/kstan2/smalltalk-and-ruby-20121208-15542185</a>).</p>"
+				event: "open .NET technology explained",
+				presenter: "Atsushi Enomoto",
+				category: "New / 新東西",
+				EN: true,
+				abstract: "<p>.NET technology has become fully open source by now, ready for true OSS lovers. Let's see how so.</p>",
+				biography: "<p>Japanese Mono project developer at Xamarin Inc.</p>"
 			}, {
 				time: "16:00-17:00",
 				venue: "H1",
@@ -25380,12 +25381,11 @@
 			}, {
 				time: "13:20-14:00",
 				venue: "R1",
-				event: "open .NET technology explained",
-				presenter: "Atsushi Enomoto",
-				category: "New / 新東西",
-				EN: true,
-				abstract: "<p>.NET technology has become fully open source by now, ready for true OSS lovers. Let's see how so.</p>",
-				biography: "<p>Japanese Mono project developer at Xamarin Inc.</p>"
+				event: "A Peek into Python's Object Model and Bytecode from a Smalltalk User",
+				presenter: "freedom",
+				category: "Hacking / 探究竟",
+				abstract: "<p>Understanding object model and bytecode is a crucial part in understanding an interpreted object-oriented language. Smalltalk, one of the oldest object-oriented programming languages, has a great object model and has been used bytecode and VM since 1970s. It is interesting to compare Smalltalk's and Python's object model and bytecode. Guido once said \"I remember being surprised by its use of metaclasses (which is quite different from that in Python or Ruby!) when I read about them much later. \" and \"Smalltalk's bytecode was a bigger influence of Python's bytecode though.\" It is interesting to compare Smalltalk's and Python's metacalss and bytecode.</p>",
+				biography: "<p>Koan-Sin Tan is a long-time open source user. He learned to write program on MPF-II and learned to user Unix on VAX-11/780. He used to be a programming language junkie,  learned a bit Smalltalk during early 90s, used it on and off. Recently he renewed his interest in ST-80 because of Scratch and BYOB/SNAP. He knew little about Python. He talked about Smalltalk's and Ruby's object model and bytecode before (<a href='http://www.slideshare.net/kstan2/smalltalk-and-ruby-20121208-15542185'>http://www.slideshare.net/kstan2/smalltalk-and-ruby-20121208-15542185</a>).</p>"
 			}, {
 				time: "13:20-14:00",
 				venue: "R2",
