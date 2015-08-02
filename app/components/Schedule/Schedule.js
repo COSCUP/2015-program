@@ -356,7 +356,7 @@ module.exports = {
 	    	"events" : [
 	    		{
 	    			"time" : "14:15-14:55",
-	    			"venue" : "H3",
+	    			"venue" : "H2",
 	    			"event" : "Workshop: Open Build Service 實作練習",
 	    			"presenter" : "Gary Lin",
 	    			"category" : "Workshop / 工作坊",
