@@ -516,6 +516,10 @@ module.exports = {
 		}
 	],
 	"day2" : [
+		{
+	    	"time" : "08:15",
+	    	"event" : "Registration / 報到"
+	    },
 	    {
 	    	"time" : "09:00",
 	    	"event" : "Announcement"
