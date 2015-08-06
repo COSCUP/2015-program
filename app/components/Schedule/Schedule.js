@@ -452,7 +452,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "16:00-17:00",
 	    	    	"venue" : "R0",
-	    	    	"event" : "[Live Coding] 第一次自幹 Open Data SimCity 就上手",
+	    	    	"event" : "第一次自幹 Open Data SimCity 就上手",
 	    	    	"presenter" : "李慕約 Muyueh",
 	    	    	"category" : "Data / 開放資料",
 	    	    	"abstract" : "<p>SheetHub.com 開放資料，d3.js 資料視覺化，turf.js 地理資訊分析，wit.ai 聲控/自然語言，Open StreetMap 地圖等技術。 </p><p>每次聽到有人講「智慧城市」，我就會想到遊戲 SimCity。資料視覺化在現代瀏覽器上發展，足以讓我們在網頁上自幹這一款遊戲。剛好 SimCity 的開發商要關門了，我們就在這一個議程中用 Open Data 從頭自幹一個，對它致敬吧。</p>",
