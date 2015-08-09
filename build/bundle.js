@@ -25492,11 +25492,11 @@
 			}, {
 				time: "14:10-14:50",
 				venue: "H0",
-				event: "資料開源應用於公共工程預算採購以及石化汙染減排",
-				presenter: "JOSEPH",
+				event: "資料開源應用於公共工程預算採購以及石化汙染減排/ Open data applied for governmental spending and heavy industry pollution control",
+				presenter: "Liam (丁立安)",
 				category: "Government / 開放政府",
 				EN: true,
-				abstract: "<p>1.資料開源應用於公共工程預算：<br/>依據先進國家經驗，政府有責任揭露每件公共工程下的各項採購成本：若由次承包商所執行之工作，以其發票金額為準。我將以自身擔任公共工程總承包商的專案管理與請款經驗，闡述如何藉由採購資料開源，來協助政府合理編列預算，特別是像石化工程此類牽涉外國專利技術，不易估價的特性。</p><p>2. 資料開源應用於石化/電力污染減排：<br/>目前空氣汙染對於台灣的影響，PM2.5 比起二氧化碳排放更對民眾健康有立即性的負面衝擊，試想即便每根工業煙囪都符合排放標準，但全部加總起來就不是那麼回事。此外，現今石化工業採取溶劑吸收的方式來處理廢氣中的二氧化硫、二氧化碳、一氧化氮等，我曾經協助中油桃園煉油廠評估其所欲購買之 SHELL（殼牌石油）溶劑吸收技術，但實屬過時落伍之技術，我屆時也將詳加說明。因此重工業汙染排放的總量管制，以及減排專利技術的有效性，是可以透過資料開源來解決的。</p>",
+				abstract: "<p>1.資料開源應用於公共工程預算：<br/>依據先進國家經驗，政府有責任揭露每件公共工程下的各項採購成本：若由次承包商所執行之工作，以其發票金額為準。我將以自身擔任公共工程總承包商的專案管理與請款經驗，闡述如何藉由採購資料開源，來協助政府合理編列預算，特別是像石化工程此類牽涉外國專利技術，不易估價的特性。</p><p>2. 資料開源應用於石化/電力污染減排：<br/>目前空氣汙染對於台灣的影響，PM2.5 比起二氧化碳排放更對民眾健康有立即性的負面衝擊，試想即便每根工業煙囪都符合排放標準，但全部加總起來就不是那麼回事。此外，現今石化工業採取溶劑吸收的方式來處理廢氣中的二氧化硫、二氧化碳、一氧化氮等，我曾經協助中油桃園煉油廠評估其所欲購買之 SHELL（殼牌石油）溶劑吸收技術，但實屬過時落伍之技術，我屆時也將詳加說明。因此重工業汙染排放的總量管制，以及減排專利技術的有效性，是可以透過資料開源來解決的。</p><p>First part: Open data applied for governmental spending</p><p>According to UK and other developed countries’ experience, the spending data of public sector bodies with their suppliers are disclosed for the benefits of public and private companies. The disclosure of spending data can help better predict the price of a tender, monitor the budget and progress execution of a project, and understand the trend of public tender market and suppliers. Unfortunately according to my experience, the public spending data are unclear and distorted in Taiwan . After my explanation , let’s hope for a more vibrant and transparent public spending market.</p><p>Second part:</p><p>Air pollution issue : PM2.5 is intensely debated over our life style and economic development. Heavy industry such as petro-chemical plants, power plants, steel plants,etc is also a contributing factor to PM2.5. Have we ever concerned about the technology they use to reduce the air pollution? I will explain it based on my experience to tell everyone that this technical data and decisions are also need to be made transparent.</p>",
 				biography: "<ul><li>國立台灣大學機械系畢業</li><li>國立台灣大學工程科學與海洋工程所畢業</li><li>前富台工程專案經理</li><li>從事國內外基礎建設工程與石化專利分析七年</li><li>現致力於將資料開源應用於公共工程預算採購以及石化汙染減排</li></ul>"
 			}, {
 				time: "14:10-14:50",
