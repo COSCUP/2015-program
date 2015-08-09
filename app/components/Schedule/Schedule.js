@@ -882,7 +882,7 @@ module.exports = {
 	    			"category" : "Workshop / 工作坊",
 	    			"cross_time" : true,
 	    			"kktix" : "http://coscup2015.kktix.cc/events/h4-gitlab-flow",
-	    			"abstract" : "<p>日益複雜的程式碼，您的團隊如何應對？若您具備 Git 基礎，來參加就對了！<br/>從需求到實作，從測試到上線。本工作坊將針對數種情境，帶您動手實際演練。<br/>活動結束後，可以設計出適合自己的 Git 流程，降低溝通、開發和部署成本。<br/></p><p>目標聽眾：</p><ul><li>已安裝 Git，不排斥打指令</li><li>具備 Git 入門基礎 (clone, diff, add, push, pull, checkout, branch, merge, rebase)</li></ul><p>預計內容：</p><ul><li>社群與工作坊簡介</li><li>Git 從單人到協作</li><li>軟體開發流程概述</li><li>Git Flow / GitHub Flow / GitLab Flow</li></ul>"
+	    			"abstract" : "<p>日益複雜的程式碼，您的團隊如何應對？若您具備 Git 基礎，來參加就對了！<br/>從需求到實作，從測試到上線。本工作坊將針對數種情境，帶您動手實際演練。<br/>活動結束後，可以設計出適合自己的 Git 流程，降低溝通、開發和部署成本。<br/></p><p>目標聽眾：</p><ul><li>已安裝 Git，不排斥打指令</li><li>具備 Git 入門基礎 (clone, diff, add, push, pull, checkout, branch, merge, rebase)</li></ul><p>預計內容：</p><p style=\"margin-left: 40px;\"><span>13:20 - 14:00</span></p><ul><li style=\"margin-left: 40px;\"><span>社群與工作坊簡介</span></li><li style=\"margin-left: 40px;\"><span>Git 從單人到協作</span></li></ul><p style=\"margin-left: 40px;\"><span>14:10 - 14:50</span></p><ul><li style=\"margin-left: 40px;\"><span>Git Flow</span></li></ul><p style=\"margin-left: 40px;\"><span>15:10 - 15:50</span></p><ul><li style=\"margin-left: 40px;\"><span>GitHub Flow</span></li><li style=\"margin-left: 40px;\"><span>工作坊課程回顧</span></li></ul>"
 	    		},
 	    		{
 	    			"time" : "13:20-16:00",
