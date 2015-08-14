@@ -499,13 +499,13 @@ module.exports = {
 	    },
 	    {
 	    	"time" : "17:00",
-	    	"venue" : "交誼廳",
+	    	"venue" : "R0",
 	    	"events" : [
 	    		{
 	    			"time" : "17:00-18:00",
 	    			"event" : "COSCUP charity auction / COSCUP 慈善拍賣會",
 	    			"presenter" : "主持：clkao",
-	    			"venue" : "交誼廳",
+	    			"venue" : "R0",
 	    			"category" : "歡樂拍賣會"
 	    		}
 	    	]
