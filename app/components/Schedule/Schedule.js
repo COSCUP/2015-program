@@ -517,7 +517,7 @@ module.exports = {
 	],
 	"day2" : [
 		{
-	    	"time" : "08:15",
+	    	"time" : "08:30",
 	    	"event" : "Registration / 報到"
 	    },
 	    {
