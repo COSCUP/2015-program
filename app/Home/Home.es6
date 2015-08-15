@@ -102,7 +102,7 @@ export default React.createClass({
 
     // XXX: try to find a session by URL
     var { event } = this.props.params;
-    var session = events.filter(e => e.event === event)[0];
+    var session = events.filter(e => e.event.replace(/\s/g, '+') === event)[0];
     if(session) {
       setTimeout(() => {
         scrollTo(0, 449);
@@ -153,7 +153,7 @@ export default React.createClass({
   _setSession(value, event){
     // XXX: replace the current URL without trigger any transition
     if(event) {
-      this.transitionTo(`/${value.event}`);
+      this.transitionTo(encodeURI(`/${value.event}`.replace(/\s/g, '+')));
     }
     this.setState({
         showSession: true,
