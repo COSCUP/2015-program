@@ -23757,7 +23757,7 @@
 	    var event = this.props.params.event;
 
 	    var session = events.filter(function (e) {
-	      return e.event === event;
+	      return e.event.replace(/\s/g, "+") === event;
 	    })[0];
 	    if (session) {
 	      setTimeout(function () {
@@ -23807,7 +23807,7 @@
 	  _setSession: function _setSession(value, event) {
 	    // XXX: replace the current URL without trigger any transition
 	    if (event) {
-	      this.transitionTo("/" + value.event);
+	      this.transitionTo(encodeURI(("/" + value.event).replace(/\s/g, "+")));
 	    }
 	    this.setState({
 	      showSession: true,
