@@ -333,7 +333,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "14:10-14:50",
 	    	    	"venue" : "H0",
-	    	    	"event" : "Web + Mobile + Desktop in one using Firefox Marketplace [本議程講者臨時不克出席，取消]",
+	    	    	"event" : "[本議程講者臨時不克出席，取消] Web + Mobile + Desktop in one using Firefox Marketplace",
 	    	    	"presenter" : "ariestiyansyah",
 	    	    	"category" : "Tips / 講秘訣",
 	    	    	"abstract" : "<p>Developing application in multi-platform cost more money and spend more time, using the open web technology will make us more happy to develop our application fast. The open Web presents incredible opportunities for developers. To take full advantage of these technologies, you need to know how to use them. In this session I will talk how HTML5 + JS Framework + CSS and Firefox Marketplace can be use on multi-platform.</p>",
