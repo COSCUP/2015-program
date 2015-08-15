@@ -25469,10 +25469,10 @@
 				time: "14:10-14:50",
 				venue: "R0",
 				event: "如何快速建立資料庫服務的私有雲(DBaaS)-以OpenStack和MySQL為建置基礎",
-				presenter: "梶山隆輔",
+				presenter: "杜修文",
 				category: "Hacking / 探究竟",
 				abstract: "<p>DBaaS with OpenStack and MySQL-Implementation and digital transformation.</p><p>By join this session you would have an understanding to the essential and benefits of DBaaS. This talk would address the architecture of OpenStack and features from MySQL that support the architecture. This session also show you the best practice of implementing DBaaS by a demo that implementing DBaaS with OpenStack and MySQL.</p>",
-				biography: "<p>Ryusuke Kajiyama is Open Source Software specialist with 10+ years of experience of systems design using MySQL and open source solutions. He originally joined MySQL Japan, and is now working as MySQL Sales Consulting Manager of JAPAC at Oracle.</p><p>梶山隆輔<br/>一位悠遊在開源世界十數年的資訊系統專家，他有豐富的使用MySQL和開源方案設計系統的經驗。他在MySQL還是屬於瑞典MySQL AB時就加入日本MySQL公司，是日本及亞太區第一位MySQL技術推廣者，目前是甲骨文日本及亞太區技術顧問部資深經理。</p>"
+				biography: "<p>一介IT老兵，目前在MySQL的原廠負責大中華區的MySQL技術推廣及協大型專案的實施及技術指導，同時也是台灣MySQL社群的推動者及主要參與者，詳情請參見<a href='https://www.facebook.com/groups/297728497041569/'>https://www.facebook.com/groups/297728497041569/</a></p>"
 			}, {
 				time: "14:10-14:50",
 				venue: "R1",
