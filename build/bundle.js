@@ -25227,20 +25227,20 @@
 				abstract: "<p>News update on upcoming VLC media player version 3.0.</p>",
 				biography: "<p>Remi has been involved with the VLC media player for 11 years first at university, the non his free time. He has since become of the lead developer for the project.</p><p>By day time, he currently works as a system software engineer for NVIDIA.</p>"
 			}, {
-				time: "10:00-10:40",
-				venue: "交誼廳",
-				event: "Unconference (TBD)",
-				presenter: "",
+				time: "10:00-10:20",
+				venue: "平面演講廳",
+				event: "[10:00-10:20] CouchDB 不是 DB，是 Framework!",
+				presenter: "Iblis Lin",
 				category: "Unconference / 開放議程",
-				abstract: "",
+				abstract: "<p>CouchDB 有個鮮少人了解的 hidden feature - CouchApp，希望為大家介紹 CouchDB 對 Sinle Page Application 的設計。</p>",
 				biography: ""
 			}, {
-				time: "10:00-10:40",
+				time: "10:20-10:40",
 				venue: "平面演講廳",
-				event: "Unconference (TBD)",
-				presenter: "",
+				event: "[10:20-10:40] Meteor: Reactive Programming",
+				presenter: "Bob Lee",
 				category: "Unconference / 開放議程",
-				abstract: "",
+				abstract: "<p>Meteor 是一個以 Javascript / Node.js 為基底的網路應用框架，對於即時性、資料變動大的應用開發有很大的便利性。本次希望能針對其響應式程式的部分做簡單介紹。</p>",
 				biography: ""
 			}]
 		}, {
@@ -25289,20 +25289,20 @@
 				abstract: "<p>The core mechanism of Linux hibernate(S4) is snapshotting the page table and memory content, then restoring it back to memory. There have a important foundation of hibernate mechanism that is the memory map that's exposing by BIOS through e820 or EFI memory map protocol should not be changed.</p><p>My presentation is talking about the e820 trap of current Linux kernel hibernating, and the status of fixing the problem.</p>",
 				biography: "<p>Joey Lee, SUSE Labs Engineer in Taipei office. He is working on ACPI, EFI, Secure Boot, Hibernate Signature Verification, NVDIMM. One of the main jobs of him is following up mailing list on kernel upstream and contribute patch to kernel.</p>"
 			}, {
-				time: "10:50-11:30",
-				venue: "交誼廳",
-				event: "Unconference (TBD)",
-				presenter: "",
+				time: "10:50-11:10",
+				venue: "平面演講廳",
+				event: "[10:50-11:10] 來收服紅外線吧！",
+				presenter: "Pichu Chen",
 				category: "Unconference / 開放議程",
-				abstract: "",
+				abstract: "<p>IRDB 是一個紅外線的資料庫，我們利用隨手可得的硬體來完成紅外線訊號的收發。</p><p>這個主題會介紹常見的紅外線遙控器的格式，以及如何自製萬能遙控器。（一個丟出來戰鬥的概念）</p>",
 				biography: ""
 			}, {
-				time: "10:50-11:30",
+				time: "11:10-11:30",
 				venue: "平面演講廳",
-				event: "Unconference (TBD)",
-				presenter: "",
+				event: "[11:10-11:30] ZFS - Zeta File System",
+				presenter: "Derek 朱",
 				category: "Unconference / 開放議程",
-				abstract: "",
+				abstract: "<p>想要有一個指令備份/還原的機制，出錯時能後悔瞬間恢復。集 RAID、LVM 於一身又易於管理的檔案系統？用 zfs 就對了！</p>",
 				biography: ""
 			}]
 		}, {
@@ -25351,20 +25351,20 @@
 				abstract: "<p>當有人告訴你，什麼樣的選股模型可以讓你找到永遠賺錢的投資組合，那絕對是騙人的，但如果有人告訴你，什麼樣的模型絕對會讓你賠錢，那我想你可以聽聽他怎麼說。</p><p>在建立投資組合模型時，如果心中沒有警覺，你可能會犯錯下讓你賠錢的錯誤，像是 survival bias、looking-forward bias、backtest overfitting 等等，其中我認為最難纏也最令人害怕的是 Backtest overfitting。這邊我會跟大家分享一些檢驗錯誤的方法與經驗。</p><p>最後，在這次的分享中，我主要會使用 Python 與 R 作為工具。</p><p>You never know how to build a successful portfolio that always gives you significant return, but you definitely should know what would make you build a model that is doomed to be a failure.</p><p>Overfitting is the most common one. In the brief talk, I would like to share some experience how to avoid overfitting. At least in some ways.</p><p>The examples would be shown in Python toolkit like ipython, pandas, numpy, matplotlib, and seaborn.</p>",
 				biography: "<p>Yen，目前任職於本土避險基金財務工程師。 目前她的工作涵蓋：多因子模型的建構、資料 Extract-Transform-Load、機器學習、以及各種數值分析。她熱衷於參與 open source 社群活動，特別是與 Python 或 R 有關的活動，同時她也是 TW R-Ladies 的發起人之一。</p><p>Chia-Yi Yen, you can call her \"Yen\" just like the Japanese dollar yen, is a financial engineer in a local hedge fund. She has been responsible for multi-factor model construction, data infrastructure, data Extract-Transform-Load solution, and other numeric analysis projects. She is active in many open-source communities like Python and R, and she is also the organizer of Taiwan R-Ladies community, which is a female meetup of everything about data in the world of R language.</p>"
 			}, {
-				time: "11:40-12:20",
-				venue: "交誼廳",
-				event: "Unconference (TBD)",
-				presenter: "",
+				time: "11:40-12:00",
+				venue: "平面演講廳",
+				event: "[11:40-12:00] InfoPlat — 致力於促成共同協作的學生社群",
+				presenter: "克莉絲汀（貓咪）",
 				category: "Unconference / 開放議程",
-				abstract: "",
+				abstract: "<p>八月在台大的校園裡發生了一些有趣的事情，新生交流臉書社團裡出現「台大找直屬」的新生直屬查詢服務，竟然有超過四千名用戶註冊使用，三天前，又出現了「NTUcourse.info」，一個將 PTT 台大課程版上的資料網頁化的服務，短短三天內就超過兩萬五千次瀏覽。</p><p>這兩個服務到底是誰開發的？他們是怎麼樣的一群人呢？</p>",
 				biography: ""
 			}, {
-				time: "11:40-12:20",
+				time: "12:00-12:20",
 				venue: "平面演講廳",
-				event: "Unconference (TBD)",
-				presenter: "",
+				event: "[12:00-12:20] 20分鐘帶你看懂台灣法庭",
+				presenter: "雨蒼",
 				category: "Unconference / 開放議程",
-				abstract: "",
+				abstract: "<p>為何台灣法庭上，檢查關總是在發呆？法官總是有罪推定？給我20分鐘，帶你看懂台灣法庭的結構性問題！</p>",
 				biography: ""
 			}]
 		}, {
@@ -25414,20 +25414,20 @@
 				abstract: "<p>現在這個總統跟女模，都能在業餘寫上一手好程式的時代。<br/>寫程式應該成為一種樂趣，而不只是謀生工具。<br/>時代不一樣了，你應該在公司成立開放源碼社團。<br/>本演講將分享在公司成立開放源碼社團的原因和好處，<br/>並以M社的開放資料社團為例，提供運作半年的經驗和實踐分享給大家。<br/></p>",
 				biography: "<p>馬克泡，曾在COSCUP多次分享OpenWrt相關心得。</p><p>發現台灣產業變遷，體認到要貢獻開放源碼社群，必須從產業鏈上游開始會比較好。</p><p>於是從系統廠轉換跑道到IC設計產業服務。後來服務於台灣自主CPU開發公司 - 晶心科技，從事NDS32 u-boot官方開發及維護工作。</p><p>目前於M社從事手機USB相關驗證開發。</p><p>陳柏儒，在M社擔任前端工程師，主要參與物聯網議題，積極在公司中培養開放軟體. 技術交流文化。</p>"
 			}, {
-				time: "13:20-14:00",
-				venue: "交誼廳",
-				event: "Unconference (TBD)",
-				presenter: "",
+				time: "13:20-13:40",
+				venue: "平面演講廳",
+				event: "[13:20-13:40] “銀髮開源力量” - 香港長者開發開源軟件助社群",
+				presenter: "KING MAN",
 				category: "Unconference / 開放議程",
-				abstract: "",
+				abstract: "<p>香港人沒有香港字可用！老人就造 “自由香港字型”</p><p>香港沒有拼音系統，倉頡又很難學會，初小學生怎樣以查詢資訊學習？老人就開發了 “筆順五碼” 中文輸入法，「以科技回饋社會」</p>",
 				biography: ""
 			}, {
-				time: "13:20-14:00",
+				time: "13:40-14:00",
 				venue: "平面演講廳",
-				event: "Unconference (TBD)",
-				presenter: "",
+				event: "[13:40-14:00] Linux - sanxi: An update on Allwinner SoC support in Mainline kernel and U-boot \"Allwinner ARM SoC (A10/sunxi) Upstream Support Status\"",
+				presenter: "蔡鎮宇 (wens)",
 				category: "Unconference / 開放議程",
-				abstract: "",
+				abstract: "<p>Linux - sunxi 是致力於為 Allwinner（全志）SoC 做 Linux support 的社群，涵蓋的硬體含 Cubieboard, Banana/Orange Pi，C.H.I.P ($9 小電腦)。分享目前的進度成果，及未來可預期的發展。</p>",
 				biography: ""
 			}]
 		}, {
@@ -25506,22 +25506,6 @@
 				category: "Taiwan / 開源與台灣",
 				abstract: "<p>語言因素之外，台灣人內斂、保守和缺乏自信，一方面又充滿熱情，形成一種悶騷的情況。對於參與 Open Source，始終不易和全球的開發社群接軌，形成一種封閉的狀態。敝人以近年淺薄的經驗，比較台灣人和一般歐美人士的運作方式的差異，希望有助突破困境。</p>",
 				biography: "<p>參與 Open Source 近二十年，近三年致力於 B2G project。</p><p>Have attended Open Source activities for nearly 20 yrs.<br/>I dedicate to B2G project in last 3 years.</p>"
-			}, {
-				time: "14:10-14:50",
-				venue: "交誼廳",
-				event: "Unconference (TBD)",
-				presenter: "",
-				category: "Unconference / 開放議程",
-				abstract: "",
-				biography: ""
-			}, {
-				time: "14:10-14:50",
-				venue: "平面演講廳",
-				event: "Unconference (TBD)",
-				presenter: "",
-				category: "Unconference / 開放議程",
-				abstract: "",
-				biography: ""
 			}]
 		}, {
 			time: "14:50",
