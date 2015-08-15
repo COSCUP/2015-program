@@ -1,11 +1,12 @@
 import React from "react";
-import Router, {Route, DefaultRoute} from "react-router";
+import Router, {Route, DefaultRoute, NotFoundRoute} from "react-router";
 import Application from "./Application";
 import Home from "./Home/Home.es6";
 
 const routes = (
-  <Route name="app" path="/" handler={Application} >
-    <DefaultRoute handler={Home} />
+  <Route name="app" path="/" handler={Application} ignoreScrollBehavior={true}>
+    <Route name="session" path="/:event" handler={Home} />
+    <NotFoundRoute handler={Home} />
   </Route>
   );
 

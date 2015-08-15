@@ -1,9 +1,11 @@
 import React from "react";
+import { Navigation } from "react-router";
 
 import "./Home.css";
 import AppBar from "../components/AppBar/AppBar.es6";
 import Filter from "../components/Filter/Filter.es6";
 import Schedule from "../components/Schedule/Schedule.es6";
+import ScheduleData from "../components/Schedule/Schedule";
 import Session from "../components/Session/Session.es6";
 import Sponsor from "../components/Sponsor/Sponsor.es6";
 import SponsorData from "../components/Sponsor/Sponsor.js";
@@ -15,8 +17,29 @@ import VenuesData from "./Venues.json";
 import classNames from "classnames";
 import $ from "jquery";
 
+var events = (() => {
+  var events = [];
+  var findEvents = (day) => {
+    ScheduleData[day].forEach((o) => {
+      if(o.event) {
+        events.push(o);
+      }
+      if(o.events) {
+        events = events.concat(o.events);
+      }
+    });
+  }
+
+  findEvents('day1');
+  findEvents('day2');
+
+  return events;
+}());
+
 export default React.createClass({
   displayName: "Home",
+
+  mixins: [Navigation],
 
   getInitialState () {
 
@@ -77,6 +100,16 @@ export default React.createClass({
         }
     });
 
+    // XXX: try to find a session by URL
+    var { event } = this.props.params;
+    var session = events.filter(e => e.event === event)[0];
+    if(session) {
+      setTimeout(() => {
+        scrollTo(0, 449);
+        this._setSession(session);
+      }, 100);
+    }
+
   },
 
   _setInScheduleArea(value){
@@ -117,7 +150,11 @@ export default React.createClass({
     }
     window.scrollTo(0, 0);
   },
-  _setSession(value){
+  _setSession(value, event){
+    // XXX: replace the current URL without trigger any transition
+    if(event) {
+      this.transitionTo(`/${value.event}`);
+    }
     this.setState({
         showSession: true,
         currentSession: value
