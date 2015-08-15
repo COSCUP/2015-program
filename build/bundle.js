@@ -24232,13 +24232,13 @@
 			return classes.substr(1);
 		}
 
-		if (true) {
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true){
 			// AMD. Register as an anonymous module.
 			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 				return classNames;
 			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
 		} else {
 			window.classNames = classNames;
 		}
@@ -25708,9 +25708,10 @@
 	  silver: "白銀級贊助",
 	  bronze: "青銅級贊助",
 	  cohost: "協辦單位",
+	  donors: "個人贊助",
 	  media: "媒體夥伴" };
 
-	var donorsOrder = ["diamond", "gold", "silver", "bronze", "cohost", "media"];
+	var donorsOrder = ["diamond", "gold", "silver", "bronze", "cohost", "donors", "media"];
 
 	var Sponsor = React.createClass({
 	  displayName: "Sponsor",
@@ -25718,17 +25719,31 @@
 	  render: function render() {
 	    var _this = this;
 
-	    console.log(this.props.data);
+	    //console.log(this.props.data);
 	    var items = donorsOrder.map(function (data_key, i) {
-	      if (!_this.props.data.sponsors[data_key]) return [];
 
-	      var listItems = _this.props.data.sponsors[data_key].map(function (value, index) {
-	        return React.createElement(
-	          "a",
-	          { className: "Sponsor-item", href: value.url, target: "_blank" },
-	          React.createElement("img", { src: value.logoUrl, alt: value.name["zh-tw"] })
-	        );
-	      });
+	      var listItems;
+	      //console.log(data_key);
+	      if (data_key !== "donors") {
+	        if (!_this.props.data.sponsors[data_key]) return [];
+	        listItems = _this.props.data.sponsors[data_key].map(function (value, index) {
+	          return React.createElement(
+	            "a",
+	            { className: "Sponsor-item", href: value.url, target: "_blank" },
+	            React.createElement("img", { src: value.logoUrl, alt: value.name["zh-tw"] })
+	          );
+	        });
+	      } else {
+	        if (!_this.props.data.donors) return [];
+	        listItems = _this.props.data.donors.map(function (value, index) {
+	          //console.log(value);
+	          return React.createElement(
+	            "div",
+	            { className: "Sponsor-donorsItem" },
+	            value
+	          );
+	        });
+	      }
 	      return React.createElement(
 	        "div",
 	        { key: i },
@@ -25770,6 +25785,7 @@
 	module.exports = Transmit.createContainer(Sponsor, {
 	  queries: {
 	    data: function data() {
+	      //return agent.get("http://cors.io/?u=http://coscup.org/2015/api/sponsors/").then(res => JSON.parse(res.text));
 	      return agent.get("http://coscup.org/2015/api/sponsors").then(function (res) {
 	        return JSON.parse(res.text);
 	      });
