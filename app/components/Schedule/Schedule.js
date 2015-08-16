@@ -1028,6 +1028,11 @@ module.exports = {
 	    {
 	    	"event" : "(10.5) Teach Kids Programing Using Scratch by Vincent",
 			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "(10.7) FREE hosting for OSS project by blueT",
+			"venue" : "R0",
 			"lightning" : true,
 			"lightningLast" : true
 	    },
