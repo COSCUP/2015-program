@@ -27,6 +27,16 @@
 	text-align: center;
 	display: block;
 }
+.Sponsor-donorsPrefix {
+	border-bottom: 1px dashed #95BB9A;
+  	border-left: 1px solid #A3D1A9;
+  	border-right: 1px solid #A3D1A9;
+	padding: 10px;
+	line-height: 1.4;
+	text-align: left;
+	display: block;
+
+}
 .Sponsor-donorsItem {
 	border-bottom: 1px dashed #95BB9A;
   	border-left: 1px solid #A3D1A9;

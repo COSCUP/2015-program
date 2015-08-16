@@ -25753,6 +25753,7 @@
 	    var items = donorsOrder.map(function (data_key, i) {
 
 	      var listItems;
+	      var prefix = "";
 	      //console.log(data_key);
 	      if (data_key !== "donors") {
 	        if (!_this.props.data.sponsors[data_key]) return [];
@@ -25765,6 +25766,12 @@
 	        });
 	      } else {
 	        if (!_this.props.data.donors) return [];
+
+	        prefix = React.createElement(
+	          "div",
+	          { className: "Sponsor-donorsPrefix" },
+	          "謝謝所有參與 COSCUP 2015 個人贊助方案的贊助者，因為有你們，促成了活動的舉行，感謝各位! 以下贊助者名字依贊助款金額與姓名筆劃順序排列："
+	        );
 	        listItems = _this.props.data.donors.map(function (value, index) {
 	          //console.log(value);
 	          return React.createElement(
@@ -25782,6 +25789,7 @@
 	          { className: "Sponsor-sectionTitle" },
 	          donors[data_key]
 	        ),
+	        prefix,
 	        listItems
 	      );
 	    });
