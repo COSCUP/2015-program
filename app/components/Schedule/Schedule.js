@@ -626,7 +626,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "10:00-10:20",
 	    	    	"venue" : "平面演講廳",
-	    	    	"event" : "[10:00-10:20] CouchDB 不是 DB，是 Framework!",
+	    	    	"event" : "[10:00-10:20] Unconf: CouchDB 不是 DB，是 Framework!",
 	    	    	"presenter" : "Iblis Lin",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>CouchDB 有個鮮少人了解的 hidden feature - CouchApp，希望為大家介紹 CouchDB 對 Sinle Page Application 的設計。</p>",
@@ -635,7 +635,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "10:20-10:40",
 	    	    	"venue" : "平面演講廳",
-	    	    	"event" : "[10:20-10:40] Meteor: Reactive Programming",
+	    	    	"event" : "[10:20-10:40] Unconf: Meteor: Reactive Programming",
 	    	    	"presenter" : "Bob Lee",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>Meteor 是一個以 Javascript / Node.js 為基底的網路應用框架，對於即時性、資料變動大的應用開發有很大的便利性。本次希望能針對其響應式程式的部分做簡單介紹。</p>",
@@ -698,7 +698,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "10:50-11:10",
 	    	    	"venue" : "平面演講廳",
-	    	    	"event" : "[10:50-11:10] 來收服紅外線吧！",
+	    	    	"event" : "[10:50-11:10] Unconf: 來收服紅外線吧！",
 	    	    	"presenter" : "Pichu Chen",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>IRDB 是一個紅外線的資料庫，我們利用隨手可得的硬體來完成紅外線訊號的收發。</p><p>這個主題會介紹常見的紅外線遙控器的格式，以及如何自製萬能遙控器。（一個丟出來戰鬥的概念）</p>",
@@ -707,7 +707,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "11:10-11:30",
 	    	    	"venue" : "平面演講廳",
-	    	    	"event" : "[11:10-11:30] ZFS - Zeta File System",
+	    	    	"event" : "[11:10-11:30] Unconf: ZFS - Zeta File System",
 	    	    	"presenter" : "Derek 朱",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>想要有一個指令備份/還原的機制，出錯時能後悔瞬間恢復。集 RAID、LVM 於一身又易於管理的檔案系統？用 zfs 就對了！</p>",
@@ -770,7 +770,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "11:40-12:00",
 	    	    	"venue" : "平面演講廳",
-	    	    	"event" : "[11:40-12:00] InfoPlat — 致力於促成共同協作的學生社群",
+	    	    	"event" : "[11:40-12:00] Unconf: InfoPlat — 致力於促成共同協作的學生社群",
 	    	    	"presenter" : "克莉絲汀（貓咪）",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>八月在台大的校園裡發生了一些有趣的事情，新生交流臉書社團裡出現「台大找直屬」的新生直屬查詢服務，竟然有超過四千名用戶註冊使用，三天前，又出現了「NTUcourse.info」，一個將 PTT 台大課程版上的資料網頁化的服務，短短三天內就超過兩萬五千次瀏覽。</p><p>這兩個服務到底是誰開發的？他們是怎麼樣的一群人呢？</p>",
@@ -779,7 +779,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "12:00-12:20",
 	    	    	"venue" : "平面演講廳",
-	    	    	"event" : "[12:00-12:20] 20分鐘帶你看懂台灣法庭",
+	    	    	"event" : "[12:00-12:20] Unconf: 20分鐘帶你看懂台灣法庭",
 	    	    	"presenter" : "雨蒼",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>為何台灣法庭上，檢查關總是在發呆？法官總是有罪推定？給我20分鐘，帶你看懂台灣法庭的結構性問題！</p>",
@@ -843,7 +843,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "13:20-13:40",
 	    	    	"venue" : "平面演講廳",
-	    	    	"event" : "[13:20-13:40] “銀髮開源力量” - 香港長者開發開源軟件助社群",
+	    	    	"event" : "[13:20-13:40] Unconf: “銀髮開源力量” - 香港長者開發開源軟件助社群",
 	    	    	"presenter" : "KING MAN",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>香港人沒有香港字可用！老人就造 “自由香港字型”</p><p>香港沒有拼音系統，倉頡又很難學會，初小學生怎樣以查詢資訊學習？老人就開發了 “筆順五碼” 中文輸入法，「以科技回饋社會」</p>",
@@ -852,7 +852,7 @@ module.exports = {
 	    	    {
 	    	    	"time" : "13:40-14:00",
 	    	    	"venue" : "平面演講廳",
-	    	    	"event" : "[13:40-14:00] Linux - sanxi: An update on Allwinner SoC support in Mainline kernel and U-boot \"Allwinner ARM SoC (A10/sunxi) Upstream Support Status\"",
+	    	    	"event" : "[13:40-14:00] Unconf: Linux - sanxi: An update on Allwinner SoC support in Mainline kernel and U-boot \"Allwinner ARM SoC (A10/sunxi) Upstream Support Status\"",
 	    	    	"presenter" : "蔡鎮宇 (wens)",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>Linux - sunxi 是致力於為 Allwinner（全志）SoC 做 Linux support 的社群，涵蓋的硬體含 Cubieboard, Banana/Orange Pi，C.H.I.P ($9 小電腦)。分享目前的進度成果，及未來可預期的發展。</p>",
