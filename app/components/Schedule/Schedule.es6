@@ -185,6 +185,7 @@ export default React.createClass({
         
         "Schedule-item" : value.event && !value.lightning,
         "Schedule-itemLightning" : value.event && value.lightning === true,
+        "Schedule-itemLightningLast" : value.event && value.lightningLast === true,
         "Schedule-itemWrapper" : value.events,
         "has-top-border" : i !== 0
       })

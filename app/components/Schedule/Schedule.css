@@ -224,6 +224,17 @@
     color: rgb(100,100,100);
     overflow: hidden;
 }
+.Schedule-itemLightningLast {
+    padding: 4px;
+    padding-left: 92px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    line-height: 1.5;
+    background: white;
+    position: relative;
+    color: rgb(100,100,100);
+    overflow: hidden;
+}
 .Schedule-event {
     overflow: hidden;
 }

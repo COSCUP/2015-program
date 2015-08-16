@@ -1028,12 +1028,8 @@ module.exports = {
 	    {
 	    	"event" : "(10.5) Teach Kids Programing Using Scratch by Vincent",
 			"venue" : "R0",
-			"lightning" : true
-	    },
-	    {
-	    	"event" : "/",
-			"venue" : "R0",
-			"lightning" : true
+			"lightning" : true,
+			"lightningLast" : true
 	    },
 	    {
 	    	"time" : "17:00",

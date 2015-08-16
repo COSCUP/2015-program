@@ -24520,6 +24520,7 @@
 
 	        "Schedule-item": value.event && !value.lightning,
 	        "Schedule-itemLightning": value.event && value.lightning === true,
+	        "Schedule-itemLightningLast": value.event && value.lightningLast === true,
 	        "Schedule-itemWrapper": value.events,
 	        "has-top-border": i !== 0
 	      });
@@ -25616,11 +25617,8 @@
 			}, {
 					event: "(10.5) Teach Kids Programing Using Scratch by Vincent",
 					venue: "R0",
-					lightning: true
-			}, {
-					event: "/",
-					venue: "R0",
-					lightning: true
+					lightning: true,
+					lightningLast: true
 			}, {
 					time: "17:00",
 					event: "Closing / 閉幕式",
