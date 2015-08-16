@@ -973,12 +973,72 @@ module.exports = {
 		{
 	    	"time" : "16:00",
 	    	"event" : "Lightning Talk / 閃電秀",
-				"venue" : "全場聯播"
+			"venue" : "R0"
+	    },
+	    {
+	    	"event" : "( 1 ) 後山大開源計劃",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "( 2 ) Bind Python and C by StarNight",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "( 3 ) 三分鐘教阿嬤學會打中文",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "( 4 ) 傳統產業的開源殉道者 by derek",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "( 5 ) TIH打一下廣告～",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "( 6 ) Lightning Hedis by kewang",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "( 7 ) 擁抱自由‧擁抱開源",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "( 8 ) 開源回娘家 by 行銷組雁子",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "( 9 ) 雲端巨量資料物聯網深度學習文化創意產業之前進吧！高捷少女",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "(10 ) 進交大一點都不難 by 帥帥の小飛機",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "(10.5) Teach Kids Programing Using Scratch by Vincent",
+			"venue" : "R0",
+			"lightning" : true
+	    },
+	    {
+	    	"event" : "/",
+			"venue" : "R0",
+			"lightning" : true
 	    },
 	    {
 	    	"time" : "17:00",
 	    	"event" : "Closing / 閉幕式",
-				"venue" : "全場聯播"
+			"venue" : "全場聯播"
 	    }
 	]
 }

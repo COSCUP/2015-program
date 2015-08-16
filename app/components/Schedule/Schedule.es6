@@ -182,7 +182,9 @@ export default React.createClass({
     .map((value,i)=>{
       
       var itemClasses = classNames({
-        "Schedule-item" : value.event,
+        
+        "Schedule-item" : value.event && !value.lightning,
+        "Schedule-itemLightning" : value.event && value.lightning === true,
         "Schedule-itemWrapper" : value.events,
         "has-top-border" : i !== 0
       })

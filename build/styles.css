@@ -1146,6 +1146,16 @@ th {
     color: rgb(100,100,100);
     overflow: hidden;
 }
+.Schedule-itemLightning {
+    padding: 4px;
+    padding-left: 92px;
+    padding-right: 20px;
+    line-height: 1.5;
+    background: white;
+    position: relative;
+    color: rgb(100,100,100);
+    overflow: hidden;
+}
 .Schedule-event {
     overflow: hidden;
 }
