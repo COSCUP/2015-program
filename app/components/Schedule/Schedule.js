@@ -566,7 +566,7 @@ module.exports = {
 
 	    		"time" : "09:10-10:00",
 	    		"venue" : "全場聯播",
-	    		"event" : "How Redis Powers Your Web Service & Flurry analytics Intro",
+	    		"event" : "How Redis Powers Your Web Service & Flurry Analytics Intro",
 	    		"presenter": "Gene Lian & Roger Lo",
 	    		"category" : "Tips / 講秘訣",
 	    	    "abstract" : "<p>Redis is an advanced key-value cache and store to achieve better performance, which has been widely applied in lots of popular products over the past couple of years, including Flickr and Twitter. In this talk, we're going to introduce how we leverage Redis to improve recommendation system in terms of the faster web service, the more scalable data store and the auto-failover mechanism. The following topics will be covered:</p><ol><li>What Redis features and how it works in general?</li><li>How to operate Redis (a simple command-line demo)?</li><li>How Redis powers your web service on top of the Yahoo! experience.</li></ol><p>Flurry from Yahoo presents the latest stats on app usage in mobile based on the 700,000 apps, Flurry Analytics tracks and the Mobile Developer Suite. App growth in Asia nearly doubled last year-98%! Dive deep into what’s driving growth in Asia app usage and how usage differs across countries.</p>",
