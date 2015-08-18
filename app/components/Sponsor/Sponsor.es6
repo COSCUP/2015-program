@@ -10,7 +10,7 @@ const donors = {
   "silver": "白銀級贊助",
   "bronze": "青銅級贊助",
   "cohost": "協辦單位",
-  "donors": "個人贊助",
+  "donors": "特別感謝",
   "media": "媒體夥伴",
 };
 
@@ -39,15 +39,15 @@ const Sponsor = React.createClass({
         }else{
             if (! this.props.data.donors) return [];
 
-            prefix = <div className="Sponsor-donorsPrefix">謝謝所有參與 COSCUP 2015 個人贊助方案的贊助者，因為有你們，促成了活動的舉行，感謝各位! 以下贊助者名字依贊助款金額與姓名筆劃順序排列：</div>
-            listItems = this.props.data.donors.map((value,index)=>{
-                //console.log(value);
-                return (
-                  <div className="Sponsor-donorsItem">
-                    {value}
-                  </div>
-                )
-            });
+            prefix = <a className="Sponsor-donorsPrefix" href="http://coscup.org/2015/zh-tw/sponsors/">請點選看看有哪些支持 COSCUP 的夥伴們！</a>
+            // listItems = this.props.data.donors.map((value,index)=>{
+            //     //console.log(value);
+            //     return (
+            //       <div className="Sponsor-donorsItem">
+            //         {value}
+            //       </div>
+            //     )
+            // });
 
         }
         return (
