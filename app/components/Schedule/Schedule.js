@@ -708,7 +708,7 @@ module.exports = {
 	    	    	"time" : "11:10-11:30",
 	    	    	"venue" : "平面演講廳",
 	    	    	"event" : "[11:10-11:30] Unconf: ZFS - Zeta File System",
-	    	    	"presenter" : "Derek 朱",
+	    	    	"presenter" : "Derek 呆",
 	    	    	"category" : "Unconference / 開放議程",
 	    	    	"abstract" : "<p>想要有一個指令備份/還原的機制，出錯時能後悔瞬間恢復。集 RAID、LVM 於一身又易於管理的檔案系統？用 zfs 就對了！</p>",
 	    	    	"biography" : ""
