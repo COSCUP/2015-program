@@ -24051,7 +24051,7 @@
 	            React.createElement(
 	              "a",
 	              { className: "Home-patch",
-	                href: "https://github.com/COSCUP/coscup-schedule",
+	                href: "//github.com/COSCUP/2015-program",
 	                target: "_blank" },
 	              "patches welcome"
 	            )
@@ -24096,7 +24096,7 @@
 	                { className: "AppBar-wrap" },
 	                React.createElement(
 	                    "a",
-	                    { href: "http://coscup.org/" },
+	                    { href: "//coscup.org/" },
 	                    React.createElement("img", { className: "AppBar-logo", src: logo })
 	                ),
 	                React.createElement(
@@ -24109,17 +24109,17 @@
 	                    ),
 	                    React.createElement(
 	                        "a",
-	                        { className: "AppBar-item", href: "http://coscup.org/2015/zh-tw/about/" },
+	                        { className: "AppBar-item", href: "/2015/zh-tw/about/" },
 	                        "簡介"
 	                    ),
 	                    React.createElement(
 	                        "a",
-	                        { className: "AppBar-item", href: "http://coscup.org/2015/zh-tw/sponsors/" },
+	                        { className: "AppBar-item", href: "/2015/zh-tw/sponsors/" },
 	                        "贊助"
 	                    ),
 	                    React.createElement(
 	                        "a",
-	                        { className: "AppBar-item", href: "http://blog.coscup.org/" },
+	                        { className: "AppBar-item", href: "//blog.coscup.org/" },
 	                        "部落格"
 	                    )
 	                )
@@ -24766,7 +24766,7 @@
 							presenter: "鄭鴻旗（Honki）",
 							category: "Workshop / 工作坊",
 							cross_time: true,
-							kktix: "http://coscup2015.kktix.cc/events/workshop2015sp",
+							kktix: "//coscup2015.kktix.cc/events/workshop2015sp",
 							abstract: "<p>COSCUP首次親子工作坊<br/>帶孩子踏入自造世界！<br/></p><p>Workshop(工作坊)這個名詞開始於工業革命時代，最早是指一個房間或是一棟建築，提供器具或機具讓人們完成作品；現代對於場地較無嚴格限制，主要是強調參與工作坊的人們動手做的概念。</p><p>本工作坊就是這麼一個準備好材料與工具，讓孩子體驗自己動手設計、製做機器人樂趣的園地！歡迎家長陪同參與，內容將讓小朋友親手操作手工具，為安全考量，參與的小朋友年齡需為10-15歲。參與者將一併納入大會保險，請家長們放心。</p>",
 							biography: "<p>openLab.Taipei 的共同創辦人，擁有豐富的工作坊設計與帶領經驗。<a href='http://buzzorange.com/techorange/2014/03/17/openlab-taipei-arduino/'>看他的專訪</a>。</p>"
 					}, {
@@ -24776,7 +24776,7 @@
 							presenter: "macJack",
 							category: "Workshop / 工作坊",
 							cross_time: true,
-							kktix: "http://coscup2015.kktix.cc/events/openstacktwug-contribute",
+							kktix: "//coscup2015.kktix.cc/events/openstacktwug-contribute",
 							abstract: "<p>This workshop are welcome everyone who is interested in learning how to contribute to OpenStack upstream.</p><p>這個工作坊非常歡迎對於想要貢獻文件或是原始碼到OpenStack開發社群但是對於流程不太熟悉的朋友加入</p><p>我們講師跟助教都已經成功的送出貢獻到OpenStack上游開發者社群</p><p>各位參加的朋友將會在這個過程當中學習到如何成功送出patch或是程式碼所需要相關大小能力以及知識</p><p>還有如何跟OpenStack開發者社群互動</p><p>並且利用CI系統以及邀請他人做CodeReview</p><p>我們會把最困難的部份簡化到當天就可以成功送出Patch</p><p>並且讓上游開發社群接受你或妳送出的貢獻文件</p><p>真的一點都不困難</p><p>趕快來加入我們吧!!</p>",
 							biography: ""
 					}, {
@@ -24786,7 +24786,7 @@
 							presenter: "曾政嘉",
 							category: "Workshop / 工作坊",
 							cross_time: true,
-							kktix: "http://coscup2015.kktix.cc/events/fedroa-rpm",
+							kktix: "//coscup2015.kktix.cc/events/fedroa-rpm",
 							abstract: "<p>簡述打包 RPM 時的注意事項，並帶著參與者動手實作。</p><p>希望透過這個工作坊讓更多人瞭解如何幫忙軟體打包，參與社群幫忙貢獻。</p>",
 							biography: ""
 					}]
@@ -25868,7 +25868,7 @@
 	  queries: {
 	    data: function data() {
 	      //return agent.get("http://cors.io/?u=http://coscup.org/2015/api/sponsors/").then(res => JSON.parse(res.text));
-	      return agent.get("http://coscup.org/2015/api/sponsors").then(function (res) {
+	      return agent.get("/2015/api/sponsors.json").then(function (res) {
 	        return JSON.parse(res.text);
 	      });
 	    }
